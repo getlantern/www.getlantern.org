@@ -1,0 +1,8 @@
+section:not(#topbar) {
+  text-align: center;
+}
+
+section:not(#topbar):not(#footer) {
+  height: 300px;
+  line-height: 300px;
+}

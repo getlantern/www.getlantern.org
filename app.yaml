@@ -1,0 +1,29 @@
+application: getlanternsite
+version: dev
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+skip_files:
+- ^(.*/)?#.*#
+- ^(.*/)?.*~
+- ^(.*/)?.*\.sh
+- ^(.*/)?.*\.y[a]?ml
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?.*\.s[ca]ss
+- ^(.*/)?.*\.jar
+- ^(.*/)?.*/node_modules/.*
+- ^(.*/)?.*/RCS/.*
+- ^(.*/)?\..*
+- ^(.*/)?.*\.bak$
+
+handlers:
+
+- url: /
+  static_files: dist/index.html
+  upload: dist/index.html
+  secure: always
+
+- url: /
+  static_dir: dist
+  secure: always
