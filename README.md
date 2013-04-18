@@ -18,7 +18,7 @@ $ bower install
 
 ## Development
 ```
-$ grunt server
+$ grunt gae_devserver
 ```
 
 ## Deployment

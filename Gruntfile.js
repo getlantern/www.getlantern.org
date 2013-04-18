@@ -13,13 +13,20 @@ module.exports = function (grunt) {
     app: 'app',
     dist: 'dist'
   };
-
   try {
     yeomanConfig.app = require('./component.json').appPath || yeomanConfig.app;
   } catch (e) {}
 
+  var gaeConfig = {
+    appId: 'getlanternsite'
+  };
+  try {
+    gaeConfig.appId = global.fs.readFileSync('./app.yaml', {encoding: 'utf-8'}).split('\n')[0].split(' ')[1] || gaeConfig.appId;
+  } catch (e) {}
+
   grunt.initConfig({
     yeoman: yeomanConfig,
+    gae: gaeConfig,
     watch: {
       compass: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
@@ -64,8 +71,11 @@ module.exports = function (grunt) {
       }
     },
     open: {
-      server: {
+      devServer: {
         url: 'http://localhost:<%= connect.options.port %>'
+      },
+      prodServer: {
+        url: 'https://<%= gae.appId %>.appspot.com'
       }
     },
     clean: {
@@ -233,23 +243,22 @@ module.exports = function (grunt) {
 
   grunt.renameTask('regarde', 'watch');
 
-//grunt.registerTask('server', [
-  grunt.registerTask('defaultserver', [
-    'clean:server',
-    'compass:server',
-    'livereload-start',
-    'connect:livereload',
-    'open',
-    'watch'
-  ]);
-
   grunt.registerTask('server', [
     'clean:server',
     'compass:server',
     'livereload-start',
+    'connect:livereload',
+    'open:devServer',
+    'watch'
+  ]);
+
+  grunt.registerTask('gae_devserver', [
+    'clean:server',
+    'compass:server',
+    'livereload-start',
     'link_main_css',
-    'gae_devserver',
-    'open',
+    '_gae_devserver',
+    'open:devServer',
     'watch'
   ]);
 
@@ -278,48 +287,34 @@ module.exports = function (grunt) {
     'usemin'
   ]);
 
+  grunt.registerTask('deploy', [
+    'build',
+    'gae_deploy',
+    'open:prodServer'
+  ]);
+
   grunt.registerTask('default', ['build']);
 
-  // based on http://stackoverflow.com/questions/15014127/yeoman-to-use-google-app-engine-server
-  grunt.registerTask('gae_devserver', 'Run App Engine dev server.', function() {
-    var spawn = require('child_process').spawn;
-    var PIPE = {stdio: 'inherit'};
-    var done = this.async();
-    var args = [grunt.config('connect.options.port') || 9000,
-                yeomanConfig.app];
-    // XXX hack to run in background
-    spawn('./gae_devserver.sh', args, PIPE).on('exit', function(status) {
-      done(status === 0);
-    });
-  });
-  grunt.registerTask('gae_deploy', 'Deploy to App Engine.', function() {
-    var spawn = require('child_process').spawn;
-    var PIPE = {stdio: 'inherit'};
-    var done = this.async();
-    var args = ['update', '.'];
-    spawn('appcfg.py', args, PIPE).on('exit', function(status) {
-      done(status === 0);
-    });
-  });
-  grunt.registerTask('checkprod', 'Open browser to deployed app.', function() {
-    var spawn = require('child_process').spawn;
-    var PIPE = {stdio: 'inherit'};
-    var done = this.async();
-    var args = ['https://getlanternsite.appspot.com']; // XXX pull from config
-    spawn('open', args, PIPE).on('exit', function(status) {
-      done(status === 0);
-    });
-  });
-  grunt.registerTask('link_main_css', function() {
-    var spawn = require('child_process').spawn;
-    var PIPE = {stdio: 'inherit'};
-    var done = this.async();
-    // XXX hack to get compass-compiled css working for gae dev server
-    spawn('./link_main_css.sh', [], PIPE).on('exit', function(status) {
-      done(status === 0);
-    });
-  });
-  // XXX refactor the above to be DRY
+  function spawned(cmd, args) {
+    function spawnFunc() {
+      var spawn = require('child_process').spawn;
+      var PIPE = {stdio: 'inherit'};
+      /*jshint validthis:true */
+      var done = this.async();
+      spawn(cmd, args || [], PIPE).on('exit', function(status) {
+        done(status === 0);
+      });
+    }
+    return spawnFunc;
+  }
 
-  grunt.registerTask('deploy', ['build', 'gae_deploy', 'checkprod']);
+  grunt.registerTask('link_main_css',
+    spawned('./link_main_css.sh')
+  );
+  grunt.registerTask('_gae_devserver', 'Run App Engine dev server.',
+    spawned('./gae_devserver.sh', [grunt.config('connect.options.port') || 9000, grunt.config('yeoman.app')])
+  );
+  grunt.registerTask('gae_deploy', 'Deploy to App Engine.',
+    spawned('appcfg.py', ['update', '.'])
+  );
 };
