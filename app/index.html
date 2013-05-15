@@ -12,7 +12,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="styles/main.css">
   </head>
-  <body ng-app="www.getlantern.orgApp">
+  <body ng-app="GetLanternSiteApp" ng-cloak>
     <!--[if lt IE 7]>
       <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
     <![endif]-->
@@ -28,30 +28,80 @@
         <img style="height:50px" src="images/logo.png">
       </section>
 
-      <section id="download">
-        download section
+      <section id="download" ng-controller="DownloadCtrl"
+        ng-init="fetchInstallerMetadata()">
+        <div ng-show="data">
+          <div ng-hide="selectedOS == 'UNKNOWNOS'">
+            <ul id="selected-installer-data-list">
+              <li><a class="btn btn-primary btn-large" href="{{data[selectedOS].url}}" translate>DOWNLOAD</a></li>
+              <li>{{selectedOS | translate}}</li>
+              <li>
+                <span translate>VERSION</span>
+                {{data[selectedOS].version}}
+              </li>
+              <li>
+                <span translate>RELEASED</span>
+                <time datetime="{{data[selectedOS].released}}">
+                  {{data[selectedOS].released | date}}
+                </time>
+              </li>
+            </ul>
+            <div>
+              <a ng-click="selectOS('UNKNOWNOS')">{{'OTHER_SYSTEMS' | translate}}</a>
+            </div>
+          </div>
+          <div ng-show="selectedOS == 'UNKNOWNOS'">
+            <ul id="os-list">
+              <li ng-repeat="(osKey, osVal) in data">
+                <a ng-click="selectOS(osKey)">{{osKey | translate}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div ng-hide="data">
+          <!-- TODO -->
+          ("email me a download link when lantern is available" form)
+        </div>
+        <div ng-show="errorLoading" translate>
+          LATEST_INSTALLER_DATA_LOADING_FAILED
+        </div>
       </section>
 
       <section id="watch">
-        watch section
+        (watch section)
       </section>
 
-      <section id="footer">
-        footer
-      </section>
+      <!-- for http://compass-style.org/reference/compass/layout/sticky_footer/ -->
+      <div id="root_footer"></div>
     </div>
+    <section id="footer" ng-controller="FooterCtrl">
+      <nav>
+        <ul id="footer-navlink-list">
+          <li ng-repeat="(linktextKey, url) in navLinks">
+            <a href="{{url}}" translate>{{linktextKey}}</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
     <!-- site content ends here -->
 
+    <!-- these get automatically replaced with CDN-hosted versions -->
     <script src="components/angular/angular.js"></script>
-    <!--
     <script src="components/angular-resource/angular-resource.js"></script>
     <script src="components/angular-cookies/angular-cookies.js"></script>
     <script src="components/angular-sanitize/angular-sanitize.js"></script>
-    -->
 
+    <!-- these get automatically minified and concatenated at build time -->
     <!-- build:js scripts/scripts.js -->
+    <script src="components/angular-translate/src/translate.js"></script>
+    <script src="components/angular-translate/src/filter/translate.js"></script>
+    <script src="components/angular-translate/src/directive/translate.js"></script>
     <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/translations.js"></script>
+    <script src="scripts/controllers/download.js"></script>
+    <script src="scripts/controllers/footer.js"></script>
+    <script src="scripts/services/constants.js"></script>
+    <script src="scripts/services/osSniffer.js"></script>
     <!-- endbuild -->
 
     <script>

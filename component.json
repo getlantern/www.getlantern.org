@@ -1,16 +1,19 @@
 {
-  "name": "www.getlantern.org",
+  "name": "GetLanternSite",
   "version": "0.0.0",
+  "appPath": "app",
   "dependencies": {
-    "angular": "~1.0.5",
+    "angular": "~1.0.6",
     "json3": "~3.2.4",
     "es5-shim": "~2.0.8",
-    "angular-resource": "~1.0.5",
-    "angular-cookies": "~1.0.5",
-    "angular-sanitize": "~1.0.5"
+    "angular-resource": "~1.0.6",
+    "angular-cookies": "~1.0.6",
+    "angular-sanitize": "~1.0.6",
+    "angular-bootstrap": "~0.3.0",
+    "angular-translate": "git://github.com/PascalPrecht/angular-translate.git#0.8.0"
   },
   "devDependencies": {
-    "angular-mocks": "~1.0.5",
-    "angular-scenario": "~1.0.5"
+    "angular-mocks": "~1.0.6",
+    "angular-scenario": "~1.0.6"
   }
 }

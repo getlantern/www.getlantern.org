@@ -18,10 +18,13 @@ module.exports = function (grunt) {
   } catch (e) {}
 
   var gaeConfig = {
-    appId: 'getlanternsite'
+    appId: 'getlanternsite',
+    verId: 'dev'
   };
   try {
-    gaeConfig.appId = global.fs.readFileSync('./app.yaml', {encoding: 'utf-8'}).split('\n')[0].split(' ')[1] || gaeConfig.appId;
+    var appYaml = global.fs.readFileSync('./app.yaml', {encoding: 'utf-8'}).split('\n');
+    gaeConfig.appId = appYaml[0].split(' ')[1] || gaeConfig.appId;
+    gaeConfig.verId = appYaml[1].split(' ')[1] || gaeConfig.verId;
   } catch (e) {}
 
   grunt.initConfig({
@@ -75,7 +78,7 @@ module.exports = function (grunt) {
         url: 'http://localhost:<%= connect.options.port %>'
       },
       prodServer: {
-        url: 'https://<%= gae.appId %>.appspot.com'
+        url: 'https://<%= gae.verId %>-dot-<%= gae.appId %>.appspot.com'
       }
     },
     clean: {

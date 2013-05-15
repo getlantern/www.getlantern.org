@@ -1,5 +1,13 @@
+@import "compass/layout/sticky-footer";
+@include sticky-footer($footerHeight, "#content-container");
+
 #footer {
+  height: $footerHeight;
   background-color: #aaa;
   color: #333;
-  padding: 20px;
+  padding-top: 15px;
+}
+
+#footer-navlink-list {
+  @include delimited-list('∙');
 }

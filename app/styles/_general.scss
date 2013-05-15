@@ -1,8 +1,12 @@
+a {
+  cursor: pointer;
+}
+
 section:not(#topbar) {
   text-align: center;
 }
 
 section:not(#topbar):not(#footer) {
-  height: 300px;
-  line-height: 300px;
+  height: 200px;
+  padding-top: 30px;
 }

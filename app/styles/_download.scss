@@ -2,3 +2,12 @@
   background-color: #444;
   color: #ccc;
 }
+
+#selected-installer-data-list {
+  @include no-bullets;
+  margin-left: 0;
+}
+
+#os-list {
+  @include delimited-list('∙');
+}
