@@ -5,8 +5,3 @@ a {
 section:not(#topbar) {
   text-align: center;
 }
-
-section:not(#topbar):not(#footer) {
-  //height: 200px;
-  padding: 30px 0;
-}
