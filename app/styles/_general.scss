@@ -7,6 +7,6 @@ section:not(#topbar) {
 }
 
 section:not(#topbar):not(#footer) {
-  height: 200px;
-  padding-top: 30px;
+  //height: 200px;
+  padding: 30px 0;
 }
