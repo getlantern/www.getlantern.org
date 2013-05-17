@@ -24,64 +24,139 @@
 
     <!-- site content starts here -->
     <div id="content-container">
-      <section id="topbar">
-        <img style="height:50px" src="images/logo.png">
-      </section>
+      <header id="topbar" class="header">
+        <div class="wrap clearfix">
+          <img src="images/lantern-beta-logo.png" alt="Lantern Beta" />
+        </div>
+        <a href="https://github.com//getlantern/www.getlantern.org">
+          <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
+        </a>
+      </header>
 
-      <section id="download" ng-controller="DownloadCtrl"
+      <section id="download" class="section download" ng-controller="DownloadCtrl"
         ng-init="fetchInstallerMetadata()">
-        <div ng-show="data">
-          <div ng-hide="selectedOS == 'UNKNOWNOS'">
-            <ul id="selected-installer-data-list">
-              <li><a class="btn btn-primary btn-large" href="{{data[selectedOS].url}}" translate>DOWNLOAD</a></li>
-              <li>{{selectedOS | translate}}</li>
-              <li>
-                <span translate>VERSION</span>
-                {{data[selectedOS].version}}
-              </li>
-              <li>
-                <span translate>RELEASED</span>
-                <time datetime="{{data[selectedOS].released}}">
-                  {{data[selectedOS].released | date}}
-                </time>
-              </li>
-            </ul>
-            <div>
-              <a ng-click="selectOS('UNKNOWNOS')">{{'OTHER_SYSTEMS' | translate}}</a>
+
+        <div class="constrained">
+
+          <div class="panel">
+            <h1 class="panel-title">Free the Internet</h1>
+            <div class="panel-text">
+              <p>Securely share your connection to defeat censorship</p>
+            </div><!-- end .panel-text -->
+
+            <div ng-show="data">
+              <div ng-hide="selectedOS == 'UNKNOWNOS'">
+
+                <div class="button-wrapper">
+                  <a class="btn btn-primary btn-large" href="{{data[selectedOS].url}}" translate>Download Lantern</a>
+                </div>
+
+                <ul id="selected-installer-data-list" class="data-list">
+                  <li class="first">
+                    <span class="icn icn-apple"></span> 
+                    {{selectedOS | translate}}
+                  </li>
+                  <li>
+                    <span translate>VERSION</span>
+                    {{data[selectedOS].version}}
+                  </li>
+                  <li class="last">
+                    <span translate>RELEASED</span>
+                    <time datetime="{{data[selectedOS].released}}">
+                      {{data[selectedOS].released | date}}
+                    </time>
+                  </li>
+                </ul>
+
+                <div class="os-link">
+                  <a ng-click="selectOS('UNKNOWNOS')">{{'OTHER_SYSTEMS' | translate}}</a>
+                </div>
+              </div>
+
+              <div ng-show="selectedOS == 'UNKNOWNOS'">
+                <ul id="os-list" class="data-list">
+                  <li ng-repeat="(osKey, osVal) in data">
+                    <a ng-click="selectOS(osKey)">{{osKey | translate}}</a>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div ng-show="selectedOS == 'UNKNOWNOS'">
-            <ul id="os-list">
-              <li ng-repeat="(osKey, osVal) in data">
-                <a ng-click="selectOS(osKey)">{{osKey | translate}}</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div ng-hide="data">
-          <!-- TODO -->
-          ("email me a download link when lantern is available" form)
-        </div>
-        <div ng-show="errorLoading" translate>
-          LATEST_INSTALLER_DATA_LOADING_FAILED
+
+            <div ng-hide="data">
+              <!-- TODO -->
+              ("email me a download link when lantern is available" form)
+            </div>
+
+            <div ng-show="errorLoading" translate>
+              LATEST_INSTALLER_DATA_LOADING_FAILED
+            </div>
+
+          </div><!-- end .panel -->
+        </div><!-- end .constrained -->
+      </section>
+
+      <div class="white-panel">
+        <div class="quotes constrained clearfix">
+          <div class="quote">
+            <blockquote>"An amazing quote would go here.  Something flattering."</blockquote>
+            <div class="cite"><img src="images/logo-fast-company.png" alt="Fast Company" /></div>
+          </div><!-- end .quote -->
+          <div class="quote">
+            <blockquote>"An amazing quote would go here.  Something flattering."</blockquote>
+            <div class="cite"><img src="images/logo-cnbc.png" alt="CNBC" /></div>
+          </div><!-- end .quote -->
+          <div class="quote last">
+            <blockquote>"An amazing quote would go here.  Something flattering."</blockquote>
+            <div class="cite"><img src="images/logo-wired.png" alt="Wired" /></div>
+          </div><!-- end .quote -->
+        </div><!-- end .quotes -->
+      </div><!-- end .white-panel -->
+
+      <section id="watch" class="section watch">
+        <div class="wrap">
+          <iframe width="960" height="540" src="http://www.youtube.com/embed/_vx1OVLX5Rc?rel=0" frameborder="0" allowfullscreen></iframe>
         </div>
       </section>
 
-      <section id="watch">
-        <iframe width="640" height="480" src="http://www.youtube.com/embed/IytNBm8WA1c" frameborder="0" allowfullscreen></iframe>
+      <section class="section white-panel demo">
+        <h1 class="section-title">1+ billion people live without a complete Internet</h1>
+        <p>Help fight firewalls.  Lantern is a free program that gives<br /> people access in places where access is denied.</p>
+        <hr />
+        <div class="demo-screen">
+          <h2 class="screen-caption">Lantern in Action</h2>
+          <img src="images/screenshot.jpg" alt="Lantern in Action" />
+        </div><!-- end .demo-screen -->
       </section>
 
       <!-- for http://compass-style.org/reference/compass/layout/sticky_footer/ -->
       <div id="root_footer"></div>
     </div>
-    <section id="footer" ng-controller="FooterCtrl">
-      <nav>
-        <ul id="footer-navlink-list">
-          <li ng-repeat="(linktextKey, url) in navLinks">
-            <a href="{{url}}" translate>{{linktextKey}}</a>
-          </li>
-        </ul>
-      </nav>
+    <section id="footer" class="footer" ng-controller="FooterCtrl">
+      <div class="contrained">
+
+        <div class="footer-logo">
+          <img src="images/lantern-footer-logo.png" alt="Lantern" />
+        </div><!-- end .footer-logo -->
+
+        <nav class="footer-links">
+          <ul id="footer-navlink-list">
+            <li ng-repeat="(linktextKey, url) in navLinks">
+              <a href="{{url}}" translate>{{linktextKey}}</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="github-button">
+          <a href="http://developer.github.com/" target="_blank">
+            <img src="images/btn-developer-wiki.png" alt="Github Developer Wiki" />
+          </a>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2013 Brave New Software.</p>
+          <a href="#">Some rights reserved</a>
+        </div>
+
+      </div><!-- end .constrained -->
     </section>
     <!-- site content ends here -->
 

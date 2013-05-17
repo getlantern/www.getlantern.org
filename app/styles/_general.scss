@@ -1,7 +1,116 @@
+body { background-color: #f0f0f0; }
+
+h1, .btn {
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-weight: 700;
+}
+
+blockquote {
+	font-family: 'Georgia', serif;
+}
+
 a {
   cursor: pointer;
 }
 
 section:not(#topbar) {
   text-align: center;
+}
+
+ul, ol {
+	
+	li {
+		line-height: 1.4;
+	}
+}
+
+iframe { max-width: 100%; }
+
+hr {
+	border: 0;
+	height: 2px;
+	border-top: 2px solid #e1e1e1;
+	border-bottom: 1px solid #d6d6d6;
+}
+
+/* ===================
+   LAYOUT
+=================== */
+.wrap {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.constrained {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.white-panel {
+	background: #fff;
+	border-bottom: 1px solid #c7c7c7;
+}
+
+.section { 
+	padding: 54px 0 94px; 
+	border-bottom: 1px solid #c7c7c7;
+}
+
+/* ===================
+   QUOTES
+=================== */
+.quotes {
+	display: table;
+
+	.last { border: 0; }
+}
+
+.quote {
+	display: table-cell;
+	width: 30%;
+	height: 100%;
+	max-width: 250px;
+	font-size: 19px;
+	padding: 52px 30px 20px;
+	border-right: 1px solid #ededed;
+
+	blockquote { 
+		border: 0; 
+		padding: 0;
+		line-height: 1.2;
+		color: #808080;
+	}
+
+	.cite { text-align: right; }
+}
+
+/* ===================
+   DEMO
+=================== */
+.demo { 
+	font-size: 18px; 
+
+	hr {
+		margin: 40px auto 30px;
+		width: 40%;
+	}
+}
+
+.section-title {
+	margin: 0 0 25px;
+	font-size: 36px;
+}
+
+.demo-screen {
+
+	img {
+		@include box-shadow(rgba(black, 0.46) 0 10px 43px);
+	}
+}
+
+.screen-caption {
+	color: #737373;
+	font-size: 18px;
+	font-weight: normal;
 }

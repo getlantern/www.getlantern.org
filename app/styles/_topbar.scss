@@ -1,4 +1,7 @@
-#topbar {
-  background-color: #013548;
-  padding: 15px 30px;
+.header {
+  background-color: #0a3343;
+  padding: 15px 0;
+  @include box-shadow(rgba(black, 0.19) 0 1px 0);
+  position: relative;
+  z-index: 1;
 }

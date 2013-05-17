@@ -4,10 +4,10 @@ angular.module('GetLanternSiteApp', ['pascalprecht.translate'], ['$translateProv
   function ($translateProvider) {
     $translateProvider.translations('en_EN', {
       LATEST_INSTALLER_DATA_LOADING_FAILED: 'Could not load latest installer data. Please check your connection and try reloading the page.',
-      DOWNLOAD: 'Download',
+      DOWNLOAD: 'Download Lantern',
       VERSION: 'Version',
       RELEASED: 'Released',
-      OSX: 'OS X',
+      OSX: 'Mac OS X',
       WINDOWS: 'Windows',
       UBUNTU32: 'Ubuntu 32-bit',
       UBUNTU64: 'Ubuntu 64-bit',

@@ -3,11 +3,37 @@
 
 #footer {
   height: $footerHeight;
-  background-color: #aaa;
-  color: #333;
-  padding-top: 15px;
+  color: #626262;
+  font-size: 16px;
+}
+
+.footer-logo { 
+	padding: 20px 0; 
 }
 
 #footer-navlink-list {
   @include delimited-list('∙');
+  font-family: 'Oswald', Helvetica, Arial, sans-serif;
+
+  li:after {
+  	content: " | ";
+  	padding: 0 4px;
+  }
+
+  a {
+  	color: #626262;
+  	font-size: 18px;
+  }
+}
+
+.footer-links { padding-bottom: 40px; }
+
+.github-button { padding-bottom: 15px;}
+
+.copyright {
+	padding-bottom: 50px;
+
+	p { margin-bottom: 3px; }
+
+	a { color: #139ceb; }
 }
