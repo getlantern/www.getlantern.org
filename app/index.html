@@ -118,15 +118,17 @@
         </div>
       </section>
 
+      <!--
       <section class="section white-panel demo">
-        <h1 class="section-title">1+ billion people live without a complete Internet</h1>
+        <h1 class="section-title">Over a billion people live without a complete Internet</h1>
         <p>Help fight firewalls.  Lantern is a free program that gives<br /> people access in places where access is denied.</p>
         <hr />
         <div class="demo-screen">
           <h2 class="screen-caption">Lantern in Action</h2>
           <img src="images/screenshot.jpg" alt="Lantern in Action" />
-        </div><!-- end .demo-screen -->
+        </div>
       </section>
+      -->
 
       <!-- for http://compass-style.org/reference/compass/layout/sticky_footer/ -->
       <div id="root_footer"></div>
@@ -140,20 +142,16 @@
 
         <nav class="footer-links">
           <ul id="footer-navlink-list">
-            <li ng-repeat="(linktextKey, url) in navLinks">
-              <a href="{{url}}" translate>{{linktextKey}}</a>
+            <li ng-repeat="i in navLinks">
+              <a href="{{i.url}}" translate>{{i.key}}</a>
             </li>
           </ul>
         </nav>
 
         <div class="github-button">
-          <a href="http://developer.github.com/" target="_blank">
-            <img src="images/btn-developer-wiki.png" alt="Github Developer Wiki" />
-          </a>
         </div>
         <div class="copyright">
-          <p>&copy; 2013 Brave New Software.</p>
-          <a href="#">Some rights reserved</a>
+          <p>© 2013 Brave New Software</p>
         </div>
 
       </div><!-- end .constrained -->
