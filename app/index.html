@@ -44,7 +44,13 @@
               <p translate>SECURELY_SHARE</p>
             </div><!-- end .panel-text -->
 
+            <!-- if we haven't (yet) fetched installer data -->
+            <div ng-hide="data" translate>CHECK_BACK_SOON</div>
+
+            <!-- if we have fetched installer data -->
             <div ng-show="data">
+
+              <!-- if the user selected an OS, or we auto-selected the sniffed OS -->
               <div ng-hide="selectedOS == 'UNKNOWNOS'">
 
                 <div class="button-wrapper">
@@ -53,7 +59,7 @@
 
                 <ul id="selected-installer-data-list" class="data-list">
                   <li class="first">
-                    <span class="icn icn-apple"></span> 
+                    <span class="icn icn-{{icnClassFor[selectedOS]}}"></span> 
                     {{selectedOS | translate}}
                   </li>
                   <li>
@@ -80,15 +86,6 @@
                   </li>
                 </ul>
               </div>
-            </div>
-
-            <div ng-hide="data">
-              <!-- TODO -->
-              ("email me a download link when lantern is available" form)
-            </div>
-
-            <div ng-show="errorLoading" translate>
-              LATEST_INSTALLER_DATA_LOADING_FAILED
             </div>
 
           </div><!-- end .panel -->
