@@ -2,42 +2,44 @@
 
 describe('Controller: DownloadCtrl', function () {
 
-  // load the controller's module
   beforeEach(module('GetLanternSiteApp'));
 
   var DownloadCtrl,
     scope,
-    $httpBackend,
-    mockInstallerData = {"OSX":{},"WINDOWS":{},"UBUNTU32":{},"UBUNTU64":{}};
+    calledFetch,
+    deferred,
 
-  // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope, $injector) {
+    // XXX move mocks into separate files
+    mockOsSniffer = {os: 'dummyOS'},
+    mockInstallerDataFetcher = {
+      fetch: function() {
+        calledFetch = true;
+        return deferred.promise;
+      }
+    };
+
+  beforeEach(inject(function ($rootScope, $controller, $q) {
     scope = $rootScope.$new();
+    calledFetch = false;
+    deferred = $q.defer();
     DownloadCtrl = $controller('DownloadCtrl', {
-      $scope: scope
+      $scope: scope,
+      osSniffer: mockOsSniffer,
+      installerDataFetcher: mockInstallerDataFetcher
     });
-    $httpBackend = $injector.get('$httpBackend');
-    $httpBackend.whenGET(/.*/).respond(mockInstallerData);
   }));
 
-  afterEach(function() {
-    $httpBackend.verifyNoOutstandingExpectation();
-    $httpBackend.verifyNoOutstandingRequest();
+  it('should set scope.selectedOS to the value returned by osSniffer on init', function () {
+    expect(scope.selectedOS).toEqual(mockOsSniffer.os);
   });
 
-  it('initially has no installer data', function () {
-    expect(scope.data).toBeUndefined();
+  it('should call installerDataFetcher.fetch on init', function () {
+    expect(calledFetch).toBeTruthy();
   });
 
-  it('should try to fetch the latest installer metadata', function () {
-    $httpBackend.expectGET(/.*/);
-    DownloadCtrl.fetchInstallerMetadata(function () {
-      expect(scope.data).toBeDefined();
-      expect(scope.data.OSX).toBeDefined();
-      expect(scope.data.WINDOWS).toBeDefined();
-      expect(scope.data.UBUNTU64).toBeDefined();
-      expect(scope.data.UBUNTU32).toBeDefined();
-    });
-    $httpBackend.flush();
+  it('should set scope.data to the value fetch resolves to', function () {
+    deferred.resolve('it worked');
+    scope.$apply();
+    expect(scope.data).toEqual('it worked');
   });
 });
