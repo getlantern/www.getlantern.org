@@ -12,7 +12,10 @@ describe('Service: constants', function () {
   }));
 
   it('should define necessary constants', function () {
-    expect(constants.INSTALLER_DATA_URL).toMatch(URL_PAT);
+    var urlKeys = 'FORUMS_URL DOCS_URL DEVELOPERS_URL INSTALLER_DATA_URL'.split(' ');
+    urlKeys.forEach(function(key) {
+      expect(constants[key]).toMatch(URL_PAT);
+    });
   });
 
 });

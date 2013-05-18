@@ -3,6 +3,10 @@
 angular.module('GetLanternSiteApp')
   .factory('constants', function () {
     return {
+      FORUMS_URL: 'https://groups.google.com/group/lantern-users-en',
+      DOCS_URL: 'https://github.com/getlantern/lantern/wiki',
+      DEVELOPERS_URL: 'https://github.com/getlantern/lantern',
+
     // point this at the real data when it's ready, or point at a not found url
     // to test what happens if we can't reach the installer data or if we take
     // it down on purpose to temporarily disable public download:

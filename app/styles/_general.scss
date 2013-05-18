@@ -1,5 +1,13 @@
 body { background-color: #f0f0f0; }
 
+#ghribbon {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: 0;
+	z-index: 100;
+}
+
 h1, .btn {
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-weight: 700;

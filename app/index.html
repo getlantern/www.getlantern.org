@@ -23,14 +23,15 @@
     <![endif]-->
 
     <!-- site content starts here -->
-    <div id="content-container">
+    <div id="content-container" ng-controller="RootCtrl">
+      <a href="{{constants.DEVELOPERS_URL}}">
+        <img id="ghribbon" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+      </a>
+
       <header id="topbar" class="header">
         <div class="wrap clearfix">
           <img src="images/lantern-beta-logo.png" alt="Lantern Beta" />
         </div>
-        <a href="https://github.com//getlantern/www.getlantern.org">
-          <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
-        </a>
       </header>
 
       <section id="download" class="section download" ng-controller="DownloadCtrl">
@@ -130,7 +131,7 @@
       <!-- for http://compass-style.org/reference/compass/layout/sticky_footer/ -->
       <div id="root_footer"></div>
     </div>
-    <section id="footer" class="footer" ng-controller="FooterCtrl">
+    <section id="footer" class="footer">
       <div class="contrained">
 
         <div class="footer-logo">
@@ -139,9 +140,9 @@
 
         <nav class="footer-links">
           <ul id="footer-navlink-list">
-            <li ng-repeat="i in navLinks">
-              <a href="{{i.url}}" translate>{{i.key}}</a>
-            </li>
+            <li><a href="{{constants.FORUMS_URL}}" translate>LINKTEXT_FORUMS</a></li>
+            <li><a href="{{constants.DOCS_URL}}" translate>LINKTEXT_DOCS</a></li>
+            <li><a href="{{constants.DEVELOPERS_URL}}" translate>LINKTEXT_DEVELOPERS</a></li>
           </ul>
         </nav>
 
@@ -168,8 +169,8 @@
     <script src="components/angular-translate/src/directive/translate.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/translations.js"></script>
+    <script src="scripts/controllers/root.js"></script>
     <script src="scripts/controllers/download.js"></script>
-    <script src="scripts/controllers/footer.js"></script>
     <script src="scripts/services/constants.js"></script>
     <script src="scripts/services/osSniffer.js"></script>
     <script src="scripts/services/installerDataFetcher.js"></script>
