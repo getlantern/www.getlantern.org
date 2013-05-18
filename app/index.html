@@ -39,16 +39,16 @@
         <div class="constrained">
 
           <div class="panel">
-            <h1 class="panel-title">Free the Internet</h1>
+            <h1 class="panel-title" translate>FREE_THE_INTERNET</h1>
             <div class="panel-text">
-              <p>Securely share your connection to defeat censorship</p>
+              <p translate>SECURELY_SHARE</p>
             </div><!-- end .panel-text -->
 
             <div ng-show="data">
               <div ng-hide="selectedOS == 'UNKNOWNOS'">
 
                 <div class="button-wrapper">
-                  <a class="btn btn-primary btn-large" href="{{data[selectedOS].url}}" translate>Download Lantern</a>
+                  <a class="btn btn-primary btn-large" href="{{data[selectedOS].url}}" translate>DOWNLOAD_LANTERN</a>
                 </div>
 
                 <ul id="selected-installer-data-list" class="data-list">
@@ -97,6 +97,7 @@
 
       <div class="white-panel">
         <div class="quotes constrained clearfix">
+          <!-- XXX what would we do with quotes when viewing the site in another language? -->
           <div class="quote">
             <blockquote>"An amazing quote would go here.  Something flattering."</blockquote>
             <div class="cite"><img src="images/logo-fast-company.png" alt="Fast Company" /></div>

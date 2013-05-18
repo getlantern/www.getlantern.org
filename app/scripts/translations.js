@@ -3,8 +3,10 @@
 angular.module('GetLanternSiteApp', ['pascalprecht.translate'], ['$translateProvider',
   function ($translateProvider) {
     $translateProvider.translations('en_EN', {
+      FREE_THE_INTERNET: 'Free the Internet',
+      SECURELY_SHARE: 'Securely share your connection to defeat censorship',
       LATEST_INSTALLER_DATA_LOADING_FAILED: 'Could not load latest installer data. Please check your connection and try reloading the page.',
-      DOWNLOAD: 'Download Lantern',
+      DOWNLOAD_LANTERN: 'Download Lantern',
       VERSION: 'Version',
       RELEASED: 'Released',
       OSX: 'Mac OS X',
