@@ -18,11 +18,7 @@ blockquote {
 }
 
 a {
-  cursor: pointer;
-}
-
-section:not(#topbar) {
-  text-align: center;
+	cursor: pointer;
 }
 
 ul, ol {
@@ -91,34 +87,4 @@ hr {
 	}
 
 	.cite { text-align: right; }
-}
-
-/* ===================
-   DEMO
-=================== */
-.demo { 
-	font-size: 18px; 
-
-	hr {
-		margin: 40px auto 30px;
-		width: 40%;
-	}
-}
-
-.section-title {
-	margin: 0 0 25px;
-	font-size: 36px;
-}
-
-.demo-screen {
-
-	img {
-		@include box-shadow(rgba(black, 0.46) 0 10px 43px);
-	}
-}
-
-.screen-caption {
-	color: #737373;
-	font-size: 18px;
-	font-weight: normal;
 }
