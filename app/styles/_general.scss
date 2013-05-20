@@ -1,5 +1,23 @@
 body { background-color: #f0f0f0; }
 
+.chromeframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 101;
+	background: #fff;
+	@include opacity(0.9);
+	padding: 30px 20px;
+	text-align: center;
+	color: #f00;
+	a {
+		color: #f00;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+}
+
 #ghribbon {
 	position: absolute;
 	top: 0;
