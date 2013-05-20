@@ -82,6 +82,7 @@
               <div ng-show="selectedOS == 'UNKNOWNOS'">
                 <ul id="os-list" class="data-list">
                   <li ng-repeat="(osKey, osVal) in data">
+                    <span class="icn icn-{{icnClassFor[osKey]}}"</span>
                     <a ng-click="selectOS(osKey)">{{osKey | translate}}</a>
                   </li>
                 </ul>
