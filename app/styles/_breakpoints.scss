@@ -1,0 +1,77 @@
+/* Landscape phones and down */
+@media (max-width: 599px) {
+
+	.site-logo {
+		margin: 0 auto
+	}
+
+	.section {
+		padding: 15px 0 10%;
+	}
+
+	.panel {
+		width: 90%;
+		height: 370px;
+		padding-top: 10%;
+
+		.panel-title {
+			font-size: 30px; 
+		}
+
+		.panel-title,
+		.panel-text { 
+			margin: 0 5% 15px; 
+		}
+
+		.panel-text {
+			font-size: 18px;
+		}
+
+		.os-select {
+			padding: 0 10% 0;
+
+			li {
+				display: block;
+				padding-bottom: 10px;
+			}
+		} // end .os-select
+	} // end .panel
+
+} // end @media (max-width: 480px)
+
+
+/* Landscape phone to portrait tablet */
+@media (min-width: 600px)  {
+
+	.section { padding: 54px 0 94px; }
+
+	.panel { 
+		width: 80%; 
+
+		.panel-title { 
+			font-size: 48px; 
+		}
+
+		.panel-text { 
+			font-size: 22px;
+		}
+	}
+
+	.data-list {
+
+		li {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.first:after {
+			content: '\2022';
+			padding: 0 7px;
+			color: #9f9f9f;
+			font-size: 1.2em;
+			position: relative;
+			top: 2px;
+		}
+	}
+
+} // end @media (max-width: 767px)
