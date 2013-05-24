@@ -29,7 +29,18 @@
 
 .footer-links { padding-bottom: 40px; }
 
-.github-button { padding-bottom: 15px;}
+.github-button { 
+  padding-bottom: 15px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.gh-btn {
+  width: 46%;
+  margin: 0 2%;
+  float: left;
+  text-align: center;
+}
 
 .copyright {
 	padding-bottom: 50px;
