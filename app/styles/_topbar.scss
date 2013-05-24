@@ -5,3 +5,18 @@
   position: relative;
   z-index: 1;
 }
+
+.site-logo {
+	position: relative;
+	width: 153px;
+	padding-bottom: 12px;
+
+	.beta {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		font-size: 11px;
+		color: #b1b8bc;
+		text-transform: uppercase;
+	}
+}

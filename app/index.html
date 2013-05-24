@@ -30,7 +30,12 @@
 
       <header id="topbar" class="header">
         <div class="wrap clearfix">
-          <img src="images/lantern-beta-logo.png" alt="Lantern Beta" />
+          <div class="site-logo">
+            <a href="/">
+              <img src="images/lantern-logo.png" alt="Lantern Beta" />
+              <span class="beta">Beta</span>
+            </a>
+          </div><!-- end .site-logo -->
         </div>
       </header>
 
@@ -80,9 +85,9 @@
               </div>
 
               <div ng-show="selectedOS == 'UNKNOWNOS'">
-                <ul id="os-list" class="data-list">
+                <ul id="os-list" class="data-list os-select">
                   <li ng-repeat="(osKey, osVal) in data">
-                    <span class="icn icn-{{icnClassFor[osKey]}}"</span>
+                    <span class="icn icn-{{icnClassFor[osKey]}}"></span>
                     <a ng-click="selectOS(osKey)">{{osKey | translate}}</a>
                   </li>
                 </ul>
@@ -112,7 +117,7 @@
       </div>
       -->
 
-      <section id="watch" class="section watch">
+      <section id="watch" class="section white-panel watch">
         <div class="wrap">
           <iframe width="960" height="540" src="http://www.youtube.com/embed/_vx1OVLX5Rc?rel=0" frameborder="0" allowfullscreen></iframe>
         </div>
@@ -133,11 +138,12 @@
       <!-- for http://compass-style.org/reference/compass/layout/sticky_footer/ -->
       <div id="root_footer"></div>
     </div>
-    <section id="footer" class="footer">
+
+    <footer id="footer" class="footer">
       <div class="contrained">
 
         <div class="footer-logo">
-          <img src="images/lantern-footer-logo.png" alt="Lantern" />
+          <img src="images/lantern-footer-logo.jpg" alt="Lantern" />
         </div>
 
         <nav class="footer-links">
@@ -148,14 +154,23 @@
           </ul>
         </nav>
 
-        <div class="github-button">
+        <div class="github-button clearfix">
+          <div class="gh-btn">
+            <!-- STAR -->
+            <iframe src="http://ghbtns.com/github-btn.html?user=getlantern&amp;repo=lantern&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="130" height="30"></iframe>
+          </div>
+
+          <div class="gh-btn">
+            <!-- FORK -->
+            <iframe src="http://ghbtns.com/github-btn.html?user=getlantern&amp;repo=lantern&amp;type=fork&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="130" height="30"></iframe>
+          </div>
         </div>
         <div class="copyright">
           <p>© 2013 Brave New Software</p>
         </div>
 
       </div>
-    </section>
+    </footer>
     <!-- site content ends here -->
 
     <!-- these get automatically replaced with CDN-hosted versions -->

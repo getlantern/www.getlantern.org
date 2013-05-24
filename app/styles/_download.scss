@@ -10,8 +10,8 @@
 	padding: 30px 0;
 	color: #fff;
 	display: inline-block;
-	width: 80%;
 	max-width: 700px;
+	height: 365px;
 
 	.button-wrapper {
 		background: #212121;
@@ -48,17 +48,23 @@
 
 	.data-list { font-size: 14px; }
 
+	.os-select {
+		font-size: 16px;
+		padding-top: 30px;
+
+		li { padding: 0 16px; }
+
+		a { color: #fff; }
+	}
+
 } // end .panel
 
 .panel-title { 
-	font-size: 48px; 
 	line-height: 1.2;
 	margin: 0 25px 25px;
 }
 
 .panel-text { 
-	font-size: 22px; 
-	font-weight: normal;
 	padding: 15px 0;
 	line-height: 1.2;
 	border-top: 1px solid #fff;
@@ -70,31 +76,20 @@
 } 
 
 #selected-installer-data-list {
-  @include no-bullets;
-  margin-left: 0;
+  //@include no-bullets;
+  //margin-left: 0;
 }
 
 #os-list {
-  @include delimited-list('∙');
-  font-size: 16px;
+  //@include delimited-list('∙');
+  //font-size: 16px;
 }
 
 .data-list {
 	padding-bottom: 10px;
 
 	li {
-		display: inline;
-		vertical-align: middle;
-		line-height: 1.2;
-	}
-
-	.first:after {
-		content: '\2022';
-		padding: 0 5px;
-		color: #9f9f9f;
-		font-size: 2em;
-		line-height: 1;
-		vertical-align: middle;
+		line-height: 1.5;
 	}
 
 	.last { display: block; }
@@ -128,4 +123,8 @@
 	height: 23px;
 }
 
-.os-link { font-size: 14px; }
+.os-link { 
+	font-size: 14px; 
+	padding-top: 15px;
+}
+
