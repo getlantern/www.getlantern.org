@@ -46,6 +46,11 @@
 	  }
 	}
 
+    .subprompt {
+        font-size: 22px;
+        line-height: 24px;
+    }
+
 	.data-list { font-size: 14px; }
 
 	.os-select {
@@ -57,6 +62,15 @@
 		a { color: #fff; }
 	}
 
+    .extra-info {
+      color: #aaa;
+    }
+
+    .warning {
+      color: #888;
+      font-size: 14px;
+	  margin: 25px;
+    }
 } // end .panel
 
 .panel-title { 
@@ -74,16 +88,6 @@
 
 	p { margin: 0; }
 } 
-
-#selected-installer-data-list {
-  //@include no-bullets;
-  //margin-left: 0;
-}
-
-#os-list {
-  //@include delimited-list('∙');
-  //font-size: 16px;
-}
 
 .data-list {
 	padding-bottom: 10px;
@@ -127,4 +131,3 @@
 	font-size: 14px; 
 	padding-top: 15px;
 }
-
