@@ -14,13 +14,14 @@ angular.module('GetLanternSiteApp')
         os = 'WINDOWS';
         break;
       case 'Linux':
-        // XXX TODO make this more robust
         // https://github.com/codejoust/session.js/issues/29
         // https://github.com/codejoust/session.js/issues/30
-        if (/x86_64/.test(navigator.userAgent)) {
-          os = 'UBUNTU64';
-        } else if (/x86/.test(navigator.userAgent)) {
-          os = 'UBUNTU32';
+        if (/Ubuntu/.test(navigator.userAgent)) {
+          if (/x86_64/.test(navigator.userAgent)) {
+            os = 'UBUNTU64';
+          } else if (/(x|i6)86/.test(navigator.userAgent)) {
+            os = 'UBUNTU32';
+          }
         }
         break;
       }
