@@ -3,13 +3,39 @@
 angular.module('GetLanternSiteApp')
   .factory('installerDataFetcher', function ($log, $http, $q, constants) {
 
-    function fetch() {
+    function xhrFetch(url) {
       var deferred = $q.defer();
-      $http.get(constants.INSTALLER_DATA_URL)
-        .success(function (data, status, headers, config) {
-          if ($log.debug) { // requires angular 1.1+
-            $log.debug('fetch succeeded', data, status, headers, config);
-          }
+      $http.get(url)
+        .success(function (data) {
+          deferred.resolve(data);
+        })
+        .error(function () {
+          $log.error('fetch failed');
+          deferred.reject();
+        });
+      return deferred.promise;
+    }
+
+    function xdrFetch(url) {
+      var deferred = $q.defer(),
+          xdr = new window.XDomainRequest();
+      xdr.onload = function () {
+        deferred.resolve(xdr.responseText);
+      };
+      xdr.onerror = function () {
+        deferred.reject();
+      };
+      xdr.open('GET', url);
+      xdr.send();
+      return deferred.promise;
+    }
+
+    function fetch() {
+      var deferred = $q.defer(),
+          // work around https://github.com/angular/angular.js/issues/934
+          fetchFunc = window.XDomainRequest ? xdrFetch : xhrFetch;
+      fetchFunc(constants.INSTALLER_DATA_URL)
+        .then(function (data) {
           if (isValid(data)) {
             deferred.resolve(data);
           } else {
