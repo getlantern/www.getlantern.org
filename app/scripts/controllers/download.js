@@ -34,8 +34,9 @@ angular.module('GetLanternSiteApp')
 
     $scope.handleDownload = function () {
       $scope.downloadClicked = true;
-      if (!/nodownload/.test(window.location.search)) {
-        window.location.href = $scope.data[$scope.selectedOS].url;
+      if (!/(localhost|127.0.0.1)/.test(location.hostname) &&
+          !/nodownload/.test(location.search)) {
+        location.href = $scope.data[$scope.selectedOS].url;
       }
     };
 
