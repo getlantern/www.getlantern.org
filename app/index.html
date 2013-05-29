@@ -1,8 +1,8 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" ng-app="GetLanternSiteApp" ng-cloak> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" ng-app="GetLanternSiteApp" ng-cloak> <!--<![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" id="ng-app" ng-app="GetLanternSiteApp"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" id="ng-app" ng-app="GetLanternSiteApp"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" id="ng-app" ng-app="GetLanternSiteApp"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" id="ng-app" ng-app="GetLanternSiteApp"> <!--<![endif]-->
   <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body ng-controller="RootCtrl">
-    <!--[if lt IE 10]>
+    <!--[if lt IE 8]>
       <p class="chromeframe">You are using an outdated browser. Please <a href="https://www.google.com/chrome/">upgrade your browser</a> or <a href="https://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> and try again.</p>
     <![endif]-->
 
@@ -21,6 +21,9 @@
       <script src="components/es5-shim/es5-shim.js"></script>
       <script src="components/json3/lib/json3.min.js"></script>
     <![endif]-->
+    <!-- uncomment out to enable firebug lite (useful for IE)
+      <script src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js"></script>
+    -->
 
     <!-- site content starts here -->
     <div id="content-container">
@@ -53,7 +56,7 @@
             <div ng-hide="data" ng-bind-template="{{'CHECK_BACK_SOON' | translate}}">Check back again soon to download Lantern.</div>
 
             <!-- if we have fetched installer data -->
-            <div ng-show="data">
+            <div ng-show="data" class="ng-cloak">
 
               <!-- if the user selected an OS, or we auto-selected the sniffed OS -->
               <div ng-hide="selectedOS == 'UNKNOWNOS'">

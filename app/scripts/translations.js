@@ -18,7 +18,7 @@ angular.module('GetLanternSiteApp', ['pascalprecht.translate'], ['$translateProv
       UBUNTU64: 'Ubuntu 64-bit',
       UNKNOWNOS: '(unknown operating system)',
       OTHER_SYSTEMS: 'Other systems',
-      DOWNLOAD_IN_PROGRESS: 'Your download should be in progress...',
+      DOWNLOAD_IN_PROGRESS: 'Download started',
       DIRECT_LINK: 'Direct download link',
       WARNING: 'Warning: Lantern is pending external security audit and thorough peer review within the technical community. Please only use Lantern if you understand your risks.',
       FORUMS: 'Forums',

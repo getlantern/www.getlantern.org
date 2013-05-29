@@ -11,7 +11,7 @@
     "session.js": "codejoust/session.js"
   },
   "devDependencies": {
-    "angular-mocks": "~1.0.6",
-    "angular-scenario": "~1.0.6"
+    "angular-mocks": "~1.0.7",
+    "angular-scenario": "~1.0.7"
   }
 }
