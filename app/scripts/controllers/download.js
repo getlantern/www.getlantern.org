@@ -20,6 +20,7 @@ angular.module('GetLanternSiteApp')
         function (data) {
           $log.log('successfully fetched installer data', data);
           $scope.data = data;
+          $scope.osKeys = Object.keys(data);
           if (!$scope.$$phase) {
             $scope.$digest();
           }
@@ -50,5 +51,9 @@ angular.module('GetLanternSiteApp')
       WINDOWS: 'windows',
       UBUNTU32: 'ubuntu',
       UBUNTU64: 'ubuntu'
+    };
+
+    $scope.isUbuntu = function (key) {
+      return /UBUNTU/.test(key);
     };
   });

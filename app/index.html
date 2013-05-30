@@ -71,7 +71,10 @@
                     <li class="first">
                       <span class="icn icn-{{icnClassFor[selectedOS]}}"></span> 
                       {{selectedOS | translate}}
-                      <sup class="extra-info">{{data[selectedOS].minOSVerReq}}+</sup>
+                      <sup class="extra-info">
+                        {{data[selectedOS].minOSVerReq}}
+                        <span ng-bind-tempalte="{{'OR_HIGHER' | translate}}">or higher</span>
+                      </sup>
                     </li>
                    <li>
                     <span ng-bind-template="{{'VERSION' | translate}}">Version</span>
@@ -102,10 +105,13 @@
               <div ng-show="selectedOS == 'UNKNOWNOS'">
                 <h3 class="subprompt" ng-bind-template="{{'CHOOSE_SYSTEM' | translate}}">Choose System</h3>
                 <ul class="data-list os-select">
-                  <li ng-repeat="(osKey, osVal) in data">
+                  <li ng-repeat="osKey in osKeys | orderBy:isUbuntu">
                     <span class="icn icn-{{icnClassFor[osKey]}}"></span>
                     <a ng-click="selectOS(osKey)">{{osKey | translate}}</a>
-                    <span class="extra-info">{{data[osKey].minOSVerReq}}+</span>
+                    <span class="extra-info">
+                      {{data[osKey].minOSVerReq}}
+                      <span ng-bind-tempalte="{{'OR_HIGHER' | translate}}">or higher</span>
+                    </span>
                   </li>
                 </ul>
               </div>

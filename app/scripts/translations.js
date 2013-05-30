@@ -11,6 +11,7 @@ angular.module('GetLanternSiteApp', ['pascalprecht.translate'], ['$translateProv
       DOWNLOAD_LANTERN: 'Download Lantern',
       CHOOSE_SYSTEM: 'Choose System',
       VERSION: 'Version',
+      OR_HIGHER: 'or higher',
       RELEASED: 'Released',
       OSX: 'OS X',
       WINDOWS: 'Windows',
