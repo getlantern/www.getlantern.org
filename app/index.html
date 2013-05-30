@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/modernizr-2.6.2.min.js"></script>
   </head>
   <body ng-controller="RootCtrl">
     <!--[if lt IE 8]>
@@ -70,10 +71,10 @@
                     <li class="first">
                       <span class="icn icn-{{icnClassFor[selectedOS]}}"></span> 
                       {{selectedOS | translate}}
-                      <sup class="extra-info">{{data[selectedOS].minOSVerReq}}+</sup
-                   ></li>
-                   <li><span
-                     ng-bind-template="{{'VERSION' | translate}}">Version</span>
+                      <sup class="extra-info">{{data[selectedOS].minOSVerReq}}+</sup>
+                    </li>
+                   <li>
+                    <span ng-bind-template="{{'VERSION' | translate}}">Version</span>
                       {{data[selectedOS].version}}
                     </li>
                     <li class="last">
@@ -104,7 +105,7 @@
                   <li ng-repeat="(osKey, osVal) in data">
                     <span class="icn icn-{{icnClassFor[osKey]}}"></span>
                     <a ng-click="selectOS(osKey)">{{osKey | translate}}</a>
-                    <sup class="extra-info">{{data[osKey].minOSVerReq}}+</sup>
+                    <span class="extra-info">{{data[osKey].minOSVerReq}}+</span>
                   </li>
                 </ul>
               </div>

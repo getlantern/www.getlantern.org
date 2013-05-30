@@ -60,17 +60,18 @@
 		li { padding: 0 16px; }
 
 		a { color: #fff; }
-	}
+		
+	} // end .os-select
 
-    .extra-info {
-      color: #aaa;
-    }
+  .extra-info {
+    color: #aaa;
+  }
 
-    .warning {
-      color: #888;
-      font-size: 14px;
-	  margin: 25px;
-    }
+  .warning {
+    color: #888;
+    font-size: 14px;
+  	margin: 25px;
+  }
 } // end .panel
 
 .panel-title { 

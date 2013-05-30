@@ -1,0 +1,44 @@
+.no-backgroundsize .download {
+	background-color: #000;
+}
+
+.no-rgba .panel { background: url(../images/transparent.png) repeat; }
+
+.lt-ie9 {
+	.section { padding: 54px 0 94px; }
+	.panel { 
+		width: 80%; 
+
+		.panel-title { 
+			font-size: 48px; 
+		}
+
+		.panel-text { 
+			font-size: 22px;
+		}
+
+		.os-select {
+			li {
+				width: 40%;
+				text-align: left;
+			}
+		}
+	} // end .panel
+
+	.data-list {
+
+		li {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.first:after {
+			content: '\2022';
+			padding: 0 7px;
+			color: #9f9f9f;
+			font-size: 1.2em;
+			position: relative;
+			top: 2px;
+		}
+	}
+} // end .lt-ie9

@@ -51,7 +51,14 @@
 		.panel-text { 
 			font-size: 22px;
 		}
-	}
+
+		.os-select {
+			li {
+				width: 40%;
+				text-align: left;
+			}
+		}
+	} // end .panel
 
 	.data-list {
 
@@ -70,4 +77,23 @@
 		}
 	}
 
-} // end @media (max-width: 767px)
+} // end @media (min-width: 600px)
+
+@media (min-width: 1030px)  {
+
+	.panel {
+		.os-select {
+			li {
+				width: auto;
+				text-align: center;
+			}
+
+			.extra-info {
+				display: block;
+	      font-size: 14px;
+	      padding: 10px 0 0 30px;
+			}
+		}
+	}
+
+} // end @media (min-width: 1030px)
