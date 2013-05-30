@@ -1,0 +1,50 @@
+{
+  "OSX": {
+    "url": "https://s3.amazonaws.com/lantern-installers/lantern-0.21.3-a1b2c3.dmg",
+    "sigUrl": "https://s3.amazonaws.com/lantern-installers/lantern-0.21.3-a1b2c3.dmg.asc",
+    "minOSVerReq": "10.6",
+    "released": "2013-05-25",
+    "version": "0.21.3-a1b2c3",
+    "major": "0",
+    "minor": "21",
+    "patch": "3",
+    "git": "a1b2c3",
+    "build": ""
+  },
+  "WINDOWS": {
+    "url": "https://s3.amazonaws.com/lantern-installers/lantern-0.21.3-a1b2c3.exe",
+    "sigUrl": "https://s3.amazonaws.com/lantern-installers/lantern-0.21.3-a1b2c3.exe.asc",
+    "minOSVerReq": "XP",
+    "released": "2013-05-25",
+    "version": "0.21.3-a1b2c3",
+    "major": "0",
+    "minor": "21",
+    "patch": "3",
+    "git": "a1b2c3",
+    "build": ""
+  },
+  "UBUNTU32": {
+    "url": "https://s3.amazonaws.com/lantern-installers/lantern-0.21.3-a1b2c3.32bit.deb",
+    "sigUrl": "https://s3.amazonaws.com/lantern-installers/lantern-0.21.3-a1b2c3.32bit.deb.asc",
+    "minOSVerReq": "12.04",
+    "released": "2013-05-25",
+    "version": "0.21.3-a1b2c3",
+    "major": "0",
+    "minor": "21",
+    "patch": "3",
+    "git": "a1b2c3",
+    "build": "32bit"
+  },
+  "UBUNTU64": {
+    "url": "https://s3.amazonaws.com/lantern-installers/lantern-0.21.3-a1b2c3.64bit.deb",
+    "sigUrl": "https://s3.amazonaws.com/lantern-installers/lantern-0.21.3-a1b2c3.64bit.deb.asc",
+    "minOSVerReq": "12.04",
+    "released": "2013-05-25",
+    "version": "0.21.3-a1b2c3",
+    "major": "0",
+    "minor": "21",
+    "patch": "3",
+    "git": "a1b2c3",
+    "build": "64bit"
+  }
+}

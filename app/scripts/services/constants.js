@@ -12,5 +12,7 @@ angular.module('GetLanternSiteApp')
     // it down on purpose to temporarily disable public download:
     //INSTALLER_DATA_URL: '//s3.amazonaws.com/lantern-installers/latest.json'
       INSTALLER_DATA_URL: '//s3.amazonaws.com/lantern-installers/dummy-latest.json'
+    // local version handy for avoiding cross-origin requests in testing
+    //INSTALLER_DATA_URL: '/data/dummy-latest.json'
     };
   });
