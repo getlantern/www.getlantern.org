@@ -1,29 +1,32 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" id="ng-app" ng-app="GetLanternSiteApp"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" id="ng-app" ng-app="GetLanternSiteApp"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" id="ng-app" ng-app="GetLanternSiteApp"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" id="ng-app" ng-app="GetLanternSiteApp"> <!--<![endif]-->
   <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>Lantern</title>
+    <title ng-bind-template="{{'LANTERN' | translate}}">Lantern</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="styles/main.css">
   </head>
-  <body ng-app="GetLanternSiteApp" ng-cloak>
+  <body ng-controller="RootCtrl">
     <!--[if lt IE 8]>
-      <p class="chromeframe">You are using an outdated browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> and try again.</p>
+      <p class="chromeframe">You are using an outdated browser. Please <a href="https://www.google.com/chrome/">upgrade your browser</a> or <a href="https://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> and try again.</p>
     <![endif]-->
 
     <!--[if lt IE 9]>
       <script src="components/es5-shim/es5-shim.js"></script>
       <script src="components/json3/lib/json3.min.js"></script>
     <![endif]-->
+    <!-- uncomment out to enable firebug lite (useful for IE)
+      <script src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js"></script>
+    -->
 
     <!-- site content starts here -->
-    <div id="content-container" ng-controller="RootCtrl">
+    <div id="content-container">
       <a href="{{constants.DEVELOPERS_URL}}">
         <img id="ghribbon" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
       </a>
@@ -32,68 +35,80 @@
         <div class="wrap clearfix">
           <div class="site-logo">
             <a href="/">
-              <img src="images/lantern-logo.png" alt="Lantern Beta" />
-              <span class="beta">Beta</span>
+              <img src="images/lantern-logo.png" alt="Lantern" />
+              <span class="beta" ng-bind-template="{{'BETA' | translate}}">Beta</span>
             </a>
-          </div><!-- end .site-logo -->
+          </div>
         </div>
       </header>
 
-      <section id="download" class="section download" ng-controller="DownloadCtrl">
+      <section class="section download" ng-controller="DownloadCtrl">
 
         <div class="constrained">
 
           <div class="panel">
-            <h1 class="panel-title" translate>FREE_THE_INTERNET</h1>
+            <h1 class="panel-title" ng-bind-template="{{'FREE_THE_INTERNET' | translate}}">Free the Internet</h1>
             <div class="panel-text">
-              <p translate>SECURELY_SHARE</p>
+              <p ng-bind-template="{{'SECURELY_SHARE' | translate}}">Securely share your connection to defeat censorship</p>
             </div>
 
             <!-- if we haven't (yet) fetched installer data -->
-            <div ng-hide="data" translate>CHECK_BACK_SOON</div>
+            <div ng-hide="data" ng-bind-template="{{'CHECK_BACK_SOON' | translate}}">Check back again soon to download Lantern.</div>
 
             <!-- if we have fetched installer data -->
-            <div ng-show="data">
+            <div ng-show="data" class="ng-cloak">
 
               <!-- if the user selected an OS, or we auto-selected the sniffed OS -->
               <div ng-hide="selectedOS == 'UNKNOWNOS'">
 
-                <div class="button-wrapper">
-                  <a class="btn btn-primary btn-large" href="{{data[selectedOS].url}}" translate>DOWNLOAD_LANTERN</a>
+                <div ng-hide="downloadClicked">
+                  <div class="button-wrapper">
+                    <a class="btn btn-primary btn-large" ng-click="handleDownload()" ng-bind-template="{{'DOWNLOAD_LANTERN' | translate}}">Download Lantern</a>
+                  </div>
+
+                  <ul class="data-list">
+                    <li class="first">
+                      <span class="icn icn-{{icnClassFor[selectedOS]}}"></span> 
+                      {{selectedOS | translate}}
+                      <sup class="extra-info">{{data[selectedOS].minOSVerReq}}+</sup
+                   ></li>
+                   <li><span
+                     ng-bind-template="{{'VERSION' | translate}}">Version</span>
+                      {{data[selectedOS].version}}
+                    </li>
+                    <li class="last">
+                      <span ng-bind-template="{{'RELEASED' | translate}}">Released</span>
+                      <time datetime="{{data[selectedOS].released}}">
+                        {{data[selectedOS].released | date}}
+                      </time>
+                    </li>
+                  </ul>
                 </div>
 
-                <ul id="selected-installer-data-list" class="data-list">
-                  <li class="first">
-                    <span class="icn icn-{{icnClassFor[selectedOS]}}"></span> 
-                    {{selectedOS | translate}}
-                  </li>
-                  <li>
-                    <span translate>VERSION</span>
-                    {{data[selectedOS].version}}
-                  </li>
-                  <li class="last">
-                    <span translate>RELEASED</span>
-                    <time datetime="{{data[selectedOS].released}}">
-                      {{data[selectedOS].released | date}}
-                    </time>
-                  </li>
-                </ul>
+                <div ng-show="downloadClicked">
+                  <h3 class="subprompt" ng-bind-template="{{'DOWNLOAD_IN_PROGRESS' | translate}}">Your download should be in progress...</h3>
+                  <div>
+                    <a href="{{data[selectedOS].url}}" ng-bind-template="{{'DIRECT_LINK' | translate}}">Direct download link</a>
+                  </div>
+                  <div class="warning" ng-bind-template="{{'WARNING' | translate}}">Warning: Lantern is pending external security audit and thorough peer review within the technical community. Please only use Lantern if you understand your risks.</div>
+                </div>
 
                 <div class="os-link">
-                  <a ng-click="selectOS('UNKNOWNOS')">{{'OTHER_SYSTEMS' | translate}}</a>
+                  <a ng-click="selectOS('UNKNOWNOS')" ng-bind-template="{{'OTHER_SYSTEMS' | translate}}">Other systems</a>
                 </div>
               </div>
 
               <div ng-show="selectedOS == 'UNKNOWNOS'">
-                <ul id="os-list" class="data-list os-select">
+                <h3 class="subprompt" ng-bind-template="{{'CHOOSE_SYSTEM' | translate}}">Choose System</h3>
+                <ul class="data-list os-select">
                   <li ng-repeat="(osKey, osVal) in data">
                     <span class="icn icn-{{icnClassFor[osKey]}}"></span>
                     <a ng-click="selectOS(osKey)">{{osKey | translate}}</a>
+                    <sup class="extra-info">{{data[osKey].minOSVerReq}}+</sup>
                   </li>
                 </ul>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -117,9 +132,9 @@
       </div>
       -->
 
-      <section id="watch" class="section white-panel watch">
+      <section class="section white-panel watch">
         <div class="wrap">
-          <iframe width="960" height="540" src="http://www.youtube.com/embed/_vx1OVLX5Rc?rel=0" frameborder="0" allowfullscreen></iframe>
+          <iframe width="960" height="540" src="https://www.youtube.com/embed/_vx1OVLX5Rc?rel=0" frameborder="0" allowfullscreen></iframe>
         </div>
       </section>
 
@@ -148,25 +163,23 @@
 
         <nav class="footer-links">
           <ul id="footer-navlink-list">
-            <li><a href="{{constants.FORUMS_URL}}" translate>LINKTEXT_FORUMS</a></li>
-            <li><a href="{{constants.DOCS_URL}}" translate>LINKTEXT_DOCS</a></li>
-            <li><a href="{{constants.DEVELOPERS_URL}}" translate>LINKTEXT_DEVELOPERS</a></li>
+            <li><a href="{{constants.FORUMS_URL}}" ng-bind-template="{{'FORUMS' | translate}}">Forums</a></li>
+            <li><a href="{{constants.DOCS_URL}}" ng-bind-template="{{'DOCS' | translate}}">Docs</a></li>
+            <li><a href="{{constants.DEVELOPERS_URL}}" ng-bind-template="{{'DEVELOPERS' | translate}}">Developers</a></li>
           </ul>
         </nav>
 
         <div class="github-button clearfix">
           <div class="gh-btn">
-            <!-- STAR -->
-            <iframe src="http://ghbtns.com/github-btn.html?user=getlantern&amp;repo=lantern&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="130" height="30"></iframe>
+            <iframe src="/github-btn.html?user=getlantern&amp;repo=lantern&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="130" height="30"></iframe>
           </div>
 
           <div class="gh-btn">
-            <!-- FORK -->
-            <iframe src="http://ghbtns.com/github-btn.html?user=getlantern&amp;repo=lantern&amp;type=fork&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="130" height="30"></iframe>
+            <iframe src="/github-btn.html?user=getlantern&amp;repo=lantern&amp;type=fork&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="130" height="30"></iframe>
           </div>
         </div>
         <div class="copyright">
-          <p>© 2013 Brave New Software</p>
+          <p ng-bind-template="{{'COPYRIGHT' | translate}}">© 2013 Brave New Software</p>
         </div>
 
       </div>
@@ -175,15 +188,15 @@
 
     <!-- these get automatically replaced with CDN-hosted versions -->
     <script src="components/angular/angular.js"></script>
-    <script src="components/angular-resource/angular-resource.js"></script>
     <script src="components/angular-cookies/angular-cookies.js"></script>
+    <!-- not used:
+    <script src="components/angular-resource/angular-resource.js"></script>
     <script src="components/angular-sanitize/angular-sanitize.js"></script>
+    -->
 
     <!-- these get automatically minified and concatenated at build time -->
     <!-- build:js scripts/scripts.js -->
-    <script src="components/angular-translate/src/translate.js"></script>
-    <script src="components/angular-translate/src/filter/translate.js"></script>
-    <script src="components/angular-translate/src/directive/translate.js"></script>
+    <script src="components/angular-translate/angular-translate.js"></script>
     <script src="components/session.js/session.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/translations.js"></script>

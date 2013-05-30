@@ -21,7 +21,7 @@ describe('Service: installerDataFetcher', function () {
     $$httpBackend.verifyNoOutstandingRequest();
   });
 
-  describe('fetch', function () {
+  xdescribe('fetch', function () {
     it('should make an http request for the installer data and return a '+
        'promise that is resolved if valid data is received', function () {
       $$httpBackend.whenGET(constants.INSTALLER_DATA_URL).respond(mockDataValid);

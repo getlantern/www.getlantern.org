@@ -5,7 +5,7 @@ describe('Service: constants', function () {
   beforeEach(module('GetLanternSiteApp'));
 
   var constants,
-      URL_PAT = /^http(s):\/\/.*$/; // naive but good enough
+      URL_PAT = /^(http:|https:|)\/\/.*$/; // naive but good enough
 
   beforeEach(inject(function (_constants_) {
     constants = _constants_;
