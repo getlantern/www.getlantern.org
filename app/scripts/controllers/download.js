@@ -54,6 +54,6 @@ angular.module('GetLanternSiteApp')
     };
 
     $scope.isUbuntu = function (key) {
-      return /UBUNTU/.test(key);
+      return (/UBUNTU/).test(key);
     };
   });
