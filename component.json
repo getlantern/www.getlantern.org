@@ -8,6 +8,7 @@
     "angular-translate": "~0.8.0",
     "es5-shim": "~2.0.8",
     "json3": "~3.2.4",
+    "modernizr": "~2.6.2",
     "session.js": "codejoust/session.js"
   },
   "devDependencies": {
