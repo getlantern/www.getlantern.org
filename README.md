@@ -2,8 +2,7 @@
 
 [![build status](https://secure.travis-ci.org/getlantern/www.getlantern.org.png)](https://travis-ci.org/getlantern/www.getlantern.org)
 
-This is prospective code that may soon power the new
-https://www.getlantern.org.
+This code will soon power the new https://www.getlantern.org.
 
 In the meantime, a live demo is available at
 https://getlanternsite.appspot.com/.
@@ -71,6 +70,8 @@ to work as development progresses.
 angular:controller <newcontroller>` (or `yo angular:service <newservice>`,
 etc.), the Angular generator will stub out a test spec for you.
 
+## Creating a production build
+
 Run `grunt build` when ready to locally preview a production build of the site.
 This should lint-check the code, run the automated tests, then compile, minify,
 concatenate, and otherwise modify source files for production. The resulting
@@ -80,12 +81,19 @@ version to make sure it looks the same as the development version.
 
 ## Deployment
 
-To deploy to App Engine, go to https://appengine.google.com and make sure you
-can access the "getlanternsite" app there. Then open app.yaml and change the
-version to <somenewversion>.
+Before you can deploy to App Engine, you must have permission to modify the
+"getlanternsite" app when you go to https://appengine.google.com. Email
+admin@getlantern.org if you need to request permission.
 
-When ready to deploy, run `grunt deploy` (another custom grunt task I wrote).
-This will run the `build` task mentioned above, and then
-upload the files in `dist` to production. You can then go to
-https://<somenewversion>-dot-getlanternsite.appspot.com/ to make sure
-everything looks good on the production server.
+When ready to deploy, make sure the "version" field in app.yaml is set to where
+you'd like to deploy to. For instance, if version is set to "dev", your build
+will be deployed to https://dev-dot-getlanternsite.appspot.com/. If there is
+an existing deployment there you don't want to overwrite, change "version" in
+app.yaml to &lt;somenewversion&gt;, and then you'll be deploying to
+https://&lt;somenewversion&gt;-dot-getlanternsite.appspot.com/.
+
+Once version is set how you want it, just run `grunt deploy` (another custom
+grunt task). This will run the grunt build task mentioned above, and if it
+completes successfully, the files in `dist` will be uploaded to production.
+Once uploaded, a browser will automatically open to where you just deployed to
+so you can make sure everything looks good on the production server.
