@@ -1,7 +1,14 @@
 'use strict';
 
 angular.module('GetLanternSiteApp')
-  .controller('DownloadCtrl', function ($rootScope, $scope, $log, $timeout, osSniffer, installerDataFetcher) {
+  .controller('DownloadCtrl', function (
+      $log,
+      $rootScope,
+      $scope,
+      $timeout,
+      constants,
+      installerDataFetcher,
+      osSniffer) {
     // have to bind to rootScope to work in IE8?
     if (/lt-ie9/.test((document.getElementById('ng-app') || {}).className)) {
       $scope = $rootScope;
@@ -35,9 +42,15 @@ angular.module('GetLanternSiteApp')
 
     $scope.handleDownload = function () {
       $scope.downloadClicked = true;
-      if (!/(localhost|127.0.0.1)/.test(location.hostname) &&
-          !/nodownload/.test(location.search)) {
-        location.href = $scope.data[$scope.selectedOS].url;
+      if (/(localhost|127.0.0.1)/.test(location.hostname) ||
+          /dummy/.test(constants.INSTALLER_DATA_URL) ||
+          /nodownload/.test(location.search)) {
+        $log.log('skipping redirect to installer url');
+      } else {
+        $log.log('redirecting to installer url');
+        $timeout(function () {
+          location.href = $scope.data[$scope.selectedOS].url;
+        }, 500);
       }
     };
 
