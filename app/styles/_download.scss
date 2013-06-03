@@ -23,6 +23,7 @@
 	}
 
 	.btn-primary {
+		white-space: nowrap;
 		background: #ecf88b;
 		color: #363636;
 		text-transform: uppercase;
@@ -47,8 +48,8 @@
 	}
 
     .subprompt {
-        font-size: 22px;
-        line-height: 24px;
+      font-size: 22px;
+      line-height: 24px;
     }
 
 	.data-list { font-size: 14px; }
@@ -65,6 +66,7 @@
 
   .extra-info {
     color: #aaa;
+    font-size: 100%
   }
 
   .warning {

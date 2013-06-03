@@ -53,9 +53,15 @@
 		}
 
 		.os-select {
+
 			li {
 				width: 40%;
 				text-align: left;
+				padding-bottom: 10px;
+
+				.extra-info {
+					font-size: 14px;
+				}
 			}
 		}
 	} // end .panel

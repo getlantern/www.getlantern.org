@@ -21,6 +21,11 @@
 			li {
 				width: 40%;
 				text-align: left;
+				padding-bottom: 10px;
+			}
+
+			.extra-info {
+	      font-size: 14px;
 			}
 		}
 	} // end .panel
@@ -31,6 +36,8 @@
 			display: inline-block;
 			vertical-align: middle;
 		}
+
+		li.last { display: block; }
 
 		.first:after {
 			content: '\2022';
