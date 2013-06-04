@@ -8,6 +8,7 @@ files = [
   JASMINE,
   JASMINE_ADAPTER,
   'app/components/angular/angular.js',
+  'app/components/angular-google-analytics/src/angular-google-analytics.js',
   'app/components/angular-mocks/angular-mocks.js',
   'app/components/angular-translate/angular-translate.js',
   'app/scripts/*.js',

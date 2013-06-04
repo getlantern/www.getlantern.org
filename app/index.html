@@ -63,7 +63,7 @@
             <div ng-show="data" class="ng-cloak">
 
               <!-- if the user selected an OS, or we auto-selected the sniffed OS -->
-              <div ng-hide="selectedOS == 'UNKNOWNOS'">
+              <div ng-hide="selectedOS == 'UNAVAILABLE_OS'">
 
                 <div ng-hide="downloadClicked">
                   <div class="button-wrapper">
@@ -101,11 +101,11 @@
                 </div>
 
                 <div class="os-link">
-                  <a ng-click="selectOS('UNKNOWNOS')" ng-bind-template="{{'OTHER_SYSTEMS' | translate}}">Other systems</a>
+                  <a ng-click="selectOS('UNAVAILABLE_OS')" ng-bind-template="{{'OTHER_SYSTEMS' | translate}}">Other systems</a>
                 </div>
               </div>
 
-              <div ng-show="selectedOS == 'UNKNOWNOS'">
+              <div ng-show="selectedOS == 'UNAVAILABLE_OS'">
                 <h3 class="subprompt" ng-bind-template="{{'CHOOSE_SYSTEM' | translate}}">Choose System</h3>
                 <ul class="data-list os-select">
                   <li ng-repeat="osKey in osKeys | orderBy:isUbuntu">
@@ -206,22 +206,15 @@
 
     <!-- these get automatically minified and concatenated at build time -->
     <!-- build:js scripts/scripts.js -->
+    <script src="components/angular-google-analytics/src/angular-google-analytics.js"></script>
     <script src="components/angular-translate/angular-translate.js"></script>
     <script src="components/session.js/session.js"></script>
     <script src="scripts/app.js"></script>
-    <script src="scripts/translations.js"></script>
+    <script src="scripts/constants.js"></script>
     <script src="scripts/controllers/root.js"></script>
     <script src="scripts/controllers/download.js"></script>
-    <script src="scripts/services/constants.js"></script>
     <script src="scripts/services/osSniffer.js"></script>
     <script src="scripts/services/installerDataFetcher.js"></script>
     <!-- endbuild -->
-
-    <script>
-      var _gaq=[['_setAccount','UA-21815217-1'],['_trackPageview']];
-      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-      s.parentNode.insertBefore(g,s)}(document,'script'));
-    </script>
   </body>
 </html>

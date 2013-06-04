@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Service: constants', function () {
+describe('constants', function () {
 
   beforeEach(module('GetLanternSiteApp'));
 

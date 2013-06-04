@@ -6,6 +6,7 @@ angular.module('GetLanternSiteApp')
       $rootScope,
       $scope,
       $timeout,
+      Analytics,
       constants,
       installerDataFetcher,
       osSniffer) {
@@ -52,11 +53,13 @@ angular.module('GetLanternSiteApp')
           location.href = $scope.data[$scope.selectedOS].url;
         }, 500);
       }
+      Analytics.trackEvent('download', 'clicked', osSniffer.os);
     };
 
     $scope.selectOS = function (os) {
       $scope.downloadClicked = false;
       $scope.selectedOS = os;
+      Analytics.trackEvent('selectOS', 'clicked', os);
     };
 
     $scope.icnClassFor = {
