@@ -16,7 +16,7 @@ angular.module('GetLanternSiteApp', [
       VERSION: 'Version',
       OR_HIGHER: 'or higher',
       RELEASED: 'Released',
-      OSX: 'OS X',
+      OSX: 'OS X 64-bit',
       WINDOWS: 'Windows',
       UBUNTU32: 'Ubuntu 32-bit',
       UBUNTU64: 'Ubuntu 64-bit',

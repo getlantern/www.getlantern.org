@@ -74,10 +74,10 @@
                     <li class="first">
                       <span class="icn icn-{{icnClassFor[selectedOS]}}"></span> 
                       {{selectedOS | translate}}
-                      <sup class="extra-info">
+                      <span class="extra-info">
                         {{data[selectedOS].minOSVerReq}}
                         <span ng-bind-template="{{'OR_HIGHER' | translate}}">or higher</span>
-                      </sup>
+                      </span>
                     </li>
                    <li>
                     <span ng-bind-template="{{'VERSION' | translate}}">Version</span>
