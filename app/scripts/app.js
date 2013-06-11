@@ -24,7 +24,7 @@ angular.module('GetLanternSiteApp', [
       OTHER_SYSTEMS: 'Other systems',
       DOWNLOAD_IN_PROGRESS: 'Thank you for downloading Lantern.',
       DIRECT_LINK: 'If your download has not started automatically, click here.',
-      WARNING: 'Warning: Lantern is pending external security audit and thorough peer review within the technical community. Please only use Lantern if you understand your risks.',
+      WARNING: 'Warning: Lantern is pending external security audit and thorough peer review within the technical community. Please only use Lantern if you understand your risks. If you need to use Lantern to Get Access to blocked sites, it may not work until you receive an invite from an already-invited user.',
       FORUMS: 'Forums',
       DOCS: 'Docs',
       DEVELOPERS: 'Developers',
