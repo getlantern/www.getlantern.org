@@ -11,6 +11,7 @@ files = [
   'app/components/angular-google-analytics/src/angular-google-analytics.js',
   'app/components/angular-mocks/angular-mocks.js',
   'app/components/angular-translate/angular-translate.js',
+  'app/components/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
   'app/scripts/*.js',
   'app/scripts/**/*.js',
 //'test/mock/**/*.js',
