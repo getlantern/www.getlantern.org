@@ -6,7 +6,7 @@
     "angular": "~1.0.7",
     "angular-cookies": "~1.0.7",
     "angular-google-analytics": "skivvies/angular-google-analytics",
-    "angular-translate": "~0.8.0",
+    "angular-translate": "~0.9.1",
     "es5-shim": "~2.0.8",
     "json3": "~3.2.4",
     "modernizr": "~2.6.2",
