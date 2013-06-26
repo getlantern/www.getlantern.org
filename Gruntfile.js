@@ -14,7 +14,7 @@ module.exports = function (grunt) {
     dist: 'dist'
   };
   try {
-    yeomanConfig.app = require('./component.json').appPath || yeomanConfig.app;
+    yeomanConfig.app = require('./bower.json').appPath || yeomanConfig.app;
   } catch (e) {}
 
   var gaeConfig = {
@@ -235,6 +235,7 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,txt}',
             'components/**/*',
+            'locale/*',
             'app.yaml', // XXX
             'images/{,*/}*.{gif,webp}'
           ]
