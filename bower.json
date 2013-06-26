@@ -1,7 +1,6 @@
 {
   "name": "GetLanternSite",
   "version": "0.0.0",
-  "appPath": "app",
   "dependencies": {
     "angular": "~1.0.7",
     "angular-cookies": "~1.0.7",
