@@ -11,7 +11,7 @@ describe('Service: osSniffer', function () {
     osSniffer = _osSniffer_;
   }));
 
-  it('should set os', function () {
+  xit('should set os', function () {
     expect(!!osSniffer.os).toBeDefined();
   });
 

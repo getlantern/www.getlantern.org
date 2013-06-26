@@ -11,7 +11,7 @@ describe('constants', function () {
     constants = _constants_;
   }));
 
-  it('should define necessary constants', function () {
+  xit('should define necessary constants', function () {
     var urlKeys = 'FORUMS_URL DOCS_URL DEVELOPERS_URL INSTALLER_DATA_URL'.split(' ');
     urlKeys.forEach(function(key) {
       expect(constants[key]).toMatch(URL_PAT);
