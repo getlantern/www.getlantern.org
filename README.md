@@ -11,7 +11,9 @@ https://getlanternsite.appspot.com/.
 
 - [Node](http://nodejs.org/)
 - [Yeoman](http://yeoman.io/), [Grunt](http://gruntjs.com/),
-  [Bower](http://bower.io) (npm install -g yo grunt-cli bower)
+  [Bower](http://bower.io),
+  [generator-angular](https://github.com/yeoman/generator-angular)
+  (npm install -g yo grunt-cli bower generator-angular)
 - [Ruby](http://www.ruby-lang.org/) (comes with OS X)
 - [Compass](http://compass-style.org/) (gem install compass)
 - [Python](http://python.org/) (comes with OS X)
