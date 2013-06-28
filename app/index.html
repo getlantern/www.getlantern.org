@@ -59,7 +59,25 @@
             </div>
 
             <!-- if we haven't (yet) fetched installer data -->
+            <!--
             <div ng-hide="data" ng-bind-template="{{'CHECK_BACK_SOON' | translate}}">Check back again soon to download Lantern.</div>
+            -->
+            <section ng-hide="data" class="signup">
+              <h3 class="panel-subtitle" ng-bind-template="{{'COMING_SOON' | translate}}">Lantern is coming soon</h3>
+
+              <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
+                <!-- name="mc-embedded-subscribe-form" -->
+                <h5 class="form-title" ng-bind-template="{{'REQUEST_INVITE' | translate}}">Request an invite and updates:</h5>
+                <div class="input-append">
+                  <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
+                    ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
+                    class="input-xlarge" placeholder="email@example.com" autofocus>
+                  <input type="submit" name="subscribe" class="btn btn-inverse"
+                    ng-disabled="signupForm.$invalid"
+                    value="+">
+                </div>
+              </form>
+            </section>
 
             <!-- if we have fetched installer data -->
             <div ng-show="data" class="ng-cloak">
@@ -218,6 +236,7 @@
     <script src="scripts/constants.js"></script>
     <script src="scripts/controllers/root.js"></script>
     <script src="scripts/controllers/download.js"></script>
+    <script src="scripts/directives/signup.js"></script>
     <script src="scripts/services/osSniffer.js"></script>
     <script src="scripts/services/installerDataFetcher.js"></script>
     <!-- endbuild -->

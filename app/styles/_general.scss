@@ -1,3 +1,5 @@
+@import "mixins";
+
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
 
@@ -9,6 +11,16 @@ body {
 .ng-cloak {
   display: none;
 }
+
+/*
+input:focus, textarea:focus {
+  @include ctb-box-shadow(0 0 8px rgba(82,168,236,.6));
+
+  &.ng-invalid {
+    @include input-invalid;
+  }
+}
+*/
 
 .chromeframe {
 	position: absolute;

@@ -39,7 +39,11 @@ angular.module('GetLanternSiteApp')
           }
         });
     }
-    $timeout(fetch);
+
+    var onlyShowSignupForm = true;
+    if (!onlyShowSignupForm) {
+      $timeout(fetch);
+    }
 
     $scope.handleDownload = function () {
       $scope.downloadClicked = true;

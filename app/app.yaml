@@ -2,8 +2,8 @@
 # only meant for use with gae dev_appserver.py
 # use the app.yaml in repo root for deploying with appcfg.py
 
-application: getlanternsite
-version: dev
+application: getlanternhr
+version: "2013-06-28"
 runtime: python27
 api_version: 1
 threadsafe: yes

@@ -18,8 +18,9 @@ module.exports = function (grunt) {
   } catch (e) {}
 
   var gaeConfig = {
-    appId: 'getlanternsite',
-    verId: 'dev'
+    //appId: 'getlanternsite',
+    appId: 'getlanternhr',
+    verId: '2013-06-28'
   };
   try {
     var appYaml = global.fs.readFileSync('./app.yaml', {encoding: 'utf-8'}).split('\n');

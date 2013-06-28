@@ -5,6 +5,50 @@
   text-align: center;
 }
 
+.signup {
+  .panel-subtitle {
+    color: $lnt-yellow;
+    margin: 28px 0;
+  }
+  .form-title {
+    color: $lnt-pale-yellow;
+    margin: 18px 0;
+  }
+  input[type=email] {
+    text-align: center;
+    background: #333;
+    color: $lnt-pale-yellow;
+    border: 1px solid #222 !important;
+    font-weight: bold;
+    font-size: $baseFontSize * .9;
+    @include ctb-box-shadow(none !important);
+
+    &:focus {
+      @include ctb-box-shadow(0 0 8px rgba(120, 120, 120, .6) !important);
+    }
+
+    &::-webkit-input-placeholder {
+      text-align: center;
+      color: #666;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+      text-align: center;  
+      color: #666;
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+      text-align: center;  
+      color: #666;
+    }
+
+    &:-ms-input-placeholder {  
+      text-align: center; 
+      color: #666;
+    }
+  }
+}
+
 .panel {
 	background: rgba(0,0,0,0.69);
 	padding: 30px 0;
@@ -24,7 +68,7 @@
 
 	.btn-primary {
 		white-space: nowrap;
-		background: #ecf88b;
+		background: $lnt-yellow;
 		color: #363636;
 		text-transform: uppercase;
 		font-size: 18px;
