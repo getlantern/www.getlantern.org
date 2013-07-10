@@ -7,7 +7,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title ng-bind-template="{{'LANTERN' | translate}}">Lantern</title>
-    <meta name="description" content="">
+    <meta name="description" content="Defeat internet censorship. Give or get access to the open internet by sharing connections through your social network." ng-attr-content="{{'META_DESC' | translate}}">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="styles/main.css">
@@ -25,6 +25,7 @@
       <script src="components/es5-shim/es5-shim.js"></script>
       <script src="components/json3/lib/json3.min.js"></script>
     <![endif]-->
+
     <!-- uncomment out to enable firebug lite (useful for IE)
       <script src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js"></script>
     -->
@@ -55,7 +56,7 @@
           <div class="panel">
             <h1 class="panel-title" ng-bind-template="{{'FREE_THE_INTERNET' | translate}}">Free the Internet</h1>
             <div class="panel-text">
-              <p ng-bind-template="{{'SECURELY_SHARE' | translate}}">Securely share your connection to defeat censorship</p>
+              <p ng-bind-template="{{'SHARE_CONNECTIONS' | translate}}">Securely share connections to defeat censorship</p>
             </div>
 
             <!-- if we haven't (yet) fetched installer data -->
@@ -145,7 +146,7 @@
         </div>
       </section>
 
-      <!-- XXX what would we do with quotes when viewing the site in another language?
+      <!-- XXX(i18n): would we translate quotes? probably better to get original quotes in other languages
       <div class="white-panel">
         <div class="quotes constrained clearfix">
           <div class="quote">
