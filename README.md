@@ -13,7 +13,7 @@ This is the code that powers https://www.getlantern.org.
   - [bower](http://bower.io)
   - [generator-angular](https://github.com/yeoman/generator-angular)
   (npm install -g yo grunt-cli bower generator-angular)
-- For modifying stylesheets:
+- For building stylesheets:
   - [Ruby](http://www.ruby-lang.org/) (comes with OS X)
   - [Compass](http://compass-style.org/) (gem install compass)
 - For deploying to App Engine:
@@ -23,6 +23,8 @@ This is the code that powers https://www.getlantern.org.
   - [Python 2.7](http://python.org/) (comes with OS X)
   - [Transifex Client](https://pypi.python.org/pypi/transifex-client)
     (pip install transifex-client)
+- For running tests:
+  - [PhantomJS](http://phantomjs.org/) (brew install phantomjs)
 
 ## Setup
 

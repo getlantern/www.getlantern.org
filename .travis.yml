@@ -3,13 +3,12 @@ node_js:
   - "0.10"
 
 before_script:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-  - npm install -g bower karma
+  - gem install compass
+  - npm install grunt-cli
   - bower install
 
 script:
-  - karma start karma.conf.js --no-auto-watch --single-run --reporters=dots --browsers=Firefox
+  - grunt test
 
 notifications:
   irc: "irc.freenode.net#lantern"
