@@ -50,63 +50,63 @@
 }
 
 .panel {
-	background: rgba(0,0,0,0.69);
-	padding: 30px 0;
-	color: #fff;
-	display: inline-block;
-	max-width: 700px;
-	height: 365px;
+  background: rgba(0,0,0,0.69);
+  padding: 30px 0;
+  color: #fff;
+  display: inline-block;
+  max-width: 700px;
+  height: 365px;
 
-	.button-wrapper {
-		background: #212121;
-		display: inline-block;
-		padding: 5px;
-		@include box-shadow(rgba(white, 0.31) 0 1px 0);
-		@include border-radius(11px);
-		margin-bottom: 10px;
-	}
+  .button-wrapper {
+    background: #212121;
+    display: inline-block;
+    padding: 5px;
+    @include box-shadow(rgba(white, 0.31) 0 1px 0);
+    @include border-radius(11px);
+    margin-bottom: 10px;
+  }
 
-	.btn-primary {
-		white-space: nowrap;
-		background: $lnt-yellow;
-		color: #363636;
-		text-transform: uppercase;
-		font-size: 18px;
-		font-weight: bold;
-		text-shadow: 0 -1px 0 #fff;
-		width: 200px;
-		line-height: 52px;	
-		border: 1px solid #5e7c4c;
-		@include box-shadow(rgba(black, 0.73) 0 2px 2px, rgba(white, 0.56) 0 1px 0 inset);
-		@include transition-property(background-color);
-	  @include transition-duration(0.5s);
-	  @include transition-timing-function(ease-in);
+  .btn-primary {
+    white-space: nowrap;
+    background: $lnt-yellow;
+    color: #363636;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 0 -1px 0 #fff;
+    width: 200px;
+    line-height: 52px;  
+    border: 1px solid #5e7c4c;
+    @include box-shadow(rgba(black, 0.73) 0 2px 2px, rgba(white, 0.56) 0 1px 0 inset);
+    @include transition-property(background-color);
+    @include transition-duration(0.5s);
+    @include transition-timing-function(ease-in);
 
-		&:hover {
-	  	background: #cdd558;
-	  }
+    &:hover {
+      background: #cdd558;
+    }
 
-	  &:focus, &:active {
-	  	@include box-shadow(rgba(black, 0.73) 0 2px 2px, rgba(black, 0.75) 0 2px 2px inset);
-	  }
-	}
+    &:focus, &:active {
+      @include box-shadow(rgba(black, 0.73) 0 2px 2px, rgba(black, 0.75) 0 2px 2px inset);
+    }
+  }
 
     .subprompt {
       font-size: 22px;
       line-height: 24px;
     }
 
-	.data-list { font-size: 14px; }
+  .data-list { font-size: 14px; }
 
-	.os-select {
-		font-size: 16px;
-		padding-top: 30px;
+  .os-select {
+    font-size: 16px;
+    padding-top: 30px;
 
-		li { padding: 0 16px; }
+    li { padding: 0 16px; }
 
-		a { color: #fff; }
-		
-	} // end .os-select
+    a { color: #fff; }
+    
+  } // end .os-select
 
   .extra-info {
     color: #aaa;
@@ -121,60 +121,60 @@
 } // end .panel
 
 .panel-title { 
-	line-height: 1.2;
-	margin: 0 25px 25px;
+  line-height: 1.2;
+  margin: 0 25px 25px;
 }
 
 .panel-text { 
-	padding: 15px 0;
-	line-height: 1.2;
-	border-top: 1px solid #fff;
-	border-bottom: 1px solid #fff;
-	margin: 0 25px 25px;
-	display: inline-block;
+  padding: 15px 0;
+  line-height: 1.2;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  margin: 0 25px 25px;
+  display: inline-block;
 
-	p { margin: 0; }
+  p { margin: 0; }
 } 
 
 .data-list {
-	padding-bottom: 10px;
+  padding-bottom: 10px;
 
-	li {
-		line-height: 1.5;
-	}
+  li {
+    line-height: 1.5;
+  }
 
-	.last { display: block; }
+  .last { display: block; }
 }
 
 .icn {
-	display: inline-block;
-	vertical-align: middle;
-	background: url(../images/icons-os.png) no-repeat;
-	margin-right: 5px;
-	position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  background: url(../images/icons-os.png) no-repeat;
+  margin-right: 5px;
+  position: relative;
 }
 
 .icn-apple {
-	background-position: left top;
-	width: 17px;
-	height: 21px;
-	top: -3px;
+  background-position: left top;
+  width: 17px;
+  height: 21px;
+  top: -3px;
 }
 
 .icn-windows {
-	background-position: left -68px;
-	width: 19px;
-	height: 21px;
-	top: -1px;
+  background-position: left -68px;
+  width: 19px;
+  height: 21px;
+  top: -1px;
 }
 
 .icn-ubuntu {
-	background-position: left -126px;
-	width: 24px;
-	height: 23px;
+  background-position: left -126px;
+  width: 24px;
+  height: 23px;
 }
 
 .os-link { 
-	font-size: 14px; 
-	padding-top: 15px;
+  font-size: 14px; 
+  padding-top: 15px;
 }

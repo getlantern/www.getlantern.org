@@ -9,7 +9,7 @@
 }
 
 .footer-logo { 
-	padding: 20px 0; 
+  padding: 20px 0; 
 }
 
 #footer-navlink-list {
@@ -17,13 +17,13 @@
   font-family: 'Oswald', Helvetica, Arial, sans-serif;
 
   li:after {
-  	content: " | ";
-  	padding: 0 4px;
+    content: " | ";
+    padding: 0 4px;
   }
 
   a {
-  	color: #626262;
-  	font-size: 18px;
+    color: #626262;
+    font-size: 18px;
   }
 }
 
@@ -43,9 +43,9 @@
 }
 
 .copyright {
-	padding-bottom: 50px;
+  padding-bottom: 50px;
 
-	p { margin-bottom: 3px; }
+  p { margin-bottom: 3px; }
 
-	a { color: #139ceb; }
+  a { color: #139ceb; }
 }
