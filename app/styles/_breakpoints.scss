@@ -3,6 +3,15 @@
 
   .section {
     padding: 15px 0 10%;
+
+    &.watch {
+      padding-left: 15px;
+      padding-right: 15px;
+
+      .video { // 320p
+        height: 214px;
+      }
+    }
   }
 
   .panel {
@@ -58,7 +67,18 @@
 /* Landscape phone to portrait tablet */
 @media (min-width: 600px)  {
 
-  .section { padding: 54px 0 94px; }
+  .section {
+    padding: 54px 0 94px;
+
+    &.watch {
+      padding-left: 5px;
+      padding-right: 5px;
+
+      .video { // 480p
+        height: 320px; // XXX check aspect ratio
+      }
+    }
+  }
 
   .panel { 
     width: 80%; 
@@ -104,7 +124,27 @@
 
 } // end @media (min-width: 600px)
 
+@media (min-width: 720px)  {
+  .section.watch {
+    padding-left: 5px;
+    padding-right: 5px;
+
+    .video { // 780p
+      height: 480px; // XXX check aspect ratio
+    }
+  }
+}
+
 @media (min-width: 1030px)  {
+
+  .section.watch {
+    padding-left: 5px;
+    padding-right: 5px;
+
+    .video { // 1020p
+      height: 680px; // XXX check aspect ratio
+    }
+  }
 
   .panel {
     .os-select {
