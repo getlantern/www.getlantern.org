@@ -2,6 +2,7 @@
 
 angular.module('GetLanternSiteApp')
   .constant('constants', {
+    DEFAULT_LOCALE: 'en_US',
     GA_ACCOUNT_ID: 'UA-21815217-1', // google analytics
     FORUMS_URL: 'https://groups.google.com/group/lantern-users-en',
     DOCS_URL: 'https://github.com/getlantern/lantern/wiki',

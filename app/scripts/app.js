@@ -4,12 +4,12 @@ angular.module('GetLanternSiteApp', [
     'pascalprecht.translate',
     'angular-google-analytics'
   ],
-  ['$translateProvider', function ($translateProvider) {
+  ['$translateProvider', function ($translateProvider, constants) {
     $translateProvider.useStaticFilesLoader({
       prefix: 'locale/',
       suffix: '.json'
     });
-    $translateProvider.uses('en_US');
+    $translateProvider.uses(constants.DEFAULT_LOCALE);
   }])
   .config(['AnalyticsProvider', 'constants', function (AnalyticsProvider, constants) {
     AnalyticsProvider.setAccount(constants.GA_ACCOUNT_ID);
