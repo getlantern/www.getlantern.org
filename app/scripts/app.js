@@ -4,7 +4,7 @@ angular.module('GetLanternSiteApp', [
     'pascalprecht.translate',
     'angular-google-analytics'
   ],
-  ['$translateProvider', function ($translateProvider, constants) {
+  ['$translateProvider', 'constants', function ($translateProvider, constants) {
     $translateProvider.useStaticFilesLoader({
       prefix: 'locale/',
       suffix: '.json'
