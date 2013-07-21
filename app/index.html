@@ -67,7 +67,7 @@
               <h3 class="panel-subtitle" ng-bind-template="{{'JOIN_BETA' | translate}}">Join the private beta</h3>
 
               <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
-                <!-- name="mc-embedded-subscribe-form" -->
+                <input type="hidden" name="_charset_">
                 <h5 class="form-title" ng-bind-template="{{'REQUEST_INVITE' | translate}}">Request an invite and updates:</h5>
                 <div class="input-append">
                   <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
@@ -93,7 +93,7 @@
 
                   <ul class="data-list">
                     <li class="first">
-                      <span class="icn icn-{{icnClassFor[selectedOS]}}"></span> 
+                      <span class="icn icn-{{icnClassFor[selectedOS]}}"></span>
                       {{selectedOS | translate}}
                       <span class="extra-info">
                         {{data[selectedOS].minOSVerReq}}
