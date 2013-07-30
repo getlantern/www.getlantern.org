@@ -76,10 +76,25 @@ To add or change a translated string, update the corresponding mapping
 in "app/locale/en_US.json" and add or update any references to it in the app if
 needed.
 
-Then use the [Transifex client](http://support.transifex.com/customer/portal/articles/960804-overview)
-to [push the new translations to Transifex](http://support.transifex.com/customer/portal/articles/996211-pushing-new-translations).
-Translations can also be [pulled from Transifex](http://support.transifex.com/customer/portal/articles/996157-getting-translations).
-The Transifex project for these translations is at https://www.transifex.com/projects/p/lantern-www/.
+#### Transifex
+
+All translatable content for Lantern has been uploaded to [the Lantern
+Transifex project](https://www.transifex.com/projects/p/lantern/] to help
+manage translations. Translatable strings from this code have been uploaded to
+the [www](https://www.transifex.com/projects/p/lantern/resource/www/) resource
+therein. Transifex has been set up to automatically pull updates to that
+resource from [its GitHub
+url](https://raw.github.com/getlantern/www.getlantern.org/master/app/locale/en_US.json)
+(see
+http://support.transifex.com/customer/portal/articles/1166968-updating-your-source-files-automatically
+for more information).
+
+After translators add translations of these strings to the Transifex project,
+the [Transifex
+client](http://support.transifex.com/customer/portal/articles/960804-overview)
+can be used to pull them. See
+http://support.transifex.com/customer/portal/articles/996157-getting-translations
+for more.
 
 ## Testing
 

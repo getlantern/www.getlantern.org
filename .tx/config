@@ -1,7 +1,7 @@
 [main]
 host = https://www.transifex.com
 
-[lantern-www.master]
+[lantern.www]
 file_filter = app/locale/<lang>.json
 source_file = app/locale/en_US.json
 source_lang = en
