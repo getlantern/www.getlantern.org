@@ -6,3 +6,9 @@ file_filter = app/locale/<lang>.json
 source_file = app/locale/en_US.json
 source_lang = en
 type = KEYVALUEJSON
+
+[lantern.video-captions]
+file_filter = video_captions/<lang>.srt
+source_file = video_captions/en_US.srt
+source_lang = en
+type = SRT
