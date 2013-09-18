@@ -64,9 +64,6 @@ To start up a development session using grunt's default dev server, run
 server, open a browser pointing to the dev server, and detect when any source
 files are changed and automatically compile any reload them in the browser.
 
-To test in the Google App Engine dev server, you can run the custom grunt task
-I wrote via "grunt gae_devserver".
-
 ### i18n
 
 Translated strings are fetched from json files in the "app/locale" directory
@@ -127,8 +124,7 @@ an existing deployment there you don't want to overwrite, change "version" in
 app.yaml to &lt;somenewversion&gt;, and then you'll be deploying to
 https://&lt;somenewversion&gt;-dot-getlanternhr.appspot.com/.
 
-Once version is set how you want it, just run "grunt deploy" (another custom
-grunt task). This will run the grunt build task mentioned above, and if it
-completes successfully, the files in "dist" will be uploaded to production.
-Once uploaded, a browser will automatically open to where you just deployed to
-so you can make sure everything looks good on the production server.
+Once version is set how you want it, and you have a successful build in
+the "dist" directory, run "appcfg --oauth2 update ." The files in "dist" will be
+uploaded to production. Once uploaded, open a browser to the newly deployed
+version to make sure everything looks good on the production server.
