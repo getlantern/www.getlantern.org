@@ -242,22 +242,30 @@ module.exports = function (grunt) {
       // }
     },
     htmlmin: {
+      // https://github.com/yeoman/grunt-usemin/issues/44#issuecomment-17430724
       dist: {
         options: {
-          /*removeCommentsFromCDATA: true,
-          // https://github.com/yeoman/grunt-usemin/issues/44
-          //collapseWhitespace: true,
+          removeComments: true,
           collapseBooleanAttributes: true,
           removeAttributeQuotes: true,
           removeRedundantAttributes: true,
-          useShortDoctype: true,
-          removeEmptyAttributes: true,
-          removeOptionalTags: true*/
+          removeEmptyAttributes: true
         },
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>',
-          src: ['*.html', 'views/*.html'],
+          src: '{,*/}*.html',
+          dest: '<%= yeoman.dist %>'
+        }]
+      },
+      deploy: {
+        options: {
+          collapseWhitespace: true
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.dist %>',
+          src: '{,*/}*.html',
           dest: '<%= yeoman.dist %>'
         }]
       }
