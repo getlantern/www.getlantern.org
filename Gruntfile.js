@@ -343,15 +343,16 @@ module.exports = function (grunt) {
         }]
       }
     },
-    uglify: {
-      dist: {
-        files: {
-          '<%= yeoman.dist %>/scripts/scripts.js': [
-            '<%= yeoman.dist %>/scripts/scripts.js'
-          ]
-        }
-      }
-    }
+    // using <!-- build:js... --> blocks in html instead
+    //uglify: {
+    //  dist: {
+    //    files: {
+    //      '<%= yeoman.dist %>/scripts/scripts.js': [
+    //        '<%= yeoman.dist %>/scripts/**/*.js'
+    //      ]
+    //    }
+    //  }
+    //}
   });
 
   grunt.registerTask('server', function (target) {
