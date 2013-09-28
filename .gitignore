@@ -3,6 +3,7 @@ dist
 .tmp
 app/bower_components
 app/styles/main.css
+app/scripts/jsFromJSON
 .DS_Store
 *.sw[po]
 *.un~

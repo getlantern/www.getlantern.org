@@ -41,6 +41,10 @@ module.exports = function (grunt) {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
         tasks: ['compass:server', 'autoprefixer']
       },
+      jsFromJSON: {
+        files: ['<%= yeoman.app %>/locale/*.json'],
+        tasks: ['jsFromJSON:server']
+      },
       styles: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
         tasks: ['copy:styles', 'autoprefixer']
@@ -52,8 +56,8 @@ module.exports = function (grunt) {
         files: [
           '<%= yeoman.app %>/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
-          '{.tmp,<%= yeoman.app %>}/locale/{,*/}*.json',
           '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
+          '<%= yeoman.app %>/locale/{,*/}*.json',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
@@ -241,26 +245,13 @@ module.exports = function (grunt) {
       //   }
       // }
     },
+    // XXX https://github.com/yeoman/grunt-usemin/issues/44
     htmlmin: {
-      // https://github.com/yeoman/grunt-usemin/issues/44#issuecomment-17430724
       dist: {
         options: {
+          collapseWhitespace: true,
           removeComments: true,
-          collapseBooleanAttributes: true,
-          removeAttributeQuotes: true,
-          removeRedundantAttributes: true,
-          removeEmptyAttributes: true
-        },
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>',
-          src: '{,*/}*.html',
-          dest: '<%= yeoman.dist %>'
-        }]
-      },
-      deploy: {
-        options: {
-          collapseWhitespace: true
+          removeRedundantAttributes: true
         },
         files: [{
           expand: true,
@@ -279,8 +270,8 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
           src: [
+            '*.html',
             '*.{ico,png,txt}',
-            '.htaccess',
             'bower_components/**/*',
             'images/{,*/}*.{gif,webp}',
             'locale/*',
@@ -318,8 +309,7 @@ module.exports = function (grunt) {
         'compass:dist',
         'copy:styles',
         'imagemin',
-        'svgmin',
-        'htmlmin'
+        'svgmin'
       ]
     },
     karma: {
@@ -343,6 +333,15 @@ module.exports = function (grunt) {
         }]
       }
     },
+    jsFromJSON: {
+      server: {
+        files: {
+          '<%= yeoman.app %>/scripts/jsFromJSON/translations.js': [
+            '<%= yeoman.app %>/locale/*.json'
+          ]
+        }
+      }
+    }
     // using <!-- build:js... --> blocks in html instead
     //uglify: {
     //  dist: {
@@ -355,6 +354,34 @@ module.exports = function (grunt) {
     //}
   });
 
+  grunt.registerMultiTask('jsFromJSON', 'generate js from JSON', function (target) {
+    this.files.forEach(function (f) {
+      try {
+        var result = {};
+        f.src.forEach(function (src) {
+          if (!grunt.file.exists(src)) {
+            throw "JSON source file \"" + src + "\" not found.";
+          } else {
+            grunt.log.debug("reading JSON source file \"" + src + "\"");
+            try {
+              var name = src.split('/').slice(-1)[0].replace(/.json$/i, ''),
+                  json = grunt.file.readJSON(src);
+              result[name] = json;
+            } catch (e) {
+              grunt.fail.warn(e);
+            }
+          }
+        });
+        grunt.log.debug("writing js destination file \"" + f.dest + "\"");
+        var name = f.dest.split('/').splice(-1)[0].replace(/.js$/i, '');
+        grunt.file.write(f.dest, 'window.'+name+'='+JSON.stringify(result)+';');
+        grunt.log.writeln("File \"" + f.dest + "\" created.");
+      } catch (e) {
+        grunt.fail.warn(e);
+      }
+    });
+  });
+
   grunt.registerTask('server', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
@@ -362,6 +389,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'jsFromJSON:server',
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
@@ -390,7 +418,8 @@ module.exports = function (grunt) {
     'cssmin',
     'uglify',
     'rev',
-    'usemin'
+    'usemin',
+    'htmlmin'
   ]);
 
   grunt.registerTask('default', [

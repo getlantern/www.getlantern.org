@@ -5,11 +5,11 @@ angular.module('GetLanternSiteApp', [
     'angular-google-analytics'
   ],
   ['$translateProvider', 'constants', function ($translateProvider, constants) {
-    $translateProvider.useStaticFilesLoader({
-      prefix: 'locale/',
-      suffix: '.json'
-    });
-    $translateProvider.uses(constants.DEFAULT_LOCALE);
+    if (!window.translations) {
+      throw new Error('Expected "window.translations" to be populated. Was "grunt jsFromJSON" not run?');
+      return;
+    }
+    $translateProvider.translations(window.translations[constants.DEFAULT_LOCALE]);
   }])
   .config(['AnalyticsProvider', 'constants', function (AnalyticsProvider, constants) {
     AnalyticsProvider.setAccount(constants.GA_ACCOUNT_ID);
