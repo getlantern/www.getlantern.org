@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('GetLanternSiteApp')
-  .factory('installerDataFetcher', function ($http, $q, constants) {
+  .factory('installerDataFetcher', ['$http', '$q', 'constants', function ($http, $q, constants) {
 
     function fetch(callback, errback) {
       // work around https://github.com/angular/angular.js/issues/934
@@ -68,4 +68,4 @@ angular.module('GetLanternSiteApp')
     return {
       fetch: fetch
     };
-  });
+  }]);

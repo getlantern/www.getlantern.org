@@ -1,9 +1,7 @@
 'use strict';
 
 angular.module('GetLanternSiteApp')
-  .directive('signupForm', function (
-    $http,
-    $window) {
+  .directive('signupForm', ['$http', '$window', function ($http, $window) {
     var action = 'https://getlantern.us2.list-manage.com/subscribe/post?u=0ac18298d5d0330dcda8f48aa&id=f06770f311';
     var target = 'formResult';
 
@@ -19,5 +17,5 @@ angular.module('GetLanternSiteApp')
         form.submit();
       };
     };
-  });
+  }]);
 

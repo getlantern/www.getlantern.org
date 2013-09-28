@@ -1,15 +1,16 @@
 'use strict';
 
 angular.module('GetLanternSiteApp')
-  .controller('DownloadCtrl', function (
-      $log,
-      $rootScope,
-      $scope,
-      $timeout,
-      Analytics,
-      constants,
-      installerDataFetcher,
-      osSniffer) {
+  .controller('DownloadCtrl', [
+      '$log',
+      '$rootScope',
+      '$scope',
+      '$timeout',
+      'Analytics',
+      'constants',
+      'installerDataFetcher',
+      'osSniffer',
+      function ($log, $rootScope, $scope, $timeout, Analytics, constants, installerDataFetcher, osSniffer) {
     // have to bind to rootScope to work in IE8?
     if (/lt-ie9/.test((document.getElementById('ng-app') || {}).className)) {
       $scope = $rootScope;
@@ -76,4 +77,4 @@ angular.module('GetLanternSiteApp')
     $scope.isUbuntu = function (key) {
       return (/UBUNTU/).test(key);
     };
-  });
+  }]);

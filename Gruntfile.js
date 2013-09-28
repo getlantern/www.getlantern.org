@@ -328,7 +328,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>/scripts',
-          src: '*.js',
+          src: '{,*/}*.js',
           dest: '<%= yeoman.dist %>/scripts'
         }]
       }
@@ -414,7 +414,7 @@ module.exports = function (grunt) {
     'concat',
     'copy:dist',
     'cdnify',
-    'ngmin',
+  //'ngmin', // XXX getting clobbered by uglify task below
     'cssmin',
     'uglify',
     'rev',

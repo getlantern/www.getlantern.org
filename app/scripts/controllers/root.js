@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('GetLanternSiteApp')
-  .controller('RootCtrl', function ($scope, constants) {
+  .controller('RootCtrl', ['$scope', 'constants', function ($scope, constants) {
     $scope.constants = constants;
-  });
+  }]);

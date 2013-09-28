@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('GetLanternSiteApp')
-  .factory('osSniffer', function (Analytics) {
+  .factory('osSniffer', ['Analytics', function (Analytics) {
     var os = 'UNAVAILABLE_OS';
 
     // requires https://github.com/codejoust/session.js
@@ -32,4 +32,4 @@ angular.module('GetLanternSiteApp')
     return {
       os: os
     };
-  });
+  }]);
