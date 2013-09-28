@@ -5,11 +5,11 @@
     padding: 15px 0 10%;
 
     &.watch {
-      padding-left: 15px;
-      padding-right: 15px;
+      padding: 15px;
 
       .video { // 320p
         height: 214px;
+        width: 380px;
       }
     }
   }
@@ -20,12 +20,12 @@
     padding-top: 10%;
 
     .panel-title {
-      font-size: 30px; 
+      font-size: 30px;
     }
 
     .panel-title,
-    .panel-text { 
-      margin: 0 5% 15px; 
+    .panel-text {
+      margin: 0 5% 15px;
     }
 
     .panel-text {
@@ -33,12 +33,12 @@
     }
 
     .panel-subtitle {
-      font-size: 20px; 
+      font-size: 20px;
       margin: 70px 0 0;
     }
 
     .form-title {
-      font-size: 13px; 
+      font-size: 13px;
       margin: 0 0 10px;
     }
 
@@ -71,23 +71,23 @@
     padding: 54px 0 94px;
 
     &.watch {
-      padding-left: 5px;
-      padding-right: 5px;
+      padding: 15px;
 
       .video { // 480p
-        height: 320px; // XXX check aspect ratio
+        height: 320px;
+        width: 570px;
       }
     }
   }
 
-  .panel { 
-    width: 80%; 
+  .panel {
+    width: 80%;
 
-    .panel-title { 
-      font-size: 48px; 
+    .panel-title {
+      font-size: 48px;
     }
 
-    .panel-text { 
+    .panel-text {
       font-size: 22px;
     }
 
@@ -126,11 +126,11 @@
 
 @media (min-width: 720px)  {
   .section.watch {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 40px 80px;
 
     .video { // 780p
-      height: 480px; // XXX check aspect ratio
+      height: 330px;
+      width: 600px;
     }
   }
 }
@@ -138,11 +138,11 @@
 @media (min-width: 1030px)  {
 
   .section.watch {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 80px 120px;
 
     .video { // 1020p
-      height: 680px; // XXX check aspect ratio
+      height: 560px;
+      width: 1000px;
     }
   }
 
