@@ -1,11 +1,45 @@
 .header {
   display: block;
-  background-color: #0a3343;
+  background-color: $lnt-teal;
   padding: 15px 0;
   @include box-shadow(rgba(black, 0.19) 0 1px 0);
   position: relative;
   z-index: 1;
   border-bottom: 1px solid #12485d;
+
+  .lang-chooser {
+    margin: 26px 22px 0 0;
+  }
+
+  .dropdown-toggle {
+    background: $lnt-teal;
+    font-weight: normal;
+
+    &:hover {
+      background: rgba(0, 0, 0, .1);
+    }
+  }
+
+  .lang-list {
+    background: rgba(0, 0, 0, .5) !important;
+    text-shadow: 1px 1px 1px #ccc;
+    min-width: 100px;
+    text-align: right;
+    a {
+      color: #fff !important;
+      &:hover {
+        background: $lnt-teal;
+        background-image: linear-gradient(to bottom, $lnt-light-teal, $lnt-teal);
+      }
+    }
+  }
+
+  .dropdown-menu li > a:hover {
+  }
+
+  .btn-group.open .dropdown-toggle {
+    background: rgba(0, 0, 0, .5);
+  }
 }
 
 .site-logo {

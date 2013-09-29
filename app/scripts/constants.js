@@ -2,7 +2,49 @@
 
 angular.module('GetLanternSiteApp')
   .constant('constants', {
-    DEFAULT_LOCALE: 'en_US',
+    DEFAULT_LANGCODE: 'en_US',
+    LANGS: {
+      en_US: {
+        code: 'en_US',
+        name: 'English',
+        dir: 'ltr'
+      },
+      tr: {
+        code: 'tr',
+        name: 'Türkçe',
+        dir: 'ltr'
+      },
+      vi: {
+        code: 'vi',
+        name: 'Tiếng Việt',
+        dir: 'ltr'
+      },
+      sl_SI: {
+        code: 'sl_SI',
+        name: 'slovenščina',
+        dir: 'ltr'
+      },
+      fr_FR: {
+        code: 'fr_FR',
+        name: 'Français',
+        dir: 'ltr'
+      },
+      fa_IR: {
+        code: 'fa_IR',
+        name: 'پارسی',
+        dir: 'rtl'
+      },
+      ar: {
+        code: 'ar',
+        name: 'العربية',
+        dir: 'rtl'
+      },
+      zh_CN: {
+        code: 'zh_CN',
+        name: '中文',
+        dir: 'ltr'
+      }
+    },
     GA_ACCOUNT_ID: 'UA-21815217-1', // google analytics
     FORUMS_URL: 'https://groups.google.com/group/lantern-users-en',
     DOCS_URL: 'https://github.com/getlantern/lantern/wiki',

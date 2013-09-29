@@ -3,8 +3,8 @@
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
 
-body { 
-  background-color: #f3f3f3; 
+body {
+  background-color: #f3f3f3;
   font-weight: 300;
 }
 
@@ -40,6 +40,7 @@ input:focus, textarea:focus {
   }
 }
 
+/*
 #ghribbon {
   position: absolute;
   top: 0;
@@ -47,6 +48,7 @@ input:focus, textarea:focus {
   border: 0;
   z-index: 100;
 }
+*/
 
 h1, .btn, strong { font-weight: 700; }
 
@@ -57,14 +59,14 @@ a { cursor: pointer; }
 ul, ol {
   list-style: none;
   margin: 0;
-  
+
   li {
     line-height: 1.4;
   }
 }
 
-iframe { 
-  max-width: 100%; 
+iframe {
+  max-width: 100%;
 }
 
 hr {
@@ -93,7 +95,7 @@ hr {
   border-bottom: 1px solid #c7c7c7;
 }
 
-.section { 
+.section {
   border-bottom: 1px solid #c7c7c7;
 }
 
@@ -115,8 +117,8 @@ hr {
   padding: 52px 30px 20px;
   border-right: 1px solid #ededed;
 
-  blockquote { 
-    border: 0; 
+  blockquote {
+    border: 0;
     padding: 0;
     line-height: 1.2;
     color: #808080;

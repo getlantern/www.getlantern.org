@@ -5,13 +5,13 @@
     "DOWNLOAD_LANTERN": "تحميل البرنامج لانتيرن",
     "DIRECT_LINK": "إذا لم يبدأ التحميل تلقائيا. إنقر هنا",
     "RELEASED": "صدر",
-    "UBUNTU64": "Ubuntu 64-bit",
+    "UBUNTU64": "أوبونتو 64 بت",
     "OSX": "بت OS  64 X",
     "CHOOSE_SYSTEM": "إختر نظام التشغيل",
     "OTHER_SYSTEMS": "أنطمة تشغيل أخرى",
     "UNAVAILABLE_OS": "(نظام تشغيل غير متاح)",
     "OR_HIGHER": "أو أعلى",
-    "WARNING": "Warning: Lantern is pending external security audit and thorough peer review within the technical community. Please only use Lantern if you understand your risks. If you need to use Lantern to Get Access to blocked sites, it may not work until you receive an invite from an already-invited user.",
+    "WARNING": "تنيه: لانتيرن لا زال محل المراجعة ما إذا كان إستخدامه آمنا, و هو كذالك مازال محل إستعراض شامل من طرف تقنيين مختصين في مجال المعلوماتية.  يرجى فقط استخدام البرنامج إذا فهمت المخاطر الناجمة . إذا كنت بحاجة إلى استخدام لانتيرن للوصول إلى المواقع المحجوبة، فإنه قد لا يعمل حتى تتلقى دعوة من مستخدم يستعمل البرنامج فعليا.",
     "DOWNLOAD_IN_PROGRESS": "شكرا على تحميل البرنامج لانتيرن",
     "DEVELOPERS": "المبرمجون",
     "FREE_THE_INTERNET": "حرر الأنترنت",
@@ -23,6 +23,6 @@
     "FORUMS": "منتديات",
     "LANTERN": "لانتيرن",
     "CHECK_BACK_SOON": "أعد المحاولة قريبا لتحميل لانتيرن",
-    "UBUNTU32": "Ubuntu 32-bit",
+    "UBUNTU32": "أوبونتو 32 بت",
     "JOIN_BETA": "\nإنضم إلى النسخة بيتا"
 }

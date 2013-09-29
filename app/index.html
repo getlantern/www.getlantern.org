@@ -24,7 +24,7 @@
     <script src="scripts/jsFromJSON/translations.js"></script>
     <!-- endbuild -->
   </head>
-  <body ng-controller="RootCtrl">
+  <body ng-controller="RootCtrl" class="ng-cloak">
     <!--[if lt IE 8]>
       <p class="chromeframe">You are using an outdated browser. Please <a href="https://www.google.com/chrome/">upgrade your browser</a> or <a href="https://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> and try again.</p>
     <![endif]-->
@@ -40,13 +40,27 @@
 
     <!-- site content starts here -->
     <div id="content-container">
+      <!--
       <div id="ghribbon">
         <a href="{{constants.DEVELOPERS_URL}}">
           <img src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
         </a>
       </div>
+      -->
 
       <header id="topbar" class="header">
+        <nav class="lang-chooser btn-group dropdown pull-right">
+          <a class="btn btn-inverse dropdown-toggle">
+            <span class="icon-globe"></span>
+            {{activeLang.name}}
+            <span class="caret"></span>
+          </a>
+          <ul class="lang-list dropdown-menu">
+            <li ng-repeat="lang in constants.LANGS" ng-hide="lang.code == activeLang.code">
+              <a ng-click="changeLang(lang.code)">{{lang.name}}</a>
+            </li>
+          </ul>
+        </nav>
         <div class="wrap clearfix">
           <div class="site-logo">
             <a href="/">
@@ -89,7 +103,7 @@
             </section>
 
             <!-- if we have fetched installer data -->
-            <div ng-show="data" class="ng-cloak">
+            <div ng-show="data">
 
               <!-- if the user selected an OS, or we auto-selected the sniffed OS -->
               <div ng-hide="selectedOS == 'UNAVAILABLE_OS'">
@@ -248,8 +262,11 @@
          CDN-hosted versions -->
     <script src="bower_components/angular/angular.js"></script>
     <!-- build:js scripts/libs.js -->
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-google-analytics/src/angular-google-analytics.js"></script>
     <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
     <script src="bower_components/session.js/session.js"></script>
     <!-- endbuild -->
 
