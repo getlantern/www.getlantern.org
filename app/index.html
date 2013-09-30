@@ -59,6 +59,12 @@
             <li ng-repeat="lang in constants.LANGS" ng-hide="lang.code == activeLang.code">
               <a ng-click="changeLang(lang.code)">{{lang.name}}</a>
             </li>
+            <li class="divider"></li>
+            <li>
+              <a ng-href="{{constants.HELP_TRANSLATE_URL}}" target="_blank" ng-bind-template="{{'HELP_TRANSLATE' | translate}}">
+                Help Translate
+              </a>
+            </li>
           </ul>
         </nav>
         <div class="wrap clearfix">
