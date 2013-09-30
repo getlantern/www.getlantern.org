@@ -21,7 +21,7 @@ angular.module('GetLanternSiteApp')
       },
       sl_SI: {
         code: 'sl_SI',
-        name: 'slovenščina',
+        name: 'Slovenščina',
         dir: 'ltr'
       },
       fr_FR: {
