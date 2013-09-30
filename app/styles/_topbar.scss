@@ -14,6 +14,7 @@
   .dropdown-toggle {
     background: $lnt-teal;
     font-weight: normal;
+    text-shadow: 1px 1px 1px #000;
 
     &:hover {
       background: rgba(0, 0, 0, .1);
@@ -21,8 +22,9 @@
   }
 
   .lang-list {
-    background: rgba(0, 0, 0, .5) !important;
-    text-shadow: 1px 1px 1px #ccc;
+    background-color: #000;
+    background: rgba(0, 0, 0, .8);
+    text-shadow: 1px 1px 1px #000;
     min-width: 100px;
     text-align: right;
     a {
@@ -38,7 +40,8 @@
   }
 
   .btn-group.open .dropdown-toggle {
-    background: rgba(0, 0, 0, .5);
+    background-color: #000;
+    background: rgba(0, 0, 0, .8);
   }
 }
 
