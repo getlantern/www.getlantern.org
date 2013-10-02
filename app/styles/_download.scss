@@ -47,6 +47,9 @@
       color: #666;
     }
   }
+  input[type=submit] {
+    @include single-transition(all, 0.5s);
+  }
 }
 
 .panel {
