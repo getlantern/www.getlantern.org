@@ -413,7 +413,7 @@ module.exports = function (grunt) {
     'autoprefixer',
     'concat',
     'copy:dist',
-    'cdnify',
+  //'cdnify',
   //'ngmin', // XXX getting clobbered by uglify task below
     'cssmin',
     'uglify',
