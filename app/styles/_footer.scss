@@ -29,7 +29,7 @@
 .footer-links {
   padding-bottom: 35px;
   a {
-    @include single-transition(all, .5s);
+    @include single-transition(color, .5s);
     text-shadow: 1px 1px 1px #ccc;
     color: #626262;
     &:hover {

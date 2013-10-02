@@ -196,8 +196,9 @@
       </div>
       -->
 
-      <section class="section white-panel watch">
-        <iframe class="video" src="https://www.youtube.com/embed/aiPkCugE-RY?origin=www.getlantern.org&autohide=1&enablejsapi=1&rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+      <section class="section white-panel watch" ng-init="replacingHtml='<iframe class=\'video\' src=\'https://www.youtube.com/embed/aiPkCugE-RY?origin=www.getlantern.org&autohide=1&autoplay=1&enablejsapi=1&rel=0&showinfo=0\' frameborder=\'0\' allowfullscreen>'">
+        <img class="video-snapshot" src="images/video-snapshot.jpg" replace-parent-on-click>
+        <img class="play-button" src="images/icon-play.png" replace-parent-on-click>
       </section>
 
       <!--
@@ -285,6 +286,7 @@
     <script src="scripts/controllers/root.js"></script>
     <script src="scripts/controllers/download.js"></script>
     <script src="scripts/directives/signup.js"></script>
+    <script src="scripts/directives/replaceParentOnClick.js"></script>
     <script src="scripts/services/osSniffer.js"></script>
     <script src="scripts/services/installerDataFetcher.js"></script>
     <!-- endbuild -->

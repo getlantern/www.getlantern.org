@@ -1,7 +1,35 @@
 .watch {
   text-align: center;
+  position: relative;
 
-  .video {
+  .video-snapshot, .video {
     width: 100%;
+  }
+
+  .play-button {
+    $wdth: 86px;
+    $hght: 61px;
+    width: $wdth;
+    height: $hght;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -$hght / 2.0;
+    margin-left: -$wdth / 2.0;
+    cursor: pointer;
+
+    @include single-transition(opacity, .5s);
+    opacity: 0.8;
+    &:hover {
+      opacity: 1.0;
+    }
+  }
+
+  .video-snapshot {
+    cursor: pointer;
+
+    &:hover + .play-button {
+      opacity: 1.0;
+    }
   }
 }
