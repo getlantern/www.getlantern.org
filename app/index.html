@@ -262,15 +262,27 @@
     </footer>
     <!-- site content ends here -->
 
+    <script>
+      window.session = {
+        options: {
+          gapi_location: false
+        }
+        /*
+        ,start: function (session) {
+          console.debug('session:', session);
+        }*/
+      };
+    </script>
+
     <!-- these get automatically minified and concatenated at build time -->
     <!-- build:js scripts/loadlast.js -->
+    <script src="bower_components/session.js/session.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-google-analytics/src/angular-google-analytics.js"></script>
     <script src="bower_components/angular-translate/angular-translate.js"></script>
     <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
-    <script src="bower_components/session.js/session.js"></script>
 
     <script src="scripts/app.js"></script>
     <script src="scripts/constants.js"></script>
