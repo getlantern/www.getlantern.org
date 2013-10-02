@@ -91,7 +91,8 @@
             <!--
             <div ng-hide="data" ng-bind-template="{{'CHECK_BACK_SOON' | translate}}">Check back again soon to download Lantern.</div>
             -->
-            <section ng-hide="data" class="signup">
+            <!--<section ng-hide="data" class="signup">-->
+            <section class="signup">
               <h3 class="panel-subtitle" ng-bind-template="{{'JOIN_BETA' | translate}}">Join the private beta</h3>
 
               <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
@@ -109,9 +110,10 @@
             </section>
 
             <!-- if we have fetched installer data -->
-            <div ng-show="data">
+            <!--<div ng-show="data">-->
 
               <!-- if the user selected an OS, or we auto-selected the sniffed OS -->
+              <!--
               <div ng-hide="selectedOS == 'UNAVAILABLE_OS'">
 
                 <div ng-hide="downloadClicked">
@@ -170,6 +172,7 @@
                 </ul>
               </div>
             </div>
+            -->
           </div>
         </div>
       </section>
