@@ -14,10 +14,12 @@
     margin-left: -$wdth / 2.0;
     cursor: pointer;
 
-    @include single-transition(opacity, .5s);
-    opacity: 0.8;
-    &:hover {
-      opacity: 1.0;
+    html.no-touch & {
+      @include single-transition(opacity, .5s);
+      opacity: 0.8;
+      &:hover {
+        opacity: 1.0;
+      }
     }
   }
 
@@ -27,10 +29,5 @@
     &:hover + .play-button {
       opacity: 1.0;
     }
-  }
-
-  .video {
-    height: auto;
-    width: auto;
   }
 }
