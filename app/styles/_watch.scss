@@ -2,10 +2,6 @@
   text-align: center;
   position: relative;
 
-  .video-snapshot, .video {
-    width: 100%;
-  }
-
   .play-button {
     $wdth: 86px;
     $hght: 61px;
@@ -31,5 +27,10 @@
     &:hover + .play-button {
       opacity: 1.0;
     }
+  }
+
+  .video {
+    height: auto;
+    width: auto;
   }
 }

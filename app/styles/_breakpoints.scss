@@ -6,11 +6,6 @@
 
     &.watch {
       padding: 15px;
-
-      .video { // 320p
-        height: 214px;
-        width: 380px;
-      }
     }
   }
 
@@ -46,10 +41,6 @@
       width: 200px;
     }
 
-    .signup input[type=submit] {
-      display: none;
-    }
-
 
     .os-select {
       padding: 0 10% 0;
@@ -72,11 +63,6 @@
 
     &.watch {
       padding: 15px;
-
-      .video { // 480p
-        height: 320px;
-        width: 570px;
-      }
     }
   }
 
@@ -127,11 +113,6 @@
 @media (min-width: 720px)  {
   .section.watch {
     padding: 40px 80px;
-
-    .video { // 780p
-      height: 330px;
-      width: 600px;
-    }
   }
 }
 
@@ -139,11 +120,6 @@
 
   .section.watch {
     padding: 80px 120px;
-
-    .video { // 1020p
-      height: 560px;
-      width: 1000px;
-    }
   }
 
   .panel {
