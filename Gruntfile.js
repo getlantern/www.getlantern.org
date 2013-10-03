@@ -373,7 +373,7 @@ module.exports = function (grunt) {
         });
         grunt.log.debug("writing js destination file \"" + f.dest + "\"");
         var name = f.dest.split('/').splice(-1)[0].replace(/.js$/i, '');
-        grunt.file.write(f.dest, 'window.'+name+'='+JSON.stringify(result)+';');
+        grunt.file.write(f.dest, 'angular.module("GetLanternSiteApp").constant("'+name+'",'+JSON.stringify(result)+');');
         grunt.log.writeln("File \"" + f.dest + "\" created.");
       } catch (e) {
         grunt.fail.warn(e);

@@ -6,12 +6,8 @@ angular.module('GetLanternSiteApp', [
     'ui.bootstrap',
     'angular-google-analytics'
   ],
-  ['$translateProvider', 'constants', function ($translateProvider, constants) {
-    if (!window.translations) {
-      throw new Error('Expected "window.translations" to be populated. Was "grunt jsFromJSON" not run?');
-      return;
-    }
-    angular.forEach(window.translations, function (transTable, langCode) {
+  ['$translateProvider', 'constants', 'translations', function ($translateProvider, constants, translations) {
+    angular.forEach(translations, function (transTable, langCode) {
       $translateProvider.translations(langCode, transTable);
     });
     $translateProvider.useCookieStorage();
