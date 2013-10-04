@@ -39,12 +39,13 @@
         <nav class="lang-chooser btn-group dropdown pull-right">
           <a class="btn btn-inverse dropdown-toggle">
             <span class="icon-globe"></span>
-            {{activeLang.name}}
+            <span class="active-lang">{{activeLang.name}}</span>
             <span class="caret"></span>
           </a>
           <ul class="lang-list dropdown-menu">
-            <li ng-repeat="lang in constants.LANGS" ng-hide="lang.code == activeLang.code">
-              <a ng-click="changeLang(lang.code)">{{lang.name}}</a>
+            <li ng-repeat="lang in constants.LANGS">
+              <a ng-show="lang.code == activeLang.code" class="active-lang">{{lang.name}}</a>
+              <a ng-click="changeLang(lang.code)" ng-hide="lang.code == activeLang.code">{{lang.name}}</a>
             </li>
             <li class="divider"></li>
             <li>

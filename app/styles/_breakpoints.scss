@@ -1,6 +1,10 @@
 /* Landscape phones and down */
 @media (max-width: 599px) {
 
+  .header .dropdown-toggle .active-lang {
+    display: none;
+  }
+
   .section {
     padding: 15px 0 10%;
 

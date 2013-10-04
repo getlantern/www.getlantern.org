@@ -29,7 +29,7 @@
     text-align: right;
     a {
       color: #fff !important;
-      &:hover {
+      &.active-lang, &:hover {
         background: $lnt-teal;
         background-image: linear-gradient(to bottom, $lnt-light-teal, $lnt-teal);
       }
