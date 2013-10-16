@@ -22,7 +22,7 @@ $ bower install
 $ grunt server
 ```
 
-If you do all of that, you should be able to run the site. If you experience errors, there's
+Once you do all of that, the site should be up and running. If you experience errors, there's
 likely something wrong with an outdated version of some required prerequisite for your 
 current step, and you'll need to fiddle!
 
