@@ -4,6 +4,31 @@
 
 This is the code that powers https://www.getlantern.org.
 
+## OSX Quick Start
+
+The easiest path to get up and running on OSX is to do the following in Terminal:
+
+```
+$ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+$ brew install npm
+$ npm install -g yo grunt-cli bower generator-angular
+$ gem install compass
+$ pip install transifex-client (you may need sudo pip install transifex-client)
+$ brew install phantomjs
+$ git clone git@github.com:<username>/www.getlantern.org.git
+$ cd www.getlantern.org
+$ npm install
+$ bower install
+$ grunt server
+```
+
+If you do all of that, you should be able to run the site. If you experience errors, there's
+likely something wrong with an outdated version of some required prerequisite for your 
+current step, and you'll need to fiddle!
+
+You still won't be able to deploy to App Engine (see below), but the above will enable you get 
+the site up and running quickly.
+
 ## Requirements
 
 - [node](http://nodejs.org/)
