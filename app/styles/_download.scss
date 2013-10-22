@@ -1,22 +1,20 @@
 .download {
   background-color: #f5f5f5;
-  background: url(../images/hero.jpg) no-repeat center top;
+  background: url(../images/lantern-bg.png) no-repeat center top;
   background-size: cover;
-  text-align: center;
 }
 
 .signup {
   .panel-subtitle {
     color: $lnt-yellow;
-    margin: 28px 0;
   }
   .form-title {
     color: $lnt-pale-yellow;
-    margin: 18px 0;
+    font-size: 22px;
   }
   input[type=email] {
     text-align: center;
-    background: #333;
+    background: #666;
     color: $lnt-pale-yellow;
     border: 1px solid #222 !important;
     font-weight: bold;
@@ -29,32 +27,32 @@
 
     &::-webkit-input-placeholder {
       text-align: center;
-      color: #666;
+      color: #fff;
     }
 
     &:-moz-placeholder { /* Firefox 18- */
       text-align: center;
-      color: #666;
+      color: #fff;
     }
 
     &::-moz-placeholder {  /* Firefox 19+ */
       text-align: center;
-      color: #666;
+      color: #fff;
     }
 
     &:-ms-input-placeholder {
       text-align: center;
-      color: #666;
+      color: #fff;
     }
+    
   }
   input[type=submit] {
     @include single-transition(all, 0.5s);
+    background-color: #555;
   }
 }
 
 .panel {
-  background: rgba(0,0,0,0.69);
-  padding: 30px 0;
   color: #fff;
   display: inline-block;
   max-width: 700px;
@@ -125,18 +123,46 @@
 
 .panel-title {
   line-height: 1.2;
-  margin: 0 25px 25px;
 }
 
 .panel-text {
-  padding: 15px 0;
   line-height: 1.2;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  margin: 0 25px 25px;
   display: inline-block;
-
+  
   p { margin: 0; }
+  
+  p:first-of-type {
+      font-size: 20px;
+  }
+  
+  p:last-of-type {
+      margin-top: 90px;
+  }
+}
+
+.video-panel {
+    width: 42%;
+    text-align: center;
+    color: #fff;
+    
+    h4 {
+        font-weight: 300;
+    }
+    
+    .video-snapshot {
+        -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+        border: 5px solid #ccc;
+    }
+    
+    .play-button {
+        $wdth: 86px;
+        $hght: 61px;
+        width: $wdth;
+        height: $hght;
+        position: relative;
+        top: -160px;
+        cursor: pointer;
+    }
 }
 
 .data-list {

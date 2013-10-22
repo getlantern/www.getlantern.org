@@ -35,44 +35,63 @@
 
     <!-- site content starts here -->
     <div id="content-container">
-      <header id="topbar" class="header">
-        <nav class="lang-chooser btn-group dropdown pull-right">
-          <a class="btn btn-inverse dropdown-toggle">
-            <span class="icon-globe"></span>
-            <span class="active-lang">{{activeLang.name}}</span>
-            <span class="caret"></span>
-          </a>
-          <ul class="lang-list dropdown-menu">
-            <li ng-repeat="lang in constants.LANGS">
-              <a ng-show="lang.code == activeLang.code" class="active-lang">{{lang.name}}</a>
-              <a ng-click="changeLang(lang.code)" ng-hide="lang.code == activeLang.code">{{lang.name}}</a>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <a ng-href="{{constants.HELP_TRANSLATE_URL}}" target="_blank" ng-bind-template="{{'HELP_TRANSLATE' | translate}}">
-                Help Translate
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <div class="wrap clearfix">
-          <div class="site-logo">
-            <a href="/">
-              <img src="images/lantern-logo.png" alt="Lantern" />
-              <span class="beta" ng-bind-template="{{'BETA' | translate}}">Beta</span>
-            </a>
-          </div>
-        </div>
-      </header>
+        <header id="topbar" class="header">
+            <div class="wrap clearfix">
+                <nav class="lang-chooser btn-group dropdown pull-right">
+                    <a class="btn btn-inverse dropdown-toggle">
+                        <span class="icon-globe"></span>
+                        <span class="active-lang">{{activeLang.name}}</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="lang-list dropdown-menu">
+                        <li ng-repeat="lang in constants.LANGS">
+                            <a ng-show="lang.code == activeLang.code" class="active-lang">{{lang.name}}</a>
+                            <a ng-click="changeLang(lang.code)" ng-hide="lang.code == activeLang.code">{{lang.name}}</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a ng-href="{{constants.HELP_TRANSLATE_URL}}" target="_blank" ng-bind-template="{{'HELP_TRANSLATE' | translate}}">
+                                Help Translate
+                            </a>
+                        </li>
+                    </ul>
+                    <nav class="header-links">
+                        <ul class="social-media-icons">
+                            <li><a href="https://twitter.com/getlantern" target="_blank"><span class="icon-twitter"></span></a></li>
+                            <li><a href="https://www.facebook.com/getlantern" target="_blank"><span class="icon-facebook"></span></a></li>
+                            <li><a href="http://get-lantern.tumblr.com/" target="_blank"><span class="icon-tumblr"></span></a></li>
+                            <li class="github"><a href="https://github.com/getlantern/lantern" target="_blank"><span class="icon-github"></span></a></li>
+                            <!--
+                            <li><a href="https://github.com/getlantern/lantern" target="_blank"><span class="icon-googleplus"></span></a></li>
+                            <li><a href="https://github.com/getlantern/lantern" target="_blank"><span class="icon-youtube"></span></a></li>
+                            -->
+                        </ul>
+                    </nav>
+                </nav>
+                <nav class="header-links header-nav-links pull-right clearfix">
+                    <ul id="header-navlink-list" class="clearfix">
+                        <li><a href="{{constants.DOCS_URL}}" target="_blank" ng-bind-template="{{'DOCS' | translate}}" class="pull-right">Docs</a></li>
+                        <li><a href="{{constants.FORUMS_URL}}" target="_blank" ng-bind-template="{{'FORUMS' | translate}}" class="pull-right">Forums</a></li>
+                        <li><a href="#faq" ng-bind-template="{{'FAQ' | translate}}" class="pull-right">FAQ</a></li>
+                    </ul>
+                </nav>
+                <div class="site-logo">
+                    <a href="/">
+                        <img src="images/lantern-logo.png" alt="Lantern" />
+                    </a>
+                </div>
+            </div>
+        </header>
 
       <section class="section download" ng-controller="DownloadCtrl">
-
         <div class="constrained">
-
           <div class="panel">
-            <h1 class="panel-title" ng-bind-template="{{'FREE_THE_INTERNET' | translate}}">Free the Internet</h1>
+            <h1 class="panel-title" ng-bind-template="{{'WHAT_IS_LANTERN' | translate}}">What is Lantern?</h1>
             <div class="panel-text">
-              <p ng-bind-template="{{'SHARE_CONNECTIONS' | translate}}">Securely share connections to defeat censorship</p>
+              <p ng-bind-template="{{'LANTERN_DESCRIPTION_1' | translate}}">Lantern is a network...</p>
+              <br>
+              <br>
+              <p ng-bind-template="{{'LANTERN_DESCRIPTION_2' | translate}}">Lantern is a network...</p>
             </div>
 
             <!-- if we haven't (yet) fetched installer data -->
@@ -81,15 +100,13 @@
             -->
             <!--<section ng-hide="data" class="signup">-->
             <section class="signup">
-              <h3 class="panel-subtitle" ng-bind-template="{{'JOIN_BETA' | translate}}">Join the private beta</h3>
-
               <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
                 <input type="hidden" name="_charset_">
                 <h5 class="form-title" ng-bind-template="{{'REQUEST_INVITE' | translate}}">Request an invite and updates:</h5>
                 <div class="input-append">
                   <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
                     ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
-                    class="input-xlarge" placeholder="email@example.com">
+                    class="input-xlarge" placeholder="Enter your email address">
                   <input type="submit" name="subscribe" class="btn btn-inverse"
                     ng-disabled="signupForm.$invalid"
                     value="+">
@@ -162,6 +179,13 @@
             </div>
             -->
           </div>
+          
+            <div class="video-panel pull-right">
+                <h4>Watch how Lantern works</h4>
+                <img class="video-snapshot" src="images/video-snapshot.jpg" video-on-click>
+                <img class="play-button" src="images/icon-play.png" video-on-click>
+                <div id="video"></div>
+            </div>
         </div>
       </section>
 
@@ -184,12 +208,201 @@
       </div>
       -->
 
-      <section class="section white-panel watch">
-        <img class="video-snapshot" src="images/video-snapshot.jpg" video-on-click>
-        <img class="play-button" src="images/icon-play.png" video-on-click>
-        <div id="video"></div>
-      </section>
-
+        <section class="section white-panel watch">
+            <h3 ng-bind-template="{{'HOW_LANTERN_WORKS' | translate}}">How Lantern Works</h3>
+            <p ng-bind-template="{{'LANTERN_PARAGRAPH_1' | translate}}">Lantern's main goal is...</p>
+            <p ng-bind-template="{{'LANTERN_PARAGRAPH_2' | translate}}">At the core of Lantern is...</p>
+            <div class="input-append">
+                <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
+                    ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
+                    class="input-xlarge" placeholder="Enter your email address">
+                <input type="submit" name="subscribe" class="btn btn-inverse"
+                    ng-disabled="signupForm.$invalid"
+                    value="+">
+            </div>
+            <img class="video-snapshot" src="images/lantern-screenshot.png">
+            
+            <div id="faq" class="clearfix" ng-controller="DownloadCtrl">
+                <h3>Frequently Asked Questions</h3>
+                <p></p>
+                <ul>
+                    <li class="clearfix">
+                        <button ng-click="faq1=!faq1" class="pull-left">+</button>
+                        <div class="faq-item pull-left">
+                            <h5 ng-bind-template="{{'SAFE_TO_USE_QUESTION' | translate}}"></h5>
+                            <div ng-hide="faq1" class="faq-answer">
+                                <p ng-bind-template="{{'SAFE_TO_USE_ANSWER_1' | translate}}"></p>
+                                <p>
+                                    <span ng-bind-template="{{'SAFE_TO_USE_ANSWER_2-1' | translate}}"></span>
+                                    <strong ng-bind-template="{{'SAFE_TO_USE_ANSWER_2-2' | translate}}"></strong>
+                                    <span ng-bind-template="{{'SAFE_TO_USE_ANSWER_2-3' | translate}}"></span>
+                                    <strong ng-bind-template="{{'SAFE_TO_USE_ANSWER_2-4' | translate}}"></strong>
+                                    <span ng-bind-template="{{'SAFE_TO_USE_ANSWER_2-5' | translate}}"></span>
+                                </p>
+                                <p>
+                                    <strong ng-bind-template="{{'SAFE_TO_USE_ANSWER_3-1' | translate}}"></strong>
+                                    <span ng-bind-template="{{'SAFE_TO_USE_ANSWER_3-2' | translate}}"></span>
+                                    <a href="https://www.torproject.org/" target="_blank" ng-bind-template="{{'TOR' | translate}}"></a>
+                                    <span ng-bind-template="{{'SAFE_TO_USE_ANSWER_3-3' | translate}}"></span>
+                                </p>
+                                <p ng-bind-template="{{'SAFE_TO_USE_ANSWER_4' | translate}}"></p>
+                                <p ng-bind-template="{{'SAFE_TO_USE_ANSWER_5' | translate}}"></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <button ng-click="faq2=!faq2" class="pull-left">+</button>
+                        <div class="faq-item pull-left">
+                            <h5 ng-bind-template="{{'CANT_REACH_USERS_QUESTION' | translate}}"></h5>
+                            <div ng-hide="faq2" class="faq-answer">
+                                <p>
+                                    <span ng-bind-template="{{'CANT_REACH_USERS_ANSWER_1-1' | translate}}"></span>
+                                    <a href="https://github.com/getlantern/lantern/wiki/Lantern-Cloud-Servers" target="_blank" ng-bind-template="{{'LANTERN_CLOUD_SERVERS' | translate}}"></a>
+                                    <span ng-bind-template="{{'CANT_REACH_USERS_ANSWER_1-2' | translate}}"></span>
+                                </p>
+                                <p ng-bind-template="{{'CANT_REACH_USERS_ANSWER_2' | translate}}"></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <button ng-click="faq3=!faq3" class="pull-left">+</button>
+                        <div class="faq-item pull-left">
+                            <h5 ng-bind-template="{{'COMPARE_TO_OTHER_TOOLS_QUESTION' | translate}}"></h5>
+                            <div ng-hide="faq3" class="faq-answer">
+                                <p ng-bind-template="{{'COMPARE_TO_OTHER_TOOLS_ANSWER_1' | translate}}"></p>
+                                <p ng-bind-template="{{'COMPARE_TO_OTHER_TOOLS_ANSWER_2' | translate}}"></p>
+                                <p ng-bind-template="{{'COMPARE_TO_OTHER_TOOLS_ANSWER_3' | translate}}"></p>
+                                <p ng-bind-template="{{'COMPARE_TO_OTHER_TOOLS_ANSWER_4' | translate}}"></p>
+                                <p ng-bind-template="{{'COMPARE_TO_OTHER_TOOLS_ANSWER_5' | translate}}"></p>
+                                <p ng-bind-template="{{'COMPARE_TO_OTHER_TOOLS_ANSWER_6' | translate}}"></p>
+                                <p ng-bind-template="{{'COMPARE_TO_OTHER_TOOLS_ANSWER_7' | translate}}"></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li  class="clearfix">
+                        <button ng-click="faq4=!faq4" class="pull-left">+</button>
+                        <div class="faq-item pull-left">
+                            <h5 ng-bind-template="{{'TRUST_NETWORK_QUESTION' | translate}}"></h5>
+                            <div ng-hide="faq4" class="faq-answer">
+                                <p ng-bind-template="{{'TRUST_NETWORK_ANSWER_1' | translate}}"></p>
+                                <p ng-bind-template="{{'TRUST_NETWORK_ANSWER_2' | translate}}"></p>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- <li class="clearfix">
+                        <button ng-click="faq5=!faq5" class="pull-left">+</button>
+                        <div class="faq-item pull-left">
+                            <h5 ng-bind-template="{{'RESISTANT_TO_BLOCKING_QUESTION' | translate}}"></h5>
+                            <div ng-hide="faq5" class="faq-answer">
+                                <p ng-bind-template="{{'RESISTANT_TO_BLOCKING_ANSWER' | translate}}"></p>
+                            </div>
+                        </div>
+                    </li> -->
+                    <li class="clearfix">
+                        <button ng-click="faq6=!faq6" class="pull-left">+</button>
+                        <div class="faq-item pull-left">
+                            <h5 ng-bind-template="{{'DOWNLOAD_LANTERN_QUESTION' | translate}}"></h5>
+                            <div ng-hide="faq6" class="faq-answer">
+                                <p ng-bind-template="{{'DOWNLOAD_LANTERN_ANSWER' | translate}}"></p>
+                                <div class="input-append">
+                                    <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
+                                        ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
+                                        class="input-xlarge" placeholder="Enter your email address">
+                                    <input type="submit" name="subscribe" class="btn btn-inverse"
+                                        ng-disabled="signupForm.$invalid"
+                                        value="+">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <button ng-click="faq7=!faq7" class="pull-left">+</button>
+                        <div class="faq-item pull-left">
+                            <h5 ng-bind-template="{{'CAN_I_STILL_HELP_QUESTION' | translate}}"></h5>
+                            <div ng-hide="faq7" class="faq-answer">
+                                <p>
+                                    <span ng-bind-template="{{'CAN_I_STILL_HELP_ANSWER_1-1' | translate}}"></span>
+                                    <strong ng-bind-template="{{'CAN_I_STILL_HELP_ANSWER_1-2' | translate}}"></strong>
+                                    <span ng-bind-template="{{'CAN_I_STILL_HELP_ANSWER_1-3' | translate}}"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <button ng-click="faq8=!faq8" class="pull-left">+</button>
+                        <div class="faq-item pull-left">
+                            <h5 ng-bind-template="{{'INSTALLED_LANTERN_QUESTION' | translate}}"></h5>
+                            <div ng-hide="faq8" class="faq-answer">
+                                <p ng-bind-template="{{'INSTALLED_LANTERN_ANSWER_1' | translate}}"></p>
+                                <ol>
+                                    <li>
+                                        <p ng-bind-template="{{'INSTALLED_LANTERN_ANSWER_2' | translate}}"></p>
+                                    </li>
+                                    <li>
+                                        <p ng-bind-template="{{'INSTALLED_LANTERN_ANSWER_3' | translate}}"></p>
+                                    </li>
+                                </ol>
+                                <p>
+                                    <span ng-bind-template="{{'INSTALLED_LANTERN_ANSWER_4-1' | translate}}"></span>
+                                    <strong ng-bind-template="{{'INSTALLED_LANTERN_ANSWER_4-2' | translate}}"></strong>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <button ng-click="faq9=!faq9" class="pull-left">+</button>
+                        <div class="faq-item pull-left">
+                            <h5 ng-bind-template="{{'VULNERABLE_TO_HACKERS_QUESTION' | translate}}"></h5>
+                            <div ng-hide="faq9" class="faq-answer">
+                                <p ng-bind-template="{{'VULNERABLE_TO_HACKERS_ANSWER' | translate}}"></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <button ng-click="faq10=!faq10" class="pull-left">+</button>
+                        <div class="faq-item pull-left">
+                            <h5 ng-bind-template="{{'IS_LANTERN_FREE_QUESTION' | translate}}"></h5>
+                            <div ng-hide="faq10" class="faq-answer">
+                                <p>
+                                    <span ng-bind-template="{{'IS_LANTERN_FREE_ANSWER_1-1' | translate}}"></span>
+                                    <a href="https://raw.github.com/getlantern/lantern/master/LICENSE" target="_blank" ng-bind-template="{{'LICENSE' | translate}}"></a>
+                                    <span ng-bind-template="{{'IS_LANTERN_FREE_ANSWER_1-2' | translate}}"></span>
+                                    <a href="https://raw.github.com/wiki/getlantern/lantern/LICENSE.txt" target="_blank" ng-bind-template="{{'FREE_LICENSE' | translate}}"></a>
+                                </p>
+                                <p ng-bind-template="{{'IS_LANTERN_FREE_ANSWER_2' | translate}}"></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <button ng-click="faq11=!faq11" class="pull-left">+</button>
+                        <div class="faq-item pull-left">
+                            <h5 ng-bind-template="{{'CONTRIBUTE_QUESTION' | translate}}"></h5>
+                            <div ng-hide="faq11" class="faq-answer">
+                                <p>
+                                    <span ng-bind-template="{{'CONTRIBUTE_ANSWER_1-1' | translate}}"></span>
+                                    <a href="https://github.com/getlantern/lantern/wiki/Contributing" target="_blank" ng-bind-template="{{'CONTRIBUTING' | translate}}"></a>
+                                    <span ng-bind-template="{{'CONTRIBUTE_ANSWER_1-2' | translate}}"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <button ng-click="faq12=!faq12" class="pull-left">+</button>
+                        <div class="faq-item pull-left">
+                            <h5 ng-bind-template="{{'MORE_QUESTIONS_QUESTION' | translate}}"></h5>
+                            <div ng-hide="faq12" class="faq-answer">
+                                <p>
+                                    <span ng-bind-template="{{'MORE_QUESTIONS_ANSWER_1-1' | translate}}"></span>
+                                    <a href="https://github.com/getlantern/lantern/wiki/%5Bdevelopers%5D-Questions-and-Answers" target="_blank" ng-bind-template="{{'DEVELOPERS_Q&A' | translate}}"></a>
+                                    <span ng-bind-template="{{'MORE_QUESTIONS_ANSWER_1-2' | translate}}"></span>
+                                    <a href="https://groups.google.com/forum/#!forum/lantern-users-en" target="_blank" ng-bind-template="{{'LANTERN_FORUM' | translate}}"></a>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
       <!--
       <section class="section white-panel demo">
         <h1 class="section-title">Over a billion people live without a complete Internet</h1>
@@ -207,38 +420,36 @@
     </div>
 
     <footer id="footer" class="footer">
-      <div class="contrained">
-
-        <div class="footer-logo">
-          <img src="images/lantern-footer-logo.jpg" alt="Lantern" />
+        <div class="contrained">
+            <div class="footer-logo">
+              <img src="images/lantern-footer-logo.jpg" alt="Lantern" />
+            </div>
+    
+            <nav class="footer-links">
+                <ul id="footer-navlink-list">
+                    <li><a href="#faq" ng-bind-template="{{'FAQ' | translate}}">FAQ</a></li>
+                    <li><a href="{{constants.FORUMS_URL}}"  target="_blank" ng-bind-template="{{'FORUMS' | translate}}">Forums</a></li>
+                    <li><a href="{{constants.DOCS_URL}}" target="_blank" ng-bind-template="{{'DOCS' | translate}}">Docs</a></li>
+                </ul>
+            </nav>
+    
+            <nav class="footer-links">
+              <ul class="social-media-icons">
+                <li><a href="https://twitter.com/getlantern" target="_blank"><span class="icon-twitter"></span></a></li>
+                <li><a href="https://www.facebook.com/getlantern" target="_blank"><span class="icon-facebook"></span></a></li>
+                <li><a href="http://get-lantern.tumblr.com/" target="_blank"><span class="icon-tumblr"></span></a></li>
+                <li class="github"><a href="https://github.com/getlantern/lantern" target="_blank"><span class="icon-github"></span></a></li>
+                <!--
+                <li><a href="https://github.com/getlantern/lantern" target="_blank"><span class="icon-googleplus"></span></a></li>
+                <li><a href="https://github.com/getlantern/lantern" target="_blank"><span class="icon-youtube"></span></a></li>
+                -->
+              </ul>
+            </nav>
+    
+            <div class="copyright">
+              <p ng-bind-template="{{'COPYRIGHT' | translate}}">© 2013 Brave New Software</p>
+            </div>
         </div>
-
-        <nav class="footer-links">
-          <ul id="footer-navlink-list">
-            <li><a href="{{constants.FORUMS_URL}}" ng-bind-template="{{'FORUMS' | translate}}">Forums</a></li>
-            <li><a href="{{constants.DOCS_URL}}" ng-bind-template="{{'DOCS' | translate}}">Docs</a></li>
-            <li><a href="{{constants.DEVELOPERS_URL}}" ng-bind-template="{{'DEVELOPERS' | translate}}">Developers</a></li>
-          </ul>
-        </nav>
-
-        <nav class="footer-links">
-          <ul class="social-media-icons">
-            <li><a href="https://twitter.com/getlantern" target="_blank"><span class="icon-twitter"></span></a></li>
-            <li><a href="https://www.facebook.com/getlantern" target="_blank"><span class="icon-facebook"></span></a></li>
-            <li><a href="http://get-lantern.tumblr.com/" target="_blank"><span class="icon-tumblr"></span></a></li>
-            <li class="github"><a href="https://github.com/getlantern/lantern" target="_blank"><span class="icon-github"></span></a></li>
-            <!--
-            <li><a href="https://github.com/getlantern/lantern" target="_blank"><span class="icon-googleplus"></span></a></li>
-            <li><a href="https://github.com/getlantern/lantern" target="_blank"><span class="icon-youtube"></span></a></li>
-            -->
-          </ul>
-        </nav>
-
-        <div class="copyright">
-          <p ng-bind-template="{{'COPYRIGHT' | translate}}">© 2013 Brave New Software</p>
-        </div>
-
-      </div>
     </footer>
     <!-- site content ends here -->
 

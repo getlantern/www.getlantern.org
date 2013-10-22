@@ -31,7 +31,7 @@ angular.module('GetLanternSiteApp')
       },
       fa_IR: {
         code: 'fa_IR',
-        name: 'پارسی',
+        name: 'فارسی',
         dir: 'rtl'
       },
       ar: {
