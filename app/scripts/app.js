@@ -41,7 +41,9 @@ angular.module('GetLanternSiteApp', [
     }
   }])
   .run(['$cookies', '$rootScope', '$translate', 'constants', function ($cookies, $rootScope, $translate, constants) {
-    $rootScope.constants = constants;
+    angular.forEach(constants, function (value, key) {
+      $rootScope[key] = value;
+    });
     $rootScope.activeLang = constants.LANGS[$translate.uses()];
 
     $rootScope.changeLang = function (langCode) {

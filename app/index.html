@@ -43,13 +43,13 @@
             <span class="caret"></span>
           </a>
           <ul class="lang-list dropdown-menu">
-            <li ng-repeat="lang in constants.LANGS">
+            <li ng-repeat="lang in LANGS">
               <a ng-show="lang.code == activeLang.code" class="active-lang">{{lang.name}}</a>
               <a ng-click="changeLang(lang.code)" ng-hide="lang.code == activeLang.code">{{lang.name}}</a>
             </li>
             <li class="divider"></li>
             <li>
-              <a ng-href="{{constants.HELP_TRANSLATE_URL}}" target="_blank" ng-bind-template="{{'HELP_TRANSLATE' | translate}}">
+              <a ng-href="{{HELP_TRANSLATE_URL}}" target="_blank" ng-bind-template="{{'HELP_TRANSLATE' | translate}}">
                 Help Translate
               </a>
             </li>
@@ -57,10 +57,10 @@
         </nav>
         <nav class="pull-right">
           <ul class="social-media-icons">
-            <li><a ng-href="{{constants.TWITTER_URL}}" target="_blank"><span class="icon-twitter"></span></a></li>
-            <li><a ng-href="{{constants.FACEBOOK_URL}}" target="_blank"><span class="icon-facebook"></span></a></li>
-            <li><a ng-href="{{constants.TUMBLR_URL}}" target="_blank"><span class="icon-tumblr"></span></a></li>
-            <li class="github"><a ng-href="{{constants.GITHUB_URL}}" target="_blank"><span class="icon-github"></span></a></li>
+            <li><a ng-href="{{TWITTER_URL}}" target="_blank"><span class="icon-twitter"></span></a></li>
+            <li><a ng-href="{{FACEBOOK_URL}}" target="_blank"><span class="icon-facebook"></span></a></li>
+            <li><a ng-href="{{TUMBLR_URL}}" target="_blank"><span class="icon-tumblr"></span></a></li>
+            <li class="github"><a ng-href="{{GITHUB_URL}}" target="_blank"><span class="icon-github"></span></a></li>
           </ul>
         </nav>
         <div class="wrap clearfix">
@@ -223,19 +223,19 @@
 
         <nav class="footer-links">
           <ul id="footer-navlink-list">
-            <li><a ng-href="{{constants.FORUMS_URL}}" ng-bind-template="{{'FORUMS' | translate}}">Forums</a></li>
-            <li><a ng-href="{{constants.DOCS_URL}}" ng-bind-template="{{'DOCS' | translate}}">Docs</a></li>
-            <li><a ng-href="{{constants.GET_INVOLVED_URL}}" ng-bind-template="{{'GET_INVOLVED' | translate}}">Get Involved</a></li>
+            <li><a ng-href="{{FORUMS_URL}}" ng-bind-template="{{'FORUMS' | translate}}">Forums</a></li>
+            <li><a ng-href="{{DOCS_URL}}" ng-bind-template="{{'DOCS' | translate}}">Docs</a></li>
+            <li><a ng-href="{{GET_INVOLVED_URL}}" ng-bind-template="{{'GET_INVOLVED' | translate}}">Get Involved</a></li>
           </ul>
         </nav>
 
         <nav class="footer-links">
           <!-- XXX DRY .social-media-icons in header -->
           <ul class="social-media-icons">
-            <li><a ng-href="{{constants.TWITTER_URL}}" target="_blank"><span class="icon-twitter"></span></a></li>
-            <li><a ng-href="{{constants.FACEBOOK_URL}}" target="_blank"><span class="icon-facebook"></span></a></li>
-            <li><a ng-href="{{constants.TUMBLR_URL}}" target="_blank"><span class="icon-tumblr"></span></a></li>
-            <li class="github"><a ng-href="{{constants.GITHUB_URL}}" target="_blank"><span class="icon-github"></span></a></li>
+            <li><a ng-href="{{TWITTER_URL}}" target="_blank"><span class="icon-twitter"></span></a></li>
+            <li><a ng-href="{{FACEBOOK_URL}}" target="_blank"><span class="icon-facebook"></span></a></li>
+            <li><a ng-href="{{TUMBLR_URL}}" target="_blank"><span class="icon-tumblr"></span></a></li>
+            <li class="github"><a ng-href="{{GITHUB_URL}}" target="_blank"><span class="icon-github"></span></a></li>
             <!--
             <li><a href="https://github.com/getlantern/lantern" target="_blank"><span class="icon-googleplus"></span></a></li>
             <li><a href="https://github.com/getlantern/lantern" target="_blank"><span class="icon-youtube"></span></a></li>
