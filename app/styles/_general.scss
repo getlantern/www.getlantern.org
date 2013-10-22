@@ -126,3 +126,28 @@ hr {
 
   .cite { text-align: right; }
 }
+
+/* other */
+
+.social-media-icons {
+  @include inline-block-list;
+  font-size: 24px;
+  .icon-github {
+    font-size: 27px;
+  }
+  li {
+    padding: 0 3px;
+    &.github {
+      margin-bottom: -2px;
+    }
+  }
+  a {
+    @include single-transition(color, .5s);
+    text-shadow: 1px 1px 1px #000;
+    color: #fff;
+    &:hover {
+      color: $lnt-pale-teal;
+      text-decoration: none;
+    }
+  }
+}

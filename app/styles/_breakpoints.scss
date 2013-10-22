@@ -1,8 +1,10 @@
 /* Landscape phones and down */
 @media (max-width: 599px) {
 
-  .header .dropdown-toggle .active-lang {
-    display: none;
+  .header {
+    .social-media-icons, .dropdown-toggle .active-lang {
+      display: none;
+    }
   }
 
   .section {

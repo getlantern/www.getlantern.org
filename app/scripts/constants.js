@@ -50,7 +50,12 @@ angular.module('GetLanternSiteApp')
     FORUMS_URL: 'https://groups.google.com/group/lantern-users-en',
     DOCS_URL: 'https://github.com/getlantern/lantern/wiki',
     HELP_TRANSLATE_URL: 'https://github.com/getlantern/lantern/wiki/Translating-Lantern',
-    DEVELOPERS_URL: 'https://github.com/getlantern/lantern'
+    GET_INVOLVED_URL: 'https://github.com/getlantern/lantern/wiki/Get-Involved',
+
+    TWITTER_URL: 'https://twitter.com/getlantern',
+    FACEBOOK_URL: 'https://www.facebook.com/getlantern',
+    TUMBLR_URL: 'http://get-lantern.tumblr.com/',
+    GITHUB_URL: 'https://github.com/getlantern/lantern'
 
   // point this at the real data when it's ready, or point at a not found url
   // to test what happens if we can't reach the installer data or if we take

@@ -53,23 +53,6 @@
 }
 */
 
-.social-media-icons {
-  @include inline-block-list;
-  font-size: 24px;
-  .icon-github {
-    font-size: 27px;
-  }
-  li {
-    padding: 0 3px;
-    &.github {
-      margin-bottom: -2px;
-    }
-  }
-  a:hover {
-    text-decoration: none;
-  }
-}
-
 .copyright {
   padding-bottom: 50px;
 
