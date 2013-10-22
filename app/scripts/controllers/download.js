@@ -77,4 +77,18 @@ angular.module('GetLanternSiteApp')
     $scope.isUbuntu = function (key) {
       return (/UBUNTU/).test(key);
     };
+    
+    $scope.faq1 = true;
+    $scope.faq2 = true;
+    $scope.faq3 = true;
+    $scope.faq4 = true;
+    $scope.faq5 = true;
+    $scope.faq6 = true;
+    $scope.faq7 = true;
+    $scope.faq8 = true;
+    $scope.faq9 = true;
+    $scope.faq10 = true;
+    $scope.faq11 = true;
+    $scope.faq12 = true;
+    
   }]);

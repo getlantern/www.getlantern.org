@@ -1,33 +1,72 @@
 .watch {
   text-align: center;
-  position: relative;
 
-  .play-button {
-    $wdth: 86px;
-    $hght: 61px;
-    width: $wdth;
-    height: $hght;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -$hght / 2.0;
-    margin-left: -$wdth / 2.0;
-    cursor: pointer;
-
-    html.no-touch & {
-      @include single-transition(opacity, .5s);
-      opacity: 0.8;
-      &:hover {
-        opacity: 1.0;
-      }
+    p {
+        margin: 0 auto 11px;
+        text-align: left;
+        width: 85%;
     }
+
+  .app-screenshot {
+    margin-top: 20px;
   }
 
-  .video-snapshot {
-    cursor: pointer;
+}
 
-    &:hover + .play-button {
-      opacity: 1.0;
+#faq {
+    padding: 25px;
+
+    button {
+        display:block;
+        margin-right: 3%;
+        width: 40px;
+        height: 40px;
+        background: #1a729c;
+        box-shadow: 0px -1px 0px #125a7b;
+        -moz-box-shadow:    0px 2px 0px #125a7b;
+        -webkit-box-shadow: 0px 2px 0px #125a7b;
+        box-shadow:         0px 2px 0px #125a7b;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 30px;
     }
-  }
+
+    ul {
+        background: #f6f6f6;
+        padding: 25px;
+        border-radius: 5px;
+
+        li {
+            border-bottom: 1px solid #999;
+            padding: 20px 0;
+        }
+
+        ol {
+            list-style-type: decimal;
+
+            li {
+                border-bottom: none;
+                padding: 0;
+                margin-left: 40px;
+
+                p {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .faq-item {
+            text-align: left;
+            width: 90%;
+
+            .faq-answer {
+
+                p {
+                    width: 100%;
+                }
+            }
+
+        }
+    }
 }

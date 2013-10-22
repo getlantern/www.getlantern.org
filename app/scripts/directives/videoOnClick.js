@@ -8,8 +8,8 @@ angular.module('GetLanternSiteApp')
           snapshot = children[0];
 
       element.bind('click', function () {
-        var width = snapshot.width,
-            height = snapshot.height;
+        var width = 462,
+            height = 264;
         container.html(
           '<iframe id="ytplayer" type="text/html" width="'+width+'" height="'+height+'" '+
           'src="https://www.youtube.com/embed/aiPkCugE-RY?origin=www.getlantern.org&'+

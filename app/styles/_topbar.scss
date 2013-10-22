@@ -1,7 +1,6 @@
 .header {
   display: block;
   background-color: $lnt-teal;
-  padding: 15px 0;
   @include box-shadow(rgba(black, 0.19) 0 1px 0);
   position: relative;
   z-index: 1;
@@ -13,6 +12,8 @@
 
   .lang-chooser {
     margin: 26px 22px 0 0;
+    //text-align: center;
+    //padding: 10px 0 0 30px;
   }
 
   .dropdown-toggle {
@@ -47,12 +48,38 @@
     background-color: #000;
     background: rgba(0, 0, 0, .8);
   }
+
+    .header-links a {
+        -webkit-transition: color 0.5s;
+        transition: color 0.5s;
+        color: #7d8d95;
+    }
+
+    .header-links a:hover {
+        color: #ffffff;
+    }
+
+    .header-nav-links {
+        width: 30%;
+    }
+}
+
+#header-navlink-list a {
+    display: block;
+    width: 33%;
+    border-right: 1px solid #7d8d95;
+    text-align: center;
+    line-height: 90px;
+    font-size: 24px;
+    @include delimited-list('∙');
+    font-family: 'Oswald', Helvetica, Arial, sans-serif;
 }
 
 .site-logo {
   position: relative;
   width: 153px;
   padding-bottom: 12px;
+  margin-top: 10px;
 
   .beta {
     position: absolute;
