@@ -220,7 +220,7 @@
                     ng-disabled="signupForm.$invalid"
                     value="+">
             </div>
-            <img class="video-snapshot" src="images/lantern-screenshot.png">
+            <img class="video-snapshot" src="images/lantern-connect9.gif">
             
             <div id="faq" class="clearfix" ng-controller="DownloadCtrl">
                 <h3>Frequently Asked Questions</h3>
@@ -271,31 +271,37 @@
                                 <p ng-bind-template="{{'COMPARE_TO_OTHER_TOOLS_ANSWER_2' | translate}}"></p>
                                 <p ng-bind-template="{{'COMPARE_TO_OTHER_TOOLS_ANSWER_3' | translate}}"></p>
                                 <p ng-bind-template="{{'COMPARE_TO_OTHER_TOOLS_ANSWER_4' | translate}}"></p>
-                                <p ng-bind-template="{{'COMPARE_TO_OTHER_TOOLS_ANSWER_5' | translate}}"></p>
-                                <p ng-bind-template="{{'COMPARE_TO_OTHER_TOOLS_ANSWER_6' | translate}}"></p>
-                                <p ng-bind-template="{{'COMPARE_TO_OTHER_TOOLS_ANSWER_7' | translate}}"></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <button ng-click="faq4=!faq4" class="pull-left">+</button>
+                        <div class="faq-item pull-left">
+                            <h5 ng-bind-template="{{'PROXY_BY_DEFAULT_QUESTION' | translate}}"></h5>
+                            <div ng-hide="faq4" class="faq-answer">
+                                <p ng-bind-template="{{'PROXY_BY_DEFAULT_ANSWER_1' | translate}}"></p>
+                                <p ng-bind-template="{{'PROXY_BY_DEFAULT_ANSWER_2' | translate}}"></p>
                             </div>
                         </div>
                     </li>
                     <li  class="clearfix">
-                        <button ng-click="faq4=!faq4" class="pull-left">+</button>
+                        <button ng-click="faq5=!faq5" class="pull-left">+</button>
                         <div class="faq-item pull-left">
                             <h5 ng-bind-template="{{'TRUST_NETWORK_QUESTION' | translate}}"></h5>
-                            <div ng-hide="faq4" class="faq-answer">
+                            <div ng-hide="faq5" class="faq-answer">
                                 <p ng-bind-template="{{'TRUST_NETWORK_ANSWER_1' | translate}}"></p>
                                 <p ng-bind-template="{{'TRUST_NETWORK_ANSWER_2' | translate}}"></p>
+                                <p ng-bind-template="{{'TRUST_NETWORK_ANSWER_3' | translate}}"></p>
+                                <p ng-bind-template="{{'TRUST_NETWORK_ANSWER_4' | translate}}"></p>
+                                <ul>
+                                    <li>
+                                        <p ng-bind-template="{{'TRUST_NETWORK_ANSWER_5' | translate}}"></p>
+                                    </li>
+                                </ul>
+                                
                             </div>
                         </div>
                     </li>
-                    <!-- <li class="clearfix">
-                        <button ng-click="faq5=!faq5" class="pull-left">+</button>
-                        <div class="faq-item pull-left">
-                            <h5 ng-bind-template="{{'RESISTANT_TO_BLOCKING_QUESTION' | translate}}"></h5>
-                            <div ng-hide="faq5" class="faq-answer">
-                                <p ng-bind-template="{{'RESISTANT_TO_BLOCKING_ANSWER' | translate}}"></p>
-                            </div>
-                        </div>
-                    </li> -->
                     <li class="clearfix">
                         <button ng-click="faq6=!faq6" class="pull-left">+</button>
                         <div class="faq-item pull-left">
