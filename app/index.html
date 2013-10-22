@@ -301,12 +301,15 @@
                             <div ng-hide="faq6" class="faq-answer">
                                 <p ng-bind-template="{{'DOWNLOAD_LANTERN_ANSWER' | translate}}"></p>
                                 <div class="input-append">
+                                  <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
+                                    <input type="hidden" name="_charset_">
                                     <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
                                         ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
                                         class="input-xlarge" placeholder="email@example.com">
                                     <input type="submit" name="subscribe" class="btn btn-inverse"
                                         ng-disabled="signupForm.$invalid"
                                         value="+">
+                                  </form>
                                 </div>
                             </div>
                         </div>
