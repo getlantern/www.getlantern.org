@@ -58,10 +58,10 @@
         <!--
         <nav class="pull-right">
           <ul class="social-media-icons">
-            <li><a ng-href="{{TWITTER_URL}}" target="_blank"><span class="icon-twitter"></span></a></li>
-            <li><a ng-href="{{FACEBOOK_URL}}" target="_blank"><span class="icon-facebook"></span></a></li>
-            <li><a ng-href="{{TUMBLR_URL}}" target="_blank"><span class="icon-tumblr"></span></a></li>
-            <li class="github"><a ng-href="{{GITHUB_URL}}" target="_blank"><span class="icon-github"></span></a></li>
+            <li><a target="_blank" ng-href="{{TWITTER_URL}}" target="_blank"><span class="icon-twitter"></span></a></li>
+            <li><a target="_blank" ng-href="{{FACEBOOK_URL}}" target="_blank"><span class="icon-facebook"></span></a></li>
+            <li><a target="_blank" ng-href="{{TUMBLR_URL}}" target="_blank"><span class="icon-tumblr"></span></a></li>
+            <li class="github"><a target="_blank" ng-href="{{GITHUB_URL}}" target="_blank"><span class="icon-github"></span></a></li>
           </ul>
         </nav>
         -->
@@ -216,26 +216,15 @@
             <img class="app-screenshot" src="images/lantern-connect9.gif">
 
             <div id="faq" class="clearfix" ng-controller="DownloadCtrl">
-                <h3>Frequently Asked Questions</h3>
+              <h3 ng-bind-template="{{'QUESTIONS_AND_ANSWERS' | translate}}">Questions and Answers</h3>
                 <ul>
                     <li class="clearfix">
                         <button ng-click="faq1=!faq1" class="pull-left">{{faq1 && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
-                            <h5 ng-bind-template="{{'SAFE_TO_USE_QUESTION' | translate}}"></h5>
+                          <a ng-click="faq1=!faq1"><h5 ng-bind-template="{{'SAFE_TO_USE_QUESTION' | translate}}"></h5></a>
                             <div ng-hide="faq1" class="faq-answer">
-                                <p>
-                                    <span ng-bind-template="{{'SAFE_TO_USE_ANSWER_1-1' | translate}}"></span>
-                                    <strong ng-bind-template="{{'SAFE_TO_USE_ANSWER_1-2' | translate}}"></strong>
-                                    <span ng-bind-template="{{'SAFE_TO_USE_ANSWER_1-3' | translate}}"></span>
-                                    <strong ng-bind-template="{{'SAFE_TO_USE_ANSWER_1-4' | translate}}"></strong>
-                                    <span ng-bind-template="{{'SAFE_TO_USE_ANSWER_1-5' | translate}}"></span>
-                                </p>
-                                <p>
-                                    <strong ng-bind-template="{{'SAFE_TO_USE_ANSWER_2-1' | translate}}"></strong>
-                                    <span ng-bind-template="{{'SAFE_TO_USE_ANSWER_2-2' | translate}}"></span>
-                                    <a href="https://www.torproject.org/" target="_blank" ng-bind-template="{{'TOR' | translate}}"></a>
-                                    <span ng-bind-template="{{'SAFE_TO_USE_ANSWER_2-3' | translate}}"></span>
-                                </p>
+                                <p ng-bind-html-unsafe="'SAFE_TO_USE_ANSWER_1' | translate"></p>
+                                <p ng-bind-html-unsafe="'SAFE_TO_USE_ANSWER_2' | translate"></p>
                                 <p ng-bind-template="{{'SAFE_TO_USE_ANSWER_3' | translate}}"></p>
                             </div>
                         </div>
@@ -243,33 +232,29 @@
                     <li class="clearfix">
                         <button ng-click="faq2=!faq2" class="pull-left">{{faq2 && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
-                            <h5 ng-bind-template="{{'CANT_REACH_USERS_QUESTION' | translate}}"></h5>
+                            <a ng-click="faq2=!faq2"><h5 ng-bind-template="{{'CANT_REACH_USERS_QUESTION' | translate}}"></h5></a>
                             <div ng-hide="faq2" class="faq-answer">
-                                <p>
-                                    <span ng-bind-template="{{'CANT_REACH_USERS_ANSWER_1-1' | translate}}"></span>
-                                    <a href="https://github.com/getlantern/lantern/wiki/Lantern-Cloud-Servers" target="_blank" ng-bind-template="{{'LANTERN_CLOUD_SERVERS' | translate}}"></a>
-                                    <span ng-bind-template="{{'CANT_REACH_USERS_ANSWER_1-2' | translate}}"></span>
-                                </p>
-                                <p ng-bind-template="{{'CANT_REACH_USERS_ANSWER_2' | translate}}"></p>
+                              <p ng-bind-html-unsafe="'CANT_REACH_USERS_ANSWER_1' | translate"></p>
+                              <p ng-bind-template="{{'CANT_REACH_USERS_ANSWER_2' | translate}}"></p>
                             </div>
                         </div>
                     </li>
                     <li class="clearfix">
                         <button ng-click="faq3=!faq3" class="pull-left">{{faq3 && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
-                            <h5 ng-bind-template="{{'COMPARE_TO_OTHER_TOOLS_QUESTION' | translate}}"></h5>
+                            <a ng-click="faq3=!faq3"><h5 ng-bind-template="{{'COMPARE_TO_OTHER_TOOLS_QUESTION' | translate}}"></h5></a>
                             <div ng-hide="faq3" class="faq-answer">
-                                <p ng-bind-template="{{'COMPARE_TO_OTHER_TOOLS_ANSWER_1' | translate}}"></p>
+                                <p ng-bind-html-unsafe="'COMPARE_TO_OTHER_TOOLS_ANSWER_1' | translate"></p>
                                 <p ng-bind-template="{{'COMPARE_TO_OTHER_TOOLS_ANSWER_2' | translate}}"></p>
                                 <p ng-bind-template="{{'COMPARE_TO_OTHER_TOOLS_ANSWER_3' | translate}}"></p>
-                                <p ng-bind-template="{{'COMPARE_TO_OTHER_TOOLS_ANSWER_4' | translate}}"></p>
+                                <p ng-bind-html-unsafe="'COMPARE_TO_OTHER_TOOLS_ANSWER_4' | translate"></p>
                             </div>
                         </div>
                     </li>
                     <li class="clearfix">
                         <button ng-click="faq4=!faq4" class="pull-left">{{faq4 && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
-                            <h5 ng-bind-template="{{'PROXY_BY_DEFAULT_QUESTION' | translate}}"></h5>
+                            <a ng-click="faq4=!faq4"><h5 ng-bind-template="{{'PROXY_BY_DEFAULT_QUESTION' | translate}}"></h5></a>
                             <div ng-hide="faq4" class="faq-answer">
                                 <p ng-bind-template="{{'PROXY_BY_DEFAULT_ANSWER_1' | translate}}"></p>
                                 <p ng-bind-template="{{'PROXY_BY_DEFAULT_ANSWER_2' | translate}}"></p>
@@ -279,25 +264,18 @@
                     <li  class="clearfix">
                         <button ng-click="faq5=!faq5" class="pull-left">{{faq5 && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
-                            <h5 ng-bind-template="{{'TRUST_NETWORK_QUESTION' | translate}}"></h5>
+                            <a ng-click="faq5=!faq5"><h5 ng-bind-template="{{'TRUST_NETWORK_QUESTION' | translate}}"></h5></a>
                             <div ng-hide="faq5" class="faq-answer">
                                 <p ng-bind-template="{{'TRUST_NETWORK_ANSWER_1' | translate}}"></p>
-                                <p ng-bind-template="{{'TRUST_NETWORK_ANSWER_2' | translate}}"></p>
+                                <p ng-bind-html-unsafe="'TRUST_NETWORK_ANSWER_2' | translate"></p>
                                 <p ng-bind-template="{{'TRUST_NETWORK_ANSWER_3' | translate}}"></p>
-                                <p ng-bind-template="{{'TRUST_NETWORK_ANSWER_4' | translate}}"></p>
-                                <ul>
-                                    <li>
-                                        <p ng-bind-template="{{'TRUST_NETWORK_ANSWER_5' | translate}}"></p>
-                                    </li>
-                                </ul>
-
                             </div>
                         </div>
                     </li>
                     <li class="clearfix">
                         <button ng-click="faq6=!faq6" class="pull-left">{{faq6 && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
-                            <h5 ng-bind-template="{{'DOWNLOAD_LANTERN_QUESTION' | translate}}"></h5>
+                          <a ng-click="faq6=!faq6"><h5 ng-bind-template="{{'DOWNLOAD_LANTERN_QUESTION' | translate}}"></h5></a>
                             <div ng-hide="faq6" class="faq-answer">
                                 <p ng-bind-template="{{'DOWNLOAD_LANTERN_ANSWER' | translate}}"></p>
                                 <div class="input-append">
@@ -317,23 +295,19 @@
                     <li class="clearfix">
                         <button ng-click="faq7=!faq7" class="pull-left">{{faq7 && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
-                            <h5 ng-bind-template="{{'CAN_I_STILL_HELP_QUESTION' | translate}}"></h5>
+                            <a ng-click="faq7=!faq7"><h5 ng-bind-template="{{'CAN_I_STILL_HELP_QUESTION' | translate}}"></h5></a>
                             <div ng-hide="faq7" class="faq-answer">
-                                <p>
-                                    <span ng-bind-template="{{'CAN_I_STILL_HELP_ANSWER_1-1' | translate}}"></span>
-                                    <strong ng-bind-template="{{'CAN_I_STILL_HELP_ANSWER_1-2' | translate}}"></strong>
-                                    <span ng-bind-template="{{'CAN_I_STILL_HELP_ANSWER_1-3' | translate}}"></span>
-                                </p>
+                                <p ng-bind-html-unsafe="'CAN_I_STILL_HELP_ANSWER_1' | translate"></p>
                             </div>
                         </div>
                     </li>
                     <li class="clearfix">
                         <button ng-click="faq8=!faq8" class="pull-left">{{faq8 && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
-                            <h5 ng-bind-template="{{'INSTALLED_LANTERN_QUESTION' | translate}}"></h5>
+                            <a ng-click="faq8=!faq8"><h5 ng-bind-template="{{'INSTALLED_LANTERN_QUESTION' | translate}}"></h5></a>
                             <div ng-hide="faq8" class="faq-answer">
                                 <p ng-bind-template="{{'INSTALLED_LANTERN_ANSWER_1' | translate}}"></p>
-                                <ol>
+                                <ol style="font-weight: bold">
                                     <li>
                                         <p ng-bind-template="{{'INSTALLED_LANTERN_ANSWER_2' | translate}}"></p>
                                     </li>
@@ -341,17 +315,14 @@
                                         <p ng-bind-template="{{'INSTALLED_LANTERN_ANSWER_3' | translate}}"></p>
                                     </li>
                                 </ol>
-                                <p>
-                                    <span ng-bind-template="{{'INSTALLED_LANTERN_ANSWER_4-1' | translate}}"></span>
-                                    <strong ng-bind-template="{{'INSTALLED_LANTERN_ANSWER_4-2' | translate}}"></strong>
-                                </p>
+                                <p ng-bind-html-unsafe="'INSTALLED_LANTERN_ANSWER_4' | translate"></p>
                             </div>
                         </div>
                     </li>
                     <li class="clearfix">
                         <button ng-click="faq9=!faq9" class="pull-left">{{faq9 && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
-                            <h5 ng-bind-template="{{'VULNERABLE_TO_HACKERS_QUESTION' | translate}}"></h5>
+                            <a ng-click="faq9=!faq9"><h5 ng-bind-template="{{'VULNERABLE_TO_HACKERS_QUESTION' | translate}}"></h5></a>
                             <div ng-hide="faq9" class="faq-answer">
                                 <p ng-bind-template="{{'VULNERABLE_TO_HACKERS_ANSWER' | translate}}"></p>
                             </div>
@@ -360,14 +331,9 @@
                     <li class="clearfix">
                         <button ng-click="faq10=!faq10" class="pull-left">{{faq10 && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
-                            <h5 ng-bind-template="{{'IS_LANTERN_FREE_QUESTION' | translate}}"></h5>
+                            <a ng-click="faq10=!faq10"><h5 ng-bind-template="{{'IS_LANTERN_FREE_QUESTION' | translate}}"></h5></a>
                             <div ng-hide="faq10" class="faq-answer">
-                                <p>
-                                    <span ng-bind-template="{{'IS_LANTERN_FREE_ANSWER_1-1' | translate}}"></span>
-                                    <a href="https://raw.github.com/getlantern/lantern/master/LICENSE" target="_blank" ng-bind-template="{{'LICENSE' | translate}}"></a>
-                                    <span ng-bind-template="{{'IS_LANTERN_FREE_ANSWER_1-2' | translate}}"></span>
-                                    <a href="https://raw.github.com/wiki/getlantern/lantern/LICENSE.txt" target="_blank" ng-bind-template="{{'FREE_LICENSE' | translate}}"></a>
-                                </p>
+                                <p ng-bind-html-unsafe="'IS_LANTERN_FREE_ANSWER_1' | translate"></p>
                                 <p ng-bind-template="{{'IS_LANTERN_FREE_ANSWER_2' | translate}}"></p>
                             </div>
                         </div>
@@ -375,27 +341,18 @@
                     <li class="clearfix">
                         <button ng-click="faq11=!faq11" class="pull-left">{{faq11 && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
-                            <h5 ng-bind-template="{{'CONTRIBUTE_QUESTION' | translate}}"></h5>
+                            <a ng-click="faq11=!faq11"><h5 ng-bind-template="{{'CONTRIBUTE_QUESTION' | translate}}"></h5></a>
                             <div ng-hide="faq11" class="faq-answer">
-                                <p>
-                                    <span ng-bind-template="{{'CONTRIBUTE_ANSWER_1-1' | translate}}"></span>
-                                    <a href="https://github.com/getlantern/lantern/wiki/Contributing" target="_blank" ng-bind-template="{{'CONTRIBUTING' | translate}}"></a>
-                                    <span ng-bind-template="{{'CONTRIBUTE_ANSWER_1-2' | translate}}"></span>
-                                </p>
+                                <p ng-bind-html-unsafe="'CONTRIBUTE_ANSWER_1' | translate"></p>
                             </div>
                         </div>
                     </li>
                     <li class="clearfix">
                         <button ng-click="faq12=!faq12" class="pull-left">{{faq12 && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
-                            <h5 ng-bind-template="{{'MORE_QUESTIONS_QUESTION' | translate}}"></h5>
+                            <a ng-click="faq12=!faq12"><h5 ng-bind-template="{{'MORE_QUESTIONS_QUESTION' | translate}}"></h5></a>
                             <div ng-hide="faq12" class="faq-answer">
-                                <p>
-                                    <span ng-bind-template="{{'MORE_QUESTIONS_ANSWER_1-1' | translate}}"></span>
-                                    <a href="https://github.com/getlantern/lantern/wiki/%5Bdevelopers%5D-Questions-and-Answers" target="_blank" ng-bind-template="{{'DEVELOPERS_Q&A' | translate}}"></a>
-                                    <span ng-bind-template="{{'MORE_QUESTIONS_ANSWER_1-2' | translate}}"></span>
-                                    <a href="https://groups.google.com/forum/#!forum/lantern-users-en" target="_blank" ng-bind-template="{{'LANTERN_FORUM' | translate}}"></a>
-                                </p>
+                                <p ng-bind-html-unsafe="'MORE_QUESTIONS_ANSWER_1' | translate"></p>
                             </div>
                         </div>
                     </li>
@@ -427,22 +384,22 @@
 
         <nav class="footer-links">
           <ul id="footer-navlink-list">
-            <li><a ng-href="{{FORUMS_URL}}" ng-bind-template="{{'FORUMS' | translate}}">Forums</a></li>
-            <li><a ng-href="{{DOCS_URL}}" ng-bind-template="{{'DOCS' | translate}}">Docs</a></li>
-            <li><a ng-href="{{GET_INVOLVED_URL}}" ng-bind-template="{{'GET_INVOLVED' | translate}}">Get Involved</a></li>
+            <li><a target="_blank" ng-href="{{FORUMS_URL}}" ng-bind-template="{{'FORUMS' | translate}}">Forums</a></li>
+            <li><a target="_blank" ng-href="{{DOCS_URL}}" ng-bind-template="{{'DOCS' | translate}}">Docs</a></li>
+            <li><a target="_blank" ng-href="{{GET_INVOLVED_URL}}" ng-bind-template="{{'GET_INVOLVED' | translate}}">Get Involved</a></li>
           </ul>
         </nav>
 
         <nav class="footer-links">
           <!-- XXX DRY .social-media-icons in header -->
           <ul class="social-media-icons">
-            <li><a ng-href="{{TWITTER_URL}}" target="_blank"><span class="icon-twitter"></span></a></li>
-            <li><a ng-href="{{FACEBOOK_URL}}" target="_blank"><span class="icon-facebook"></span></a></li>
-            <li><a ng-href="{{TUMBLR_URL}}" target="_blank"><span class="icon-tumblr"></span></a></li>
-            <li class="github"><a ng-href="{{GITHUB_URL}}" target="_blank"><span class="icon-github"></span></a></li>
+            <li><a target="_blank" ng-href="{{TWITTER_URL}}" target="_blank"><span class="icon-twitter"></span></a></li>
+            <li><a target="_blank" ng-href="{{FACEBOOK_URL}}" target="_blank"><span class="icon-facebook"></span></a></li>
+            <li><a target="_blank" ng-href="{{TUMBLR_URL}}" target="_blank"><span class="icon-tumblr"></span></a></li>
+            <li class="github"><a target="_blank" ng-href="{{GITHUB_URL}}" target="_blank"><span class="icon-github"></span></a></li>
             <!--
-            <li><a ng-href="{{GOOGLEPLUS_URL}}" target="_blank"><span class="icon-googleplus"></span></a></li>
-            <li><a ng-href="{{YOUTUBE_URL}}" target="_blank"><span class="icon-youtube"></span></a></li>
+            <li><a target="_blank" ng-href="{{GOOGLEPLUS_URL}}" target="_blank"><span class="icon-googleplus"></span></a></li>
+            <li><a target="_blank" ng-href="{{YOUTUBE_URL}}" target="_blank"><span class="icon-youtube"></span></a></li>
             -->
           </ul>
         </nav>
