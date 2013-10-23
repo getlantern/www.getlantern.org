@@ -40,7 +40,7 @@ angular.module('GetLanternSiteApp', [
       return bestMatch;
     }
   }])
-  .run(['$cookies', '$rootScope', '$translate', 'constants', function ($cookies, $rootScope, $translate, constants) {
+  .run(['$rootScope', '$translate', 'constants', function ($rootScope, $translate, constants) {
     angular.forEach(constants, function (value, key) {
       $rootScope[key] = value;
     });
