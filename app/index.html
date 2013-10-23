@@ -224,7 +224,7 @@
                         <button ng-click="faq1=!faq1" class="pull-left">{{faq1 && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
                           <a ng-click="faq1=!faq1"><h5 ng-bind-template="{{'SAFE_TO_USE_QUESTION' | translate}}"></h5></a>
-                            <div ng-hide="faq1" class="faq-answer">
+                            <div collapse="faq1" class="faq-answer">
                                 <p ng-bind-html-unsafe="'SAFE_TO_USE_ANSWER_1' | translate"></p>
                                 <p ng-bind-html-unsafe="'SAFE_TO_USE_ANSWER_2' | translate"></p>
                                 <p ng-bind-template="{{'SAFE_TO_USE_ANSWER_3' | translate}}"></p>
@@ -235,7 +235,7 @@
                         <button ng-click="faq2=!faq2" class="pull-left">{{faq2 && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
                             <a ng-click="faq2=!faq2"><h5 ng-bind-template="{{'CANT_REACH_USERS_QUESTION' | translate}}"></h5></a>
-                            <div ng-hide="faq2" class="faq-answer">
+                            <div collapse="faq2" class="faq-answer">
                               <p ng-bind-html-unsafe="'CANT_REACH_USERS_ANSWER_1' | translate"></p>
                               <p ng-bind-template="{{'CANT_REACH_USERS_ANSWER_2' | translate}}"></p>
                             </div>
@@ -245,7 +245,7 @@
                         <button ng-click="faq3=!faq3" class="pull-left">{{faq3 && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
                             <a ng-click="faq3=!faq3"><h5 ng-bind-template="{{'COMPARE_TO_OTHER_TOOLS_QUESTION' | translate}}"></h5></a>
-                            <div ng-hide="faq3" class="faq-answer">
+                            <div collapse="faq3" class="faq-answer">
                                 <p ng-bind-html-unsafe="'COMPARE_TO_OTHER_TOOLS_ANSWER_1' | translate"></p>
                                 <p ng-bind-template="{{'COMPARE_TO_OTHER_TOOLS_ANSWER_2' | translate}}"></p>
                                 <p ng-bind-template="{{'COMPARE_TO_OTHER_TOOLS_ANSWER_3' | translate}}"></p>
@@ -257,7 +257,7 @@
                         <button ng-click="faq4=!faq4" class="pull-left">{{faq4 && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
                             <a ng-click="faq4=!faq4"><h5 ng-bind-template="{{'PROXY_BY_DEFAULT_QUESTION' | translate}}"></h5></a>
-                            <div ng-hide="faq4" class="faq-answer">
+                            <div collapse="faq4" class="faq-answer">
                                 <p ng-bind-template="{{'PROXY_BY_DEFAULT_ANSWER_1' | translate}}"></p>
                                 <p ng-bind-template="{{'PROXY_BY_DEFAULT_ANSWER_2' | translate}}"></p>
                             </div>
@@ -267,7 +267,7 @@
                         <button ng-click="faq5=!faq5" class="pull-left">{{faq5 && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
                             <a ng-click="faq5=!faq5"><h5 ng-bind-template="{{'TRUST_NETWORK_QUESTION' | translate}}"></h5></a>
-                            <div ng-hide="faq5" class="faq-answer">
+                            <div collapse="faq5" class="faq-answer">
                                 <p ng-bind-template="{{'TRUST_NETWORK_ANSWER_1' | translate}}"></p>
                                 <p ng-bind-html-unsafe="'TRUST_NETWORK_ANSWER_2' | translate"></p>
                                 <p ng-bind-template="{{'TRUST_NETWORK_ANSWER_3' | translate}}"></p>
@@ -278,7 +278,7 @@
                         <button ng-click="faq6=!faq6" class="pull-left">{{faq6 && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
                           <a ng-click="faq6=!faq6"><h5 ng-bind-template="{{'DOWNLOAD_LANTERN_QUESTION' | translate}}"></h5></a>
-                            <div ng-hide="faq6" class="faq-answer">
+                            <div collapse="faq6" class="faq-answer">
                                 <p ng-bind-template="{{'DOWNLOAD_LANTERN_ANSWER' | translate}}"></p>
                                 <div class="input-append">
                                   <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
@@ -298,7 +298,7 @@
                         <button ng-click="faq7=!faq7" class="pull-left">{{faq7 && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
                             <a ng-click="faq7=!faq7"><h5 ng-bind-template="{{'CAN_I_STILL_HELP_QUESTION' | translate}}"></h5></a>
-                            <div ng-hide="faq7" class="faq-answer">
+                            <div collapse="faq7" class="faq-answer">
                                 <p ng-bind-html-unsafe="'CAN_I_STILL_HELP_ANSWER_1' | translate"></p>
                             </div>
                         </div>
@@ -307,7 +307,7 @@
                         <button ng-click="faq8=!faq8" class="pull-left">{{faq8 && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
                             <a ng-click="faq8=!faq8"><h5 ng-bind-template="{{'INSTALLED_LANTERN_QUESTION' | translate}}"></h5></a>
-                            <div ng-hide="faq8" class="faq-answer">
+                            <div collapse="faq8" class="faq-answer">
                                 <p ng-bind-template="{{'INSTALLED_LANTERN_ANSWER_1' | translate}}"></p>
                                 <ol style="font-weight: bold">
                                     <li>
@@ -325,7 +325,7 @@
                         <button ng-click="faq9=!faq9" class="pull-left">{{faq9 && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
                             <a ng-click="faq9=!faq9"><h5 ng-bind-template="{{'VULNERABLE_TO_HACKERS_QUESTION' | translate}}"></h5></a>
-                            <div ng-hide="faq9" class="faq-answer">
+                            <div collapse="faq9" class="faq-answer">
                                 <p ng-bind-template="{{'VULNERABLE_TO_HACKERS_ANSWER' | translate}}"></p>
                             </div>
                         </div>
@@ -334,7 +334,7 @@
                         <button ng-click="faq10=!faq10" class="pull-left">{{faq10 && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
                             <a ng-click="faq10=!faq10"><h5 ng-bind-template="{{'IS_LANTERN_FREE_QUESTION' | translate}}"></h5></a>
-                            <div ng-hide="faq10" class="faq-answer">
+                            <div collapse="faq10" class="faq-answer">
                                 <p ng-bind-html-unsafe="'IS_LANTERN_FREE_ANSWER_1' | translate"></p>
                                 <p ng-bind-template="{{'IS_LANTERN_FREE_ANSWER_2' | translate}}"></p>
                             </div>
@@ -344,7 +344,7 @@
                         <button ng-click="faq11=!faq11" class="pull-left">{{faq11 && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
                             <a ng-click="faq11=!faq11"><h5 ng-bind-template="{{'CONTRIBUTE_QUESTION' | translate}}"></h5></a>
-                            <div ng-hide="faq11" class="faq-answer">
+                            <div collapse="faq11" class="faq-answer">
                                 <p ng-bind-html-unsafe="'CONTRIBUTE_ANSWER_1' | translate"></p>
                             </div>
                         </div>
@@ -353,7 +353,7 @@
                         <button ng-click="faq12=!faq12" class="pull-left">{{faq12 && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
                             <a ng-click="faq12=!faq12"><h5 ng-bind-template="{{'MORE_QUESTIONS_QUESTION' | translate}}"></h5></a>
-                            <div ng-hide="faq12" class="faq-answer">
+                            <div collapse="faq12" class="faq-answer">
                                 <p ng-bind-html-unsafe="'MORE_QUESTIONS_ANSWER_1' | translate"></p>
                             </div>
                         </div>
