@@ -15,7 +15,7 @@
   input[type=email] {
     text-align: center;
     background: #666;
-    color: $lnt-pale-yellow;
+    color: #fff;
     border: 1px solid #222 !important;
     font-weight: bold;
     font-size: $baseFontSize * .9;
@@ -25,26 +25,27 @@
       @include ctb-box-shadow(0 0 8px rgba(120, 120, 120, .6) !important);
     }
 
+    $placeholder-color: $lnt-pale-yellow;
     &::-webkit-input-placeholder {
       text-align: center;
-      color: #fff;
+      color: $placeholder-color;
     }
 
     &:-moz-placeholder { /* Firefox 18- */
       text-align: center;
-      color: #fff;
+      color: $placeholder-color;
     }
 
     &::-moz-placeholder {  /* Firefox 19+ */
       text-align: center;
-      color: #fff;
+      color: $placeholder-color;
     }
 
     &:-ms-input-placeholder {
       text-align: center;
-      color: #fff;
+      color: $placeholder-color;
     }
-    
+
   }
   input[type=submit] {
     @include single-transition(all, 0.5s);
@@ -128,13 +129,13 @@
 .panel-text {
   line-height: 1.2;
   display: inline-block;
-  
+
   p { margin: 0; }
-  
+
   p:first-of-type {
       font-size: 20px;
   }
-  
+
   p:last-of-type {
       margin-top: 90px;
   }
@@ -145,11 +146,11 @@
     width: 42%;
     text-align: center;
     color: #fff;
-    
+
     h4 {
         font-weight: 300;
     }
-    
+
     .video-snapshot {
         -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
         border: 5px solid #ccc;
@@ -160,7 +161,7 @@
           opacity: 1.0;
         }
     }
-    
+
   .play-button {
     $wdth: 86px;
     $hght: 61px;
