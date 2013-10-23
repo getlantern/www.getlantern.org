@@ -67,6 +67,12 @@
           </ul>
         </nav>
         -->
+        <nav class="section-nav pull-right">
+          <ul class="section-list">
+            <li><a href="#about" ng-bind-template="{{'ABOUT' | translate}}">About</a></li>
+            <li><a href="#faq" ng-bind-template="{{'FAQ' | translate}}">FAQ</a></li>
+          </ul>
+        </nav>
         <div class="wrap clearfix">
           <div class="site-logo">
             <a href="/">
@@ -202,7 +208,9 @@
       -->
 
         <section class="section white-panel watch">
-            <h3 ng-bind-template="{{'HOW_LANTERN_WORKS' | translate}}">How Lantern Works</h3>
+            <a name="about" class="section-target">
+              <h3 ng-bind-template="{{'HOW_LANTERN_WORKS' | translate}}">How Lantern Works</h3>
+            </a>
             <p ng-bind-template="{{'LANTERN_PARAGRAPH_1' | translate}}">Lantern's main goal is...</p>
             <p ng-bind-template="{{'LANTERN_PARAGRAPH_2' | translate}}">At the core of Lantern is...</p>
             <!--
@@ -218,7 +226,9 @@
             <img class="app-screenshot" src="images/vis.gif">
 
             <div id="faq" class="clearfix" ng-controller="DownloadCtrl">
-              <h3 ng-bind-template="{{'QUESTIONS_AND_ANSWERS' | translate}}">Questions and Answers</h3>
+                <a name="faq" class="section-target">
+                  <h3 ng-bind-template="{{'QUESTIONS_AND_ANSWERS' | translate}}">Questions and Answers</h3>
+                </a>
                 <ul>
                     <li class="clearfix">
                         <button ng-click="faq1=!faq1" class="pull-left">{{faq1 && '+' || '-'}}</button>

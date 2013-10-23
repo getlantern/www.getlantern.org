@@ -6,8 +6,27 @@
   z-index: 1;
   border-bottom: 1px solid #12485d;
 
-  .social-media-icons {
-    margin: 25px 20px 0 0;
+
+  //.social-media-icons {
+  //  margin: 25px 20px 0 0;
+  //}
+
+  .section-nav {
+    margin: 30px 22px 0 0;
+    font-family: Oswald;
+    text-transform: uppercase;
+  }
+
+  .section-list {
+    @include inline-list;
+
+    a {
+      color: #fff;
+    }
+
+    li {
+      padding: 0 20px;
+    }
   }
 
   .lang-chooser {

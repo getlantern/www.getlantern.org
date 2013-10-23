@@ -14,7 +14,7 @@
 
 #footer-navlink-list {
   @include delimited-list('∙');
-  font-family: 'Oswald', Helvetica, Arial, sans-serif;
+  font-family: Oswald;
 
   li:after {
     content: " | ";

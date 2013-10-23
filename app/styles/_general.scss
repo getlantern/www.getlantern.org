@@ -99,33 +99,39 @@ hr {
   border-bottom: 1px solid #c7c7c7;
 }
 
+a.section-target {
+  color: #333;
+  text-decoration: none;
+  cursor: default;
+}
+
 /* ===================
    QUOTES
 =================== */
-.quotes {
-  display: table;
-
-  .last { border: 0; }
-}
-
-.quote {
-  display: table-cell;
-  width: 30%;
-  height: 100%;
-  max-width: 250px;
-  font-size: 19px;
-  padding: 52px 30px 20px;
-  border-right: 1px solid #ededed;
-
-  blockquote {
-    border: 0;
-    padding: 0;
-    line-height: 1.2;
-    color: #808080;
-  }
-
-  .cite { text-align: right; }
-}
+//.quotes {
+//  display: table;
+//
+//  .last { border: 0; }
+//}
+//
+//.quote {
+//  display: table-cell;
+//  width: 30%;
+//  height: 100%;
+//  max-width: 250px;
+//  font-size: 19px;
+//  padding: 52px 30px 20px;
+//  border-right: 1px solid #ededed;
+//
+//  blockquote {
+//    border: 0;
+//    padding: 0;
+//    line-height: 1.2;
+//    color: #808080;
+//  }
+//
+//  .cite { text-align: right; }
+//}
 
 /* other */
 
