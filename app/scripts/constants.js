@@ -8,7 +8,7 @@ angular.module('GetLanternSiteApp')
         code: 'en_US',
         name: 'English',
         dir: 'ltr'
-      },
+      }/*,
       tr: {
         code: 'tr',
         name: 'Türkçe',
@@ -43,7 +43,7 @@ angular.module('GetLanternSiteApp')
         code: 'zh_CN',
         name: '中文',
         dir: 'ltr'
-      }
+      }*/
     },
     GA_ACCOUNT_ID: 'UA-21815217-1', // google analytics
     SIGNUP_URL: 'https://getlantern.us2.list-manage.com/subscribe/post?u=0ac18298d5d0330dcda8f48aa&id=f06770f311',
