@@ -34,6 +34,11 @@
     -->
 
     <!-- site content starts here -->
+    <div class="lightbox hide" lightbox>
+      <a class="lightbox-close" lightbox-close>&times;</a>
+      <div class="media-container"></div>
+    </div>
+
     <div id="content-container">
       <header id="topbar" class="header">
         <nav class="lang-chooser btn-group dropdown pull-right">
@@ -421,6 +426,7 @@
           <p ng-bind-template="{{'COPYRIGHT' | translate}}">© 2013 Brave New Software</p>
         </div>
     </footer>
+
     <!-- site content ends here -->
 
     <script>
@@ -448,6 +454,7 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/constants.js"></script>
     <script src="scripts/controllers/download.js"></script>
+    <script src="scripts/directives/lightbox.js"></script>
     <script src="scripts/directives/signup.js"></script>
     <script src="scripts/directives/videoOnClick.js"></script>
     <script src="scripts/services/osSniffer.js"></script>

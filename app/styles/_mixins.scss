@@ -7,8 +7,8 @@
   }
 }
 
-@mixin position($top: false, $right: false, $bottom: false, $left: false) {
-  position: absolute;
+@mixin position($top: false, $right: false, $bottom: false, $left: false, $position: absolute) {
+  position: $position;
   @if $top {
     top: $top;
   }
