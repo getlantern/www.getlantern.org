@@ -78,17 +78,60 @@ angular.module('GetLanternSiteApp')
       return (/UBUNTU/).test(key);
     };
     
-    $scope.faq1 = true;
-    $scope.faq2 = true;
-    $scope.faq3 = true;
-    $scope.faq4 = true;
-    $scope.faq5 = true;
-    $scope.faq6 = true;
-    $scope.faq7 = true;
-    $scope.faq8 = true;
-    $scope.faq9 = true;
-    $scope.faq10 = true;
-    $scope.faq11 = true;
-    $scope.faq12 = true;
+
+    $scope.faqs = [ {
+            key : "SAFE_TO_USE",
+            nparagraphs : 3
+          }, {
+            key : "PRIVACY_INFO",
+            nparagraphs : 2
+          }, {
+            key : "CANT_REACH_USERS",
+            nparagraphs : 2
+          }, {
+            key : "COMPARE_TO_OTHER_TOOLS",
+            nparagraphs : 4
+          }, {
+            key : "PROXY_BY_DEFAULT",
+            nparagraphs : 2
+          }, {
+            key : "TRUST_NETWORK",
+            nparagraphs : 3
+//          }, {
+//            key : "RESISTANT_TO_BLOCKING",
+//            nparagraphs : 1
+          }, {
+            key : "DOWNLOAD_LANTERN",
+            nparagraphs : 1
+          }, {
+            key : "CAN_I_STILL_HELP",
+            nparagraphs : 1
+          }, {
+            key : "INSTALLED_LANTERN",
+            nparagraphs : 4
+          }, {
+            key : "VULNERABLE_TO_HACKERS",
+            nparagraphs : 1
+          }, {
+            key : "IS_LANTERN_FREE",
+            nparagraphs : 2
+          }, {
+            key : "CONTRIBUTE",
+            nparagraphs : 1
+          }, {
+            key : "MORE_QUESTIONS",
+            nparagraphs : 1
+          }
+          ];
     
+    /**
+     * Generates a range of numbers from start to end (inclusive)
+     */
+    $scope.range = function(start, end) {
+      var result = [];
+      for (var i=start; i<=end; i++) {
+        result.push(i);
+      }
+      return result;
+    }
   }]);
