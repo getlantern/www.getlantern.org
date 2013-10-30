@@ -1,6 +1,7 @@
 # www.getlantern.org
 
 [![build status](https://secure.travis-ci.org/getlantern/www.getlantern.org.png)](https://travis-ci.org/getlantern/www.getlantern.org)
+[![Code Climate](https://codeclimate.com/github/getlantern/www.getlantern.org.png)](https://codeclimate.com/github/getlantern/www.getlantern.org)
 
 This is the code that powers https://www.getlantern.org.
 
