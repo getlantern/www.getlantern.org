@@ -49,7 +49,7 @@ the site up and running quickly.
       a recent SDK and create symlinks to the command-line tools.
     - On OS X, you may get an error message when you run the GoogleAppEngineLauncher
       that complains about it either being corrupted or being unable to find python.
-      - To fix this, create a symlink from python2.5 to python:
+      - To fix this, create a symlink from python2.7 to python:
         `sudo ln -s /usr/bin/python2.7 /usr/bin/python`
 - For managing translations:
   - [Python 2.7](http://python.org/) (comes with OS X)
