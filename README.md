@@ -44,6 +44,12 @@ the site up and running quickly.
 - For deploying to App Engine:
   - [Python 2.7](http://python.org/) (comes with OS X)
   - [App Engine Python SDK](https://developers.google.com/appengine/downloads#Google_App_Engine_SDK_for_Python)
+    - Make sure to run the GoogleAppEngineLauncher at least once so that it can install
+      a recent SDK and create symlinks to the command-line tools.
+    - On OS X, you may get an error message when you run the GoogleAppEngineLauncher
+      that complains about it either being corrupted or being unable to find python.
+      - To fix this, create a symlink from python2.5 to python:
+        `sudo ln -s /usr/bin/python2.7 /usr/bin/python`
 - For managing translations:
   - [Python 2.7](http://python.org/) (comes with OS X)
   - [Transifex Client](https://pypi.python.org/pypi/transifex-client)
@@ -150,6 +156,6 @@ app.yaml to &lt;somenewversion&gt;, and then you'll be deploying to
 https://&lt;somenewversion&gt;-dot-getlanternhr.appspot.com/.
 
 Once version is set how you want it, and you have a successful build in
-the "dist" directory, run "appcfg --oauth2 update ." The files in "dist" will be
+the "dist" directory, run "appcfg.py --oauth2 update ." The files in "dist" will be
 uploaded to production. Once uploaded, open a browser to the newly deployed
 version to make sure everything looks good on the production server.
