@@ -41,6 +41,7 @@ angular.module('GetLanternSiteApp', [
     }
   }])
   .run(['$rootScope', '$translate', 'constants', function ($rootScope, $translate, constants) {
+    constants.NLANGS = Object.keys(constants.LANGS).length;
     angular.forEach(constants, function (value, key) {
       $rootScope[key] = value;
     });

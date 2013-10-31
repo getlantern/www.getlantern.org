@@ -23,12 +23,12 @@ angular.module('GetLanternSiteApp')
         code: 'sl_SI',
         name: 'Slovenščina',
         dir: 'ltr'
-      },
+      }*/,
       fr_FR: {
         code: 'fr_FR',
         name: 'Français',
         dir: 'ltr'
-      },
+      }/*,
       fa_IR: {
         code: 'fa_IR',
         name: 'فارسی',
@@ -52,7 +52,7 @@ angular.module('GetLanternSiteApp')
     HELP_TRANSLATE_URL: 'https://github.com/getlantern/lantern/wiki/Translating-Lantern',
     PRIVACY_URL: 'https://github.com/getlantern/lantern/wiki/Privacy',
     GET_INVOLVED_URL: 'https://github.com/getlantern/lantern/wiki/Get-Involved',
-    
+
     TWITTER_URL: 'https://twitter.com/getlantern',
     FACEBOOK_URL: 'https://www.facebook.com/getlantern',
     TUMBLR_URL: 'http://get-lantern.tumblr.com/',

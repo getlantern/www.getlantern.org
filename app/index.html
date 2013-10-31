@@ -48,13 +48,11 @@
             <span class="caret"></span>
           </a>
           <ul class="lang-list dropdown-menu">
-            <!--
-            <li ng-repeat="lang in LANGS">
+            <li ng-repeat="lang in LANGS" ng-show="NLANGS > 1">
               <a ng-show="lang.code == activeLang.code" class="active-lang">{{lang.name}}</a>
               <a ng-click="changeLang(lang.code)" ng-hide="lang.code == activeLang.code">{{lang.name}}</a>
             </li>
-            <li class="divider"></li>
-            -->
+            <li class="divider" ng-show="NLANGS > 1"></li>
             <li>
               <a ng-href="{{HELP_TRANSLATE_URL}}" target="_blank" ng-bind-template="{{'HELP_TRANSLATE' | translate}}">
                 Help Translate
