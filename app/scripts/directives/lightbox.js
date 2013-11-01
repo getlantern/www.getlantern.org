@@ -6,11 +6,12 @@ angular.module('GetLanternSiteApp')
       $rootScope.lightbox = element;
     };
   }])
-  .directive('lightboxClose', ['$rootScope', function ($rootScope) {
+  .directive('lightboxClose', ['$rootScope', '$window', function ($rootScope, $window) {
     return function (scope, element) {
       element.bind('click', function () {
         var $lightbox = $rootScope.lightbox;
         $lightbox.addClass('hide');
+        $window.player.pauseVideo();
       });
     };
   }]);

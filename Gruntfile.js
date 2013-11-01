@@ -249,7 +249,7 @@ module.exports = function (grunt) {
     htmlmin: {
       dist: {
         options: {
-          collapseWhitespace: true,
+          collapseWhitespace: false, // setting to true messes up styles e.g. in footer
           removeComments: true,
           removeRedundantAttributes: true
         },

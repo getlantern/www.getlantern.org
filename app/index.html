@@ -36,37 +36,18 @@
     <!-- site content starts here -->
     <div class="lightbox hide" lightbox>
       <a class="lightbox-close" lightbox-close>&times;</a>
-      <div class="media-container"></div>
+      <div class="media-container" id="player"></div>
     </div>
 
     <div id="content-container">
       <header id="topbar" class="header">
-        <nav class="lang-chooser btn-group dropdown pull-right">
-          <a class="btn btn-inverse dropdown-toggle">
-            <span class="icon-globe"></span>
-            <!--<span class="active-lang">{{activeLang.name}}</span>-->
-            <span class="caret"></span>
-          </a>
-          <ul class="lang-list dropdown-menu">
-            <li ng-repeat="lang in LANGS" ng-show="NLANGS > 1">
-              <a ng-show="lang.code == activeLang.code" class="active-lang">{{lang.name}}</a>
-              <a ng-click="changeLang(lang.code)" ng-hide="lang.code == activeLang.code">{{lang.name}}</a>
-            </li>
-            <li class="divider" ng-show="NLANGS > 1"></li>
-            <li>
-              <a ng-href="{{HELP_TRANSLATE_URL}}" target="_blank" ng-bind-template="{{'HELP_TRANSLATE' | translate}}">
-                Help Translate
-              </a>
-            </li>
-          </ul>
-        </nav>
         <!--
         <nav class="pull-right">
           <ul class="social-media-icons">
-            <li><a target="_blank" ng-href="{{TWITTER_URL}}" target="_blank"><span class="icon-twitter"></span></a></li>
-            <li><a target="_blank" ng-href="{{FACEBOOK_URL}}" target="_blank"><span class="icon-facebook"></span></a></li>
-            <li><a target="_blank" ng-href="{{TUMBLR_URL}}" target="_blank"><span class="icon-tumblr"></span></a></li>
-            <li class="github"><a target="_blank" ng-href="{{GITHUB_URL}}" target="_blank"><span class="icon-github"></span></a></li>
+            <li><a target="_blank" ng-href="{{TWITTER_URL}}"><span class="icon-twitter"></span></a></li>
+            <li><a target="_blank" ng-href="{{FACEBOOK_URL}}"><span class="icon-facebook"></span></a></li>
+            <li><a target="_blank" ng-href="{{TUMBLR_URL}}"><span class="icon-tumblr"></span></a></li>
+            <li><a target="_blank" ng-href="{{GITHUB_URL}}"><span class="icon-github"></span></a></li>
           </ul>
         </nav>
         -->
@@ -237,8 +218,9 @@
                     <li class="clearfix" ng-repeat="faq in faqs">
                         <button ng-click="faq.expanded=!faq.expanded" class="pull-left">{{!faq.expanded && '+' || '-'}}</button>
                         <div class="faq-item pull-left">
-                          <a ng-click="faq.expanded=!faq.expanded"><h5 ng-bind-template="{{faq.key + '_QUESTION' | translate}}"></h5></a>
-                            <div collapse="!faq.expanded" class="faq-answer">
+                          <a ng-href="#faq_{{faq.key|lowercase}}" name="faq_{{faq.key|lowercase}}"
+                             ng-click="faq.expanded=!faq.expanded"><h5 ng-bind-template="{{faq.key + '_QUESTION' | translate}}"></h5></a>
+                            <div ng-show="faq.expanded" class="faq-answer">
                                 <p ng-repeat="i in range(1, faq.nparagraphs)">
                                    <span ng-bind-html-unsafe="faq.key + '_ANSWER_' + i | translate"></span>
                                 </p>
@@ -282,8 +264,8 @@
           <img src="images/lantern-footer-logo.jpg" alt="Lantern" />
         </div>
 
-        <nav class="footer-links">
-          <ul id="footer-navlink-list">
+        <nav>
+          <ul class="navlink-list main-nav">
             <li><a target="_blank" ng-href="{{FORUMS_URL}}" ng-bind-template="{{'FORUMS' | translate}}">Forums</a></li>
             <li><a target="_blank" ng-href="{{DOCS_URL}}" ng-bind-template="{{'DOCS' | translate}}">Docs</a></li>
             <li><a target="_blank" ng-href="{{PRIVACY_URL}}" ng-bind-template="{{'PRIVACY' | translate}}">Privacy</a></li>
@@ -291,17 +273,31 @@
           </ul>
         </nav>
 
-        <nav class="footer-links">
+        <nav>
           <!-- XXX DRY .social-media-icons in header -->
           <ul class="social-media-icons">
-            <li><a target="_blank" ng-href="{{TWITTER_URL}}" target="_blank"><span class="icon-twitter"></span></a></li>
-            <li><a target="_blank" ng-href="{{FACEBOOK_URL}}" target="_blank"><span class="icon-facebook"></span></a></li>
-            <li><a target="_blank" ng-href="{{TUMBLR_URL}}" target="_blank"><span class="icon-tumblr"></span></a></li>
-            <li class="github"><a target="_blank" ng-href="{{GITHUB_URL}}" target="_blank"><span class="icon-github"></span></a></li>
+            <li><a target="_blank" ng-href="{{TWITTER_URL}}"><span class="icon-twitter"></span></a></li>
+            <li><a target="_blank" ng-href="{{FACEBOOK_URL}}"><span class="icon-facebook"></span></a></li>
+            <li><a target="_blank" ng-href="{{TUMBLR_URL}}"><span class="icon-tumblr"></span></a></li>
+            <li><a target="_blank" ng-href="{{GITHUB_URL}}"><span class="icon-github"></span></a></li>
             <!--
             <li><a target="_blank" ng-href="{{GOOGLEPLUS_URL}}" target="_blank"><span class="icon-googleplus"></span></a></li>
             <li><a target="_blank" ng-href="{{YOUTUBE_URL}}" target="_blank"><span class="icon-youtube"></span></a></li>
             -->
+          </ul>
+        </nav>
+
+        <nav ng-show="NLANGS > 1">
+          <ul class="navlink-list lang-list">
+            <li ng-repeat="lang in LANGS">
+              <a ng-show="lang.code == activeLang.code" class="active-lang">{{lang.name}}</a>
+              <a ng-href="#{{lang.code}}" ng-hide="lang.code == activeLang.code" ng-click="changeLang(lang.code)">{{lang.name}}</a>
+            </li>
+            <li>
+              <a ng-href="{{HELP_TRANSLATE_URL}}" target="_blank" ng-bind-template="{{'HELP_TRANSLATE' | translate}}">
+                Help Translate
+              </a>
+            </li>
           </ul>
         </nav>
 
@@ -313,15 +309,7 @@
     <!-- site content ends here -->
 
     <script>
-      window.session = {
-        options: {
-          gapi_location: false
-        }
-        /*
-        ,start: function (session) {
-          console.debug('session:', session);
-        }*/
-      };
+      window.session = {options: {gapi_location: false}};
     </script>
 
     <!-- these get automatically minified and concatenated at build time -->
@@ -329,10 +317,11 @@
     <script src="bower_components/session.js/session.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="bower_components/angular-google-analytics/src/angular-google-analytics.js"></script>
     <script src="bower_components/angular-translate/angular-translate.js"></script>
     <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+
+    <!-- local copy of google analytics -->
+    <script src="scripts/lib/analytics.js"></script>
 
     <script src="scripts/app.js"></script>
     <script src="scripts/constants.js"></script>

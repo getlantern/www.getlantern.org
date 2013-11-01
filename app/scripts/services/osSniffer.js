@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('GetLanternSiteApp')
-  .factory('osSniffer', ['Analytics', function (Analytics) {
+  .factory('osSniffer', [function () {
     var os = 'UNAVAILABLE_OS';
 
     // requires https://github.com/codejoust/session.js
@@ -27,7 +27,7 @@ angular.module('GetLanternSiteApp')
       }
     }
 
-    Analytics.trackEvent('osSniffer', os, navigator.userAgent, null, true);
+    //Analytics.trackEvent('osSniffer', os, navigator.userAgent, null, true);
 
     return {
       os: os

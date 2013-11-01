@@ -2,7 +2,7 @@
 @media (max-width: 599px) {
 
   .header {
-    .section-nav, .social-media-icons, .dropdown-toggle .active-lang {
+    .section-nav/*, .social-media-icons, .dropdown-toggle .active-lang */ {
       display: none;
     }
   }

@@ -6,11 +6,10 @@ angular.module('GetLanternSiteApp')
       '$rootScope',
       '$scope',
       '$timeout',
-      'Analytics',
       'constants',
       'installerDataFetcher',
       'osSniffer',
-      function ($log, $rootScope, $scope, $timeout, Analytics, constants, installerDataFetcher, osSniffer) {
+      function ($log, $rootScope, $scope, $timeout, constants, installerDataFetcher, osSniffer) {
     // have to bind to rootScope to work in IE8?
     if (/lt-ie9/.test((document.getElementById('ng-app') || {}).className)) {
       $scope = $rootScope;
@@ -58,13 +57,13 @@ angular.module('GetLanternSiteApp')
           location.href = $scope.data[$scope.selectedOS].url;
         }, 500);
       }
-      Analytics.trackEvent('download', 'clicked', osSniffer.os);
+      //Analytics.trackEvent('download', 'clicked', osSniffer.os);
     };
 
     $scope.selectOS = function (os) {
       $scope.downloadClicked = false;
       $scope.selectedOS = os;
-      Analytics.trackEvent('selectOS', 'clicked', os);
+      //Analytics.trackEvent('selectOS', 'clicked', os);
     };
 
     $scope.icnClassFor = {
@@ -77,7 +76,7 @@ angular.module('GetLanternSiteApp')
     $scope.isUbuntu = function (key) {
       return (/UBUNTU/).test(key);
     };
-    
+
 
     $scope.faqs = [ {
             key : "SAFE_TO_USE",
@@ -123,7 +122,7 @@ angular.module('GetLanternSiteApp')
             nparagraphs : 1
           }
           ];
-    
+
     /**
      * Generates a range of numbers from start to end (inclusive)
      */

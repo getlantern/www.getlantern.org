@@ -45,7 +45,7 @@ angular.module('GetLanternSiteApp')
         dir: 'ltr'
       }*/
     },
-    GA_ACCOUNT_ID: 'UA-21815217-1', // google analytics
+    GA_WEBPROP_ID: 'UA-21815217-1', // google analytics
     SIGNUP_URL: 'https://getlantern.us2.list-manage.com/subscribe/post?u=0ac18298d5d0330dcda8f48aa&id=f06770f311',
     FORUMS_URL: 'https://groups.google.com/group/lantern-users-en',
     DOCS_URL: 'https://github.com/getlantern/lantern/wiki',

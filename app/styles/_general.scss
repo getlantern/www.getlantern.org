@@ -141,16 +141,18 @@ a.section-target {
 
 .social-media-icons {
   @include inline-block-list;
-  font-size: 24px;
+  span {
+    font-size: 24px;
+    display: inline-block;
+  }
   .icon-github {
     font-size: 27px;
+    margin-bottom: -2px;
   }
   li {
     padding: 0 3px;
-    &.github {
-      margin-bottom: -2px;
-    }
   }
+  /*
   a {
     @include single-transition(color, .5s);
     text-shadow: 1px 1px 1px #000;
@@ -160,4 +162,5 @@ a.section-target {
       text-decoration: none;
     }
   }
+  */
 }

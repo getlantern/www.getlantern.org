@@ -2,9 +2,7 @@
 
 angular.module('GetLanternSiteApp', [
     'ngCookies',
-    'pascalprecht.translate',
-    'ui.bootstrap',
-    'angular-google-analytics'
+    'pascalprecht.translate'
   ],
   ['$translateProvider', 'constants', 'translations', function ($translateProvider, constants, translations) {
     angular.forEach(translations, function (transTable, langCode) {
@@ -40,7 +38,11 @@ angular.module('GetLanternSiteApp', [
       return bestMatch;
     }
   }])
-  .run(['$rootScope', '$translate', 'constants', function ($rootScope, $translate, constants) {
+  .run(['$rootScope', '$translate', '$window', 'constants', function ($rootScope, $translate, $window, constants) {
+    if ($window.ga) {
+      $window.ga('create', constants.GA_WEBPROP_ID);
+      $window.ga('send', 'pageview');
+    }
     constants.NLANGS = Object.keys(constants.LANGS).length;
     angular.forEach(constants, function (value, key) {
       $rootScope[key] = value;
@@ -51,7 +53,4 @@ angular.module('GetLanternSiteApp', [
       $rootScope.activeLang = constants.LANGS[langCode];
       $translate.uses(langCode);
     };
-  }])
-  .config(['AnalyticsProvider', 'constants', function (AnalyticsProvider, constants) {
-    AnalyticsProvider.setAccount(constants.GA_ACCOUNT_ID);
   }]);
