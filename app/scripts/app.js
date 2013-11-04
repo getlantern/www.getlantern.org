@@ -4,12 +4,15 @@ angular.module('GetLanternSiteApp', [
     'ngCookies',
     'pascalprecht.translate'
   ],
-  ['$translateProvider', 'constants', 'translations', function ($translateProvider, constants, translations) {
+  ['$translateProvider', 'constants', 'translations', function ($translateProvider, constants, translations) { // XXX can't get services like $log injected here :(
     angular.forEach(translations, function (transTable, langCode) {
       $translateProvider.translations(langCode, transTable);
     });
     $translateProvider.useCookieStorage();
-    $translateProvider.preferredLanguage(negotiatedLang() || constants.DEFAULT_LANGCODE);
+    $translateProvider.preferredLanguage(
+        __urlHashLang(constants.LANGS) ||
+        negotiatedLang() ||
+        constants.DEFAULT_LANGCODE);
     $translateProvider.fallbackLanguage(constants.DEFAULT_LANGCODE);
 
     function negotiatedLang() {
@@ -26,7 +29,7 @@ angular.module('GetLanternSiteApp', [
         if (langAvail === langPref) {
           var countryAvail = angular.lowercase(split[1]);
           if (countryAvail === countryPref) {
-            //console.debug('exact match:', lc);
+            __log('exact match: '+lc);
             return lc;
           }
           // if we had access to the list of the browser's weighted preferences
@@ -34,11 +37,12 @@ angular.module('GetLanternSiteApp', [
           bestMatch = bestMatch || lc;
         }
       }
-      //console.debug('best match:', bestMatch);
+      __log('best match: '+bestMatch);
       return bestMatch;
     }
+
   }])
-  .run(['$rootScope', '$translate', '$window', 'constants', function ($rootScope, $translate, $window, constants) {
+  .run(['$rootScope', '$translate', '$translateCookieStorage', '$window', 'constants', function ($rootScope, $translate, $translateCookieStorage, $window, constants) {
     if ($window.ga) {
       $window.ga('create', constants.GA_WEBPROP_ID);
       $window.ga('send', 'pageview');
@@ -47,10 +51,32 @@ angular.module('GetLanternSiteApp', [
     angular.forEach(constants, function (value, key) {
       $rootScope[key] = value;
     });
-    $rootScope.activeLang = constants.LANGS[$translate.uses()];
 
     $rootScope.changeLang = function (langCode) {
       $rootScope.activeLang = constants.LANGS[langCode];
       $translate.uses(langCode);
     };
+
+    var langOverride = __urlHashLang(constants.LANGS) || $translateCookieStorage.get($translate.storageKey());
+    if (langOverride) {
+      $rootScope.changeLang(langOverride);
+    } else {
+      $rootScope.activeLang = constants.LANGS[$translate.uses()];
+    }
   }]);
+
+function __log(msg) {
+  if (window.console && window.console.debug) {
+    window.console.debug(msg);
+  }
+}
+
+// XXX would actually watch location.hash for changes and react but
+// https://github.com/angular/angular.js/issues/4608
+function __urlHashLang(langsAvail) {
+  var hash = location.hash.substring(1);
+  if (hash in langsAvail) {
+    __log('hash: '+hash);
+    return hash;
+  }
+}

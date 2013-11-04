@@ -30,6 +30,8 @@ angular.module('GetLanternSiteApp')
                 autohide: 1,
                 autoplay: 1,
                 cc_load_policy: 'en' === $translate.uses().substring(0, 2) ? 0 : 1,
+                controls: 2,
+                enable_js_api: 1,
                 origin: 'getlantern.org',
                 rel: 0,
                 showinfo: 0
