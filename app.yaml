@@ -1,5 +1,5 @@
 application: getlanternhr
-version: '2013-11-04-urlhashlang'
+version: '2013-11-14-fa-es-zh'
 runtime: python27
 api_version: 1
 threadsafe: yes
