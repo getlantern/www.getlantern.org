@@ -28,22 +28,27 @@ angular.module('GetLanternSiteApp')
         code: 'fr_FR',
         name: 'Français',
         dir: 'ltr'
-      }/*,
+      },
+      es: {
+        code: 'es',
+        name: 'Español',
+        dir: 'ltr'
+      },
       fa_IR: {
         code: 'fa_IR',
         name: 'فارسی',
         dir: 'rtl'
-      },
+      }/*,
       ar: {
         code: 'ar',
         name: 'العربية',
         dir: 'rtl'
-      },
+      }*/,
       zh_CN: {
         code: 'zh_CN',
         name: '中文',
         dir: 'ltr'
-      }*/
+      }
     },
     GA_WEBPROP_ID: 'UA-21815217-1', // google analytics
     SIGNUP_URL: 'https://getlantern.us2.list-manage.com/subscribe/post?u=0ac18298d5d0330dcda8f48aa&id=f06770f311',
