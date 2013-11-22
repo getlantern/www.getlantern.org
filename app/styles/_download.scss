@@ -115,11 +115,13 @@
     font-size: 100%
   }
 
+  /*
   .warning {
     color: #f44;
     font-size: 12px;
     margin: 25px 25px 0;
   }
+  */
 } // end .panel
 
 .panel-title {
@@ -142,6 +144,13 @@
 }
 
 .video-panel {
+    *[dir=rtl] & {
+      float: left;
+    }
+    *[dir=ltr] & {
+      float: right;
+    }
+
     position: relative;
     width: 42%;
     text-align: center;
@@ -195,11 +204,17 @@
   .last { display: block; }
 }
 
+/*
 .icn {
   display: inline-block;
   vertical-align: middle;
   background: url(../images/icons-os.png) no-repeat;
-  margin-right: 5px;
+  *[dir=rtl] & {
+    margin-left: 5px;
+  }
+  *[dir=ltr] & {
+    margin-right: 5px;
+  }
   position: relative;
 }
 
@@ -227,3 +242,4 @@
   font-size: 14px;
   padding-top: 15px;
 }
+*/

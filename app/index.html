@@ -19,7 +19,7 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body class="ng-cloak">
+  <body class="ng-cloak" lang="{{activeLang.code}}" dir="{{activeLang.dir}}">
     <!--[if lt IE 8]>
       <p class="chromeframe">You are using an outdated browser. Please <a href="https://www.google.com/chrome/">upgrade your browser</a> or <a href="https://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> and try again.</p>
     <![endif]-->
@@ -51,7 +51,7 @@
           </ul>
         </nav>
         -->
-        <nav class="section-nav pull-right">
+        <nav class="section-nav">
           <ul class="section-list">
             <li><a href="#about" ng-bind-template="{{'ABOUT' | translate}}">About</a></li>
             <li><a href="#faq" ng-bind-template="{{'FAQ' | translate}}">FAQ</a></li>
@@ -165,7 +165,7 @@
             -->
           </div>
 
-            <div class="video-panel pull-right">
+            <div class="video-panel">
                 <img class="video-snapshot" src="images/video-snapshot.jpg" video-on-click>
                 <img class="play-button" src="images/icon-play.png" video-on-click>
                 <div id="video"></div>
@@ -194,7 +194,7 @@
 
         <section class="section white-panel watch">
             <a name="about" class="section-target">
-              <h3 ng-bind-template="{{'HOW_LANTERN_WORKS' | translate}}">How Lantern Works</h3>
+              <h3 class="pagination-centered" ng-bind-template="{{'HOW_LANTERN_WORKS' | translate}}">How Lantern Works</h3>
             </a>
             <p ng-bind-template="{{'LANTERN_PARAGRAPH_1' | translate}}">Lantern's main goal is...</p>
             <p ng-bind-template="{{'LANTERN_PARAGRAPH_2' | translate}}">At the core of Lantern is...</p>
@@ -212,12 +212,12 @@
 
             <div id="faq" class="clearfix" ng-controller="DownloadCtrl">
                 <a name="faq" class="section-target">
-                  <h3 ng-bind-template="{{'QUESTIONS_AND_ANSWERS' | translate}}">Questions and Answers</h3>
+                  <h3 class="pagination-centered" ng-bind-template="{{'QUESTIONS_AND_ANSWERS' | translate}}">Questions and Answers</h3>
                 </a>
                 <ul>
                     <li class="clearfix" ng-repeat="faq in faqs">
-                        <button ng-click="faq.expanded=!faq.expanded" class="pull-left">{{!faq.expanded && '+' || '-'}}</button>
-                        <div class="faq-item pull-left">
+                        <button ng-click="faq.expanded=!faq.expanded" class="expander">{{!faq.expanded && '+' || '-'}}</button>
+                        <div class="faq-item">
                           <a ng-href="#faq_{{faq.key|lowercase}}" name="faq_{{faq.key|lowercase}}"
                              ng-click="faq.expanded=!faq.expanded"><h5 ng-bind-template="{{faq.key + '_QUESTION' | translate}}"></h5></a>
                             <div ng-show="faq.expanded" class="faq-answer">
@@ -266,10 +266,10 @@
 
         <nav>
           <ul class="navlink-list main-nav">
-            <li><a target="_blank" ng-href="{{FORUMS_URL}}" ng-bind-template="{{'FORUMS' | translate}}">Forums</a></li>
-            <li><a target="_blank" ng-href="{{DOCS_URL}}" ng-bind-template="{{'DOCS' | translate}}">Docs</a></li>
-            <li><a target="_blank" ng-href="{{PRIVACY_URL}}" ng-bind-template="{{'PRIVACY' | translate}}">Privacy</a></li>
-            <li><a target="_blank" ng-href="{{GET_INVOLVED_URL}}" ng-bind-template="{{'GET_INVOLVED' | translate}}">Get Involved</a></li>
+            <li><a target="_blank" ng-href="{{FORUMS_URL}}" ng-bind-template="{{'FORUMS' | translate}}">Forums</a>&nbsp;</li>
+            <li><a target="_blank" ng-href="{{DOCS_URL}}" ng-bind-template="{{'DOCS' | translate}}">Docs</a>&nbsp;</li>
+            <li><a target="_blank" ng-href="{{PRIVACY_URL}}" ng-bind-template="{{'PRIVACY' | translate}}">Privacy</a>&nbsp;</li>
+            <li><a target="_blank" ng-href="{{GET_INVOLVED_URL}}" ng-bind-template="{{'GET_INVOLVED' | translate}}">Get Involved</a>&nbsp;</li>
           </ul>
         </nav>
 

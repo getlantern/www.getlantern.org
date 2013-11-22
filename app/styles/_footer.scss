@@ -23,23 +23,17 @@
 
   .navlink-list {
     @include delimited-list('∙');
-  
+
     &.lang-list, &.lang-list a {
       font-size: 13px;
       &.active-lang {
         text-decoration: underline;
       }
     }
-  
+
     &.main-nav {
+      @include delimited-list('┃');
       font-family: Oswald;
-      @include delimited-list('');
-      li {
-        padding: 0 7px 0 5px;
-        &:not(:last-child) {
-          border-right: 2px solid #626262;
-        }
-      }
     }
   }
 }

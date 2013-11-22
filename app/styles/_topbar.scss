@@ -12,9 +12,15 @@
   //}
 
   .section-nav {
+    float: right;
     margin: 30px 22px 0 0;
     font-family: Oswald;
     text-transform: uppercase;
+
+    *[dir=rtl] & {
+      float: left;
+      margin: 30px 0 0 22px;
+    }
   }
 
   .section-list {
