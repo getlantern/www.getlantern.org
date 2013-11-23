@@ -10,7 +10,7 @@ This is the code that powers https://www.getlantern.org.
 The easiest path to get up and running on OSX is to do the following in Terminal:
 
 ```
-$ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+$ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
 $ brew install npm
 $ npm install -g yo grunt-cli bower generator-angular
 $ gem install compass
