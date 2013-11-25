@@ -26,12 +26,17 @@ angular.module('GetLanternSiteApp')
       }*/,
       fr_FR: {
         code: 'fr_FR',
-        name: 'Français',
+        name: 'français',
         dir: 'ltr'
       },
       es: {
         code: 'es',
-        name: 'Español',
+        name: 'español',
+        dir: 'ltr'
+      },
+      pt_BR: {
+        code: 'pt_BR',
+        name: 'português',
         dir: 'ltr'
       },
       fa_IR: {
