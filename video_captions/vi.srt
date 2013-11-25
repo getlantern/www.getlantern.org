@@ -1,0 +1,135 @@
+1
+00:00:05,0 --> 00:00:10,0
+Đã từng có lúc những bí mật bẩn thỉu luôn được che đậy
+và chỉ có thể được biết đến trong một hạn hữu số lượng người.
+
+2
+00:00:20,0 --> 00:00:22,0
+Nhưng mọi thứ đã hoàn toàn thay đổi.
+
+3
+00:00:23,0 --> 00:00:25,0
+Chúng ta đã có thể tiếp nhận được thông tin trong tích tắc
+
+4
+00:00:28,0 --> 00:00:30,0
+trên phạm vi toàn cầu
+
+5
+00:00:31,0 --> 00:00:34,0
+Internet đã đảm đang sứ mệnh của người đưa tin đến tất cả mọi người
+
+6
+00:00:34,0 --> 00:00:36,0
+Để những cánh chim tự do có thể đối chọi lại những bạo tàn của kẻ cầm quyền đầy tham nhũng
+
+7
+00:00:37,0 --> 00:00:39,0
+và thay đổi thế giới hiện tại.
+
+8
+00:00:39,0 --> 00:00:41,0
+[tiếng nói từ phía đám đông]
+Cả thế giới đang ngước nhìn!
+Cả thế giới đang ngước nhìn!
+
+9
+00:00:43,0 --> 00:00:45,0
+Ngoại trừ một số nơi tự do không được đến với tất cả mọi người.
+
+10
+00:00:46,0 --> 00:00:50,0
+Hơn một phần tư dân số trên toàn thế giới đang phải sống dưới cảnh kiểm duyệt thông tin
+
+11
+00:00:50,0 --> 00:00:52,0
+và số lượng đó vẫn không ngừng gia tăng.
+
+12
+00:00:53,0 --> 00:00:55,0
+Các trang bày tỏ chính kiến như Facebook,
+
+13
+00:00:55,0 --> 00:00:57,0
+YouTube, Twitter, và Google,
+
+14
+00:00:58,0 --> 00:01:01,0
+là những trang luôn đem đến các thông tin đa chiều, hướng tới sự công bằng cùng chống tham nhũng
+
+15
+00:01:02,0 --> 00:01:04,0
+đều bị chặn.
+
+16
+00:01:06,0 --> 00:01:08,0
+Nhưng bạn có thể xóa bỏ sự vô lý này
+
+17
+00:01:08,0 --> 00:01:10,0
+bằng cách sử dụng Lantern.
+
+18
+00:01:11,0 --> 00:01:13,0
+Lantern là một phần mềm truy cập mạng an toàn và bảo mật cao
+
+19
+00:01:13,0 --> 00:01:18,0
+cung cấp cho mọi người quyền truy cập internet tại những nơi thông tin bị chặn và kiểm duyệt.
+
+20
+00:01:18,0 --> 00:01:21,0
+Đây là phần mềm nhằm chống lại sự kiểm duyệt thông tin đến từ bất kỳ chính phủ nào.
+
+21
+00:01:21,0 --> 00:01:23,0
+Khi bạn cài đặt Lantern trên máy tính của mình
+
+22
+00:01:23,0 --> 00:01:25,0
+bạn đã đồng thời cung cấp một điểm kết nối
+
+23
+00:01:25,0 --> 00:01:28,0
+để nhận thêm các thông tin bên trong và bên ngoài các quốc gia kiểm duyệt internet.
+
+24
+00:01:29,0 --> 00:01:31,0
+Bạn đang đưa người một lối thoát
+
+25
+00:01:31,0 --> 00:01:33,0
+một cách để giao tiếp.
+
+26
+00:01:34,0 --> 00:01:36,0
+Tất cả chúng ta đều được kết nối
+
+27
+00:01:36,0 --> 00:01:38,0
+nhiều hơn bất cứ khi nào.
+
+28
+00:01:38,0 --> 00:01:40,0
+Chỉ với một vài bước đơn giản, bạn đã có được quyền
+
+29
+00:01:40,0 --> 00:01:42,0
+cung cấp truy cập internet đến mọi người
+
+30
+00:01:42,0 --> 00:01:44,0
+và cùng nhau thay đổi thế giới này.
+
+31
+00:01:45,0 --> 00:01:46,0
+Lương tri bạn sẽ cho phép điều này chứ?
+
+32
+00:01:46,0 --> 00:01:47,0
+Tham gia phong trào.
+
+33
+00:01:47,0 --> 00:01:49,0
+Tham gia Lantern.
+
