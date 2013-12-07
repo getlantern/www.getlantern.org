@@ -27,9 +27,6 @@ Once you do all of that, the site should be up and running. If you experience er
 likely something wrong with an outdated version of some required prerequisite for your 
 current step, and you'll need to fiddle!
 
-You still won't be able to deploy to App Engine (see below), but the above will enable you get 
-the site up and running quickly.
-
 ## Requirements
 
 - [node](http://nodejs.org/)
@@ -51,6 +48,8 @@ the site up and running quickly.
       that complains about it either being corrupted or being unable to find python.
       - To fix this, create a symlink from python2.7 to python:
         `sudo ln -s /usr/bin/python2.7 /usr/bin/python`
+- For deploying to Nodejitsu:
+  - [jitsu](https://github.com/nodejitsu/jitsu#one-line-jitsu-install)
 - For managing translations:
   - [Python 2.7](http://python.org/) (comes with OS X)
   - [Transifex Client](https://pypi.python.org/pypi/transifex-client)
@@ -145,6 +144,11 @@ version to make sure it looks the same as the development version.
 
 ## Deployment
 
+The site is currently hosted on App Engine, but is set up to be hosted on
+Nodejitsu.
+
+### Deploying to App Engine
+
 Before you can deploy to App Engine, you must have permission to modify the
 "getlanternhr" app when you go to https://appengine.google.com. Email
 admin@getlantern.org if you need to request permission.
@@ -160,3 +164,12 @@ Once version is set how you want it, and you have a successful build in
 the "dist" directory, run "appcfg.py --oauth2 update ." The files in "dist" will be
 uploaded to production. Once uploaded, open a browser to the newly deployed
 version to make sure everything looks good on the production server.
+
+### Deploying to Nodejitsu
+
+First make sure you have the Nodejitsu credentials for the lantern_www user
+handy, and then:
+
+    $ grunt build
+    $ cd dist
+    $ jitsu deploy
