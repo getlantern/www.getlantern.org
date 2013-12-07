@@ -2,21 +2,18 @@
   "name": "GetLanternSite",
   "version": "0.0.0",
   "dependencies": {
-    "angular": "1.0.8",
-    "angular-translate": "1.1.0",
-    "angular-translate-storage-cookie": "~0.1.5",
+    "angular": "1.2.4",
+    "angular-cookies": "~1.2.4",
+    "angular-sanitize": "~1.2.4",
+    "angular-translate": "1.1.1",
+    "angular-translate-storage-cookie": "0.1.6",
     "es5-shim": "~2.1.0",
-    "json3": "~3.2.5",
-    "modernizr": "~2.6.2",
-    "session.js": "codejoust/session.js#63a62b370a8079e2b447e625c89ed6382dc1d2d4"
-  },
-  "devDependencies": {
-    "angular-mocks": "1.0.8",
-    "angular-scenario": "1.0.8"
+    "json3": "~3.2.6",
+    "modernizr": "~2.7.1",
+    "session.js": "0.4.1"
   },
   "resolutions": {
-    "angular": "1.0.8",
-    "angular-mocks": "1.0.8",
-    "angular-scenario": "1.0.8"
+    "angular": "1.2.4",
+    "angular-cookies": "~1.2.4"
   }
 }

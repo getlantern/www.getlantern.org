@@ -2,6 +2,7 @@
 
 angular.module('GetLanternSiteApp', [
     'ngCookies',
+    'ngSanitize',
     'pascalprecht.translate'
   ],
   ['$translateProvider', 'constants', 'translations', function ($translateProvider, constants, translations) { // XXX can't get services like $log injected here :(
