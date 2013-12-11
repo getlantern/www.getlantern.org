@@ -5,29 +5,40 @@
 
 This is the code that powers https://www.getlantern.org.
 
-## OSX Quick Start
+## OS X Quick Start
 
-The easiest path to get up and running on OSX is to do the following in Terminal:
+For easy copy/paste into Terminal:
 
-```
-$ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
-$ brew install npm
-$ npm install -g yo grunt-cli bower generator-angular
-$ gem install compass
-$ pip install transifex-client (you may need sudo pip install transifex-client)
-$ brew install phantomjs
-$ git clone git@github.com:<username>/www.getlantern.org.git
-$ cd www.getlantern.org
-$ npm install
-$ bower install
-$ grunt server
-```
+    # install homebrew if missing
+    which brew || ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
 
-Once you do all of that, the site should be up and running. If you experience errors, there's
-likely something wrong with an outdated version of some required prerequisite for your 
-current step, and you'll need to fiddle!
+    # install git if missing
+    which git || brew install git
 
-## Requirements
+    # clone the repo and cd into it
+    git clone https://github.com/getlantern/www.getlantern.org.git
+    cd www.getlantern.org
+
+    # install npm if missing
+    which npm || brew install npm
+
+    # install required global node packages
+    npm install -g grunt-cli bower
+
+    # install required local node packages
+    npm install
+
+    # install required bower packages
+    bower install
+
+    # install compass if missing
+    which compass || sudo gem install compass
+
+    # start up the development web server
+    grunt server
+
+
+## Dependencies
 
 - [node](http://nodejs.org/)
 - Global npm packages:
@@ -57,17 +68,6 @@ current step, and you'll need to fiddle!
 - For running tests:
   - [PhantomJS](http://phantomjs.org/) (brew install phantomjs)
 
-## Setup
-
-After ensuring the requirements above are installed, fork this repository, and
-then run:
-
-```
-git clone git@github.com:<username>/www.getlantern.org.git
-cd www.getlantern.org
-npm install
-bower install
-```
 
 ## Tools
 
@@ -87,6 +87,7 @@ This site is built with the following tools:
 
 Before jumping in, it's worth taking some time to get familiar with any of
 these you may not have used before.
+
 
 ## Development
 
@@ -124,14 +125,6 @@ can be used to pull them. See
 http://support.transifex.com/customer/portal/articles/996157-getting-translations
 for more.
 
-## Testing
-
-Add automated tests in the "tests" directory to make sure the site continues
-to work as development progresses.
-
-**Protip:** If you add a controller (service, filter, etc.) via "yo
-angular:controller <newcontroller>" (or "yo angular:service <newservice>",
-etc.), the Angular generator will stub out a test spec for you.
 
 ## Creating a production build
 
@@ -170,6 +163,6 @@ version to make sure everything looks good on the production server.
 First make sure you have the Nodejitsu credentials for the lantern_www user
 handy, and then:
 
-    $ grunt build
-    $ cd dist
-    $ jitsu deploy
+    grunt build
+    cd dist
+    jitsu deploy
