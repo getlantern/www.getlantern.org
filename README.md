@@ -35,7 +35,7 @@ For easy copy/paste into Terminal:
     which compass || sudo gem install compass
 
     # start up the development web server
-    grunt server
+    grunt serve
 
 
 ## Dependencies
@@ -92,7 +92,7 @@ these you may not have used before.
 ## Development
 
 To start up a development session using grunt's default dev server, run
-"grunt server". That will start watching the source files, start the dev
+"grunt serve". That will start watching the source files, start the dev
 server, open a browser pointing to the dev server, and detect when any source
 files are changed and automatically compile any reload them in the browser.
 
