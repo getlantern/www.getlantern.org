@@ -48,7 +48,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "start": "./node_modules/.bin/http-server -p 8000 -c 300"
+    "start": "./node_modules/.bin/http-server -p 8000 -c 300 -d false"
   },
   "analyze": false,
   "subdomain": "getlantern"
