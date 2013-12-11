@@ -126,7 +126,10 @@ module.exports = function (grunt) {
           ]
         }]
       },
-      server: '.tmp'
+      server: [
+        '<%= yeoman.app %>/scripts/jsFromJSON/translations.js',
+        '.tmp'
+        ]
     },
     jshint: {
       options: {
@@ -270,7 +273,6 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
           src: [
-            'package.json',
             '*.html',
             '*.{ico,png,txt}',
             'images/{,*/}*.{gif,webp}',
@@ -282,6 +284,13 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>/images',
           src: [
             'generated/*'
+          ]
+        }, {
+          expand: true,
+          cwd: '.',
+          dest: '<%= yeoman.dist %>',
+          src: [
+            'package.json'
           ]
         }]
       },
@@ -373,7 +382,7 @@ module.exports = function (grunt) {
         });
         grunt.log.debug("writing js destination file \"" + f.dest + "\"");
         var name = f.dest.split('/').splice(-1)[0].replace(/.js$/i, '');
-        grunt.file.write(f.dest, 'angular.module("GetLanternSiteApp").constant("'+name+'",'+JSON.stringify(result)+');');
+        grunt.file.write(f.dest, 'angular.module("lantern_www").constant("'+name+'",'+JSON.stringify(result)+');');
         grunt.log.writeln("File \"" + f.dest + "\" created.");
       } catch (e) {
         grunt.fail.warn(e);

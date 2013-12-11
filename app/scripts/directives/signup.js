@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('GetLanternSiteApp')
+angular.module('lantern_www')
   .directive('signupForm', ['$http', '$window', 'constants', function ($http, $window, constants) {
     return function (scope, element) {
       var form = element[0],

@@ -1,10 +1,10 @@
 {
-  "name": "GetLanternSiteApp",
+  "name": "lantern_www",
   "version": "0.0.0",
   "homepage": "https://github.com/getlantern/www.getlantern.org",
   "repository": "https://github.com/getlantern/www.getlantern.org.git",
   "dependencies": {
-    "http-server": "0.5.5"
+    "http-server": "0.6.1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -49,7 +49,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "start": "./node_modules/.bin/http-server -p 8000"
+    "start": "./node_modules/.bin/http-server -p 8000 -c 300 -d false"
   },
   "analyze": false,
   "subdomain": "getlantern"

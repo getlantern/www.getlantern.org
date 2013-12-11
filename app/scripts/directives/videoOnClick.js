@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('GetLanternSiteApp')
+angular.module('lantern_www')
   .directive('videoOnClick', ['$rootScope', '$translate', '$window', 'constants', function ($rootScope, $translate, $window, constants) {
     return function (scope, element) {
       element.bind('click', function () {
