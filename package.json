@@ -4,7 +4,7 @@
   "homepage": "https://github.com/getlantern/www.getlantern.org",
   "repository": "https://github.com/getlantern/www.getlantern.org.git",
   "dependencies": {
-    "http-server": "0.5.5"
+    "http-server": "0.6.1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
