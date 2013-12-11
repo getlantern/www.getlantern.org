@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('GetLanternSiteApp')
+angular.module('lantern_www')
   .controller('DownloadCtrl', [
       '$log',
       '$rootScope',

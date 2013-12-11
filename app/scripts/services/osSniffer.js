@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('GetLanternSiteApp')
+angular.module('lantern_www')
   .factory('osSniffer', [function () {
     var os = 'UNAVAILABLE_OS';
 

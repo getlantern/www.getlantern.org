@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('GetLanternSiteApp')
+angular.module('lantern_www')
   .constant('constants', {
     DEFAULT_LANGCODE: 'en_US',
     LANGS: {

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('GetLanternSiteApp')
+angular.module('lantern_www')
   .factory('installerDataFetcher', ['$http', '$q', 'constants', function ($http, $q, constants) {
 
     function fetch(callback, errback) {

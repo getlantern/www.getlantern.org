@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('GetLanternSiteApp')
+angular.module('lantern_www')
   .directive('lightbox', ['$rootScope', function ($rootScope) {
     return function (scope, element) {
       $rootScope.lightbox = element;
