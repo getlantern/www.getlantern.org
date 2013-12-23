@@ -51,13 +51,7 @@
           </ul>
         </nav>
         -->
-        <nav class="section-nav">
-          <ul class="section-list">
-            <li><a href="#about" ng-bind-template="{{'ABOUT' | translate}}">About</a></li>
-            <li><a href="#faq" ng-bind-template="{{'FAQ' | translate}}">FAQ</a></li>
-            <li><a ng-href="{{DOCS_URL}}" target="_blank" ng-bind-template="{{'DOCS' | translate}}">Docs</a></li>
-          </ul>
-        </nav>
+            
         <div class="wrap clearfix">
           <div class="site-logo">
             <a href="/">
@@ -65,110 +59,47 @@
               <span class="beta" ng-bind-template="{{'BETA' | translate}}">Beta</span>
             </a>
           </div>
+          <nav class="section-nav">
+              <ul class="section-list">
+                <li><a href="#about" ng-bind-template="{{'ABOUT' | translate}}">About</a></li>
+                <li><a href="#faq" ng-bind-template="{{'FAQ' | translate}}">FAQ</a></li>
+                <li><a ng-href="{{DOCS_URL}}" target="_blank" ng-bind-template="{{'DOCS' | translate}}">Docs</a></li>
+              </ul>
+            </nav>
         </div>
       </header>
 
       <section class="section download" ng-controller="DownloadCtrl">
         <div class="constrained">
-          <div class="panel">
-            <h1 class="panel-title" ng-bind-template="{{'WHAT_IS_LANTERN' | translate}}">What is Lantern?</h1>
-            <div class="panel-text">
-              <p ng-bind-template="{{'LANTERN_DESCRIPTION_1' | translate}}">Lantern is a network...</p>
-              <br>
-              <br>
-              <p ng-bind-template="{{'LANTERN_DESCRIPTION_2' | translate}}">Lantern is a network...</p>
+            <div class="panel">
+                <h1 class="panel-title" ng-bind-template="{{'WHAT_IS_LANTERN' | translate}}">What is Lantern?</h1>
             </div>
-
-            <!-- if we haven't (yet) fetched installer data -->
-            <!--
-            <div ng-hide="data" ng-bind-template="{{'CHECK_BACK_SOON' | translate}}">Check back again soon to download Lantern.</div>
-            -->
-            <!--<section ng-hide="data" class="signup">-->
-            <section class="signup">
-              <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
-                <input type="hidden" name="_charset_">
-                <h5 class="form-title" ng-bind-template="{{'REQUEST_INVITE' | translate}}">Request an invite and updates:</h5>
-                <div class="input-append">
-                  <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
-                    ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
-                    class="input-xlarge" placeholder="email@example.com">
-                  <input type="submit" name="subscribe" class="btn btn-inverse"
-                    ng-disabled="signupForm.$invalid"
-                    value="+">
-                </div>
-              </form>
-            </section>
-
-            <!-- if we have fetched installer data -->
-            <!--<div ng-show="data">-->
-
-              <!-- if the user selected an OS, or we auto-selected the sniffed OS -->
-              <!--
-              <div ng-hide="selectedOS == 'UNAVAILABLE_OS'">
-
-                <div ng-hide="downloadClicked">
-                  <div class="button-wrapper">
-                    <a class="btn btn-primary btn-large" ng-click="handleDownload()" ng-bind-template="{{'DOWNLOAD_LANTERN' | translate}}">Download Lantern</a>
-                  </div>
-
-                  <ul class="data-list">
-                    <li class="first">
-                      <span class="icn icn-{{icnClassFor[selectedOS]}}"></span>
-                      {{selectedOS | translate}}
-                      <span class="extra-info">
-                        {{data[selectedOS].minOSVerReq}}
-                        <span ng-bind-template="{{'OR_HIGHER' | translate}}">or higher</span>
-                      </span>
-                    </li>
-                   <li>
-                    <span ng-bind-template="{{'VERSION' | translate}}">Version</span>
-                      {{data[selectedOS].version}}
-                    </li>
-                    <li class="last">
-                      <span ng-bind-template="{{'RELEASED' | translate}}">Released</span>
-                      <time datetime="{{data[selectedOS].released}}">
-                        {{data[selectedOS].released | date}}
-                      </time>
-                    </li>
-                  </ul>
-                </div>
-
-                <div ng-show="downloadClicked">
-                  <h3 class="subprompt" ng-bind-template="{{'DOWNLOAD_IN_PROGRESS' | translate}}">Your download should be in progress...</h3>
-                  <div>
-                    <a href="{{data[selectedOS].url}}" ng-bind-template="{{'DIRECT_LINK' | translate}}">Direct download link</a>
-                  </div>
-                  <div class="warning" ng-bind-template="{{'WARNING' | translate}}">
-                    Warning: Lantern is pending external security audit and thorough peer review within the technical community. Please only use Lantern if you understand your risks. If you need to use Lantern to <strong>Get Access</strong> to blocked sites, it may not work until you receive an invite from an already-invited user.
-                  </div>
-                </div>
-
-                <div class="os-link">
-                  <a ng-click="selectOS('UNAVAILABLE_OS')" ng-bind-template="{{'OTHER_SYSTEMS' | translate}}">Other systems</a>
-                </div>
-              </div>
-
-              <div ng-show="selectedOS == 'UNAVAILABLE_OS'">
-                <h3 class="subprompt" ng-bind-template="{{'CHOOSE_SYSTEM' | translate}}">Choose System</h3>
-                <ul class="data-list os-select">
-                  <li ng-repeat="osKey in osKeys | orderBy:isUbuntu">
-                    <span class="icn icn-{{icnClassFor[osKey]}}"></span>
-                    <a ng-click="selectOS(osKey)">{{osKey | translate}}</a>
-                    <span class="extra-info">
-                      {{data[osKey].minOSVerReq}}
-                      <span ng-bind-template="{{'OR_HIGHER' | translate}}">or higher</span>
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            -->
-          </div>
-
             <div class="video-panel">
                 <img class="video-snapshot" src="images/video-snapshot.jpg" video-on-click>
                 <img class="play-button" src="images/icon-play.png" video-on-click>
                 <div id="video"></div>
+            </div>
+            <div class="panel">
+                <div class="panel-text">
+                    <p ng-bind-template="{{'LANTERN_DESCRIPTION_1' | translate}}">Lantern is a network...</p>
+                </div>
+            </div>
+            <div class="signup">
+                <p ng-bind-template="{{'LANTERN_DESCRIPTION_2' | translate}}">Lantern is a network...</p>
+                <section class="signup">
+                  <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
+                    <input type="hidden" name="_charset_">
+                    <h5 class="form-title" ng-bind-template="{{'REQUEST_INVITE' | translate}}">Request an invite and updates:</h5>
+                    <div class="input-append">
+                      <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
+                        ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
+                        class="input-xlarge" placeholder="email@example.com">
+                      <input type="submit" name="subscribe" class="btn btn-inverse"
+                        ng-disabled="signupForm.$invalid"
+                        value="+">
+                    </div>
+                  </form>
+                </section>
             </div>
         </div>
       </section>
@@ -193,54 +124,56 @@
       -->
 
         <section class="section white-panel watch">
-            <a name="about" class="section-target">
-              <h3 class="pagination-centered" ng-bind-template="{{'HOW_LANTERN_WORKS' | translate}}">How Lantern Works</h3>
-            </a>
-            <p ng-bind-template="{{'LANTERN_PARAGRAPH_1' | translate}}">Lantern's main goal is...</p>
-            <p ng-bind-template="{{'LANTERN_PARAGRAPH_2' | translate}}">At the core of Lantern is...</p>
-            <!--
-            <div class="input-append">
-                <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
-                    ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
-                    class="input-xlarge" placeholder="email@example.com">
-                <input type="submit" name="subscribe" class="btn btn-inverse"
-                    ng-disabled="signupForm.$invalid"
-                    value="+">
-            </div>
-            -->
-            <p class="pagination-centered">
-              <img class="app-screenshot img-polaroid" src="images/vis.gif">
-            </p>
-
-            <div id="faq" class="clearfix" ng-controller="DownloadCtrl">
-                <a name="faq" class="section-target">
-                  <h3 class="pagination-centered" ng-bind-template="{{'QUESTIONS_AND_ANSWERS' | translate}}">Questions and Answers</h3>
+            <div class="constrained">
+                <a name="about" class="section-target">
+                  <h3 class="pagination-centered" ng-bind-template="{{'HOW_LANTERN_WORKS' | translate}}">How Lantern Works</h3>
                 </a>
-                <ul>
-                    <li class="clearfix" ng-repeat="faq in faqs">
-                        <button ng-click="faq.expanded=!faq.expanded" class="expander">{{!faq.expanded && '+' || '-'}}</button>
-                        <div class="faq-item">
-                          <a ng-href="#faq_{{faq.key|lowercase}}" name="faq_{{faq.key|lowercase}}"
-                             ng-click="faq.expanded=!faq.expanded"><h5 ng-bind-template="{{faq.key + '_QUESTION' | translate}}"></h5></a>
-                            <div ng-show="faq.expanded" class="faq-answer">
-                                <p ng-repeat="i in range(1, faq.nparagraphs)">
-                                   <span ng-bind-html="faq.key + '_ANSWER_' + i | translate"></span>
-                                </p>
-                                <div class="input-append" ng-show="faq.key == 'DOWNLOAD_LANTERN'">
-                                  <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
-                                    <input type="hidden" name="_charset_">
-                                    <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
-                                        ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
-                                        class="input-xlarge" placeholder="email@example.com">
-                                    <input type="submit" name="subscribe" class="btn btn-inverse"
-                                        ng-disabled="signupForm.$invalid"
-                                        value="+">
-                                  </form>
+                <p ng-bind-template="{{'LANTERN_PARAGRAPH_1' | translate}}">Lantern's main goal is...</p>
+                <p ng-bind-template="{{'LANTERN_PARAGRAPH_2' | translate}}">At the core of Lantern is...</p>
+                <!--
+                <div class="input-append">
+                    <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
+                        ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
+                        class="input-xlarge" placeholder="email@example.com">
+                    <input type="submit" name="subscribe" class="btn btn-inverse"
+                        ng-disabled="signupForm.$invalid"
+                        value="+">
+                </div>
+                -->
+                <p class="pagination-centered">
+                  <img class="app-screenshot img-polaroid" src="images/vis.gif">
+                </p>
+    
+                <div id="faq" class="clearfix" ng-controller="DownloadCtrl">
+                    <a name="faq" class="section-target">
+                      <h3 class="pagination-centered" ng-bind-template="{{'QUESTIONS_AND_ANSWERS' | translate}}">Questions and Answers</h3>
+                    </a>
+                    <ul>
+                        <li class="clearfix" ng-repeat="faq in faqs">
+                            <button ng-click="faq.expanded=!faq.expanded" class="expander">{{!faq.expanded && '+' || '-'}}</button>
+                            <div class="faq-item">
+                              <a ng-href="#faq_{{faq.key|lowercase}}" name="faq_{{faq.key|lowercase}}"
+                                 ng-click="faq.expanded=!faq.expanded"><h5 ng-bind-template="{{faq.key + '_QUESTION' | translate}}"></h5></a>
+                                <div ng-show="faq.expanded" class="faq-answer">
+                                    <p ng-repeat="i in range(1, faq.nparagraphs)">
+                                       <span ng-bind-html="faq.key + '_ANSWER_' + i | translate"></span>
+                                    </p>
+                                    <div class="input-append" ng-show="faq.key == 'DOWNLOAD_LANTERN'">
+                                      <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
+                                        <input type="hidden" name="_charset_">
+                                        <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
+                                            ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
+                                            class="input-xlarge" placeholder="email@example.com">
+                                        <input type="submit" name="subscribe" class="btn btn-inverse"
+                                            ng-disabled="signupForm.$invalid"
+                                            value="+">
+                                      </form>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
       <!--

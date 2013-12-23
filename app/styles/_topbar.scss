@@ -1,80 +1,106 @@
+$break-small: 780px;
+
 .header {
-  display: block;
-  background-color: $lnt-teal;
-  @include box-shadow(rgba(black, 0.19) 0 1px 0);
-  position: relative;
-  z-index: 1;
-  border-bottom: 1px solid #12485d;
+    display: block;
+    background-color: $lnt-teal;
+    @include box-shadow(rgba(black, 0.19) 0 1px 0);
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid #12485d;
 
-
-  //.social-media-icons {
-  //  margin: 25px 20px 0 0;
-  //}
-
-  .section-nav {
-    float: right;
-    margin: 30px 22px 0 0;
-    font-family: Oswald;
-    text-transform: uppercase;
-
-    *[dir=rtl] & {
-      float: left;
-      margin: 30px 0 0 22px;
+    //.social-media-icons {
+    //  margin: 25px 20px 0 0;
+    //}
+    
+    .site-logo {
+        float: left;
+        position: relative;
+        width: 153px;
+        padding-bottom: 12px;
+        margin-top: 10px;
+        @media screen and (max-width: $break-small) {
+            float: none;
+            margin: 5px auto;
+        }
+        
+        .beta {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-size: 11px;
+            color: #b1b8bc;
+            text-transform: uppercase;
+        }
     }
-  }
 
-  .section-list {
-    @include inline-list;
-
-    a {
-      color: #fff;
+    .section-nav {
+        float: right;
+        margin: 34px 0 0 0;
+        font-family: Oswald;
+        text-transform: uppercase;
+        @media screen and (max-width: $break-small) {
+            float: none;
+            margin: 15px auto;
+            text-align: center;
+        }
+        
+        *[dir=rtl] & {
+            float: left;
+            margin: 30px 0 0 22px;
+        }
+        
+        .section-list {
+            @include inline-list;
+            a {
+                color: #fff;
+            }
+            li {
+                display: inline-block;
+                width: 70px;
+                text-align: center;
+            }
+        }
+    }
+    
+    /*
+    .lang-chooser {
+        margin: 26px 22px 0 0;
+        //text-align: center;
+        //padding: 10px 0 0 30px;
     }
 
-    li {
-      padding: 0 20px;
-    }
-  }
-
-  /*
-  .lang-chooser {
-    margin: 26px 22px 0 0;
-    //text-align: center;
-    //padding: 10px 0 0 30px;
-  }
-
-  .dropdown-toggle {
-    background: $lnt-teal;
-    font-weight: normal;
-    text-shadow: 1px 1px 1px #000;
-
-    &:hover {
-      background: rgba(0, 0, 0, .1);
-    }
-  }
-
-  .lang-list {
-    background-color: #000;
-    background: rgba(0, 0, 0, .8);
-    text-shadow: 1px 1px 1px #000;
-    min-width: 100px;
-    text-align: right;
-    a {
-      color: #fff !important;
-      &.active-lang, &:hover {
+    .dropdown-toggle {
         background: $lnt-teal;
-        background-image: linear-gradient(to bottom, $lnt-light-teal, $lnt-teal);
-      }
+        font-weight: normal;
+        text-shadow: 1px 1px 1px #000;
+        &:hover {
+            background: rgba(0, 0, 0, .1);
+        }
+    }
+
+    .lang-list {
+        background-color: #000;
+        background: rgba(0, 0, 0, .8);
+        text-shadow: 1px 1px 1px #000;
+        min-width: 100px;
+        text-align: right;
+        a {
+            color: #fff !important;
+            &.active-lang, &:hover {
+            background: $lnt-teal;
+            background-image: linear-gradient(to bottom, $lnt-light-teal, $lnt-teal);
+        }
     }
   }
 
-  .dropdown-menu li > a:hover {
-  }
+    .dropdown-menu li > a:hover {
+    }
 
-  .btn-group.open .dropdown-toggle {
-    background-color: #000;
-    background: rgba(0, 0, 0, .8);
-  }
-  */
+    .btn-group.open .dropdown-toggle {
+        background-color: #000;
+        background: rgba(0, 0, 0, .8);
+    }
+    */
 
     .header-links a {
         -webkit-transition: color 0.5s;
@@ -102,18 +128,4 @@
     font-family: 'Oswald', Helvetica, Arial, sans-serif;
 }
 
-.site-logo {
-  position: relative;
-  width: 153px;
-  padding-bottom: 12px;
-  margin-top: 10px;
-
-  .beta {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    font-size: 11px;
-    color: #b1b8bc;
-    text-transform: uppercase;
-  }
-}
+    
