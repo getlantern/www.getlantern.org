@@ -28,7 +28,10 @@ module.exports = function (grunt) {
     watch: {
       js: {
         files: ['{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js'],
-        tasks: ['newer:jshint:all']
+        tasks: ['newer:jshint:all'],
+        options: {
+          livereload: true
+        }
       },
       jsTest: {
         files: ['test/spec/{,*/}*.js'],
@@ -41,10 +44,6 @@ module.exports = function (grunt) {
       jsFromJSON: {
         files: ['<%= yeoman.app %>/locale/*.json'],
         tasks: ['jsFromJSON:server']
-      },
-      styles: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-        tasks: ['newer:copy:styles', 'autoprefixer']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -148,9 +147,17 @@ module.exports = function (grunt) {
       }
     },
 
-    
+    // Automatically inject Bower components into the app
+    'bower-install': {
+      app: {
+        html: '<%= yeoman.app %>/index.html',
+        ignorePath: '<%= yeoman.app %>/'
+      }
+    },
 
-    
+
+
+
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
       options: {
@@ -165,7 +172,8 @@ module.exports = function (grunt) {
         httpGeneratedImagesPath: '/images/generated',
         httpFontsPath: '/styles/fonts',
         relativeAssets: false,
-        assetCacheBuster: false
+        assetCacheBuster: false,
+        raw: 'Sass::Script::Number.precision = 10\n'
       },
       dist: {
         options: {
@@ -236,22 +244,16 @@ module.exports = function (grunt) {
     htmlmin: {
       dist: {
         options: {
-          // Optional configurations that you can uncomment to use
-          // removeCommentsFromCDATA: true,
-          // collapseBooleanAttributes: true,
-          // removeAttributeQuotes: true,
-          // removeRedundantAttributes: true,
-          // useShortDoctype: true,
-          // removeEmptyAttributes: true,
-          // removeOptionalTags: true*/
-          collapseWhitespace: false, // setting to true messes up styles e.g. in footer
+          collapseWhitespace: true,
+          collapseBooleanAttributes: true,
+          removeCommentsFromCDATA: true,
           removeComments: true,
-          removeRedundantAttributes: true
+          removeOptionalTags: true
         },
         files: [{
           expand: true,
-          cwd: '<%= yeoman.app %>',
-          src: ['*.html', 'views/*.html'],
+          cwd: '<%= yeoman.dist %>',
+          src: ['*.html', 'views/{,*/}*.html'],
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -259,23 +261,23 @@ module.exports = function (grunt) {
 
     // Allow the use of non-minsafe AngularJS files. Automatically makes it
     // minsafe compatible so Uglify does not destroy the ng references
-    //ngmin: {
-    //  dist: {
-    //    files: [{
-    //      expand: true,
-    //      cwd: '.tmp/concat/scripts',
-    //      src: '*.js',
-    //      dest: '.tmp/concat/scripts'
-    //    }]
-    //  }
-    //},
+    ngmin: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '.tmp/concat/scripts',
+          src: '*.js',
+          dest: '.tmp/concat/scripts'
+        }]
+      }
+    },
 
     // Replace Google CDN references
-    //cdnify: {
-    //  dist: {
-    //    html: ['<%= yeoman.dist %>/*.html']
-    //  }
-    //},
+    cdnify: {
+      dist: {
+        html: ['<%= yeoman.dist %>/*.html']
+      }
+    },
 
     // Copies remaining files to places other tasks can use
     copy: {
@@ -286,8 +288,8 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
           src: [
-            '*.html',
             '*.{ico,png,txt}',
+            '*.html',
             'images/{,*/}*.{gif,webp}',
             'styles/fonts/*'
           ]
@@ -295,9 +297,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/images',
-          src: [
-            'generated/*'
-          ]
+          src: ['generated/*']
         }, {
           expand: true,
           cwd: '.',
@@ -318,19 +318,15 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
-        'compass:server',
-        'copy:styles'
+        'compass:server'
       ],
       test: [
-        'compass',
-        'copy:styles'
+        'compass'
       ],
       dist: [
         'compass:dist',
-        'copy:styles',
         'imagemin',
-        'svgmin',
-        'htmlmin'
+        'svgmin'
       ]
     },
 
@@ -415,6 +411,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'jsFromJSON:server',
+      'bower-install',
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
@@ -437,18 +434,19 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'bower-install',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
     'concat',
   //'ngmin', // XXX getting clobbered by uglify task below
     'copy:dist',
-  //'cdnify',
+  //'cdnify', // prefer hosting everything from our own servers
     'cssmin',
     'uglify',
     'rev',
-    'usemin'
-    //'htmlmin'
+    'usemin',
+    'htmlmin'
   ]);
 
   grunt.registerTask('default', [
