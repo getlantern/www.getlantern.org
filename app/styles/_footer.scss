@@ -22,12 +22,15 @@
   }
 
   .navlink-list {
-    @include delimited-list('∙');
+    @include inline-list;
 
+    &.lang-list > li {
+      padding: 0 5px;
+    }
     &.lang-list, &.lang-list a {
       font-size: 13px;
       &.active-lang {
-        text-decoration: underline;
+        font-weight: bold;
       }
     }
 

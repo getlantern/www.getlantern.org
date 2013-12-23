@@ -4,6 +4,7 @@ angular.module('lantern_www')
   .constant('constants', {
     DEFAULT_LANGCODE: 'en_US',
     LANGS: {
+      // http://www.omniglot.com/language/names.htm
       en_US: {
         code: 'en_US',
         name: 'English',

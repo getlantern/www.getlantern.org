@@ -201,20 +201,20 @@
 
         <nav>
           <ul class="navlink-list main-nav">
-            <li><a target="_blank" ng-href="{{FORUMS_URL}}" ng-bind-template="{{'FORUMS' | translate}}">Forums</a>&nbsp;</li>
-            <li><a target="_blank" ng-href="{{DOCS_URL}}" ng-bind-template="{{'DOCS' | translate}}">Docs</a>&nbsp;</li>
-            <li><a target="_blank" ng-href="{{PRIVACY_URL}}" ng-bind-template="{{'PRIVACY' | translate}}">Privacy</a>&nbsp;</li>
-            <li><a target="_blank" ng-href="{{GET_INVOLVED_URL}}" ng-bind-template="{{'GET_INVOLVED' | translate}}">Get Involved</a>&nbsp;</li>
+            <li><a target="_blank" ng-href="{{FORUMS_URL}}" ng-bind-template="{{'FORUMS' | translate}}">Forums</a></li><!--
+         --><li><a target="_blank" ng-href="{{DOCS_URL}}" ng-bind-template="{{'DOCS' | translate}}">Docs</a></li><!--
+         --><li><a target="_blank" ng-href="{{PRIVACY_URL}}" ng-bind-template="{{'PRIVACY' | translate}}">Privacy</a></li><!--
+         --><li><a target="_blank" ng-href="{{GET_INVOLVED_URL}}" ng-bind-template="{{'GET_INVOLVED' | translate}}">Get Involved</a></li>
           </ul>
         </nav>
 
         <nav>
           <!-- XXX DRY .social-media-icons in header -->
           <ul class="social-media-icons">
-            <li><a target="_blank" ng-href="{{TWITTER_URL}}"><span class="icon-twitter"></span></a></li>
-            <li><a target="_blank" ng-href="{{FACEBOOK_URL}}"><span class="icon-facebook"></span></a></li>
-            <li><a target="_blank" ng-href="{{TUMBLR_URL}}"><span class="icon-tumblr"></span></a></li>
-            <li><a target="_blank" ng-href="{{GITHUB_URL}}"><span class="icon-github"></span></a></li>
+            <li><a target="_blank" ng-href="{{TWITTER_URL}}"><span class="icon-twitter"></span></a></li><!--
+         --><li><a target="_blank" ng-href="{{FACEBOOK_URL}}"><span class="icon-facebook"></span></a></li><!--
+         --><li><a target="_blank" ng-href="{{TUMBLR_URL}}"><span class="icon-tumblr"></span></a></li><!--
+         --><li><a target="_blank" ng-href="{{GITHUB_URL}}"><span class="icon-github"></span></a></li>
             <!--
             <li><a target="_blank" ng-href="{{GOOGLEPLUS_URL}}" target="_blank"><span class="icon-googleplus"></span></a></li>
             <li><a target="_blank" ng-href="{{YOUTUBE_URL}}" target="_blank"><span class="icon-youtube"></span></a></li>
@@ -223,15 +223,14 @@
         </nav>
 
         <nav ng-show="NLANGS > 1">
-          <ul class="navlink-list lang-list">
-            <li ng-repeat="lang in LANGS">
-              <a ng-show="lang.code == activeLang.code" class="active-lang">{{lang.name}}</a>
-              <a ng-href="#{{lang.code}}" ng-hide="lang.code == activeLang.code" ng-click="changeLang(lang.code)">{{lang.name}}</a>
-            </li>
-            <li>
-              <a ng-href="{{HELP_TRANSLATE_URL}}" target="_blank" ng-bind-template="{{'HELP_TRANSLATE' | translate}}">
+          <ul class="navlink-list lang-list" dir="ltr">
+            <li ng-repeat="lang in LANGS"><!--
+           --><a ng-href="#{{lang.code}}" ng-class="{'active-lang': lang.code == activeLang.code}" ng-click="changeLang(lang.code)">{{lang.name}}</a><!--
+          --></li><!--
+         --><li><!--
+           --><strong><a ng-href="{{HELP_TRANSLATE_URL}}" target="_blank" ng-bind-template="{{'HELP_TRANSLATE' | translate}}">
                 Help Translate
-              </a>
+            </a></strong>
             </li>
           </ul>
         </nav>

@@ -1,5 +1,5 @@
 application: getlanternhr
-version: '2013-11-25-pt'
+version: '2013-12-22'
 runtime: python27
 api_version: 1
 threadsafe: yes
