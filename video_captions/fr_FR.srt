@@ -67,11 +67,11 @@ Mais vous pouvez aider
 
 17
 00:01:08,0 --> 00:01:10,0
-en utilisant Lantern.
+en utilisant Lanterne.
 
 18
 00:01:11,0 --> 00:01:13,0
-Lantern est un logiciel libre et sécurisé
+Lanterne est un logiciel libre et sécurisé
 
 19
 00:01:13,0 --> 00:01:18,0
@@ -83,7 +83,7 @@ C'est un logiciel qui permet de contourner la censure d’État.
 
 21
 00:01:21,0 --> 00:01:23,0
-Quand vous installez Lantern dans votre ordinateur
+Quand vous installez Lanterne dans votre ordinateur
 
 22
 00:01:23,0 --> 00:01:25,0
@@ -131,5 +131,5 @@ Rejoignez le mouvement.
 
 33
 00:01:47,0 --> 00:01:49,0
-Rejoignez Lantern.
+Rejoignez Lanterne.
 
