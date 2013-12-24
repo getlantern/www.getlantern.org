@@ -1,8 +1,7 @@
 1
 00:00:05,0 --> 00:00:10,0
 Houve um tempo em que um grito de socorro
-
-só foi ouvido na distância em que sua voz pudesse viajar.
+foi apenas ouvido até onde a sua voz pudesse alcançar.
 
 2
 00:00:20,0 --> 00:00:22,0
