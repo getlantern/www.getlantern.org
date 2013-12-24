@@ -1,27 +1,27 @@
 1
 00:00:05,0 --> 00:00:10,0
-Hubo un tiempo en que una suplica de ayuda era
-sólo oída tan lejos como su voz pudiera viajar.
+Hubo un tiempo en que una súplica de ayuda
+se oía tan lejos como alcanzara tu voz.
 
 2
 00:00:20,0 --> 00:00:22,0
-Ahora las cosas son diferentes.
+Ahora las cosas han cambiado.
 
 3
 00:00:23,0 --> 00:00:25,0
-Ahora alguien puede ser oído en cuestión de segundos
+Ahora a alguien se le puede oir en cuestión de segundos
 
 4
 00:00:28,0 --> 00:00:30,0
-por todo el mundo.
+alrededor de todo el mundo.
 
 5
 00:00:31,0 --> 00:00:34,0
-Internet se ha convertido en una voz para los sin voz
+Internet se ha convertido en una voz para los silenciados
 
 6
 00:00:34,0 --> 00:00:36,0
-Una manera de iluminar la concienciación sobre la corrupción oculta
+Una forma de concienciar sobre la corrupción oculta
 
 7
 00:00:37,0 --> 00:00:39,0
@@ -35,11 +35,11 @@ y está cambiando el mundo.
 
 9
 00:00:43,0 --> 00:00:45,0
-Excepto que la libertad no está disponible para todos.
+Salvo que la libertad no está disponible para todos.
 
 10
 00:00:46,0 --> 00:00:50,0
-Más de un cuarto de la población mundial vive con una censura impuesta-por-su-gobierno
+Más de un cuarto de la población mundial vive con una censura impuesta por su gobierno
 
 11
 00:00:50,0 --> 00:00:52,0
@@ -55,7 +55,7 @@ Youtube, Twitter, y Google,
 
 14
 00:00:58,0 --> 00:01:01,0
-precisamente los sitios que estan arrojando luz sobre la corrupción y la injusticia,
+esos sitios que están arrojando luz sobre la corrupción y la injusticia,
 
 15
 00:01:02,0 --> 00:01:04,0
@@ -63,7 +63,7 @@ son bloqueados.
 
 16
 00:01:06,0 --> 00:01:08,0
-Pero puede ayudar
+Pero tú puedes ayudar
 
 17
 00:01:08,0 --> 00:01:10,0
@@ -71,23 +71,23 @@ usando Lantern.
 
 18
 00:01:11,0 --> 00:01:13,0
-Lantern es un software libre seguro y confiable
+Lantern es un software libre, seguro y confiable
 
 19
 00:01:13,0 --> 00:01:18,0
-que da a la gente acceso a Internet en lugares donde el acceso es denegado.
+que da a la gente acceso a Internet en lugares donde está prohibido.
 
 20
 00:01:18,0 --> 00:01:21,0
-Es software que circumviene la censura gubernamental.
+Es software que circunviene la censura gubernamental.
 
 21
 00:01:21,0 --> 00:01:23,0
-Cuando instala (y ejecuta) Lantern en su equipo
+Cuando instalas (y ejecutas) Lantern en tu equipo
 
 22
 00:01:23,0 --> 00:01:25,0
-usted proporciona una nueva ruta de escape
+proporcionas una nueva ruta de escape
 
 23
 00:01:25,0 --> 00:01:28,0
@@ -95,7 +95,7 @@ para hacer que la información entre y salga de países con censura.
 
 24
 00:01:29,0 --> 00:01:31,0
-Está proporcionando a la gente una vía alternativa
+Estás proporcionando a la gente una vía alternativa
 
 25
 00:01:31,0 --> 00:01:33,0
@@ -111,7 +111,7 @@ ahora más que nunca.
 
 28
 00:01:38,0 --> 00:01:40,0
-Con unos sencillos pasos, usted tiene el poder
+Mediante unos sencillos pasos, tienes el poder
 
 29
 00:01:40,0 --> 00:01:42,0
@@ -123,13 +123,13 @@ y ayudar a cambiar el mundo.
 
 31
 00:01:45,0 --> 00:01:46,0
-¿Querrá?
+¿Lo harás?
 
 32
 00:01:46,0 --> 00:01:47,0
-Únase al movimiento.
+Únete al movimiento.
 
 33
 00:01:47,0 --> 00:01:49,0
-Únase a Lantern.
+Únete a Lantern.
 
