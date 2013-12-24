@@ -35,6 +35,11 @@ angular.module('lantern_www')
         name: 'Svenska',
         dir: 'ltr'
       },
+      ja: {
+        code: 'ja',
+        name: '日本語',
+        dir: 'ltr'
+      },
       es: {
         code: 'es',
         name: 'español',
