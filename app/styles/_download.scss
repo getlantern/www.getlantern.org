@@ -19,10 +19,10 @@
     border: 1px solid #222 !important;
     font-weight: bold;
     font-size: $baseFontSize * .9;
-    @include ctb-box-shadow(none !important);
+    @include box-shadow(none !important);
 
     &:focus {
-      @include ctb-box-shadow(0 0 8px rgba(120, 120, 120, .6) !important);
+      @include box-shadow(0 0 8px rgba(120, 120, 120, .6) !important);
     }
 
     $placeholder-color: $lnt-pale-yellow;

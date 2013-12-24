@@ -25,5 +25,5 @@
 
 @mixin input-invalid() {
   border-color: darken(#ee5f5b, 10%) !important;
-  @include ctb-box-shadow(0 0 6px lighten(#ee5f5b, 20%) !important);
+  @include box-shadow(0 0 6px lighten(#ee5f5b, 20%) !important);
 }
