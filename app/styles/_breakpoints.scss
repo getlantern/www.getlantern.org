@@ -3,21 +3,12 @@
 
   .header {
     .section-nav/*, .social-media-icons, .dropdown-toggle .active-lang */ {
-      display: none;
-    }
-  }
-
-  .section {
-    padding: 15px 0 10%;
-
-    &.watch {
-      padding: 15px;
+      
     }
   }
 
   .panel {
     width: 90%;
-    height: 370px;
     padding-top: 10%;
 
     .panel-title {
@@ -63,15 +54,6 @@
 
 /* Landscape phone to portrait tablet */
 @media (min-width: 600px)  {
-
-  .section {
-    padding: 25px 0 80px;
-
-    &.watch {
-      padding: 15px;
-    }
-  }
-
   .panel {
     width: 50%;
 

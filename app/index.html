@@ -3,338 +3,217 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" id="ng-app" ng-app="lantern_www"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" id="ng-app" ng-app="lantern_www"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" id="ng-app" ng-app="lantern_www"> <!--<![endif]-->
-  <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title ng-bind-template="{{'LANTERN' | translate}}">Lantern</title>
-    <meta name="description" content="Defeat internet censorship. Give or get access to the open internet by sharing connections through your social network." ng-attr-content="{{'META_DESC' | translate}}">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <title ng-bind-template="{{'LANTERN' | translate}}">Lantern</title>
+        <meta name="description" content="Defeat internet censorship. Give or get access to the open internet by sharing connections through your social network." ng-attr-content="{{'META_DESC' | translate}}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
 
-    <!-- build:js scripts/loadfirst.js -->
-    <script src="bower_components/modernizr/modernizr.js"></script>
-    <!-- endbuild -->
-  </head>
-  <body class="ng-cloak" lang="{{activeLang.code}}" dir="{{activeLang.dir}}">
-    <!--[if lt IE 8]>
-      <p class="chromeframe">You are using an outdated browser. Please <a href="https://www.google.com/chrome/">upgrade your browser</a> or <a href="https://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> and try again.</p>
-    <![endif]-->
-
-    <!--[if lt IE 9]>
-      <script src="bower_components/es5-shim/es5-shim.js"></script>
-      <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]-->
-
-    <!-- uncomment out to enable firebug lite (useful for IE)
-      <script src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js"></script>
-    -->
-
-    <!-- site content starts here -->
-    <div class="lightbox hide" lightbox>
-      <a class="lightbox-close" lightbox-close>&times;</a>
-      <div class="media-container" id="player"></div>
-    </div>
-
-    <div id="content-container">
-      <header id="topbar" class="header">
-        <!--
-        <nav class="pull-right">
-          <ul class="social-media-icons">
-            <li><a target="_blank" ng-href="{{TWITTER_URL}}"><span class="icon-twitter"></span></a></li>
-            <li><a target="_blank" ng-href="{{FACEBOOK_URL}}"><span class="icon-facebook"></span></a></li>
-            <li><a target="_blank" ng-href="{{TUMBLR_URL}}"><span class="icon-tumblr"></span></a></li>
-            <li><a target="_blank" ng-href="{{GITHUB_URL}}"><span class="icon-github"></span></a></li>
-          </ul>
-        </nav>
+        <!-- build:js scripts/loadfirst.js -->
+        <script src="bower_components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
+    </head>
+    <body class="ng-cloak" lang="{{activeLang.code}}" dir="{{activeLang.dir}}">
+        <!--[if lt IE 8]>
+          <p class="chromeframe">You are using an outdated browser. Please <a href="https://www.google.com/chrome/">upgrade your browser</a> or <a href="https://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> and try again.</p>
+        <![endif]-->
+    
+        <!--[if lt IE 9]>
+          <script src="bower_components/es5-shim/es5-shim.js"></script>
+          <script src="bower_components/json3/lib/json3.min.js"></script>
+        <![endif]-->
+    
+        <!-- uncomment out to enable firebug lite (useful for IE)
+          <script src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js"></script>
         -->
-        <nav class="section-nav">
-          <ul class="section-list">
-            <li><a href="#about" ng-bind-template="{{'ABOUT' | translate}}">About</a></li>
-            <li><a href="#faq" ng-bind-template="{{'FAQ' | translate}}">FAQ</a></li>
-            <li><a ng-href="{{DOCS_URL}}" target="_blank" ng-bind-template="{{'DOCS' | translate}}">Docs</a></li>
-          </ul>
-        </nav>
-        <div class="wrap clearfix">
-          <div class="site-logo">
-            <a href="/">
-              <img src="images/lantern-logo.png" alt="Lantern" />
-              <span class="beta" ng-bind-template="{{'BETA' | translate}}">Beta</span>
-            </a>
-          </div>
+
+        <!-- site content starts here -->
+        <div class="lightbox hide" lightbox>
+            <a class="lightbox-close" lightbox-close>&times;</a>
+            <div class="media-container" id="player"></div>
         </div>
-      </header>
 
-      <section class="section download" ng-controller="DownloadCtrl">
-        <div class="constrained">
-          <div class="panel">
-            <h1 class="panel-title" ng-bind-template="{{'WHAT_IS_LANTERN' | translate}}">What is Lantern?</h1>
-            <div class="panel-text">
-              <p ng-bind-template="{{'LANTERN_DESCRIPTION_1' | translate}}">Lantern is a network...</p>
-              <br>
-              <br>
-              <p ng-bind-template="{{'LANTERN_DESCRIPTION_2' | translate}}">Lantern is a network...</p>
-            </div>
-
-            <!-- if we haven't (yet) fetched installer data -->
-            <!--
-            <div ng-hide="data" ng-bind-template="{{'CHECK_BACK_SOON' | translate}}">Check back again soon to download Lantern.</div>
-            -->
-            <!--<section ng-hide="data" class="signup">-->
-            <section class="signup">
-              <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
-                <input type="hidden" name="_charset_">
-                <h5 class="form-title" ng-bind-template="{{'REQUEST_INVITE' | translate}}">Request an invite and updates:</h5>
-                <div class="input-append">
-                  <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
-                    ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
-                    class="input-xlarge" placeholder="email@example.com">
-                  <input type="submit" name="subscribe" class="btn btn-inverse"
-                    ng-disabled="signupForm.$invalid"
-                    value="+">
+        <div id="content-container">
+            <header id="topbar" class="header">
+                <div class="wrap clearfix">
+                    <div class="site-logo">
+                        <a href="/">
+                            <img src="images/lantern-logo.png" alt="Lantern" />
+                            <span class="beta" ng-bind-template="{{'BETA' | translate}}">Beta</span>
+                        </a>
+                    </div>
+                    <nav class="section-nav">
+                        <ul class="section-list">
+                            <li><a href="#about" ng-bind-template="{{'ABOUT' | translate}}">About</a></li>
+                            <li><a href="#faq" ng-bind-template="{{'FAQ' | translate}}">FAQ</a></li>
+                            <li><a ng-href="{{DOCS_URL}}" target="_blank" ng-bind-template="{{'DOCS' | translate}}">Docs</a></li>
+                        </ul>
+                    </nav>
                 </div>
-              </form>
-            </section>
-
-            <!-- if we have fetched installer data -->
-            <!--<div ng-show="data">-->
-
-              <!-- if the user selected an OS, or we auto-selected the sniffed OS -->
-              <!--
-              <div ng-hide="selectedOS == 'UNAVAILABLE_OS'">
-
-                <div ng-hide="downloadClicked">
-                  <div class="button-wrapper">
-                    <a class="btn btn-primary btn-large" ng-click="handleDownload()" ng-bind-template="{{'DOWNLOAD_LANTERN' | translate}}">Download Lantern</a>
-                  </div>
-
-                  <ul class="data-list">
-                    <li class="first">
-                      <span class="icn icn-{{icnClassFor[selectedOS]}}"></span>
-                      {{selectedOS | translate}}
-                      <span class="extra-info">
-                        {{data[selectedOS].minOSVerReq}}
-                        <span ng-bind-template="{{'OR_HIGHER' | translate}}">or higher</span>
-                      </span>
-                    </li>
-                   <li>
-                    <span ng-bind-template="{{'VERSION' | translate}}">Version</span>
-                      {{data[selectedOS].version}}
-                    </li>
-                    <li class="last">
-                      <span ng-bind-template="{{'RELEASED' | translate}}">Released</span>
-                      <time datetime="{{data[selectedOS].released}}">
-                        {{data[selectedOS].released | date}}
-                      </time>
-                    </li>
-                  </ul>
-                </div>
-
-                <div ng-show="downloadClicked">
-                  <h3 class="subprompt" ng-bind-template="{{'DOWNLOAD_IN_PROGRESS' | translate}}">Your download should be in progress...</h3>
-                  <div>
-                    <a href="{{data[selectedOS].url}}" ng-bind-template="{{'DIRECT_LINK' | translate}}">Direct download link</a>
-                  </div>
-                  <div class="warning" ng-bind-template="{{'WARNING' | translate}}">
-                    Warning: Lantern is pending external security audit and thorough peer review within the technical community. Please only use Lantern if you understand your risks. If you need to use Lantern to <strong>Get Access</strong> to blocked sites, it may not work until you receive an invite from an already-invited user.
-                  </div>
-                </div>
-
-                <div class="os-link">
-                  <a ng-click="selectOS('UNAVAILABLE_OS')" ng-bind-template="{{'OTHER_SYSTEMS' | translate}}">Other systems</a>
-                </div>
-              </div>
-
-              <div ng-show="selectedOS == 'UNAVAILABLE_OS'">
-                <h3 class="subprompt" ng-bind-template="{{'CHOOSE_SYSTEM' | translate}}">Choose System</h3>
-                <ul class="data-list os-select">
-                  <li ng-repeat="osKey in osKeys | orderBy:isUbuntu">
-                    <span class="icn icn-{{icnClassFor[osKey]}}"></span>
-                    <a ng-click="selectOS(osKey)">{{osKey | translate}}</a>
-                    <span class="extra-info">
-                      {{data[osKey].minOSVerReq}}
-                      <span ng-bind-template="{{'OR_HIGHER' | translate}}">or higher</span>
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            -->
-          </div>
-
-            <div class="video-panel">
-                <img class="video-snapshot" src="images/video-snapshot.jpg" video-on-click>
-                <img class="play-button" src="images/icon-play.png" video-on-click>
-                <div id="video"></div>
-            </div>
-        </div>
-      </section>
-
-      <!-- XXX(i18n): would we translate quotes? probably better to get original quotes in other languages
-      <div class="white-panel">
-        <div class="quotes constrained clearfix">
-          <div class="quote">
-            <blockquote>"An amazing quote would go here.  Something flattering."</blockquote>
-            <div class="cite"><img src="images/logo-fast-company.png" alt="Fast Company" /></div>
-          </div>
-          <div class="quote">
-            <blockquote>"An amazing quote would go here.  Something flattering."</blockquote>
-            <div class="cite"><img src="images/logo-cnbc.png" alt="CNBC" /></div>
-          </div>
-          <div class="quote last">
-            <blockquote>"An amazing quote would go here.  Something flattering."</blockquote>
-            <div class="cite"><img src="images/logo-wired.png" alt="Wired" /></div>
-          </div>
-        </div>
-      </div>
-      -->
-
-        <section class="section white-panel watch">
-            <a name="about" class="section-target">
-              <h3 class="text-center" ng-bind-template="{{'HOW_LANTERN_WORKS' | translate}}">How Lantern Works</h3>
-            </a>
-            <p ng-bind-template="{{'LANTERN_PARAGRAPH_1' | translate}}">Lantern's main goal is...</p>
-            <p ng-bind-template="{{'LANTERN_PARAGRAPH_2' | translate}}">At the core of Lantern is...</p>
-            <!--
-            <div class="input-append">
-                <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
-                    ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
-                    class="input-xlarge" placeholder="email@example.com">
-                <input type="submit" name="subscribe" class="btn btn-inverse"
-                    ng-disabled="signupForm.$invalid"
-                    value="+">
-            </div>
-            -->
-            <p class="text-center">
-              <img class="app-screenshot" src="images/vis.gif">
-            </p>
-
-            <div id="faq" class="clearfix" ng-controller="DownloadCtrl">
-                <a name="faq" class="section-target">
-                  <h3 class="text-center" ng-bind-template="{{'QUESTIONS_AND_ANSWERS' | translate}}">Questions and Answers</h3>
-                </a>
-                <ul>
-                    <li class="clearfix" ng-repeat="faq in faqs">
-                        <button ng-click="faq.expanded=!faq.expanded" class="expander">{{!faq.expanded && '+' || '-'}}</button>
-                        <div class="faq-item">
-                          <a ng-href="#faq_{{faq.key|lowercase}}" name="faq_{{faq.key|lowercase}}"
-                             ng-click="faq.expanded=!faq.expanded"><h5 ng-bind-template="{{faq.key + '_QUESTION' | translate}}"></h5></a>
-                            <div ng-show="faq.expanded" class="faq-answer">
-                                <p ng-repeat="i in range(1, faq.nparagraphs)">
-                                   <span ng-bind-html="faq.key + '_ANSWER_' + i | translate"></span>
-                                </p>
-                                <div class="input-append" ng-show="faq.key == 'DOWNLOAD_LANTERN'">
-                                  <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
-                                    <input type="hidden" name="_charset_">
+            </header>
+    
+            <section class="section download" ng-controller="DownloadCtrl">
+                <div class="wrap clearfix">
+                    <div class="panel">
+                        <h1 class="panel-title" ng-bind-template="{{'WHAT_IS_LANTERN' | translate}}">What is Lantern?</h1>
+                        <div class="panel-text">
+                            <p ng-bind-template="{{'LANTERN_DESCRIPTION_1' | translate}}">Lantern is a network...</p>
+                        </div>
+                    </div>
+                    <div class="video-panel">
+                        <img class="video-snapshot" src="images/video-snapshot.jpg" video-on-click>
+                        <img class="play-button" src="images/icon-play.png" video-on-click>
+                        <div id="video"></div>
+                    </div>
+                    <div class="panel">
+                        <section class="signup">
+                            <p ng-bind-template="{{'LANTERN_DESCRIPTION_2' | translate}}">Lantern is a network...</p>
+                            <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
+                                <input type="hidden" name="_charset_">
+                                <h5 class="form-title" ng-bind-template="{{'REQUEST_INVITE' | translate}}">Request an invite and updates:</h5>
+                                <div class="input-append">
                                     <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
                                         ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
                                         class="input-xlarge" placeholder="email@example.com">
                                     <input type="submit" name="subscribe" class="btn btn-inverse"
                                         ng-disabled="signupForm.$invalid"
                                         value="+">
-                                  </form>
                                 </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+                            </form>
+                        </section>
+                    </div>
+                </div>
+            </section>
+            <section class="section white-panel watch">
+                <div class="wrap">
+                    <a name="about" class="section-target">
+                        <h3 class="text-center" ng-bind-template="{{'HOW_LANTERN_WORKS' | translate}}">How Lantern Works</h3>
+                    </a>
+                    <p ng-bind-template="{{'LANTERN_PARAGRAPH_1' | translate}}">Lantern's main goal is...</p>
+                    <p ng-bind-template="{{'LANTERN_PARAGRAPH_2' | translate}}">At the core of Lantern is...</p>
+                    <p class="text-center">
+                        <img class="app-screenshot" src="images/vis.gif">
+                    </p>
+        
+                    <div id="faq" class="clearfix" ng-controller="DownloadCtrl">
+                        <a name="faq" class="section-target">
+                            <h3 class="text-center" ng-bind-template="{{'QUESTIONS_AND_ANSWERS' | translate}}">Questions and Answers</h3>
+                        </a>
+                        <ul>
+                            <li class="clearfix" ng-repeat="faq in faqs">
+                                <button ng-click="faq.expanded=!faq.expanded" class="expander">{{!faq.expanded && '+' || '-'}}</button>
+                                <div class="faq-item">
+                                    <a ng-href="#faq_{{faq.key|lowercase}}" name="faq_{{faq.key|lowercase}}"
+                                        ng-click="faq.expanded=!faq.expanded"><h5 ng-bind-template="{{faq.key + '_QUESTION' | translate}}"></h5></a>
+                                    <div ng-show="faq.expanded" class="faq-answer">
+                                        <p ng-repeat="i in range(1, faq.nparagraphs)">
+                                           <span ng-bind-html="faq.key + '_ANSWER_' + i | translate"></span>
+                                        </p>
+                                        <div class="input-group input-append" ng-show="faq.key == 'DOWNLOAD_LANTERN'">
+                                          <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
+                                            <input type="hidden" name="_charset_">
+                                            <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
+                                                ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
+                                                class="input-xlarge form-control" placeholder="email@example.com">
+                                            <span class="input-group-btn">
+                                                <input type="submit" name="subscribe" class="btn btn-inverse"
+                                                    ng-disabled="signupForm.$invalid"
+                                                    value="+">
+                                            </span>
+                                          </form>
+                                        </div>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" type="button">Go!</button>
+                                            </span>
+                                        </div><!-- /input-group -->
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- for http://compass-style.org/reference/compass/layout/sticky_footer/ -->
+            <div id="root_footer"></div>
+        </div>
+
+        <footer id="footer" class="footer">
+            <div class="constrained">
+                <div class="footer-logo">
+                    <img src="images/lantern-footer-logo.jpg" alt="Lantern" />
+                </div>
+                <nav>
+                    <ul class="navlink-list main-nav">
+                        <li><a target="_blank" ng-href="{{FORUMS_URL}}" ng-bind-template="{{'FORUMS' | translate}}">Forums</a></li>
+                        <li><a target="_blank" ng-href="{{DOCS_URL}}" ng-bind-template="{{'DOCS' | translate}}">Docs</a></li>
+                        <li><a target="_blank" ng-href="{{PRIVACY_URL}}" ng-bind-template="{{'PRIVACY' | translate}}">Privacy</a></li>
+                        <li><a target="_blank" ng-href="{{GET_INVOLVED_URL}}" ng-bind-template="{{'GET_INVOLVED' | translate}}">Get Involved</a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    <!-- XXX DRY .social-media-icons in header -->
+                    <ul class="social-media-icons">
+                        <li><a target="_blank" ng-href="{{TWITTER_URL}}"><span class="icon-twitter"></span></a></li>
+                        <li><a target="_blank" ng-href="{{FACEBOOK_URL}}"><span class="icon-facebook"></span></a></li>
+                        <li><a target="_blank" ng-href="{{TUMBLR_URL}}"><span class="icon-tumblr"></span></a></li>
+                        <li><a target="_blank" ng-href="{{GITHUB_URL}}"><span class="icon-github"></span></a></li>
+                    </ul>
+                </nav>
+                <nav ng-show="NLANGS > 1">
+                    <ul class="navlink-list lang-list" dir="ltr">
+                        <li ng-repeat="lang in LANGS">
+                            <a ng-href="#{{lang.code}}" ng-class="{'active-lang': lang.code == activeLang.code}" ng-click="changeLang(lang.code)">{{lang.name}}</a>
+                        </li>
+                        <li>
+                            <strong><a ng-href="{{HELP_TRANSLATE_URL}}" target="_blank" ng-bind-template="{{'HELP_TRANSLATE' | translate}}">
+                                Help Translate
+                            </a></strong>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="copyright">
+                    <p ng-bind-template="{{'COPYRIGHT' | translate}}">© 2013 Brave New Software</p>
+                </div>
             </div>
-        </section>
-      <!--
-      <section class="section white-panel demo">
-        <h1 class="section-title">Over a billion people live without a complete Internet</h1>
-        <p>Help fight firewalls.  Lantern is a free program that gives<br /> people access in places where access is denied.</p>
-        <hr />
-        <div class="demo-screen">
-          <h2 class="screen-caption">Lantern in Action</h2>
-          <img src="images/screenshot.jpg" alt="Lantern in Action" />
-        </div>
-      </section>
-      -->
-
-      <!-- for http://compass-style.org/reference/compass/layout/sticky_footer/ -->
-      <div id="root_footer"></div>
-    </div>
-
-    <footer id="footer" class="footer">
-      <div class="constrained">
-
-        <div class="footer-logo">
-          <img src="images/lantern-footer-logo.jpg" alt="Lantern" />
-        </div>
-
-        <nav>
-          <ul class="navlink-list main-nav">
-            <li><a target="_blank" ng-href="{{FORUMS_URL}}" ng-bind-template="{{'FORUMS' | translate}}">Forums</a></li><!--
-         --><li><a target="_blank" ng-href="{{DOCS_URL}}" ng-bind-template="{{'DOCS' | translate}}">Docs</a></li><!--
-         --><li><a target="_blank" ng-href="{{PRIVACY_URL}}" ng-bind-template="{{'PRIVACY' | translate}}">Privacy</a></li><!--
-         --><li><a target="_blank" ng-href="{{GET_INVOLVED_URL}}" ng-bind-template="{{'GET_INVOLVED' | translate}}">Get Involved</a></li>
-          </ul>
-        </nav>
-
-        <nav>
-          <!-- XXX DRY .social-media-icons in header -->
-          <ul class="social-media-icons">
-            <li><a target="_blank" ng-href="{{TWITTER_URL}}"><span class="icon-twitter"></span></a></li><!--
-         --><li><a target="_blank" ng-href="{{FACEBOOK_URL}}"><span class="icon-facebook"></span></a></li><!--
-         --><li><a target="_blank" ng-href="{{TUMBLR_URL}}"><span class="icon-tumblr"></span></a></li><!--
-         --><li><a target="_blank" ng-href="{{GITHUB_URL}}"><span class="icon-github"></span></a></li>
-            <!--
-            <li><a target="_blank" ng-href="{{GOOGLEPLUS_URL}}" target="_blank"><span class="icon-googleplus"></span></a></li>
-            <li><a target="_blank" ng-href="{{YOUTUBE_URL}}" target="_blank"><span class="icon-youtube"></span></a></li>
-            -->
-          </ul>
-        </nav>
-
-        <nav ng-show="NLANGS > 1">
-          <ul class="navlink-list lang-list" dir="ltr">
-            <li ng-repeat="lang in LANGS"><!--
-           --><a ng-href="#{{lang.code}}" ng-class="{'active-lang': lang.code == activeLang.code}" ng-click="changeLang(lang.code)">{{lang.name}}</a><!--
-          --></li><!--
-         --><li><!--
-           --><strong><a ng-href="{{HELP_TRANSLATE_URL}}" target="_blank" ng-bind-template="{{'HELP_TRANSLATE' | translate}}">
-                Help Translate
-            </a></strong>
-            </li>
-          </ul>
-        </nav>
-
-        <div class="copyright">
-          <p ng-bind-template="{{'COPYRIGHT' | translate}}">© 2013 Brave New Software</p>
-        </div>
-    </footer>
-
-    <!-- site content ends here -->
-
-    <script>
-      window.session = {options: {gapi_location: false}};
-    </script>
-
-    <!-- these get automatically minified and concatenated at build time -->
-    <!-- build:js scripts/loadlast.js -->
-    <script src="bower_components/session.js/session.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-translate/angular-translate.js"></script>
-    <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
-
-    <!-- local copy of google analytics -->
-    <script src="scripts/lib/analytics.js"></script>
-
-    <script src="scripts/app.js"></script>
-    <script src="scripts/constants.js"></script>
-    <script src="scripts/controllers/download.js"></script>
-    <script src="scripts/directives/lightbox.js"></script>
-    <script src="scripts/directives/signup.js"></script>
-    <script src="scripts/directives/videoOnClick.js"></script>
-    <script src="scripts/services/osSniffer.js"></script>
-    <script src="scripts/services/installerDataFetcher.js"></script>
-    <!-- generated by "grunt jsFromJSON"; populates window.translations with data from locale/*.json -->
-    <script src="scripts/jsFromJSON/translations.js"></script>
-    <!-- endbuild -->
-  </body>
+        </footer>
+        
+        <!-- site content ends here -->
+    
+        <script>
+            window.session = {options: {gapi_location: false}};
+        </script>
+    
+        <!-- these get automatically minified and concatenated at build time -->
+        <!-- build:js scripts/loadlast.js -->
+        <script src="bower_components/session.js/session.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="bower_components/angular-translate/angular-translate.js"></script>
+        <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+    
+        <!-- local copy of google analytics -->
+        <script src="scripts/lib/analytics.js"></script>
+    
+        <script src="scripts/app.js"></script>
+        <script src="scripts/constants.js"></script>
+        <script src="scripts/controllers/download.js"></script>
+        <script src="scripts/directives/lightbox.js"></script>
+        <script src="scripts/directives/signup.js"></script>
+        <script src="scripts/directives/videoOnClick.js"></script>
+        <script src="scripts/services/osSniffer.js"></script>
+        <script src="scripts/services/installerDataFetcher.js"></script>
+        <!-- generated by "grunt jsFromJSON"; populates window.translations with data from locale/*.json -->
+        <script src="scripts/jsFromJSON/translations.js"></script>
+        <!-- endbuild -->
+    </body>
 </html>
