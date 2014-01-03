@@ -77,14 +77,16 @@
                             <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
                                 <input type="hidden" name="_charset_">
                                 <h5 class="form-title" ng-bind-template="{{'REQUEST_INVITE' | translate}}">Request an invite and updates:</h5>
-                                <div class="input-append">
+                                <div class="input-group input-append">
                                     <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
                                         ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
-                                        class="input-xlarge" placeholder="email@example.com">
-                                    <input type="submit" name="subscribe" class="btn btn-inverse"
-                                        ng-disabled="signupForm.$invalid"
-                                        value="+">
-                                </div>
+                                        class="input-xlarge form-control" placeholder="email@example.com">
+                                    <span class="input-group-btn">
+                                        <input type="submit" name="subscribe" class="btn btn-inverse"
+                                            ng-disabled="signupForm.$invalid"
+                                            value="+">
+                                    </span>
+                                </div><!-- /input-group -->
                             </form>
                         </section>
                     </div>
@@ -93,7 +95,7 @@
             <section class="section white-panel watch">
                 <div class="wrap">
                     <a name="about" class="section-target">
-                        <h3 class="text-center" ng-bind-template="{{'HOW_LANTERN_WORKS' | translate}}">How Lantern Works</h3>
+                        <h2 class="text-center" ng-bind-template="{{'HOW_LANTERN_WORKS' | translate}}">How Lantern Works</h2>
                     </a>
                     <p ng-bind-template="{{'LANTERN_PARAGRAPH_1' | translate}}">Lantern's main goal is...</p>
                     <p ng-bind-template="{{'LANTERN_PARAGRAPH_2' | translate}}">At the core of Lantern is...</p>
@@ -103,37 +105,33 @@
         
                     <div id="faq" class="clearfix" ng-controller="DownloadCtrl">
                         <a name="faq" class="section-target">
-                            <h3 class="text-center" ng-bind-template="{{'QUESTIONS_AND_ANSWERS' | translate}}">Questions and Answers</h3>
+                            <h2 class="text-center" ng-bind-template="{{'QUESTIONS_AND_ANSWERS' | translate}}">Questions and Answers</h2>
                         </a>
                         <ul>
                             <li class="clearfix" ng-repeat="faq in faqs">
                                 <button ng-click="faq.expanded=!faq.expanded" class="expander">{{!faq.expanded && '+' || '-'}}</button>
                                 <div class="faq-item">
                                     <a ng-href="#faq_{{faq.key|lowercase}}" name="faq_{{faq.key|lowercase}}"
-                                        ng-click="faq.expanded=!faq.expanded"><h5 ng-bind-template="{{faq.key + '_QUESTION' | translate}}"></h5></a>
+                                        ng-click="faq.expanded=!faq.expanded"><h4 ng-bind-template="{{faq.key + '_QUESTION' | translate}}"></h4></a>
                                     <div ng-show="faq.expanded" class="faq-answer">
                                         <p ng-repeat="i in range(1, faq.nparagraphs)">
                                            <span ng-bind-html="faq.key + '_ANSWER_' + i | translate"></span>
                                         </p>
-                                        <div class="input-group input-append" ng-show="faq.key == 'DOWNLOAD_LANTERN'">
-                                          <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
-                                            <input type="hidden" name="_charset_">
-                                            <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
-                                                ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
-                                                class="input-xlarge form-control" placeholder="email@example.com">
-                                            <span class="input-group-btn">
-                                                <input type="submit" name="subscribe" class="btn btn-inverse"
-                                                    ng-disabled="signupForm.$invalid"
-                                                    value="+">
-                                            </span>
-                                          </form>
+                                        <div class="input-append" ng-show="faq.key == 'DOWNLOAD_LANTERN'">
+                                            <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
+                                                <input type="hidden" name="_charset_">
+                                                <div class="input-group">
+                                                    <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
+                                                        ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
+                                                        class="input-xlarge form-control" placeholder="email@example.com">
+                                                    <span class="input-group-btn">
+                                                        <input type="submit" name="subscribe" class="btn btn-inverse"
+                                                            ng-disabled="signupForm.$invalid"
+                                                            value="+">
+                                                    </span>
+                                                </div>
+                                            </form>
                                         </div>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control">
-                                            <span class="input-group-btn">
-                                                <button class="btn btn-default" type="button">Go!</button>
-                                            </span>
-                                        </div><!-- /input-group -->
                                     </div>
                                 </div>
                             </li>

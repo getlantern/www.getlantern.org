@@ -3,39 +3,21 @@
 
     p {
         margin: 0 auto 11px;
-        width: 85%;
     }
 
   .app-screenshot {
     margin-top: 20px;
+    width: 100%;
   }
 
 }
 
 #faq {
-    padding: 80px 25px 25px;
-
-    .expander {
-        *[dir=ltr] & {
-          margin-right: 3%;
-        }
-        *[dir=rtl] & {
-          margin-left: 3%;
-        }
-        display:block;
-        width: 40px;
-        height: 40px;
-        background: #1a729c;
-        box-shadow: 0px -1px 0px #125a7b;
-        -moz-box-shadow:    0px 2px 0px #125a7b;
-        -webkit-box-shadow: 0px 2px 0px #125a7b;
-        box-shadow:         0px 2px 0px #125a7b;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        font-size: 30px;
+    padding: 80px 0 25px;
+    @media screen and (max-width: $break-small) { 
+        padding-top: 25px;
     }
-
+    
     ul {
         background: #f6f6f6;
         padding: 25px;
@@ -44,30 +26,66 @@
         li {
             border-bottom: 1px solid #999;
             padding: 20px 0;
-        }
-
-        li:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .faq-item, .expander {
-          float: left;
-          *[dir=rtl] & {
-            float: right;
-          }
-        }
-
-        .faq-item {
-            width: 90%;
-
-            .faq-answer {
-
-                p {
-                    width: 100%;
+            position: relative;
+            &:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+            
+            .faq-item, .expander {
+                float: left;
+                *[dir=rtl] & {
+                    float: right;
                 }
             }
-
+            
+            .expander {
+                *[dir=ltr] & {
+                  margin-right: 2%;
+                }
+                *[dir=rtl] & {
+                  margin-left: 2%;
+                }
+                display:block;
+                width: 40px;
+                height: 40px;
+                background: #1a729c;
+                box-shadow: 0px -1px 0px #125a7b;
+                -moz-box-shadow:    0px 2px 0px #125a7b;
+                -webkit-box-shadow: 0px 2px 0px #125a7b;
+                box-shadow:         0px 2px 0px #125a7b;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                font-size: 30px;
+                position: absolute;
+                top: 50%;
+                margin-top: -20px;
+            }
+            
+            .faq-item {
+                width: 93%;
+                float: right;
+                @media screen and (max-width: 850px) {
+                    width: 90%;
+                }
+                @media screen and (max-width: $break-small) {
+                    width: 85%;
+                }
+                @media screen and (max-width: 450px) {
+                    width: 80%;
+                }
+                
+                a:hover {
+                    text-decoration: none;
+                    color: #428bca;
+                }
+                .faq-answer {
+                    p {
+                        width: 100%;
+                    }
+                }
+            }
         }
     }
 }

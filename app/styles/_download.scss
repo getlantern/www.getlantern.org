@@ -10,9 +10,8 @@
         color: #fff;
         display: inline-block;
         width: 50%;
-        @media screen and (max-width: $break-small) {
+        @media screen and (max-width: 750px) {
             width: 100%;
-            text-align: center;
         }
         
         p {
@@ -75,7 +74,7 @@
         width: 45%;
         text-align: center;
         color: #fff;
-        @media screen and (max-width: $break-small) {
+        @media screen and (max-width: 750px) {
             width: 100%;
         }
         
@@ -166,6 +165,9 @@
         input[type=submit] {
             @include single-transition(all, 0.5s);
             background-color: #555;
+        }
+        .input-group-btn {
+            width: auto;
         }
     }
 }
