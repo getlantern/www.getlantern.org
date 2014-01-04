@@ -4,14 +4,14 @@ angular.module('lantern_www')
   .directive('videoOnClick', ['$rootScope', '$translate', '$window', 'constants', function ($rootScope, $translate, $window, constants) {
 
     var autoPlay = false;
-    if ($window.player && $window.session) {
+    if ($window.session) {
       // only autoplay when not on iOS to prevent blocking playback
       // (see https://github.com/getlantern/www.getlantern.org/issues/31)
-      autoPlay = $window.session.browser.os !== 'iPhone/iPod';
+      autoPlay = !/(iPhone|iPod|iPad)/.test($window.session.browser.os);
     }
 
     function maybePlayVideo() {
-      if (autoPlay) {
+      if ($window.player && autoPlay) {
         $window.player.playVideo();
       }
     }
