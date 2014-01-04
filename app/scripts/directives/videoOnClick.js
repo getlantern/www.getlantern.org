@@ -3,7 +3,7 @@
 angular.module('lantern_www')
   .directive('videoOnClick', ['$rootScope', '$translate', '$window', 'constants', function ($rootScope, $translate, $window, constants) {
 
-    var autoPlay;
+    var autoPlay = false;
     if ($window.player && $window.session) {
       // only autoplay when not on iOS to prevent blocking playback
       // (see https://github.com/getlantern/www.getlantern.org/issues/31)
@@ -42,7 +42,7 @@ angular.module('lantern_www')
               videoId: '4TY4IVnMO98',
               playerVars: {
                 autohide: 1,
-                autoplay: +autoPlay, // + converts bool to 1 or 0 appropriately
+                autoplay: +autoPlay, // + converts bool to 0 or 1 if false or true respectively
                 cc_load_policy: +('en' !== $translate.uses().substring(0, 2)),
                 controls: 2,
                 enable_js_api: 1,
