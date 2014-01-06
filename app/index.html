@@ -111,7 +111,7 @@
                             <li class="clearfix" ng-repeat="faq in faqs">
                                 <button ng-click="faq.expanded=!faq.expanded" class="expander">{{!faq.expanded && '+' || '-'}}</button>
                                 <div class="faq-item">
-                                    <a ng-href="#faq_{{faq.key|lowercase}}" name="faq_{{faq.key|lowercase}}"
+                                    <a name="faq_{{faq.key|lowercase}}"
                                         ng-click="faq.expanded=!faq.expanded"><h4 ng-bind-template="{{faq.key + '_QUESTION' | translate}}"></h4></a>
                                     <div ng-show="faq.expanded" class="faq-answer">
                                         <p ng-repeat="i in range(1, faq.nparagraphs)">

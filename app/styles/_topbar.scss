@@ -16,6 +16,11 @@
             float:none;
             margin: 0 auto;
         }
+        
+        *[dir=rtl] & {
+            float: right;
+        }
+        
         .beta {
             position: absolute;
             bottom: 0;

@@ -166,8 +166,15 @@
             @include single-transition(all, 0.5s);
             background-color: #555;
         }
-        .input-group-btn {
-            width: auto;
+        .input-group {
+            *[dir=rtl] & {
+                direction: ltr;
+            }
+            
+            .input-group-btn {
+                width: auto;
+            }
         }
+            
     }
 }

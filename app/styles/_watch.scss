@@ -41,14 +41,15 @@
             
             .expander {
                 *[dir=ltr] & {
-                  margin-right: 2%;
+                  margin-right: 10px;
                 }
                 *[dir=rtl] & {
-                  margin-left: 2%;
+                  margin-left: 10px;
                 }
                 display:block;
                 width: 40px;
                 height: 40px;
+                padding: 0;
                 background: #1a729c;
                 box-shadow: 0px -1px 0px #125a7b;
                 -moz-box-shadow:    0px 2px 0px #125a7b;
@@ -58,14 +59,11 @@
                 border: none;
                 border-radius: 5px;
                 font-size: 30px;
-                position: absolute;
-                top: 50%;
-                margin-top: -20px;
             }
             
             .faq-item {
-                width: 93%;
-                float: right;
+                width: 92%;
+                float: left;
                 @media screen and (max-width: 850px) {
                     width: 90%;
                 }
@@ -73,7 +71,7 @@
                     width: 85%;
                 }
                 @media screen and (max-width: 450px) {
-                    width: 80%;
+                    width: 78%;
                 }
                 
                 a:hover {
@@ -83,6 +81,11 @@
                 .faq-answer {
                     p {
                         width: 100%;
+                    }
+                }
+                .input-group {
+                    *[dir=rtl] & {
+                        direction: ltr;
                     }
                 }
             }
