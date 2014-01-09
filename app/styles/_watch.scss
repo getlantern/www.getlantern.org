@@ -14,10 +14,10 @@
 
 #faq {
     padding: 80px 0 25px;
-    @media screen and (max-width: $break-small) { 
+    @media screen and (max-width: $break-small) {
         padding-top: 25px;
     }
-    
+
     ul {
         background: #f6f6f6;
         padding: 25px;
@@ -31,14 +31,14 @@
                 border-bottom: none;
                 padding-bottom: 0;
             }
-            
+
             .faq-item, .expander {
                 float: left;
                 *[dir=rtl] & {
                     float: right;
                 }
             }
-            
+
             .expander {
                 *[dir=ltr] & {
                   margin-right: 10px;
@@ -60,7 +60,7 @@
                 border-radius: 5px;
                 font-size: 30px;
             }
-            
+
             .faq-item {
                 width: 92%;
                 float: left;
@@ -73,7 +73,7 @@
                 @media screen and (max-width: 450px) {
                     width: 78%;
                 }
-                
+
                 a:hover {
                     text-decoration: none;
                     color: #428bca;
@@ -88,6 +88,17 @@
                         direction: ltr;
                     }
                 }
+
+                .faq-permalink {
+                    color: #ccc;
+                    &:hover {
+                        color: #aaa;
+                    }
+                }
+            }
+
+            h4 {
+                display: inline-block;
             }
         }
     }
