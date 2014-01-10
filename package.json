@@ -1,10 +1,10 @@
 {
   "name": "lantern_www",
-  "version": "0.0.0",
+  "version": "0.0.0-18",
   "homepage": "https://github.com/getlantern/www.getlantern.org",
   "repository": "https://github.com/getlantern/www.getlantern.org.git",
   "dependencies": {
-    "http-server": "0.6.1"
+    "http-server": "https://codeload.github.com/skivvies/http-server/legacy.tar.gz/commandlineheaders"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -50,7 +50,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "start": "./node_modules/.bin/http-server -p 8000 -c 300 -d false"
+    "start": "./node_modules/.bin/http-server -p 8000 -c 300 -d false -H Strict-Transport-Security:max-age=315360000"
   },
   "analyze": false,
   "subdomain": "getlantern"
