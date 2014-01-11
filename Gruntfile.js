@@ -364,6 +364,8 @@ module.exports = function (grunt) {
         singleRun: true
       }
     },
+
+    // config for custom tasks
     jsFromJSON: {
       server: {
         files: {
@@ -372,7 +374,22 @@ module.exports = function (grunt) {
           ]
         }
       }
-    }
+    },
+
+    shell: {
+      deploy: {
+        options: {
+          stdout: true,
+          stderr: true,
+          failOnError: true,
+          execOptions: {
+            cwd: '<%= yeoman.dist %>'
+          }
+        },
+      command: 'jitsu deploy'
+      }
+    },
+
   });
 
   grunt.registerMultiTask('jsFromJSON', 'generate js from JSON', function (target) {
@@ -434,6 +451,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'jsFromJSON:server',
     'bower-install',
     'useminPrepare',
     'concurrent:dist',
@@ -453,5 +471,10 @@ module.exports = function (grunt) {
     'newer:jshint',
     'test',
     'build'
+  ]);
+
+  grunt.registerTask('deploy', [
+    'build',
+    'shell'
   ]);
 };

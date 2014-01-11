@@ -137,32 +137,6 @@ version to make sure it looks the same as the development version.
 
 ## Deployment
 
-The site is currently hosted on App Engine, but is set up to be hosted on
-Nodejitsu.
-
-### Deploying to App Engine
-
-Before you can deploy to App Engine, you must have permission to modify the
-"getlanternhr" app when you go to https://appengine.google.com. Email
-admin@getlantern.org if you need to request permission.
-
-When ready to deploy, make sure the "version" field in app.yaml is set to where
-you'd like to deploy to. For instance, if version is set to "dev", your build
-will be deployed to https://dev-dot-getlanternhr.appspot.com/. If there is
-an existing deployment there you don't want to overwrite, change "version" in
-app.yaml to &lt;somenewversion&gt;, and then you'll be deploying to
-https://&lt;somenewversion&gt;-dot-getlanternhr.appspot.com/.
-
-Once version is set how you want it, and you have a successful build in
-the "dist" directory, run "appcfg.py --oauth2 update ." The files in "dist" will be
-uploaded to production. Once uploaded, open a browser to the newly deployed
-version to make sure everything looks good on the production server.
-
-### Deploying to Nodejitsu
-
-First make sure you have the Nodejitsu credentials for the lantern_www user
-handy, and then:
-
-    grunt build
-    cd dist
-    jitsu deploy
+First make sure you have the Nodejitsu credentials for the lantern\_www user,
+and then run "grunt deploy". This will create a fresh build in the "dist"
+directory and then run "jitsu deploy" from within it.
