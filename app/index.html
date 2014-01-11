@@ -76,7 +76,7 @@
                             <p ng-bind-template="{{'LANTERN_DESCRIPTION_2' | translate}}">Lantern is a network...</p>
                             <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
                                 <input type="hidden" name="_charset_">
-                                <h5 class="form-title" ng-bind-template="{{'REQUEST_INVITE' | translate}}">Request an invite and updates:</h5>
+                                <h5 class="form-title" ng-bind-template="{{'EMAIL_SIGNUP' | translate}}">Sign up for email updates:</h5>
                                 <div class="input-group input-append">
                                     <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
                                         ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
@@ -118,21 +118,6 @@
                                         <p ng-repeat="i in range(1, faq.nparagraphs)">
                                            <span ng-bind-html="faq.key + '_ANSWER_' + i | translate"></span>
                                         </p>
-                                        <div class="input-append" ng-show="faq.key == 'DOWNLOAD_LANTERN'">
-                                            <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
-                                                <input type="hidden" name="_charset_">
-                                                <div class="input-group">
-                                                    <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
-                                                        ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
-                                                        class="input-xlarge form-control" placeholder="email@example.com">
-                                                    <span class="input-group-btn">
-                                                        <input type="submit" name="subscribe" class="btn btn-inverse"
-                                                            ng-disabled="signupForm.$invalid"
-                                                            value="+">
-                                                    </span>
-                                                </div>
-                                            </form>
-                                        </div>
                                     </div>
                                 </div>
                             </li>
