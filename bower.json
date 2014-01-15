@@ -7,6 +7,7 @@
     "angular-sanitize": "1.2.8",
     "angular-translate": "1.1.1",
     "angular-translate-storage-cookie": "0.1.6",
+    "angular-bootstrap": "https://github.com/angular-ui/bootstrap.git#0.10.0",
     "es5-shim": "~2.3.0",
     "json3": "~3.2.6",
     "modernizr": "~2.7.1",
