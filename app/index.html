@@ -172,9 +172,13 @@
 
         <!-- site content ends here -->
 
-        <script>
-            window.session = {options: {gapi_location: false}};
-        </script>
+<script>
+window.session = {options: {gapi_location: false}};
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+</script>
 
         <!-- these get automatically minified and concatenated at build time -->
         <!-- build:js scripts/loadlast.js -->
@@ -186,9 +190,6 @@
         <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
         <script src="bower_components/angular-bootstrap/src/transition/transition.js"></script>
         <script src="bower_components/angular-bootstrap/src/collapse/collapse.js"></script>
-
-        <!-- local copy of google analytics -->
-        <script src="scripts/lib/analytics.js"></script>
 
         <script src="scripts/app.js"></script>
         <script src="scripts/constants.js"></script>

@@ -47,6 +47,7 @@ angular.module('lantern_www', [
   .run(['$rootScope', '$translate', '$translateCookieStorage', '$window', 'constants', function ($rootScope, $translate, $translateCookieStorage, $window, constants) {
     if ($window.ga) {
       $window.ga('create', constants.GA_WEBPROP_ID);
+      $window.ga('require', 'linkid', 'linkid.js');
       $window.ga('send', 'pageview');
     }
     constants.NLANGS = Object.keys(constants.LANGS).length;
