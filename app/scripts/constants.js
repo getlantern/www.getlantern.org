@@ -30,6 +30,11 @@ angular.module('lantern_www')
         name: 'català',
         dir: 'ltr'
       },
+      cs: {
+        code: 'cs',
+        name: 'čeština',
+        dir: 'ltr'
+      },
       de: {
         code: 'de',
         name: 'Deutsch',
