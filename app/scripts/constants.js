@@ -25,6 +25,11 @@ angular.module('lantern_www')
         name: 'Slovenščina',
         dir: 'ltr'
       }*/,
+      de: {
+        code: 'de',
+        name: 'Deutsch',
+        dir: 'ltr'
+      },
       fr_FR: {
         code: 'fr_FR',
         name: 'français',
