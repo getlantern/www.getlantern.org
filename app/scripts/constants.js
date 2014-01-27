@@ -90,6 +90,11 @@ angular.module('lantern_www')
         name: 'العربية',
         dir: 'rtl'
       }*/,
+      uk_UA: {
+        code: 'uk_UA',
+        name: 'Українська',
+        dir: 'ltr',
+      },
       zh_CN: {
         code: 'zh_CN',
         name: '中文',
