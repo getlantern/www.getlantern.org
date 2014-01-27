@@ -13,7 +13,7 @@ Agora, alguém pode ser ouvido em uma questão de segundos
 
 4
 00:00:28,0 --> 00:00:30,0
-por todo o mundo.
+por todos os cantos do mundo.
 
 5
 00:00:31,0 --> 00:00:34,0
@@ -21,7 +21,7 @@ A internet tornou-se uma voz para aqueles que não tem voz
 
 6
 00:00:34,0 --> 00:00:36,0
-Uma forma de mostrar nossa conscientização sobre a corrupção oculta.
+Uma forma de mostrar nossa conscientização sobre a corrupção oculta
 
 7
 00:00:37,0 --> 00:00:39,0
@@ -37,7 +37,7 @@ O mundo inteiro está assistindo!
 
 9
 00:00:43,0 --> 00:00:45,0
-Só que a liberdade não está disponível para todos.
+Apesar disso, liberdade não é algo que está disponível para todos.
 
 10
 00:00:46,0 --> 00:00:50,0
@@ -73,7 +73,7 @@ usando o Lanterna.
 
 18
 00:01:11,0 --> 00:01:13,0
-O Lanterna é um software livre e seguro
+O Lanterna é um programa livre e seguro
 
 19
 00:01:13,0 --> 00:01:18,0
