@@ -42,12 +42,12 @@ angular.module('lantern_www')
       },
       fr_CA: {
         code: 'fr_CA',
-        name: 'français canadien',
+        name: 'français (Canada)',
         dir: 'ltr'
       },
       fr_FR: {
         code: 'fr_FR',
-        name: 'français',
+        name: 'français (France)',
         dir: 'ltr'
       },
       sk: {
