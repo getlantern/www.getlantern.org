@@ -8,10 +8,10 @@
     "angular-translate": "1.1.1",
     "angular-translate-storage-cookie": "0.1.6",
     "angular-bootstrap": "https://github.com/angular-ui/bootstrap.git#0.10.0",
+    "bootstrap-sass": "git://github.com/twbs/bootstrap-sass.git#~3.1.0",
     "es5-shim": "~2.3.0",
     "json3": "3.3.0",
     "modernizr": "~2.7.1",
-    "sass-bootstrap": "~3.0.2",
     "session.js": "0.4.1"
   },
   "resolutions": {
