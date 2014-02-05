@@ -3,6 +3,12 @@
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
 
+noscript {
+  display: block;
+  text-align: center;
+  margin-top: 50px;
+  line-height: 50px;
+}
 body {
   background-color: #f3f3f3;
   font-weight: 300;

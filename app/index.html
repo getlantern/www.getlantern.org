@@ -19,7 +19,7 @@
         <script src="bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
     </head>
-    <body class="ng-cloak" lang="{{activeLang.code}}" dir="{{activeLang.dir}}">
+    <body>
         <!--[if lt IE 8]>
           <p class="chromeframe">You are using an outdated browser. Please <a href="https://www.google.com/chrome/">upgrade your browser</a> or <a href="https://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> and try again.</p>
         <![endif]-->
@@ -32,6 +32,15 @@
         <!-- uncomment out to enable firebug lite (useful for IE)
           <script src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js"></script>
         -->
+
+<noscript>
+<div lang="en" dir="ltr">JavaScript is required.</div>
+<div lang="zh_CN" dir="ltr">需要启用JavaScript。</div>
+<div lang="fa_IR" dir="rtl">جاوا اسکریپت مورد نیاز است.</div>
+<div lang="ar" dir="rtl">مطلوب جافا سكريبت.</div>
+</noscript>
+
+<div class="ng-cloak" lang="{{activeLang.code}}" dir="{{activeLang.dir}}">
 
         <!-- site content starts here -->
         <div class="lightbox hide" lightbox>
@@ -169,8 +178,7 @@
                 </div>
             </div>
         </footer>
-
-        <!-- site content ends here -->
+</div><!-- site content ends here -->
 
 <script>
 window.session = {options: {gapi_location: false}};
