@@ -18,6 +18,11 @@
         <!-- build:js scripts/loadfirst.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
+        
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+        
     </head>
     <body class="ng-cloak" lang="{{activeLang.code}}" dir="{{activeLang.dir}}">
         <!--[if lt IE 8]>
@@ -41,88 +46,127 @@
 
         <div id="content-container">
             <header id="topbar" class="header">
-                <div class="wrap clearfix">
+                <div id="logo-header" class="clearfix">
                     <div class="site-logo">
                         <a href="/">
                             <img src="images/lantern-logo.png" alt="Lantern" />
                             <span class="beta" ng-bind-template="{{'BETA' | translate}}">Beta</span>
                         </a>
                     </div>
+                    <nav class="social-media">
+                        <!-- XXX DRY .social-media-icons in header -->
+                        <ul class="social-media-icons">
+                            <li><a target="_blank" ng-href="{{TWITTER_URL}}"><span class="icon-twitter"></span></a></li>
+                            <li><a target="_blank" ng-href="{{FACEBOOK_URL}}"><span class="icon-facebook"></span></a></li>
+                            <li><a target="_blank" ng-href="{{TUMBLR_URL}}"><span class="icon-tumblr"></span></a></li>
+                            <li><a target="_blank" ng-href="{{GITHUB_URL}}"><span class="icon-github"></span></a></li>
+                        </ul>
+                    </nav>
+                    
+                    <nav class="languages" ng-show="NLANGS > 1">
+                        <ul class="navlink-list lang-list" dir="ltr">
+                            <li>
+                                <a class="active-lang">{{activeLang.name}}</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown">
+                                    More <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li ng-repeat="lang in LANGS" role="presentation">
+                                        <a role="menuitem" ng-href="#{{lang.code}}" ng-class="{'active-lang': lang.code == activeLang.code}" ng-click="changeLang(lang.code)" class="lang">{{lang.name}}</a>
+                                    </li>
+                                    <li>
+                                        <strong><a ng-href="{{HELP_TRANSLATE_URL}}" target="_blank" ng-bind-template="{{'HELP_TRANSLATE' | translate}}">
+                                            Help Translate
+                                        </a></strong>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div id="rally-banner">
+                        <h4>Donate to our</h4>
+                        <a href="">
+                            <img src="images/rally-sash.png">
+                        </a>
+                    </div>
+                </div>
+                <div id="header-nav" class="clearfix">
                     <nav class="section-nav">
                         <ul class="section-list">
                             <li><a href="#about" ng-bind-template="{{'ABOUT' | translate}}">About</a></li>
                             <li><a href="#faq" ng-bind-template="{{'FAQ' | translate}}">FAQ</a></li>
-                            <li><a ng-href="{{DOCS_URL}}" target="_blank" ng-bind-template="{{'DOCS' | translate}}">Docs</a></li>
+                            <li><a ng-href="{{BLOG_URL}}" target="_blank" ng-bind-template="{{'BLOG' | translate}}">Blog</a></li>
                         </ul>
                     </nav>
+                    <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
+                        <input type="hidden" name="_charset_">
+                        <h5 class="form-title" ng-bind-template="{{'EMAIL_SIGNUP' | translate}}">Sign up for updates</h5>
+                        <div class="input-group input-append">
+                            <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
+                                ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
+                                class="input-xlarge form-control" placeholder="email@example.com">
+                            <span class="input-group-btn">
+                                <input type="submit" name="subscribe" class="btn btn-inverse"
+                                    ng-disabled="signupForm.$invalid"
+                                    value="+">
+                            </span>
+                        </div><!-- /input-group -->
+                    </form>
                 </div>
             </header>
 
             <section class="section download" ng-controller="DownloadCtrl">
-                <div class="wrap clearfix">
-                    <div class="panel">
-                        <h1 class="panel-title" ng-bind-template="{{'WHAT_IS_LANTERN' | translate}}">What is Lantern?</h1>
-                        <div class="panel-text">
-                            <p ng-bind-template="{{'LANTERN_DESCRIPTION_1' | translate}}">Lantern is a network...</p>
-                        </div>
+                <div class="clearfix">
+                    <div class="download-text">
+                        <h3 ng-bind-template="{{'WHAT_IS_LANTERN' | translate}}">What is Lantern?</h3>
                     </div>
                     <div class="video-panel">
                         <img class="video-snapshot" src="images/video-snapshot.jpg" video-on-click>
                         <img class="play-button" src="images/icon-play.png" video-on-click>
                         <div id="video"></div>
                     </div>
-                    <div class="panel">
-                        <section class="signup">
-                            <p ng-bind-template="{{'LANTERN_DESCRIPTION_2' | translate}}">Lantern is a network...</p>
-                            <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
-                                <input type="hidden" name="_charset_">
-                                <h5 class="form-title" ng-bind-template="{{'EMAIL_SIGNUP' | translate}}">Sign up for email updates:</h5>
-                                <div class="input-group input-append">
-                                    <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
-                                        ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
-                                        class="input-xlarge form-control" placeholder="email@example.com">
-                                    <span class="input-group-btn">
-                                        <input type="submit" name="subscribe" class="btn btn-inverse"
-                                            ng-disabled="signupForm.$invalid"
-                                            value="+">
-                                    </span>
-                                </div><!-- /input-group -->
-                            </form>
-                        </section>
+                    <div class="download-text">
+                        <p ng-bind-template="{{'LANTERN_DESCRIPTION_1' | translate}}">Lantern is an international network...</p>
+                        <p ng-bind-template="{{'LANTERN_DESCRIPTION_2' | translate}}">Through our new peer-to peer censorship circumvention software...</p>
+                        <p ng-bind-template="{{'LANTERN_DESCRIPTION_3' | translate}}">Together, ...</p>
                     </div>
                 </div>
             </section>
-            <section class="section white-panel watch">
-                <div class="wrap">
-                    <a name="about" class="section-target">
-                        <h2 class="text-center" ng-bind-template="{{'HOW_LANTERN_WORKS' | translate}}">How Lantern Works</h2>
-                    </a>
+            <section class="section white-panel watch clearfix">
+                <div class="watch-text">
+                    <h3 ng-bind-template="{{'HOW_LANTERN_WORKS' | translate}}">How Lantern Works</h3>
+                </div>
+                <div class="app-screenshot">
+                    <img src="images/vis.gif">
+                    <p>Lantern users all over the world giving and getting access.</p>
+                </div>
+                <div class="watch-text">
                     <p ng-bind-template="{{'LANTERN_PARAGRAPH_1' | translate}}">Lantern's main goal is...</p>
                     <p ng-bind-template="{{'LANTERN_PARAGRAPH_2' | translate}}">At the core of Lantern is...</p>
-                    <p class="text-center">
-                        <img class="app-screenshot" src="images/vis.gif">
-                    </p>
-
-                    <div id="faq" class="clearfix" ng-controller="DownloadCtrl">
-                        <a name="faq" class="section-target">
-                            <h2 class="text-center" ng-bind-template="{{'QUESTIONS_AND_ANSWERS' | translate}}">Questions and Answers</h2>
-                        </a>
-                        <ul>
-                            <li class="clearfix" ng-repeat="faq in faqs">
-                                <button ng-click="faq.expanded=!faq.expanded" class="expander">{{!faq.expanded && '+' || '-'}}</button>
-                                <div class="faq-item">
-                                    <a name="faq_{{faq.key|lowercase}}"
-                                        ng-click="faq.expanded=!faq.expanded"><h4 ng-bind-template="{{faq.key + '_QUESTION' | translate}}"></h4></a>
-                                    <a class="faq-permalink" ng-href="#faq_{{faq.key|lowercase}}"><h4>¶</h4></a>
-                                    <div collapse="!faq.expanded" class="faq-answer">
-                                        <p ng-repeat="i in range(1, faq.nparagraphs)">
-                                           <span ng-bind-html="faq.key + '_ANSWER_' + i | translate"></span>
-                                        </p>
-                                    </div>
+                </div>
+            </section>
+            <section class="section faq clearfix">
+                <div id="faq" class="clearfix" ng-controller="DownloadCtrl">
+                    <a name="faq" class="section-target">
+                        <h3 ng-bind-template="{{'QUESTIONS_AND_ANSWERS' | translate}}">Questions and Answers</h3>
+                    </a>
+                    <ul>
+                        <li class="clearfix" ng-repeat="faq in faqs">
+                            <button ng-click="faq.expanded=!faq.expanded" class="expander">{{!faq.expanded && '+' || '-'}}</button>
+                            <div class="faq-item">
+                                <a name="faq_{{faq.key|lowercase}}"
+                                    ng-click="faq.expanded=!faq.expanded"><h4 ng-bind-template="{{faq.key + '_QUESTION' | translate}}"></h4></a>
+                                <a class="faq-permalink" ng-href="#faq_{{faq.key|lowercase}}"><h4>¶</h4></a>
+                                <div collapse="!faq.expanded" class="faq-answer">
+                                    <p ng-repeat="i in range(1, faq.nparagraphs)">
+                                       <span ng-bind-html="faq.key + '_ANSWER_' + i | translate"></span>
+                                    </p>
                                 </div>
-                            </li>
-                        </ul>
-                    </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </section>
 
@@ -143,29 +187,8 @@
                         <li><a target="_blank" ng-href="{{GET_INVOLVED_URL}}" ng-bind-template="{{'GET_INVOLVED' | translate}}">Get Involved</a></li>
                     </ul>
                 </nav>
-                <nav>
-                    <!-- XXX DRY .social-media-icons in header -->
-                    <ul class="social-media-icons">
-                        <li><a target="_blank" ng-href="{{TWITTER_URL}}"><span class="icon-twitter"></span></a></li>
-                        <li><a target="_blank" ng-href="{{FACEBOOK_URL}}"><span class="icon-facebook"></span></a></li>
-                        <li><a target="_blank" ng-href="{{TUMBLR_URL}}"><span class="icon-tumblr"></span></a></li>
-                        <li><a target="_blank" ng-href="{{GITHUB_URL}}"><span class="icon-github"></span></a></li>
-                    </ul>
-                </nav>
-                <nav ng-show="NLANGS > 1">
-                    <ul class="navlink-list lang-list" dir="ltr">
-                        <li ng-repeat="lang in LANGS">
-                            <a ng-href="#{{lang.code}}" ng-class="{'active-lang': lang.code == activeLang.code}" ng-click="changeLang(lang.code)">{{lang.name}}</a>
-                        </li>
-                        <li>
-                            <strong><a ng-href="{{HELP_TRANSLATE_URL}}" target="_blank" ng-bind-template="{{'HELP_TRANSLATE' | translate}}">
-                                Help Translate
-                            </a></strong>
-                        </li>
-                    </ul>
-                </nav>
                 <div class="copyright">
-                    <p ng-bind-template="{{'COPYRIGHT' | translate}}">© 2014 Brave New Software</p>
+                    <a href="http://www.bravenewsoftware.org/" ng-bind-template="{{'COPYRIGHT' | translate}}">© 2014 Brave New Software</a>
                 </div>
             </div>
         </footer>
@@ -182,6 +205,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
         <!-- these get automatically minified and concatenated at build time -->
         <!-- build:js scripts/loadlast.js -->
+        <script src="bower_components/jquery/jquery.min.js"></script>
         <script src="bower_components/session.js/session.js"></script>
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-cookies/angular-cookies.js"></script>
@@ -190,6 +214,8 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
         <script src="bower_components/angular-bootstrap/src/transition/transition.js"></script>
         <script src="bower_components/angular-bootstrap/src/collapse/collapse.js"></script>
+        <script src="bower_components/angular-bootstrap/src/dropdownToggle/dropdownToggle.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
         <script src="scripts/app.js"></script>
         <script src="scripts/constants.js"></script>
@@ -202,5 +228,6 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         <!-- generated by "grunt jsFromJSON"; populates window.translations with data from locale/*.json -->
         <script src="scripts/jsFromJSON/translations.js"></script>
         <!-- endbuild -->
+        
     </body>
 </html>

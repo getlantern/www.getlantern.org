@@ -1,70 +1,58 @@
 @import "compass/layout/sticky-footer";
-@include sticky-footer($footerHeight, "#content-container");
+@include sticky-footer("#content-container");
 
 #footer {
-  height: $footerHeight;
-  color: #626262;
-  font-size: 16px;
-  text-align: center;
+    background-color: #10283a;
+    color: #626262;
+    font-size: 16px;
+    text-align: center;
 
-  nav {
-    padding-bottom: 35px;
-
-    a {
-      @include single-transition(color, .5s);
-      text-shadow: 1px 1px 1px #ccc;
-      color: #626262;
-      font-size: 18px;
-      &:hover {
-        color: #000;
-      }
-    }
-  }
-
-  .navlink-list {
-    @include inline-list;
-
-    &.lang-list > li {
-      padding: 0 5px;
-    }
-    &.lang-list, &.lang-list a {
-      font-size: 13px;
-      &.active-lang {
-        font-weight: bold;
-      }
+    nav {
+        padding-bottom: 15px;
+        a {
+            @include single-transition(color, .5s);
+            color: #aaa;
+            font-size: 18px;
+            padding: 0 15px;
+            &:hover {
+                text-decoration: none;  
+                color: #ddd;
+            }
+            @media screen and (max-width: $break-small) {
+                padding: 0 4px;
+            }
+        }
     }
 
-    &.main-nav {
-      @include delimited-list('┃');
-      font-family: Oswald;
+    .navlink-list {
+        @include inline-list;
+        &.lang-list > li {
+            padding: 0 5px;
+        }
+        &.lang-list, &.lang-list a {
+            font-size: 13px;
+            &.active-lang {
+                font-weight: bold;
+            }
+        }
     }
-  }
 }
 
 .footer-logo {
-  padding: 20px 0;
+    padding: 20px 0;
 }
-
-
-/*
-.github-button {
-  padding-bottom: 15px;
-  max-width: 300px;
-  margin: 0 auto;
-}
-
-.gh-btn {
-  width: 46%;
-  margin: 0 2%;
-  float: left;
-  text-align: center;
-}
-*/
 
 .copyright {
-  padding-bottom: 50px;
-
-  p { margin-bottom: 3px; }
-
-  a { color: #139ceb; }
+    padding-bottom: 50px;
+    p {
+        margin-bottom: 3px; 
+    }
+    a { 
+        @include single-transition(color, .5s);
+        color: #aaa; 
+    }
+    a:hover {
+        text-decoration: none;
+        color: #ddd;
+    }
 }

@@ -1,0 +1,104 @@
+.faq {
+    background-color: #10283a;
+    h3 {
+        color: $lnt-yellow;
+        margin: 0 0 20px 6%;
+        text-transform: uppercase;
+        font-family: Oswald;
+    }
+    #faq {
+        padding: 50px 0 25px;
+        @media screen and (max-width: $break-small) {
+            padding-top: 25px;
+        }
+    
+        ul {
+            background: #32424d;
+            margin: 0 6%;
+            padding: 0;
+            li {
+                border-bottom: 1px solid #7f9e99;
+                padding: 10px 20px;
+                position: relative;
+                color: #fff;
+                &:last-child {
+                    border-bottom: none;
+                }
+    
+                .faq-item, .expander {
+                    float: left;
+                    *[dir=rtl] & {
+                        float: right;
+                    }
+                }
+    
+                .expander {
+                    *[dir=ltr] & {
+                      margin-right: 10px;
+                    }
+                    *[dir=rtl] & {
+                      margin-left: 10px;
+                    }
+                    display:block;
+                    width: 40px;
+                    height: 40px;
+                    padding: 0;
+                    background: transparent;
+                    color: #7f9e99;
+                    border: none;
+                    border-radius: 5px;
+                    font-size: 30px;
+                    font-weight: bold;
+                    &:focus {
+                        outline: 0;
+                    }
+                }
+    
+                .faq-item {
+                    width: 92%;
+                    float: left;
+                    @media screen and (max-width: 850px) {
+                        width: 90%;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        width: 85%;
+                    }
+                    @media screen and (max-width: 450px) {
+                        width: 78%;
+                    }
+                    a {
+                        color: #ffffff;
+                    }
+                    a:hover {
+                        text-decoration: none;
+                    }
+                    .faq-answer {
+                        p {
+                            width: 100%;
+                            color: #fff;
+                        }
+                        a {
+                            color: #7f9e99;
+                        }
+                    }
+                    .input-group {
+                        *[dir=rtl] & {
+                            direction: ltr;
+                        }
+                    }
+    
+                    .faq-permalink {
+                        color: #ccc;
+                        &:hover {
+                            color: #aaa;
+                        }
+                    }
+                }
+    
+                h4 {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
