@@ -17,7 +17,7 @@ angular.module('lantern_www')
       },
       vi: {
         code: 'vi',
-        name: 'Tiếng Việt',
+        name: 'Tiếng Việt', // that's a no-break space
         dir: 'ltr'
       },
       sl_SI: {
@@ -42,12 +42,12 @@ angular.module('lantern_www')
       },
       fr_CA: {
         code: 'fr_CA',
-        name: 'français (Canada)',
+        name: 'français (Canada)', // that's a no-break space
         dir: 'ltr'
       },
       fr_FR: {
         code: 'fr_FR',
-        name: 'français (France)',
+        name: 'français (France)', // that's a no-break space
         dir: 'ltr'
       },
       sk: {
@@ -90,9 +90,19 @@ angular.module('lantern_www')
         name: 'العربية',
         dir: 'rtl'
       }*/,
+      ru_RU: {
+        code: 'ru_RU',
+        name: 'Русский язык', // that's a no-break space
+        dir: 'ltr',
+      },
+      uk: {
+        code: 'uk',
+        name: 'Український (діаспора)', // that's a no-break space
+        dir: 'ltr',
+      },
       uk_UA: {
         code: 'uk_UA',
-        name: 'Українська',
+        name: 'Український (Україна)', // that's a no-break space
         dir: 'ltr',
       },
       zh_CN: {
