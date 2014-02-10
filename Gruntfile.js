@@ -474,6 +474,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('deploy', [
+    'clean',
     'build',
     'shell'
   ]);
