@@ -4,7 +4,8 @@
         color: $lnt-yellow;
         margin: 0 0 20px 6%;
         text-transform: uppercase;
-        font-family: Oswald;
+        font-family: AvenirNextLTPro-DemiCn;
+        font-size: 2.5em;
     }
     #faq {
         padding: 50px 0 25px;
@@ -57,6 +58,7 @@
                 .faq-item {
                     width: 92%;
                     float: left;
+                    font-family: AvenirNextLTPro-MediumCn;
                     @media screen and (max-width: 850px) {
                         width: 90%;
                     }
@@ -68,17 +70,25 @@
                     }
                     a {
                         color: #ffffff;
-                    }
-                    a:hover {
-                        text-decoration: none;
+                        &:hover {
+                            text-decoration: none;
+                        }
+                        h4 {
+                            font-family: AvenirNextLTPro-MediumCn;
+                            font-size: 1.8em;
+                        }
                     }
                     .faq-answer {
+                        font-size: 1.4em;
                         p {
                             width: 100%;
                             color: #fff;
                         }
                         a {
                             color: #7f9e99;
+                        }
+                        b {
+                            font-family: AvenirNextLTPro-DemiCn;
                         }
                     }
                     .input-group {
@@ -99,6 +109,15 @@
                     display: inline-block;
                 }
             }
+        }
+    }
+    .faq-link {
+        display: block;
+        margin: 8px 6%;
+        font-size: 22px;
+        color: #7f9e99;
+        &:hover {
+            text-decoration: none;
         }
     }
 }

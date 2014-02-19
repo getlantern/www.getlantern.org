@@ -8,12 +8,13 @@
     text-align: center;
 
     nav {
-        padding-bottom: 15px;
+        padding-bottom: 30px;
         a {
             @include single-transition(color, .5s);
             color: #aaa;
-            font-size: 18px;
+            font-size: 1.5em;
             padding: 0 15px;
+            font-family: AvenirNextLTPro-MediumCn;
             &:hover {
                 text-decoration: none;  
                 color: #ddd;
@@ -39,7 +40,7 @@
 }
 
 .footer-logo {
-    padding: 20px 0;
+    padding: 30px 0;
 }
 
 .copyright {

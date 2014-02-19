@@ -21,16 +21,18 @@
         float: left;
         margin-left: 6%;
         width: 25%;
+        font-family: AvenirNextLTPro-MediumCn;
         @media screen and (max-width: 1100px) {
             float: none;
             width: 90%;
             margin: 0 auto;
         }
         h3 {
-            margin: 50px 0 20px 0;
+            margin: 100px 0 20px 0;
             color: $lnt-yellow;
             text-transform: uppercase;
-            font-family: Oswald;
+            font-family: AvenirNextLTPro-DemiCn;
+            font-size: 2.5em;
             @media screen and (max-width: 1100px) {
                 text-align: center;
                 margin: 30px 0;
@@ -38,7 +40,7 @@
         }
         p {
             margin-bottom: 20px;
-            font-size: 20px;
+            font-size: 2em;
             @media screen and (max-width: 1100px) {
                 padding: 0 15px;
                 &:first-of-type {

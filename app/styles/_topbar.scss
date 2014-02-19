@@ -4,6 +4,7 @@
     @include box-shadow(rgba(black, 0.19) 0 1px 0);
     position: relative;
     z-index: 1;
+    font-family: AvenirNextLTPro-MediumCn;
     
     #logo-header {
         background-color: #131f28;
@@ -13,8 +14,8 @@
         .site-logo {
             float:left;
             position: relative;
-            width: 153px;
-            margin: 50px 20px;
+            width: 350px;
+            margin: 35px 40px;
             padding-bottom: 12px;
             @media screen and (max-width: $break-small) {
                 float:none;
@@ -23,6 +24,12 @@
             
             *[dir=rtl] & {
                 float: right;
+            }
+            
+            a {
+                img {
+                    width: 100%;
+                }
             }
             
             .beta {
@@ -47,9 +54,13 @@
                     padding: 0 5px;
                 }
                 &.lang-list, &.lang-list a {
-                    font-size: 13px;
+                    font-size: 1.1em;
                     &.active-lang {
+                        font-family: AvenirNextLTPro-DemiCn;
                         font-weight: bold;
+                        &:hover {
+                            color: #7f9e99;
+                        }
                     }
                 }
                 a {
@@ -64,18 +75,32 @@
                         margin-left: 0;
                     }
                 }
-                .dropdown-menu {
+                .menu {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    z-index: 1000;
+                    float: left;
+                    min-width: 160px;
+                    padding: 5px 0;
+                    margin: 2px 0 0;
+                    list-style: none;
+                    font-size: 14px;
                     background-color: #131f28;
+                    border: 1px solid #cccccc;
+                    border: 1px solid rgba(0, 0, 0, 0.15);
+                    border-radius: 4px;
+                    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+                    background-clip: padding-box;
                     li {
+                        display: block;
                         a {
+                            padding: 3px 20px;
                             @include single-transition(color, .3s);
                             &:hover {
                                 color: lighten(#7f9e99, 15%);
                                 background-color: transparent;
                             }
-                        }
-                        strong {
-                            padding: 3px 20px;
                         }
                     }
                 }
@@ -127,8 +152,10 @@
                 margin-top: 15px;
             }
             h4 {
-                margin: 3px 38px;
+                margin: 0px 36px;
                 color: #fff;
+                font-family: AvenirNextLTPro-MediumCn;
+                font-size: 1.8em;
             }
             img {
                 width: 200px;
@@ -142,7 +169,7 @@
         
         .section-nav {
             float: left;
-            font-family: Oswald;
+            font-family: 'AvenirNextLTPro-DemiCn';
             text-transform: uppercase;
             font-size: 1.6em;
             @media screen and (min-width: 1200px) {
@@ -164,6 +191,8 @@
                 a {
                     @include single-transition(color, .3s);
                     color: #fff;
+                    font-size: 1.2em;
+                    line-height: 42px;
                     &:hover {
                         text-decoration: none;
                         color: #bbb;
@@ -189,6 +218,8 @@
                 float: left; 
                 color: #ffffff;
                 margin-right: 8px;
+                font-family: AvenirNextLTPro-MediumCn;
+                font-size: 1.4em;
                 @media screen and (max-width: 875px) {
                     float: none;
                     margin-bottom: 0;
@@ -198,6 +229,7 @@
                 border: 2px solid #1e2a33;
                 input {
                     border-radius: 0;
+                    font-size: 1.1em;
                 }
                 .input-group-btn input{
                     background-color: #1e2a33;

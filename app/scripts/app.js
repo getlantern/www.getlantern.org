@@ -84,10 +84,10 @@ function __urlHashLang(langsAvail) {
   }
 }
 
-function DropdownCtrl($scope) {
-  $scope.items = [
-    "The first choice!",
-    "And another choice for you.",
-    "but wait! A third!"
-  ];
+function CollapseCtrl($scope) {
+    $scope.isCollapsed = true;
 }
+
+$(document).on('click',function(){
+    $('.menu').collapse('hide');
+})

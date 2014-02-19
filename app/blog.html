@@ -133,9 +133,9 @@
                 <div id="header-nav" class="clearfix">
                     <nav class="section-nav">
                         <ul class="section-list">
-                            <li><a href="#about" ng-bind-template="{{'ABOUT' | translate}}">About</a></li>
+                            <li><a href="/index.html" ng-bind-template="{{'ABOUT' | translate}}">About</a></li>
                             <li><a href="#faq" ng-bind-template="{{'FAQ' | translate}}">FAQ</a></li>
-                            <li><a href="/blog.html" ng-bind-template="{{'BLOG' | translate}}">Blog</a></li>
+                            <li><a ng-href="{{BLOG_URL}}" target="_blank" ng-bind-template="{{'BLOG' | translate}}">Blog</a></li>
                         </ul>
                     </nav>
                     <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
@@ -154,44 +154,13 @@
                     </form>
                 </div>
             </header>
-
-            <section class="section download" ng-controller="DownloadCtrl">
-                <div id="about" class="clearfix">
-                    <div class="download-text">
-                        <h3 ng-bind-template="{{'WHAT_IS_LANTERN' | translate}}">What is Lantern?</h3>
-                    </div>
-                    <div class="video-panel">
-                        <img class="video-snapshot" src="images/video-snapshot.jpg" video-on-click>
-                        <img class="play-button" src="images/icon-play.png" video-on-click>
-                        <div id="video"></div>
-                    </div>
-                    <div class="download-text">
-                        <p ng-bind-template="{{'LANTERN_DESCRIPTION_1' | translate}}">Lantern is an international network...</p>
-                        <p ng-bind-template="{{'LANTERN_DESCRIPTION_2' | translate}}">Through our new peer-to peer censorship circumvention software...</p>
-                        <p ng-bind-template="{{'LANTERN_DESCRIPTION_3' | translate}}">Together, ...</p>
-                    </div>
-                </div>
-            </section>
-            <section class="section white-panel watch clearfix">
-                <div class="watch-text">
-                    <h3 ng-bind-template="{{'HOW_LANTERN_WORKS' | translate}}">How Lantern Works</h3>
-                </div>
-                <div class="app-screenshot">
-                    <img src="images/vis.gif">
-                    <p>Lantern users all over the world giving and getting access.</p>
-                </div>
-                <div class="watch-text">
-                    <p ng-bind-template="{{'LANTERN_PARAGRAPH_1' | translate}}">Lantern's main goal is...</p>
-                    <p ng-bind-template="{{'LANTERN_PARAGRAPH_2' | translate}}">At the core of Lantern is...</p>
-                </div>
-            </section>
             <section class="section faq clearfix">
                 <div id="faq" class="clearfix" ng-controller="DownloadCtrl">
                     <a name="faq" class="section-target">
                         <h3 ng-bind-template="{{'QUESTIONS_AND_ANSWERS' | translate}}">Questions and Answers</h3>
                     </a>
                     <ul>
-                        <li class="clearfix" ng-repeat="faq in faqs.slice(0,5)">
+                        <li class="clearfix" ng-repeat="faq in faqs">
                             <button ng-click="faq.expanded=!faq.expanded" class="expander">{{!faq.expanded && '+' || '-'}}</button>
                             <div class="faq-item">
                                 <a name="faq_{{faq.key|lowercase}}"
@@ -205,7 +174,6 @@
                             </div>
                         </li>
                     </ul>
-                    <a class="faq-link" href="/faq.html">More Questions and Answers</a>
                 </div>
             </section>
 
