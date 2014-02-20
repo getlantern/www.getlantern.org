@@ -116,8 +116,10 @@
         margin: 8px 6%;
         font-size: 22px;
         color: #7f9e99;
+        @include single-transition(color, .3s);
         &:hover {
             text-decoration: none;
+            color: lighten(#7f9e99, 15%);
         }
     }
 }
