@@ -50,6 +50,20 @@ input:focus, textarea:focus {
   }
 }
 
+.checkdomain {
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+
+  &.unrecognized {
+    color: $state-danger-text;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
 /*
 #ghribbon {
   position: absolute;

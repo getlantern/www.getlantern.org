@@ -50,6 +50,22 @@ angular.module('lantern_www', [
       $window.ga('require', 'linkid', 'linkid.js');
       $window.ga('send', 'pageview');
     }
+
+    var domain = angular.lowercase($window.location.hostname),
+        domainType = constants.DOMAIN_TYPE_BY_DOMAIN[domain] || 'UNRECOGNIZED';
+    __log('domain: ' + domain);
+    __log('domain type: ' + domainType);
+    $rootScope.domainType = domainType;
+    if (domainType === 'CANONICAL' || domainType === 'MIRROR') {
+      if ($window.location.protocol !== 'https:') {
+        __log('redirecting to https...');
+        $window.location.replace($window.location.href.replace(/^http:/, 'https:'));
+      }
+    } else if (domainType === 'UNRECOGNIZED') {
+      __log('redirecting to official mirror...');
+      $window.location.replace(constants.MIRROR_URL);
+    }
+
     constants.NLANGS = Object.keys(constants.LANGS).length;
     angular.forEach(constants, function (value, key) {
       $rootScope[key] = value;

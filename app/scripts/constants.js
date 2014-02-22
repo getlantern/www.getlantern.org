@@ -112,6 +112,20 @@ angular.module('lantern_www')
       }
     },
     GA_WEBPROP_ID: 'UA-21815217-1', // google analytics
+    DOMAIN_TYPE_BY_DOMAIN: {
+      'localhost': 'DEV',
+      '127.0.0.1': 'DEV',
+      '0.0.0.0': 'DEV',
+      'getlantern.org': 'CANONICAL',
+      'www.getlantern.org': 'CANONICAL',
+      'getlantern.nodejitsu.com': 'CANONICAL',
+      's3-ap-southeast-1.amazonaws.com': 'MIRROR'
+    },
+    MIRROR_URL: 'https://s3-ap-southeast-1.amazonaws.com/getlantern/index.html',
+
+    BEWARE_OF_PHONIES_URLS: {
+      en_US: 'https://github.com/getlantern/lantern/wiki/Making-Sure-Lantern-Is-Genuine#wiki-getlanternorg-official-mirror'
+    },
     SIGNUP_URL: 'https://getlantern.us2.list-manage.com/subscribe/post?u=0ac18298d5d0330dcda8f48aa&id=f06770f311',
     FORUMS_URL: 'https://groups.google.com/group/lantern-users-en',
     DOCS_URL: 'https://github.com/getlantern/lantern/wiki',

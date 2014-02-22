@@ -1,6 +1,6 @@
 .download {
     background-color: #f5f5f5;
-    background: image-url("../images/lantern-bg.png", false, false) no-repeat center center;
+    background: image-url("lantern-bg.png", false, false) no-repeat center center;
     background-size: cover;
     @media screen and (min-width: $break-small) {
         padding: 60px 0 40px;
