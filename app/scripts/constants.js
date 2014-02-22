@@ -119,9 +119,9 @@ angular.module('lantern_www')
       'getlantern.org': 'CANONICAL',
       'www.getlantern.org': 'CANONICAL',
       'getlantern.nodejitsu.com': 'CANONICAL',
-      's3-ap-southeast-1.amazonaws.com': 'MIRROR'
+      's3.amazonaws.com': 'MIRROR'
     },
-    MIRROR_URL: 'https://s3-ap-southeast-1.amazonaws.com/getlantern/index.html',
+    MIRROR_URL: 'https://s3.amazonaws.com/getlantern.org/index.html',
 
     BEWARE_OF_PHONIES_URLS: {
       en_US: 'https://github.com/getlantern/lantern/wiki/Making-Sure-Lantern-Is-Genuine#wiki-getlanternorg-official-mirror'
