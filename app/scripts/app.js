@@ -82,6 +82,11 @@ angular.module('lantern_www', [
     } else {
       $rootScope.activeLang = constants.LANGS[$translate.uses()];
     }
+
+    $rootScope.valByLang = function (mapping) {
+      return mapping[$rootScope.activeLang.code] ||
+             mapping[constants.DEFAULT_LANGCODE];
+    };
   }]);
 
 function __log(msg) {

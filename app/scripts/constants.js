@@ -84,12 +84,12 @@ angular.module('lantern_www')
         code: 'fa_IR',
         name: 'فارسی',
         dir: 'rtl'
-      }/*,
+      },
       ar: {
         code: 'ar',
         name: 'العربية',
         dir: 'rtl'
-      }*/,
+      },
       ru_RU: {
         code: 'ru_RU',
         name: 'Русский язык', // that's a no-break space
@@ -127,7 +127,14 @@ angular.module('lantern_www')
       en_US: 'https://github.com/getlantern/lantern/wiki/Making-Sure-Lantern-Is-Genuine#wiki-getlanternorg-official-mirror'
     },
     SIGNUP_URL: 'https://getlantern.us2.list-manage.com/subscribe/post?u=0ac18298d5d0330dcda8f48aa&id=f06770f311',
-    FORUMS_URL: 'https://groups.google.com/group/lantern-users-en',
+    FORUMS_URLS: {
+      ar: 'https://groups.google.com/group/lantern-users-ar',
+      en_US: 'https://groups.google.com/group/lantern-users-en',
+      fa_IR: 'https://groups.google.com/group/lantern-users-fa',
+      fr_CA: 'https://groups.google.com/group/lantern-users-fr',
+      fr_FR: 'https://groups.google.com/group/lantern-users-fr',
+      zh_CN: 'https://lanternforum.greatfire.org/',
+    },
     DOCS_URL: 'https://github.com/getlantern/lantern/wiki',
     HELP_TRANSLATE_URL: 'https://github.com/getlantern/lantern/wiki/Translating-Lantern',
     PRIVACY_URL: 'https://github.com/getlantern/lantern/wiki/Privacy',

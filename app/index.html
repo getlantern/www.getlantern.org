@@ -49,7 +49,7 @@
         <div class="checkdomain {{domainType|lowercase}}" ng-show="domainType == 'MIRROR' || domainType == 'UNRECOGNIZED'">
           <span ng-show="domainType == 'MIRROR'" ng-bind-template="{{'OFFICIAL_MIRROR' | translate}}">You are viewing...</span>
           <span ng-show="domainType == 'UNRECOGNIZED'" ng-bind-template="{{'UNOFFICIAL_MIRROR' | translate}}">Caution...</span>
-          <a ng-href="{{BEWARE_OF_PHONIES_URLS[activeLang.code]}}" target="_blank" ng-bind-template="{{'BEWARE_OF_PHONIES' | translate}}">Beware of phonies</a>
+          <a ng-href="{{valByLang(BEWARE_OF_PHONIES_URLS)}}" target="_blank" ng-bind-template="{{'BEWARE_OF_PHONIES' | translate}}">Beware of phonies</a>
         </div>
 
         <div class="lightbox hide" lightbox>
@@ -155,7 +155,7 @@
                 </div>
                 <nav>
                     <ul class="navlink-list main-nav">
-                        <li><a target="_blank" ng-href="{{FORUMS_URL}}" ng-bind-template="{{'FORUMS' | translate}}">Forums</a></li>
+                        <li><a target="_blank" ng-href="{{valByLang(FORUMS_URLS)}}" ng-bind-template="{{'FORUMS' | translate}}">Forums</a></li>
                         <li><a target="_blank" ng-href="{{DOCS_URL}}" ng-bind-template="{{'DOCS' | translate}}">Docs</a></li>
                         <li><a target="_blank" ng-href="{{PRIVACY_URL}}" ng-bind-template="{{'PRIVACY' | translate}}">Privacy</a></li>
                         <li><a target="_blank" ng-href="{{GET_INVOLVED_URL}}" ng-bind-template="{{'GET_INVOLVED' | translate}}">Get Involved</a></li>
