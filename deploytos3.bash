@@ -18,6 +18,6 @@ sed -i "" "s,/styles/fonts,./fonts,g" ${CSS_DIR}/*.css || die "sed command faile
 sed -i "" "s,/images,../images,g" ${CSS_DIR}/*.css || die "sed command failed"
 
 echo "* deploying to s3..."
-s3_website push --site ${SITE_DIR} --config-dir ${CONFIG_DIR}
+echo "D" | s3_website push --site ${SITE_DIR} --config-dir ${CONFIG_DIR}
 
 echo "done."
