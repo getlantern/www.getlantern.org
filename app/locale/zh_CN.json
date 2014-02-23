@@ -1,5 +1,8 @@
 {
     "HELP_TRANSLATE": "协助翻译",
+    "OFFICIAL_MIRROR": "你正在查看 getlantern.org 的唯一官方镜像。",
+    "UNOFFICIAL_MIRROR": "警告：这似乎不是 getlantern.org 的官方镜像！",
+    "BEWARE_OF_PHONIES": "谨防假冒",
     "ABOUT": "关于",
     "FAQ": "常见问题",
     "COPYRIGHT": "© 2014 Brave New Software",
