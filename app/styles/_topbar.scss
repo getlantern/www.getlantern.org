@@ -51,6 +51,7 @@
             .navlink-list {
                 @include inline-list;
                 &.lang-list > li {
+                    float: left;
                     padding: 0 5px;
                 }
                 &.lang-list, &.lang-list a {
@@ -62,6 +63,13 @@
                             color: #7f9e99;
                         }
                     }
+                }
+                p {
+                    float: left;
+                    font-weight: bold;
+                    font-size: 1.1em;
+                    margin: 0;
+                    color: #7f9e99;
                 }
                 a {
                     @include single-transition(color, .3s);

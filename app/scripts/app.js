@@ -88,6 +88,8 @@ function CollapseCtrl($scope) {
     $scope.isCollapsed = true;
 }
 
-$(document).on('click',function(){
-    $('.menu').collapse('hide');
+$(document).on('click',function() {
+    if($('.menu').hasClass('in')) {
+        $('.menu').collapse('hide');
+    }
 })

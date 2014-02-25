@@ -98,7 +98,10 @@
                     <nav class="languages" ng-show="NLANGS > 1">
                         <ul class="navlink-list lang-list" dir="ltr">
                             <li>
-                                <a ng-href="#{{lang.code}}" class="active-lang">{{activeLang.name}}</a>
+                                <p class="active-lang">{{activeLang.name}}</p>
+                            </li>
+                            <li role="presentation" class="ng-scope">
+                                <a role="menuitem" ng-href="#en_US" ng-click="changeLang(lang.code)" class="lang ng-binding" href="#en_US">English</a>
                             </li>
                             <li role="presentation" class="ng-scope">
                                 <a role="menuitem" ng-href="#fa_IR" ng-click="changeLang(lang.code)" class="lang ng-binding" href="#fa_IR">فارسی</a>
