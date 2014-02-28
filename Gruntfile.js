@@ -390,6 +390,24 @@ module.exports = function (grunt) {
       }
     },
 
+    htmlSnapshot: {
+      debug: {
+        options: {
+          snapshotPath: 'snapshots/',
+          sitePath: 'http://0.0.0.0:9000/',
+          msWaitForPages: 1000,
+          urls: [
+            '/',
+            '/blog',
+            '/faq'
+          ]
+        }
+      },
+      prod: {
+        options: {}
+      }
+    },
+
   });
 
   grunt.registerMultiTask('jsFromJSON', 'generate js from JSON', function (target) {
