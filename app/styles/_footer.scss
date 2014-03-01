@@ -10,7 +10,7 @@
     nav {
         padding-bottom: 30px;
         a {
-            @include single-transition(color, .5s);
+            @include single-transition(color, .3s);
             color: #aaa;
             font-size: 1.5em;
             padding: 0 15px;

@@ -81,7 +81,7 @@
                 <div id="logo-header" class="clearfix">
                     <div class="site-logo">
                         <a href="/" class="clearfix">
-                            <img src="images/lantern-logo-alt.png" alt="Lantern" />
+                            <img src="images/lantern-logo-illuminated.png" alt="Lantern" />
                             <span class="beta" ng-bind-template="{{'BETA' | translate}}">Beta</span>
                         </a>
                     </div>
@@ -98,17 +98,20 @@
                     <nav class="languages" ng-show="NLANGS > 1">
                         <ul class="navlink-list lang-list" dir="ltr">
                             <li>
-                                <a ng-href="#{{lang.code}}" class="active-lang">{{activeLang.name}}</a>
+                                <a class="active-lang">{{activeLang.name}}</a>
                             </li>
                             <li role="presentation" class="ng-scope">
-                                <a role="menuitem" ng-href="#fa_IR" ng-click="changeLang(lang.code)" class="lang ng-binding" href="#fa_IR">فارسی</a>
+                                <a role="menuitem" ng-href="#en_US" ng-class="{'hidden': activeLang.code == 'en_US'}" ng-click="changeLang('en_US')" class="lang ng-binding" href="#en_US">English</a>
                             </li>
                             <li role="presentation" class="ng-scope">
-                                <a role="menuitem" ng-href="#zh_CN" ng-click="changeLang(lang.code)" class="lang ng-binding" href="#zh_CN">中文</a>
+                                <a role="menuitem" ng-href="#fa_IR" ng-class="{'hidden': activeLang.code == 'fa_IR'}" ng-click="changeLang('fa_IR')" class="lang ng-binding" href="#fa_IR">فارسی</a>
+                            </li>
+                            <li role="presentation" class="ng-scope">
+                                <a role="menuitem" ng-href="#zh_CN" ng-class="{'hidden': activeLang.code == 'zh_CN'}" ng-click="changeLang('zh_CN')" class="lang ng-binding" href="#zh_CN">中文</a>
                             </li>
                             <li class="dropdown" ng-controller="CollapseCtrl">
                                 <a ng-click="isCollapsed = !isCollapsed">
-                                    More <span class="caret"></span>
+                                    <b ng-bind-template="{{'MORE' | translate}}">More </b><span class="caret"></span>
                                 </a>
                                 <ul collapse="isCollapsed" class="menu" role="menu">
                                     <li ng-repeat="lang in LANGS" role="presentation">
@@ -124,7 +127,7 @@
                         </ul>
                     </nav>
                     <div id="rally-banner">
-                        <h4>Donate to our</h4>
+                        <h4 ng-bind-template="{{'DONATE' | translate}}">Donate to our</h4>
                         <a href="">
                             <img src="images/rally-sash.png">
                         </a>
@@ -135,7 +138,7 @@
                         <ul class="section-list">
                             <li><a href="/index.html" ng-bind-template="{{'ABOUT' | translate}}">About</a></li>
                             <li><a href="#faq" ng-bind-template="{{'FAQ' | translate}}">FAQ</a></li>
-                            <li><a href="/blog.html" target="_blank" ng-bind-template="{{'BLOG' | translate}}">Blog</a></li>
+                            <!-- <li><a href="/blog.html" target="_blank" ng-bind-template="{{'BLOG' | translate}}">Blog</a></li> -->
                         </ul>
                     </nav>
                     <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
@@ -184,7 +187,7 @@
         <footer id="footer" class="footer">
             <div class="wrap clearfix">
                 <div class="footer-logo">
-                    <img src="images/lantern-footer-logo.jpg" alt="Lantern" />
+                    <!-- <img src="images/lantern-logo-illuminated.png" alt="Lantern" /> -->
                 </div>
                 <nav>
                     <ul class="navlink-list main-nav">

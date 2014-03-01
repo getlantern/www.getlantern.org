@@ -18,8 +18,14 @@
         padding-bottom: 60px;
     }
     .download-text {
-        float: left;
-        margin-left: 6%;
+        *[dir=ltr] & {
+            float: left;
+            margin-left: 6%;
+        }
+        *[dir=rtl] & {
+            float: right;
+            margin-right: 6%;
+        }
         width: 25%;
         font-family: AvenirNextLTPro-MediumCn;
         @media screen and (max-width: 1100px) {
@@ -28,19 +34,19 @@
             margin: 0 auto;
         }
         h3 {
-            margin: 100px 0 20px 0;
+            margin: 80px 0 10px 0;
             color: $lnt-yellow;
             text-transform: uppercase;
             font-family: AvenirNextLTPro-DemiCn;
-            font-size: 2.5em;
+            font-size: 2em;
             @media screen and (max-width: 1100px) {
                 text-align: center;
                 margin: 30px 0;
             }
         }
         p {
-            margin-bottom: 20px;
-            font-size: 2em;
+            margin-bottom: 10px;
+            font-size: 1.5em;
             @media screen and (max-width: 1100px) {
                 padding: 0 15px;
                 &:first-of-type {
@@ -99,6 +105,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
+            margin-top: -$hght / 2.0;
             margin-left: -$wdth / 2.0;
             cursor: pointer;
             @media screen and (max-width: $break-small) {

@@ -2,10 +2,10 @@
     background-color: #10283a;
     h3 {
         color: $lnt-yellow;
-        margin: 0 0 20px 6%;
+        margin: 0 6% 20px 6%;
         text-transform: uppercase;
         font-family: AvenirNextLTPro-DemiCn;
-        font-size: 2.5em;
+        font-size: 2em;
     }
     #faq {
         padding: 50px 0 25px;
@@ -76,10 +76,11 @@
                         h4 {
                             font-family: AvenirNextLTPro-MediumCn;
                             font-size: 1.8em;
+                            margin-bottom: 15px;
                         }
                     }
                     .faq-answer {
-                        font-size: 1.4em;
+                        font-size: 1.5em;
                         p {
                             width: 100%;
                             color: #fff;
@@ -114,7 +115,9 @@
     .faq-link {
         display: block;
         margin: 8px 6%;
+        font-family: AvenirNextLTPro-MediumCn;
         font-size: 22px;
+        text-align: center;
         color: #7f9e99;
         @include single-transition(color, .3s);
         &:hover {

@@ -5,8 +5,14 @@
         padding-bottom: 60px;
     }
     .watch-text {
-        float: right;
-        margin-right: 6%;
+        *[dir=ltr] & {
+            float: right;
+            margin-right: 6%;
+        }
+        *[dir=rtl] & {
+            float: left;
+            margin-left: 6%;
+        }
         width: 25%;
         font-family: AvenirNextLTPro-MediumCn;
         @media screen and (max-width: 1100px) {
@@ -19,15 +25,15 @@
             color: $lnt-yellow;
             text-transform: uppercase;
             font-family: AvenirNextLTPro-DemiCn;
-            font-size: 2.5em;
+            font-size: 2em;
             @media screen and (max-width: 1100px) {
                 text-align: center;
                 margin: 30px 0;
             }
         }
         p {
-            margin-bottom: 20px;
-            font-size: 1.8em;
+            margin-bottom: 10px;
+            font-size: 1.5em;
             line-height: 32px;
             @media screen and (max-width: 1100px) {
                 padding: 0 15px;
@@ -66,7 +72,12 @@
         }
         p {
             color: $lnt-yellow;
-            margin: 15px 0 0 6%;
+            *[dir=ltr] & {
+                margin: 15px 0 0 6%;
+            }
+            *[dir=rtl] & {
+                margin: 15px 6% 0 0;   
+            }
             font-family: AvenirNextLTPro-MediumCn;
             font-size: 1.4em;
             @media screen and (max-width: 1100px) {
