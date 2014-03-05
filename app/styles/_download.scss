@@ -14,6 +14,8 @@
     /* fallback */
     background-color: #26323b;
     color: #ffffff;
+    position: relative;
+    z-index: 1;
     @media screen and (min-width: $break-small) {
         padding-bottom: 60px;
     }
@@ -103,13 +105,13 @@
             width: $wdth;
             height: $hght;
             position: absolute;
-            top: 50%;
+            top: 50%;   
             left: 50%;
             margin-top: -$hght / 2.0;
             margin-left: -$wdth / 2.0;
             cursor: pointer;
             @media screen and (max-width: $break-small) {
-                top: 32%;
+                top: 65%;
             }
             
             html.no-touch & {

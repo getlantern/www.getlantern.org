@@ -89,7 +89,7 @@
                             color: #7f9e99;
                         }
                         b {
-                            font-family: AvenirNextLTPro-DemiCn;
+                            font-family: AvenirNextLTPro-MediumCn;
                         }
                     }
                     .input-group {
@@ -119,6 +119,8 @@
         font-size: 22px;
         text-align: center;
         color: #7f9e99;
+        position: relative;
+        z-index: 3;
         @include single-transition(color, .3s);
         &:hover {
             text-decoration: none;

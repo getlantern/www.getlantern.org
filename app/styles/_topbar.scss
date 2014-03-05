@@ -10,7 +10,7 @@
         background-color: #121e27;
         padding: 20px 0;
         position: relative;
-        
+            
         .site-logo {
             float: left;
             position: relative;
@@ -18,7 +18,8 @@
             padding-bottom: 12px;
             @media screen and (max-width: $break-small) {
                 float:none;
-                margin: 0 auto;
+                height: 170px;
+                width: 100%;
             }
             
             *[dir=rtl] & {
@@ -36,7 +37,18 @@
                         right: -80px;
                     }
                     top: -75px;
-                    
+                    @media screen and (max-width: $break-small) {
+                        top: -46px;
+                        *[dir=ltr] & {
+                            left: 0px;
+                        }
+                        *[dir=rtl] & {
+                            right: 0px;
+                        }
+                    }
+                    @media screen and (max-width: 450px) {
+                        top: 0px;
+                    }
                 }
             }
             
@@ -52,9 +64,18 @@
                 *[dir=rtl] & {
                     left: 508px;
                 }
+                @media screen and (max-width: $break-small) {
+                    *[dir=ltr] & {
+                        left: 74%;
+                    }
+                    *[dir=rtl] & {
+                        left: 74%;
+                    }
+                }
             }
         }
         .languages {
+            position: relative;
             float: right;
             *[dir=rtl] & {
                 float: left;
@@ -62,7 +83,10 @@
             margin-right: 15px;
             @media screen and (max-width: $break-small) {
                 float: none;
-                text-align: right;
+                text-align: center;
+                *[dir=rtl] & {
+                    float: none;
+                }
             }
             
             .navlink-list {
@@ -73,6 +97,13 @@
                         float: right;
                     }
                     padding: 0 5px;
+                    display: inline-block;
+                    @media screen and (max-width: $break-small) {
+                        float: none;
+                        *[dir=rtl] & {
+                            float: none;
+                        }
+                    }
                 }
                 &.lang-list, &.lang-list a {
                     font-size: 1.1em;
@@ -149,13 +180,16 @@
                 float: left;
             }
             margin-right: 2%;
+            position: relative;
             @media screen and (max-width: $break-small) {
                 float: none;
                 text-align: center;
                 margin-top: 10px;
+                *[dir=rtl] & {
+                    float: none;
+                }
             }
             .social-media-icons {
-                
                 li {
                     display: block;
                     @media screen and (max-width: $break-small) {
@@ -191,7 +225,7 @@
                 left: 15%;
             }
             top: 100px;
-            @media screen and (max-width: $break-small) {
+            @media screen and (max-width: 800px) {
                 display: none;
                 position: static;
                 text-align: center;
@@ -208,7 +242,6 @@
             }
         }
     }
-    
     #header-nav {
         background-color: #495d67;
         padding: 10px 0;
