@@ -1,5 +1,5 @@
 .download {
-    background-image: -webkit-gradient(
+    /* background-image: -webkit-gradient(
         linear,
         right top,
         left top,
@@ -11,11 +11,10 @@
     background-image: -webkit-linear-gradient(left, #36444E 50%, #131F28 100%);
     background-image: -ms-linear-gradient(left, #36444E 50%, #131F28 100%);
     background-image: linear-gradient(to left, #36444E 50%, #131F28 100%);
+    */
     /* fallback */
-    background-color: #26323b;
+    background-color: #10283a;
     color: #ffffff;
-    position: relative;
-    z-index: 1;
     @media screen and (min-width: $break-small) {
         padding-bottom: 60px;
     }
@@ -29,7 +28,9 @@
             margin-right: 6%;
         }
         width: 25%;
-        font-family: AvenirNextLTPro-MediumCn;
+        font-family: 'AvenirNextLTPro-MediumCn';
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
         @media screen and (max-width: 1100px) {
             float: none;
             width: 90%;
@@ -39,7 +40,9 @@
             margin: 80px 0 10px 0;
             color: $lnt-yellow;
             text-transform: uppercase;
-            font-family: AvenirNextLTPro-DemiCn;
+            font-family: 'AvenirNextLTPro-DemiCn';
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             font-size: 2em;
             @media screen and (max-width: 1100px) {
                 text-align: center;
@@ -100,8 +103,8 @@
         }
         
         .play-button {
-            $wdth: 86px;
-            $hght: 61px;
+            $wdth: 100px;
+            $hght: 100px;
             width: $wdth;
             height: $hght;
             position: absolute;

@@ -14,7 +14,9 @@
             margin-left: 6%;
         }
         width: 25%;
-        font-family: AvenirNextLTPro-MediumCn;
+        font-family: 'AvenirNextLTPro-MediumCn';
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
         @media screen and (max-width: 1100px) {
             float: none;
             width: 90%;
@@ -24,7 +26,9 @@
             margin: 60px 0 10px 0;
             color: $lnt-yellow;
             text-transform: uppercase;
-            font-family: AvenirNextLTPro-DemiCn;
+            font-family: 'AvenirNextLTPro-DemiCn';
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             font-size: 2em;
             @media screen and (max-width: 1100px) {
                 text-align: center;
@@ -73,12 +77,14 @@
         p {
             color: $lnt-yellow;
             *[dir=ltr] & {
-                margin: 15px 0 0 6%;
+                margin: 15px 0 0 9.2%;
             }
             *[dir=rtl] & {
-                margin: 15px 6% 0 0;   
+                margin: 15px 9.2% 0 0;   
             }
-            font-family: AvenirNextLTPro-MediumCn;
+            font-family: 'AvenirNextLTPro-MediumCn';
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             font-size: 1.4em;
             @media screen and (max-width: 1100px) {
                 margin: 5px;

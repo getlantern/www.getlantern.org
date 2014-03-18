@@ -4,18 +4,22 @@
     @include box-shadow(rgba(black, 0.19) 0 1px 0);
     position: relative;
     z-index: 1;
-    font-family: AvenirNextLTPro-MediumCn;
+    font-family: 'AvenirNextLTPro-MediumCn';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     
     #logo-header {
         background-color: #121e27;
         padding: 20px 0;
         position: relative;
-            
+        height: 160px;
         .site-logo {
             float: left;
             position: relative;
+            margin-top: -20px;
+            height: 160px;
             width: 600px;
-            padding-bottom: 12px;
+            overflow: hidden;
             @media screen and (max-width: $break-small) {
                 float:none;
                 height: 170px;
@@ -29,25 +33,24 @@
             a {
                 img {
                     width: 100%;
-                    position: absolute;
+                    margin-top: -100px;
                     *[dir=ltr] & {
-                        left: -80px;
+                        margin-left: -80px;
                     }
                     *[dir=rtl] & {
-                        right: -80px;
+                        margin-right: -80px;
                     }
-                    top: -75px;
                     @media screen and (max-width: $break-small) {
-                        top: -46px;
+                        margin-top: -98px;
                         *[dir=ltr] & {
-                            left: 0px;
+                            margin-left: 0px;
                         }
                         *[dir=rtl] & {
-                            right: 0px;
+                            margin-right: 0px;
                         }
                     }
                     @media screen and (max-width: 450px) {
-                        top: 0px;
+                        margin-top: -40px;
                     }
                 }
             }
@@ -80,9 +83,10 @@
             *[dir=rtl] & {
                 float: left;
             }
-            margin-right: 15px;
+            margin-right: 4.5%;
             @media screen and (max-width: $break-small) {
                 float: none;
+                margin-top: -52px;
                 text-align: center;
                 *[dir=rtl] & {
                     float: none;
@@ -108,7 +112,9 @@
                 &.lang-list, &.lang-list a {
                     font-size: 1.1em;
                     &.active-lang {
-                        font-family: AvenirNextLTPro-MediumCn;
+                        font-family: 'AvenirNextLTPro-MediumCn';
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
                         &:hover {
                             color: #7f9e99;
                             cursor: text;
@@ -143,7 +149,8 @@
                 .menu {
                     position: absolute;
                     top: 100%;
-                    left: 0;
+                    right: 0;
+                    text-align: right;
                     z-index: 1000;
                     float: left;
                     *[dir=rtl] & {
@@ -174,48 +181,7 @@
                 }
             }
         }
-        .social-media {
-            float: right;
-            *[dir=rtl] & {
-                float: left;
-            }
-            margin-right: 2%;
-            position: relative;
-            @media screen and (max-width: $break-small) {
-                float: none;
-                text-align: center;
-                margin-top: 10px;
-                *[dir=rtl] & {
-                    float: none;
-                }
-            }
-            .social-media-icons {
-                li {
-                    display: block;
-                    @media screen and (max-width: $break-small) {
-                        display: inline-block;
-                    }
-                    a {
-                        @include single-transition(color, .3s);
-                        display: block;
-                        color: #ababab;
-                        padding: 5px;
-                        margin: 10px;
-                        width: 38px;
-                        height: 38px;
-                        font-size: 20px;
-                        background-color: #353941;
-                        text-align: center;
-                        &:hover {
-                            color: lighten(#ababab, 15%)
-                        }
-                        &:first-of-type {
-                            margin-top: 0;
-                        }
-                    }
-                }
-            }
-        }
+        
         #rally-banner {
             position: absolute;
             *[dir=ltr] & {
@@ -224,7 +190,7 @@
             *[dir=rtl] & {
                 left: 15%;
             }
-            top: 100px;
+            top: 60px;
             @media screen and (max-width: 800px) {
                 display: none;
                 position: static;
@@ -232,31 +198,43 @@
                 margin-top: 15px;
             }
             h4 {
-                margin: 0px 44px;
+                margin: 0px 0px;
                 color: #fff;
-                font-family: AvenirNextLTPro-MediumCn;
-                font-size: 1.6em;
+                font-family: 'AvenirNextLTPro-MediumCn';
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                font-size: 2.2em;
             }
             img {
-                width: 200px;
+                width: 140px;
             }
         }
     }
     #header-nav {
         background-color: #495d67;
-        padding: 10px 0;
+        padding: 5px 0 0 0;
         position: relative;
         .section-nav {
             float: left;
             font-family: 'AvenirNextLTPro-DemiCn';
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             text-transform: uppercase;
             font-size: 1.6em;
             @media screen and (min-width: 1200px) {
                 *[dir=ltr] & {
-                    margin-left: 34%;
+                    margin-left: 4.5%;
                 }
                 *[dir=rtl] & {
-                    margin-right: 34%;
+                    margin-right: 4.5%;
+                }
+            }
+            @media screen and (min-width: 876px) and (max-width: 1200px) {
+                *[dir=ltr] & {
+                    margin-left: 4.5%;
+                }
+                *[dir=rtl] & {
+                    margin-right: 4.5%;
                 }
             }
             @media screen and (max-width: 875px) {
@@ -286,50 +264,44 @@
                 }
             }
         }
-        
-        form {
-            *[dir=ltr] & {
-                float: right;
-                margin-right: 5%;
-            }
+        .social-media {
+            float: right;
             *[dir=rtl] & {
                 float: left;
-                margin-left: 5%;
             }
-            width: 500px;
-            @media screen and (max-width: 875px) {
-                display: none;
-                width: 90%;
+            margin-right: 4.5%;
+            position: relative;
+            @media screen and (max-width: $break-small) {
+                float: none;
+                text-align: center;
                 margin-top: 10px;
-            }
-            h5 {
-                text-transform: uppercase;
-                float: left;
                 *[dir=rtl] & {
-                    float: right;
-                    margin-left: 8px;
-                }
-                color: #ffffff;
-                margin-right: 8px;
-                font-family: AvenirNextLTPro-MediumCn;
-                font-size: 1.3em;
-                margin-top: 12px;
-                @media screen and (max-width: 875px) {
                     float: none;
-                    margin-bottom: 0;
                 }
             }
-            .input-group {
-                border: 2px solid #1e2a33;
-                input {
-                    border-radius: 0;
-                    font-size: 1.1em;
-                }
-                .input-group-btn input{
-                    background-color: #1e2a33;
-                    color: #6c7477;
-                    &:disabled {
-                        background-color: darken(#1e2a33, 20%);
+            .social-media-icons {
+                li {
+                    display: inline-block;
+                    @media screen and (max-width: $break-small) {
+                        display: inline-block;
+                    }
+                    padding: 0 10px;
+                    a {
+                        @include single-transition(color, .3s);
+                        transition: color 0.3s;
+                        display: block;
+                        color: #ababab;
+                        padding: 5px;
+                        width: 20px;
+                        height: 42px;
+                        font-size: 20px;
+                        text-align: center;
+                        &:hover {
+                            color: lighten(#ababab, 15%)
+                        }
+                        &:first-of-type {
+                            margin-top: 0;
+                        }
                     }
                 }
             }

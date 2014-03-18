@@ -6,19 +6,59 @@
     color: #626262;
     font-size: 16px;
     text-align: center;
+    padding-bottom: 30px;
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 15px 10px;
+        h5 {
+            text-transform: uppercase;
+            float: left;
+            *[dir=rtl] & {
+                float: right;
+                margin-left: 8px;
+            }
+            color: #ffffff;
+            margin-right: 8px;
+            font-family: 'AvenirNextLTPro-MediumCn';
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 1.3em;
+            margin-top: 12px;
+            @media screen and (max-width: 875px) {
+                float: none;
+                margin-bottom: 0;
+            }
+        }
+        .input-group {
+            border: 2px solid #1e2a33;
+            input {
+                border-radius: 0;
+                font-size: 1.1em;
+            }
+            .input-group-btn input{
+                background-color: #1e2a33;
+                color: #6c7477;
+                height: 34px;
+                &:disabled {
+                    background-color: darken(#1e2a33, 20%);
+                }
+            }
+        }
+    }
 
     nav {
-        padding-bottom: 30px;
         position: relative;
         z-index: 3;
-        margin-top: -140px;
-        margin-bottom: 80px;
+        padding: 10px;
         a {
             @include single-transition(color, .3s);
             color: #aaa;
             font-size: 1.5em;
             padding: 0 15px;
-            font-family: AvenirNextLTPro-MediumCn;
+            font-family: 'AvenirNextLTPro-MediumCn';
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             &:hover {
                 text-decoration: none;  
                 color: #ddd;
@@ -47,7 +87,7 @@
     padding: 30px 0;
     img {
         width: 500px;
-        margin-top: -11%;
+        margin-top: -6%;
         margin-bottom: 40px;
         @media screen and (max-width: $break-small) {
             width: 100;

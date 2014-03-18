@@ -81,19 +81,9 @@
                 <div id="logo-header" class="clearfix">
                     <div class="site-logo">
                         <a href="/" class="clearfix">
-                            <img src="images/lantern-logo-illuminated.png" alt="Lantern" />
-                            <span class="beta" ng-bind-template="{{'BETA' | translate}}">Beta</span>
+                            <img src="images/lantern-header-logo-scaled.png" alt="Lantern" />
                         </a>
                     </div>
-                    <nav class="social-media">
-                        <!-- XXX DRY .social-media-icons in header -->
-                        <ul class="social-media-icons">
-                            <li><a target="_blank" ng-href="{{TWITTER_URL}}"><span class="icon-twitter"></span></a></li>
-                            <li><a target="_blank" ng-href="{{FACEBOOK_URL}}"><span class="icon-facebook"></span></a></li>
-                            <li><a target="_blank" ng-href="{{TUMBLR_URL}}"><span class="icon-tumblr"></span></a></li>
-                            <li><a target="_blank" ng-href="{{GITHUB_URL}}"><span class="icon-github"></span></a></li>
-                        </ul>
-                    </nav>
                     
                     <nav class="languages" ng-show="NLANGS > 1">
                         <ul class="navlink-list lang-list" dir="ltr">
@@ -128,7 +118,7 @@
                     </nav>
                     <div id="rally-banner">
                         <h4 ng-bind-template="{{'DONATE' | translate}}">Donate to our</h4>
-                        <a href="">
+                        <a href="https://rally.org/getlantern" target="_blank">
                             <img src="images/rally-sash.png">
                         </a>
                     </div>
@@ -136,25 +126,20 @@
                 <div id="header-nav" class="clearfix">
                     <nav class="section-nav">
                         <ul class="section-list">
-                            <li><a href="/index.html" ng-bind-template="{{'ABOUT' | translate}}">About</a></li>
+                            <li><a href="#about" ng-bind-template="{{'ABOUT' | translate}}">About</a></li>
                             <li><a href="#faq" ng-bind-template="{{'FAQ' | translate}}">FAQ</a></li>
-                            <!-- <li><a href="/blog.html" target="_blank" ng-bind-template="{{'BLOG' | translate}}">Blog</a></li> -->
+                            <!-- <li><a href="/blog.html" ng-bind-template="{{'BLOG' | translate}}">Blog</a></li> -->
                         </ul>
                     </nav>
-                    <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
-                        <input type="hidden" name="_charset_">
-                        <h5 class="form-title" ng-bind-template="{{'EMAIL_SIGNUP' | translate}}">Sign up for updates</h5>
-                        <div class="input-group input-append">
-                            <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
-                                ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
-                                class="input-xlarge form-control" placeholder="email@example.com">
-                            <span class="input-group-btn">
-                                <input type="submit" name="subscribe" class="btn btn-inverse"
-                                    ng-disabled="signupForm.$invalid"
-                                    value="+">
-                            </span>
-                        </div><!-- /input-group -->
-                    </form>
+                    <nav class="social-media">
+                        <!-- XXX DRY .social-media-icons in header -->
+                        <ul class="social-media-icons">
+                            <li><a target="_blank" ng-href="{{TWITTER_URL}}"><span class="icon-twitter"></span></a></li>
+                            <li><a target="_blank" ng-href="{{FACEBOOK_URL}}"><span class="icon-facebook"></span></a></li>
+                            <li><a target="_blank" ng-href="{{TUMBLR_URL}}"><span class="icon-tumblr"></span></a></li>
+                            <li><a target="_blank" ng-href="{{GITHUB_URL}}"><span class="icon-github"></span></a></li>
+                        </ul>
+                    </nav>
                 </div>
             </header>
             <section class="section faq clearfix">
@@ -186,15 +171,37 @@
 
         <footer id="footer" class="footer">
             <div class="wrap clearfix">
-                <div class="footer-logo">
-                    <!-- <img src="images/lantern-logo-illuminated.png" alt="Lantern" /> -->
-                </div>
-                <nav>
+                <nav class="clearfix">
                     <ul class="navlink-list main-nav">
                         <li><a target="_blank" ng-href="{{FORUMS_URL}}" ng-bind-template="{{'FORUMS' | translate}}">Forums</a></li>
                         <li><a target="_blank" ng-href="{{DOCS_URL}}" ng-bind-template="{{'DOCS' | translate}}">Docs</a></li>
                         <li><a target="_blank" ng-href="{{PRIVACY_URL}}" ng-bind-template="{{'PRIVACY' | translate}}">Privacy</a></li>
                         <li><a target="_blank" ng-href="{{GET_INVOLVED_URL}}" ng-bind-template="{{'GET_INVOLVED' | translate}}">Get Involved</a></li>
+                    </ul>
+                </nav>
+                
+                <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
+                    <input type="hidden" name="_charset_">
+                    <h5 class="form-title" ng-bind-template="{{'EMAIL_SIGNUP' | translate}}">Sign up for updates</h5>
+                    <div class="input-group input-append">
+                        <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
+                            ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
+                            class="input-xlarge form-control" placeholder="email@example.com">
+                        <span class="input-group-btn">
+                            <input type="submit" name="subscribe" class="btn btn-inverse"
+                                ng-disabled="signupForm.$invalid"
+                                value="+">
+                        </span>
+                    </div><!-- /input-group -->
+                </form>
+                
+                <nav class="social-media clearfix">
+                    <!-- XXX DRY .social-media-icons in header -->
+                    <ul class="social-media-icons">
+                        <li><a target="_blank" ng-href="{{TWITTER_URL}}"><span class="icon-twitter"></span></a></li>
+                        <li><a target="_blank" ng-href="{{FACEBOOK_URL}}"><span class="icon-facebook"></span></a></li>
+                        <li><a target="_blank" ng-href="{{TUMBLR_URL}}"><span class="icon-tumblr"></span></a></li>
+                        <li><a target="_blank" ng-href="{{GITHUB_URL}}"><span class="icon-github"></span></a></li>
                     </ul>
                 </nav>
             </div>

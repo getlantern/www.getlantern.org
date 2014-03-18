@@ -1,10 +1,14 @@
 .faq {
     background-color: #10283a;
+    position: relative;
+    z-index: 1;
     h3 {
         color: $lnt-yellow;
         margin: 0 6% 20px 6%;
         text-transform: uppercase;
-        font-family: AvenirNextLTPro-DemiCn;
+        font-family: 'AvenirNextLTPro-DemiCn';
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
         font-size: 2em;
     }
     #faq {
@@ -58,7 +62,9 @@
                 .faq-item {
                     width: 92%;
                     float: left;
-                    font-family: AvenirNextLTPro-MediumCn;
+                    font-family: 'AvenirNextLTPro-MediumCn';
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
                     @media screen and (max-width: 850px) {
                         width: 90%;
                     }
@@ -74,7 +80,9 @@
                             text-decoration: none;
                         }
                         h4 {
-                            font-family: AvenirNextLTPro-MediumCn;
+                            font-family: 'AvenirNextLTPro-MediumCn';
+                            -webkit-font-smoothing: antialiased;
+                            -moz-osx-font-smoothing: grayscale;
                             font-size: 1.8em;
                             margin-bottom: 15px;
                         }
@@ -89,7 +97,9 @@
                             color: #7f9e99;
                         }
                         b {
-                            font-family: AvenirNextLTPro-MediumCn;
+                            font-family: 'AvenirNextLTPro-MediumCn';
+                            -webkit-font-smoothing: antialiased;
+                            -moz-osx-font-smoothing: grayscale;
                         }
                     }
                     .input-group {
@@ -115,7 +125,9 @@
     .faq-link {
         display: block;
         margin: 8px 6%;
-        font-family: AvenirNextLTPro-MediumCn;
+        font-family: 'AvenirNextLTPro-MediumCn';
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
         font-size: 22px;
         text-align: center;
         color: #7f9e99;
