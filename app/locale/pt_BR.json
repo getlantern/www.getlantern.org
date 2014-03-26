@@ -1,5 +1,8 @@
 {
     "HELP_TRANSLATE": "Ajude a Traduzir",
+    "OFFICIAL_MIRROR": "Você está visualizando o único e oficial espelho do getlantern.org.",
+    "UNOFFICIAL_MIRROR": "Cuidado: Este não parece ser um espelho oficial do getlantern.org!",
+    "BEWARE_OF_PHONIES": "Cuidado com os falsos",
     "ABOUT": "A respeito do...",
     "FAQ": "Perguntas Mais Frequentes",
     "COPYRIGHT": "© 2014 Brave New Software",

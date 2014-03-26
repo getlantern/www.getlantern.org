@@ -75,7 +75,7 @@ Lantern es un software libre, seguro y confiable
 
 19
 00:01:13,0 --> 00:01:18,0
-que da a la gente acceso a Internet en lugares donde está prohibido.
+que otorga a la gente acceso a Internet en lugares donde está prohibido.
 
 20
 00:01:18,0 --> 00:01:21,0

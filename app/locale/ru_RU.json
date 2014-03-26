@@ -1,5 +1,8 @@
 {
     "HELP_TRANSLATE": "Помощь в переводе",
+    "OFFICIAL_MIRROR": "You are viewing the one and only official mirror of getlantern.org.",
+    "UNOFFICIAL_MIRROR": "Внимание: это не похоже на официальное зеркало getlantern.org!",
+    "BEWARE_OF_PHONIES": "Остерегайтесь подделок!",
     "ABOUT": "О программе",
     "FAQ": "ЧаВо",
     "COPYRIGHT": "© 2014 Brave New Software",

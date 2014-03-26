@@ -1,6 +1,9 @@
 {
     "HELP_TRANSLATE": "Допоможіть у перекладі",
-    "ABOUT": "Про проґраму",
+    "OFFICIAL_MIRROR": "Ви переглядаєте єдине офіційне дзеркало getlantern.org.",
+    "UNOFFICIAL_MIRROR": "Увага: здається, що це не є офіційне дзеркало getlantern.org!",
+    "BEWARE_OF_PHONIES": "Стережіться шахраїв",
+    "ABOUT": "Про нас",
     "FAQ": "ЧаПи",
     "COPYRIGHT": "© 2014 Brave New Software",
     "WINDOWS": "Windows",
