@@ -97,12 +97,12 @@ angular.module('lantern_www')
       },
       uk: {
         code: 'uk',
-        name: 'Український (діаспора)', // that's a no-break space
+        name: 'Українська (діаспора)', // that's a no-break space
         dir: 'ltr',
       },
       uk_UA: {
         code: 'uk_UA',
-        name: 'Український (Україна)', // that's a no-break space
+        name: 'Українська (Україна)', // that's a no-break space
         dir: 'ltr',
       },
       zh_CN: {
