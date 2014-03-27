@@ -35,7 +35,7 @@ config = {
         },
         server: {
             // Host to be passed to node's `net.Server#listen()`
-            host: '127.0.0.1',
+            host: '0.0.0.0',
             // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
             port: '2368'
         },
@@ -59,7 +59,7 @@ config = {
         },
         server: {
             // Host to be passed to node's `net.Server#listen()`
-            host: '127.0.0.1',
+            host: '0.0.0.0',
             // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
             port: '2368'
         }
@@ -71,7 +71,7 @@ config = {
     // Used when developing Ghost to run tests and check the health of Ghost
     // Uses a different port number
     testing: {
-        url: 'http://127.0.0.1:2369',
+        url: 'http://0.0.0.0:2369',
         database: {
             client: 'sqlite3',
             connection: {
@@ -79,7 +79,7 @@ config = {
             }
         },
         server: {
-            host: '127.0.0.1',
+            host: '0.0.0.0',
             port: '2369'
         },
         logging: false
@@ -88,7 +88,7 @@ config = {
     // ### Travis
     // Automated testing run through GitHub
     'travis-sqlite3': {
-        url: 'http://127.0.0.1:2369',
+        url: 'http://0.0.0.0:2369',
         database: {
             client: 'sqlite3',
             connection: {
@@ -96,7 +96,7 @@ config = {
             }
         },
         server: {
-            host: '127.0.0.1',
+            host: '0.0.0.0',
             port: '2369'
         },
         logging: false
@@ -105,11 +105,11 @@ config = {
     // ### Travis
     // Automated testing run through GitHub
     'travis-mysql': {
-        url: 'http://127.0.0.1:2369',
+        url: 'http://0.0.0.0:2369',
         database: {
             client: 'mysql',
             connection: {
-                host     : '127.0.0.1',
+                host     : '0.0.0.0',
                 user     : 'travis',
                 password : '',
                 database : 'ghost_travis',
@@ -117,7 +117,7 @@ config = {
             }
         },
         server: {
-            host: '127.0.0.1',
+            host: '0.0.0.0',
             port: '2369'
         },
         logging: false
@@ -126,11 +126,11 @@ config = {
     // ### Travis
     // Automated testing run through GitHub
     'travis-pg': {
-        url: 'http://127.0.0.1:2369',
+        url: 'http://0.0.0.0:2369',
         database: {
             client: 'pg',
             connection: {
-                host     : '127.0.0.1',
+                host     : '0.0.0.0',
                 user     : 'postgres',
                 password : '',
                 database : 'ghost_travis',
@@ -138,7 +138,7 @@ config = {
             }
         },
         server: {
-            host: '127.0.0.1',
+            host: '0.0.0.0',
             port: '2369'
         },
         logging: false
