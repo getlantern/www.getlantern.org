@@ -37,11 +37,12 @@
                 font-size: 1.1em;
             }
             .input-group-btn input{
-                background-color: #1e2a33;
+                background-color: lighten(#1e2a33, 10%);
                 color: #6c7477;
                 height: 34px;
+                line-height: 10px;
                 &:disabled {
-                    background-color: darken(#1e2a33, 20%);
+                    background-color: lighten(#1e2a33, 30%);
                 }
             }
         }

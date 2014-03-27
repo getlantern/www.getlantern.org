@@ -54,8 +54,6 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-        
-        <script src="//load.sumome.com/" data-sumo-site-id="71c3bce746f9d20e20a16a192fd09e708f8737c9607bcad193a01f31c6d9054d" async></script>
     </head>
     <body class="ng-cloak" lang="{{activeLang.code}}" dir="{{activeLang.dir}}">
         <!--[if lt IE 8]>
@@ -76,9 +74,37 @@
             <a class="lightbox-close" lightbox-close>&times;</a>
             <div class="media-container" id="player"></div>
         </div>
-
+        <!-- Button trigger modal -->
+        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="modalButton">
+          Launch demo modal
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3>Sign up to get the latest updates from Lantern</h3>
+                    <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
+                        <input type="hidden" name="_charset_">
+                        <div class="input-group input-append">
+                            <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
+                                ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
+                                class="input-xlarge form-control" placeholder="email@example.com">
+                            <span class="input-group-btn">
+                                <input type="submit" name="subscribe" class="btn btn-inverse"
+                                    ng-disabled="signupForm.$invalid"
+                                    value="+">
+                            </span>
+                        </div><!-- /input-group -->
+                    </form>
+                </div>
+            </div>
+          </div>
+        </div>
         <div id="content-container">
-            <header id="topbar" class="header">
+            <header id="topbar" class="header sticky">
                 <div id="logo-header" class="clearfix">
                     <div class="site-logo clearfix">
                         <a href="/" class="clearfix">
@@ -117,12 +143,12 @@
                             </li>
                         </ul>
                     </nav>
-                    <div id="rally-banner">
+                    <!-- <div id="rally-banner">
                         <h4 ng-bind-template="{{'DONATE' | translate}}">Donate to our</h4>
                         <a href="https://rally.org/getlantern" target="_blank">
                             <img src="images/rally-sash.png">
                         </a>
-                    </div>
+                    </div> -->
                 </div>
                 <div id="header-nav" class="clearfix">
                     <nav class="section-nav">
@@ -143,7 +169,9 @@
                     </nav>
                 </div>
             </header>
-
+            <section style="height:207px; background-color: #10283a;">
+                
+            </section>
             <section class="section download" ng-controller="DownloadCtrl">
                 <div id="about" class="clearfix">
                     <div class="download-text">
@@ -161,7 +189,7 @@
                     </div>
                 </div>
             </section>
-            <section class="section white-panel watch clearfix">
+            <section class="section watch clearfix">
                 <div class="watch-text">
                     <h3 ng-bind-template="{{'HOW_LANTERN_WORKS' | translate}}">How Lantern Works</h3>
                 </div>
@@ -193,8 +221,27 @@
                                 </div>
                             </div>
                         </li>
+                        
                     </ul>
-                    <a ng-bind-template="{{'MORE_QUESTIONS' | translate}}" class="faq-link" href="/faq.html">More Questions and Answers</a>
+                    <div ng-controller="CollapseCtrl">
+                        <ul class="more_questions" collapse="isCollapsed">
+                            <li class="clearfix" ng-repeat="faq in faqs.slice(5,15)">
+                                <button ng-click="faq.expanded=!faq.expanded" class="expander">{{!faq.expanded && '+' || '-'}}</button>
+                                <div class="faq-item">
+                                    <a name="faq_{{faq.key|lowercase}}"
+                                        ng-click="faq.expanded=!faq.expanded"><h4 ng-bind-template="{{faq.key + '_QUESTION' | translate}}"></h4></a>
+                                    <a class="faq-permalink" ng-href="#faq_{{faq.key|lowercase}}"><h4>¶</h4></a>
+                                    <div collapse="!faq.expanded" class="faq-answer">
+                                        <p ng-repeat="i in range(1, faq.nparagraphs)">
+                                           <span ng-bind-html="faq.key + '_ANSWER_' + i | translate"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <a ng-bind-template="{{'MORE_QUESTIONS' | translate}}" class="faq-link" ng-click="isCollapsed = !isCollapsed" ng-show="isCollapsed">More Questions and Answers</a>
+                        <a ng-bind-template="{{'LESS_QUESTIONS' | translate}}" class="faq-link" ng-click="isCollapsed = !isCollapsed" ng-hide="isCollapsed">Less Questions and Answers</a>
+                    </div>
                 </div>
             </section>
 
@@ -252,7 +299,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
         <!-- these get automatically minified and concatenated at build time -->
         <!-- build:js scripts/loadlast.js -->
-        <script src="bower_components/jquery/jquery.min.js"></script>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/session.js/session.js"></script>
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-cookies/angular-cookies.js"></script>
@@ -261,8 +308,11 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
         <script src="bower_components/angular-bootstrap/src/transition/transition.js"></script>
         <script src="bower_components/angular-bootstrap/src/collapse/collapse.js"></script>
+        <script src="bower_components/angular-bootstrap/src/modal/modal.js"></script>
         <script src="bower_components/angular-bootstrap/src/dropdownToggle/dropdownToggle.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="bower_components/jquery-waypoints/waypoints.min.js"></script>
+        <script src="bower_components/jquery-waypoints/shortcuts/sticky-elements/waypoints-sticky.min.js"></script>
 
         <script src="scripts/app.js"></script>
         <script src="scripts/constants.js"></script>

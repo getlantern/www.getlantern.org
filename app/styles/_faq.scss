@@ -16,7 +16,13 @@
         @media screen and (max-width: $break-small) {
             padding-top: 25px;
         }
-    
+        .more_questions {
+            li {
+                &:first-child {
+                    border-top: 1px solid #7f9e99;
+                }
+            }
+        }
         ul {
             background: #32424d;
             margin: 0 6%;
@@ -57,7 +63,7 @@
                     &:focus {
                         outline: 0;
                     }
-                }
+                }   
     
                 .faq-item {
                     width: 92%;
@@ -70,7 +76,7 @@
                     }
                     @media screen and (max-width: $break-small) {
                         width: 85%;
-                    }
+                    }   
                     @media screen and (max-width: 450px) {
                         width: 78%;
                     }
@@ -85,6 +91,10 @@
                             -moz-osx-font-smoothing: grayscale;
                             font-size: 1.8em;
                             margin-bottom: 15px;
+                            @media screen and (max-width: $break-small) {
+                                width: 85%;
+                                display: inline-block;
+                            }
                         }
                     }
                     .faq-answer {
@@ -110,8 +120,14 @@
     
                     .faq-permalink {
                         color: #ccc;
+                        margin-left: 10px;
                         &:hover {
                             color: #aaa;
+                        }
+                        @media screen and (max-width: $break-small) {
+                            float: right;
+                            width: 15px;
+                            display: inline-block;
                         }
                     }
                 }
