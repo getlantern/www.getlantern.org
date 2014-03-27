@@ -15,3 +15,9 @@ angular.module('lantern_www')
       });
     };
   }]);
+  
+// $(document).ready(function () {
+//    setTimeout(function(){
+//        $('#modalButton').click();
+//    }, 5000);
+// });

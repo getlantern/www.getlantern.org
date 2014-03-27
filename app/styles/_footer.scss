@@ -1,70 +1,112 @@
 @import "compass/layout/sticky-footer";
-@include sticky-footer($footerHeight, "#content-container");
+@include sticky-footer("#content-container");
 
 #footer {
-  height: $footerHeight;
-  color: #626262;
-  font-size: 16px;
-  text-align: center;
-
-  nav {
-    padding-bottom: 35px;
-
-    a {
-      @include single-transition(color, .5s);
-      text-shadow: 1px 1px 1px #ccc;
-      color: #626262;
-      font-size: 18px;
-      &:hover {
-        color: #000;
-      }
+    background-color: #10283a;
+    color: #626262;
+    font-size: 16px;
+    text-align: center;
+    padding-bottom: 30px;
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 15px 10px;
+        h5 {
+            text-transform: uppercase;
+            float: left;
+            *[dir=rtl] & {
+                float: right;
+                margin-left: 8px;
+            }
+            color: #ffffff;
+            margin-right: 8px;
+            font-family: 'AvenirNextLTPro-MediumCn';
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 1.3em;
+            margin-top: 12px;
+            @media screen and (max-width: 875px) {
+                float: none;
+                margin-bottom: 0;
+            }
+        }
+        .input-group {
+            border: 2px solid #1e2a33;
+            input {
+                border-radius: 0;
+                font-size: 1.1em;
+            }
+            .input-group-btn input{
+                background-color: lighten(#1e2a33, 10%);
+                color: #6c7477;
+                height: 34px;
+                line-height: 10px;
+                &:disabled {
+                    background-color: lighten(#1e2a33, 30%);
+                }
+            }
+        }
     }
-  }
 
-  .navlink-list {
-    @include inline-list;
+    nav {
+        position: relative;
+        z-index: 3;
+        padding: 10px;
+        a {
+            @include single-transition(color, .3s);
+            color: #aaa;
+            font-size: 1.5em;
+            padding: 0 15px;
+            font-family: 'AvenirNextLTPro-MediumCn';
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            &:hover {
+                text-decoration: none;  
+                color: #ddd;
+            }
+            @media screen and (max-width: $break-small) {
+                padding: 0 4px;
+            }
+        }
+    }
 
-    &.lang-list > li {
-      padding: 0 5px;
+    .navlink-list {
+        @include inline-list;
+        &.lang-list > li {
+            padding: 0 5px;
+        }
+        &.lang-list, &.lang-list a {
+            font-size: 13px;
+            &.active-lang {
+                font-weight: bold;
+            }
+        }
     }
-    &.lang-list, &.lang-list a {
-      font-size: 13px;
-      &.active-lang {
-        font-weight: bold;
-      }
-    }
-
-    &.main-nav {
-      @include delimited-list('┃');
-      font-family: Oswald;
-    }
-  }
-}
+}   
 
 .footer-logo {
-  padding: 20px 0;
+    padding: 30px 0;
+    img {
+        width: 500px;
+        margin-top: -6%;
+        margin-bottom: 40px;
+        @media screen and (max-width: $break-small) {
+            width: 100;
+        }
+    }
 }
-
-
-/*
-.github-button {
-  padding-bottom: 15px;
-  max-width: 300px;
-  margin: 0 auto;
-}
-
-.gh-btn {
-  width: 46%;
-  margin: 0 2%;
-  float: left;
-  text-align: center;
-}
-*/
 
 .copyright {
-  padding-bottom: 50px;
-
-  p { margin-bottom: 3px; }
-
-  a { color: #139ceb; }
+    padding-bottom: 50px;
+    p {
+        margin-bottom: 3px; 
+    }
+    a { 
+        @include single-transition(color, .5s);
+        color: #aaa; 
+    }
+    a:hover {
+        text-decoration: none;
+        color: #ddd;
+    }
 }

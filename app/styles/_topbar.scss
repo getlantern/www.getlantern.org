@@ -1,59 +1,267 @@
 .header {
     display: block;
-    background-color: $lnt-teal;
+    width: 100%;
+    background-color: #131f28;
     @include box-shadow(rgba(black, 0.19) 0 1px 0);
     position: relative;
     z-index: 1;
-    border-bottom: 1px solid #12485d;
-    padding: 15px 0;
+    font-family: 'AvenirNextLTPro-MediumCn';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     
-    .site-logo {
-        float:left;
+    #logo-header {
+        background-color: #121e27;
+        padding: 20px 0;
         position: relative;
-        width: 153px;
-        padding-bottom: 12px;
-        @media screen and (max-width: $break-small) {
-            float:none;
-            margin: 0 auto;
+        height: 160px;
+        .site-logo {
+            float: left;
+            position: absolute;
+            margin-top: -20px;
+            height: 160px;
+            width: 600px;
+            overflow: hidden;
+            @media screen and (max-width: $break-small) {
+                float:none;
+                height: 170px;
+                width: 100%;
+            }
+            
+            *[dir=rtl] & {
+                float: right;
+            }
+            
+            a {
+                img {
+                    width: 100%;
+                    margin-top: -100px;
+                    *[dir=ltr] & {
+                        margin-left: -60px;
+                    }
+                    *[dir=rtl] & {
+                        margin-right: -60px;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        margin-top: -98px;
+                        *[dir=ltr] & {
+                            margin-left: 0px;
+                        }
+                        *[dir=rtl] & {
+                            margin-right: 0px;
+                        }
+                    }
+                    @media screen and (max-width: 450px) {
+                        margin-top: -40px;
+                    }
+                }
+            }
+            
+            .beta {
+                position: absolute;
+                top: 146px;
+                font-size: 14px;
+                color: #b1b8bc;
+                text-transform: uppercase;
+                *[dir=ltr] & {
+                    left: 346px;
+                }
+                *[dir=rtl] & {
+                    left: 508px;
+                }
+                @media screen and (max-width: $break-small) {
+                    *[dir=ltr] & {
+                        left: 74%;
+                    }
+                    *[dir=rtl] & {
+                        left: 74%;
+                    }
+                }
+            }
+        }
+        .languages {
+            position: relative;
+            float: right;
+            *[dir=rtl] & {
+                float: left;
+            }
+            margin-right: 4.5%;
+            @media screen and (max-width: $break-small) {
+                float: none;
+                margin-top: -52px;
+                text-align: center;
+                *[dir=rtl] & {
+                    float: none;
+                }
+            }
+            
+            .navlink-list {
+                @include inline-list;
+                &.lang-list > li {
+                    float: left;
+                    *[dir=rtl] & {
+                        float: right;
+                    }
+                    padding: 0 5px;
+                    display: inline-block;
+                    @media screen and (max-width: $break-small) {
+                        float: none;
+                        *[dir=rtl] & {
+                            float: none;
+                        }
+                    }
+                }
+                &.lang-list, &.lang-list a {
+                    font-size: 1.1em;
+                    &.active-lang {
+                        font-family: 'AvenirNextLTPro-MediumCn';
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                        &:hover {
+                            color: #7f9e99;
+                            cursor: text;
+                        }
+                    }
+                }
+                p {
+                    float: left;
+                    *[dir=rtl] & {
+                        float: right;
+                    }
+                    font-weight: bold;
+                    font-size: 1.1em;
+                    margin: 0;
+                    color: #7f9e99;
+                }
+                a {
+                    @include single-transition(color, .3s);
+                    color: #7f9e99;
+                    &:hover {
+                        text-decoration: none;
+                        color: lighten(#7f9e99, 15%);
+                    }
+                    b {
+                        font-weight: normal;
+                    }
+                    span {
+                        border-top: 4px solid #7f9e99;
+                        margin-left: 0;
+                    }
+                }
+                .menu {
+                    position: absolute;
+                    top: 100%;
+                    right: 0;
+                    text-align: right;
+                    z-index: 1000;
+                    float: left;
+                    *[dir=rtl] & {
+                        float: right;
+                    }
+                    min-width: 160px;
+                    padding: 5px 0;
+                    margin: 2px 0 0;
+                    list-style: none;
+                    font-size: 14px;
+                    background-color: #131f28;
+                    border: 1px solid #cccccc;
+                    border: 1px solid rgba(0, 0, 0, 0.15);
+                    border-radius: 4px;
+                    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+                    background-clip: padding-box;
+                    li {
+                        display: block;
+                        a {
+                            padding: 3px 20px;
+                            @include single-transition(color, .3s);
+                            &:hover {
+                                color: lighten(#7f9e99, 15%);
+                                background-color: transparent;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        #rally-banner {
+            position: absolute;
+            top: 60px;
+            margin-right: 15px;
+            *[dir=ltr] & {
+                right: 4.5%;
+            }
+            *[dir=rtl] & {
+                left: 4.5%;
+            }
+            @media screen and (max-width: 800px) {
+                display: none;
+                position: static;
+                text-align: center;
+                margin-top: 15px;
+            }
+            h4 {
+                margin: 0px 0px;
+                color: #fff;
+                font-family: 'AvenirNextLTPro-MediumCn';
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                font-size: 2.2em;
+            }
+            img {
+                width: 140px;
+            }
+        }
+    }
+}
+
+#header-nav {
+    background-color: #32424d;
+    padding: 5px 0 0 0;
+    position: relative;
+    z-index: 1;
+    .section-nav {
+        float: left;
+        font-family: 'AvenirNextLTPro-DemiCn';
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-transform: uppercase;
+        font-size: 1.6em;
+        @media screen and (min-width: 1200px) {
+            *[dir=ltr] & {
+                margin-left: 4.5%;
+            }
+            *[dir=rtl] & {
+                margin-right: 4.5%;
+            }
+        }
+        @media screen and (min-width: 876px) and (max-width: 1200px) {
+            *[dir=ltr] & {
+                margin-left: 4.5%;
+            }
+            *[dir=rtl] & {
+                margin-right: 4.5%;
+            }
+        }
+        @media screen and (max-width: 875px) {
+            float:  none;
+            text-align: center;
         }
         
         *[dir=rtl] & {
             float: right;
         }
         
-        .beta {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            font-size: 11px;
-            color: #b1b8bc;
-            text-transform: uppercase;
-        }
-    }
-
-    .section-nav {
-        float: right;
-        margin: 25px 0 0 0;
-        font-family: Oswald;
-        text-transform: uppercase;
-        font-size: 1.6em;
-        @media screen and (max-width: $break-small) {
-            float:none;
-            text-align: center;
-            margin-top: 10px;
-        }
-        
-        *[dir=rtl] & {
-          float: left;
-          margin: 30px 0 0 22px;
-        }
-        
         .section-list {
             @include inline-list;
+            line-height: 38px;
             a {
+                @include single-transition(color, .3s);
                 color: #fff;
+                font-size: 1.2em;
+                line-height: 42px;
                 &:hover {
                     text-decoration: none;
+                    color: #bbb;
                 }
             }
             li {
@@ -61,4 +269,61 @@
             }
         }
     }
+    .social-media {
+        float: right;
+        *[dir=rtl] & {
+            float: left;
+        }
+        margin-right: 4.5%;
+        position: relative;
+        @media screen and (max-width: $break-small) {
+            float: none;
+            text-align: center;
+            margin-top: 10px;
+            *[dir=rtl] & {
+                float: none;
+            }
+        }
+        .social-media-icons {
+            li {
+                display: inline-block;
+                @media screen and (max-width: $break-small) {
+                    display: inline-block;
+                }
+                padding: 0 10px;
+                a {
+                    @include single-transition(color, .3s);
+                    transition: color 0.3s;
+                    display: block;
+                    color: #ababab;
+                    padding: 5px;
+                    width: 20px;
+                    height: 42px;
+                    font-size: 20px;
+                    text-align: center;
+                    &:hover {
+                        color: lighten(#ababab, 15%)
+                    }
+                    &:first-of-type {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+/* #sumotest-badge {
+    display:none !important;
+} */
+.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+.test {
+  height: 120px;
+  position: fixed;
+}
+#modalButton {
+    display: none;
 }

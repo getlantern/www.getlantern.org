@@ -5,10 +5,11 @@
   @include single-transition(all, .5s, ease);
   z-index: 10000;
   padding: 70px;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
 
   .media-container {
-    width: 100%;
+    width: 80%;
     height: 125%;
   }
 }

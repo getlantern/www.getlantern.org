@@ -9,10 +9,6 @@
         <title ng-bind-template="{{'LANTERN' | translate}}">Lantern</title>
         <meta name="description" content="Defeat internet censorship. Give or get access to the open internet by sharing connections through your social network." ng-attr-content="{{'META_DESC' | translate}}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-
-        <!-- build:css({.tmp,app}) styles/main.css -->
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         
         <!--
@@ -58,8 +54,9 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+        
     </head>
-    <body>
+    <body class="ng-cloak" lang="{{activeLang.code}}" dir="{{activeLang.dir}}">
         <!--[if lt IE 8]>
           <p class="chromeframe">You are using an outdated browser. Please <a href="https://www.google.com/chrome/">upgrade your browser</a> or <a href="https://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> and try again.</p>
         <![endif]-->
@@ -73,56 +70,12 @@
           <script src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js"></script>
         -->
 
-<noscript>
-<div lang="en" dir="ltr">JavaScript is required.</div>
-<div lang="zh_CN" dir="ltr">需要启用JavaScript。</div>
-<div lang="fa_IR" dir="rtl">جاوا اسکریپت مورد نیاز است.</div>
-<div lang="ar" dir="rtl">مطلوب جافا سكريبت.</div>
-</noscript>
-
-<div class="ng-cloak" lang="{{activeLang.code}}" dir="{{activeLang.dir}}">
-
         <!-- site content starts here -->
-
-        <div class="checkdomain {{domainType|lowercase}}" ng-show="domainType == 'MIRROR' || domainType == 'UNRECOGNIZED'">
-          <span ng-show="domainType == 'MIRROR'" ng-bind-template="{{'OFFICIAL_MIRROR' | translate}}">You are viewing...</span>
-          <span ng-show="domainType == 'UNRECOGNIZED'" ng-bind-template="{{'UNOFFICIAL_MIRROR' | translate}}">Caution...</span>
-          <a ng-href="{{valByLang(BEWARE_OF_PHONIES_URLS)}}" target="_blank" ng-bind-template="{{'BEWARE_OF_PHONIES' | translate}}">Beware of phonies</a>
-        </div>
-
         <div class="lightbox hide" lightbox>
             <a class="lightbox-close" lightbox-close>&times;</a>
             <div class="media-container" id="player"></div>
         </div>
-        <!-- Button trigger modal -->
-        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="modalButton">
-          Launch demo modal
-        </button>
-        
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h3>Sign up to get the latest updates from Lantern</h3>
-                    <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
-                        <input type="hidden" name="_charset_">
-                        <div class="input-group input-append">
-                            <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
-                                ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
-                                class="input-xlarge form-control" placeholder="email@example.com">
-                            <span class="input-group-btn">
-                                <input type="submit" name="subscribe" class="btn btn-inverse"
-                                    ng-disabled="signupForm.$invalid"
-                                    value="+">
-                            </span>
-                        </div><!-- /input-group -->
-                    </form>
-                </div>
-            </div>
-          </div>
-        </div>
+
         <div id="content-container">
             <header id="topbar" class="header sticky">
                 <div id="logo-header" class="clearfix">
@@ -163,12 +116,12 @@
                             </li>
                         </ul>
                     </nav>
-                    <!-- <div id="rally-banner">
+                    <div id="rally-banner">
                         <h4 ng-bind-template="{{'DONATE' | translate}}">Donate to our</h4>
                         <a href="https://rally.org/getlantern" target="_blank">
                             <img src="images/rally-sash.png">
                         </a>
-                    </div> -->
+                    </div>
                 </div>
                 <div id="header-nav" class="clearfix">
                     <nav class="section-nav">
@@ -192,43 +145,13 @@
             <section style="height:207px; background-color: #10283a;">
                 
             </section>
-            <section class="section download" ng-controller="DownloadCtrl">
-                <div id="about" class="clearfix">
-                    <div class="download-text">
-                        <h3 ng-bind-template="{{'WHAT_IS_LANTERN' | translate}}">What is Lantern?</h3>
-                    </div>
-                    <div class="video-panel">
-                        <img class="video-snapshot" src="images/video-snapshot.jpg" video-on-click>
-                        <img class="play-button" src="images/play-button.png" video-on-click>
-                        <div id="video"></div>
-                    </div>
-                    <div class="download-text">
-                        <p ng-bind-template="{{'LANTERN_DESCRIPTION_1' | translate}}">Lantern is an international network...</p>
-                        <p ng-bind-template="{{'LANTERN_DESCRIPTION_2' | translate}}">Through our new peer-to peer censorship circumvention software...</p>
-                        <p ng-bind-template="{{'LANTERN_DESCRIPTION_3' | translate}}">Together, ...</p>
-                    </div>
-                </div>
-            </section>
-            <section class="section watch clearfix">
-                <div class="watch-text">
-                    <h3 ng-bind-template="{{'HOW_LANTERN_WORKS' | translate}}">How Lantern Works</h3>
-                </div>
-                <div class="app-screenshot">
-                    <img src="images/vis.gif">
-                    <p ng-bind-template="{{'LANTERN_CAPTION' | translate}}">Lantern users all over the world giving and getting access.</p>
-                </div>
-                <div class="watch-text">
-                    <p ng-bind-template="{{'LANTERN_PARAGRAPH_1' | translate}}">Lantern's main goal is...</p>
-                    <p ng-bind-template="{{'LANTERN_PARAGRAPH_2' | translate}}">At the core of Lantern is...</p>
-                </div>
-            </section>
             <section class="section faq clearfix">
                 <div id="faq" class="clearfix" ng-controller="DownloadCtrl">
                     <a name="faq" class="section-target">
                         <h3 ng-bind-template="{{'QUESTIONS_AND_ANSWERS' | translate}}">Questions and Answers</h3>
                     </a>
                     <ul>
-                        <li class="clearfix" ng-repeat="faq in faqs.slice(0,5)">
+                        <li class="clearfix" ng-repeat="faq in faqs">
                             <button ng-click="faq.expanded=!faq.expanded" class="expander">{{!faq.expanded && '+' || '-'}}</button>
                             <div class="faq-item">
                                 <a name="faq_{{faq.key|lowercase}}"
@@ -241,27 +164,7 @@
                                 </div>
                             </div>
                         </li>
-                        
                     </ul>
-                    <div ng-controller="CollapseCtrl">
-                        <ul class="more_questions" collapse="isCollapsed">
-                            <li class="clearfix" ng-repeat="faq in faqs.slice(5,15)">
-                                <button ng-click="faq.expanded=!faq.expanded" class="expander">{{!faq.expanded && '+' || '-'}}</button>
-                                <div class="faq-item">
-                                    <a name="faq_{{faq.key|lowercase}}"
-                                        ng-click="faq.expanded=!faq.expanded"><h4 ng-bind-template="{{faq.key + '_QUESTION' | translate}}"></h4></a>
-                                    <a class="faq-permalink" ng-href="#faq_{{faq.key|lowercase}}"><h4>¶</h4></a>
-                                    <div collapse="!faq.expanded" class="faq-answer">
-                                        <p ng-repeat="i in range(1, faq.nparagraphs)">
-                                           <span ng-bind-html="faq.key + '_ANSWER_' + i | translate"></span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                        <a ng-bind-template="{{'MORE_QUESTIONS' | translate}}" class="faq-link" ng-click="isCollapsed = !isCollapsed" ng-show="isCollapsed">More Questions and Answers</a>
-                        <a ng-bind-template="{{'LESS_QUESTIONS' | translate}}" class="faq-link" ng-click="isCollapsed = !isCollapsed" ng-hide="isCollapsed">Less Questions and Answers</a>
-                    </div>
                 </div>
             </section>
 
@@ -273,7 +176,7 @@
             <div class="wrap clearfix">
                 <nav class="clearfix">
                     <ul class="navlink-list main-nav">
-                        <li><a target="_blank" ng-href="{{valByLang(FORUMS_URLS)}}" ng-bind-template="{{'FORUMS' | translate}}">Forums</a></li>
+                        <li><a target="_blank" ng-href="{{FORUMS_URL}}" ng-bind-template="{{'FORUMS' | translate}}">Forums</a></li>
                         <li><a target="_blank" ng-href="{{DOCS_URL}}" ng-bind-template="{{'DOCS' | translate}}">Docs</a></li>
                         <li><a target="_blank" ng-href="{{PRIVACY_URL}}" ng-bind-template="{{'PRIVACY' | translate}}">Privacy</a></li>
                         <li><a target="_blank" ng-href="{{GET_INVOLVED_URL}}" ng-bind-template="{{'GET_INVOLVED' | translate}}">Get Involved</a></li>
@@ -306,7 +209,8 @@
                 </nav>
             </div>
         </footer>
-</div><!-- site content ends here -->
+
+        <!-- site content ends here -->
 
 <script>
 window.session = {options: {gapi_location: false}};
@@ -318,7 +222,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
         <!-- these get automatically minified and concatenated at build time -->
         <!-- build:js scripts/loadlast.js -->
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/jquery/jquery.min.js"></script>
         <script src="bower_components/session.js/session.js"></script>
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-cookies/angular-cookies.js"></script>
@@ -327,11 +231,8 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
         <script src="bower_components/angular-bootstrap/src/transition/transition.js"></script>
         <script src="bower_components/angular-bootstrap/src/collapse/collapse.js"></script>
-        <script src="bower_components/angular-bootstrap/src/modal/modal.js"></script>
         <script src="bower_components/angular-bootstrap/src/dropdownToggle/dropdownToggle.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="bower_components/jquery-waypoints/waypoints.min.js"></script>
-        <script src="bower_components/jquery-waypoints/shortcuts/sticky-elements/waypoints-sticky.min.js"></script>
 
         <script src="scripts/app.js"></script>
         <script src="scripts/constants.js"></script>

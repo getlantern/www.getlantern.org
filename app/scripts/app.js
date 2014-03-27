@@ -104,3 +104,69 @@ function __urlHashLang(langsAvail) {
     return hash;
   }
 }
+
+function CollapseCtrl($scope) {
+    $scope.isCollapsed = true;
+}
+
+$(function(){
+  $('#logo-header').data('size','big');
+});
+
+$(window).scroll(function(){
+  if($(document).scrollTop() > 0)
+{
+    if($('#logo-header').data('size') == 'big')
+    {
+        $('#logo-header').data('size','small');
+        $('#logo-header').stop().animate({
+            height:'60px'
+        },100);
+        $('.site-logo').stop().animate({
+            width:'300px',
+            height:'80px'
+        },100);
+        $('.site-logo img').stop().animate({
+            'margin-top':'-62px',
+        },100);
+        $('#rally-banner').css({
+            position:'static',
+            float:'right'
+        });
+        $('#rally-banner h4').css({
+            display:'inline',
+            'font-size':'1.8em',
+        });
+        $('#rally-banner img').css({
+            width:'100px',
+        },100);
+    }
+}
+else
+  {
+    if($('#logo-header').data('size') == 'small')
+      {
+        $('#logo-header').data('size','big');
+        $('#logo-header').stop().animate({
+            height:'160px'
+        },100);
+        $('.site-logo').stop().animate({
+            width:'600px',
+            height:'auto'
+        },100);
+        $('.site-logo img').stop().animate({
+            'margin-top':'-98px',
+        },100);
+        $('#rally-banner').css({
+            position:'absolute',
+        });
+        $('#rally-banner h4').css({
+            display:'block',
+            'font-size':'2.2em'
+        });
+        $('#rally-banner img').css({
+            width:'140px',
+        },100);
+      }  
+  }
+});
