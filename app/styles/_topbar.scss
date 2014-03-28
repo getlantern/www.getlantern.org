@@ -36,10 +36,10 @@
                     width: 100%;
                     margin-top: -100px;
                     *[dir=ltr] & {
-                        margin-left: -60px;
+                        margin-left: -14%;
                     }
                     *[dir=rtl] & {
-                        margin-right: -60px;
+                        margin-right: -14%;
                     }
                     @media screen and (max-width: $break-small) {
                         margin-top: -98px;
