@@ -276,10 +276,9 @@
         }
         margin-right: 4.5%;
         position: relative;
-        @media screen and (max-width: $break-small) {
+        @media screen and (max-width: 875px) {
             float: none;
             text-align: center;
-            margin-top: 10px;
             *[dir=rtl] & {
                 float: none;
             }

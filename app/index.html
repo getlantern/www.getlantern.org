@@ -74,35 +74,6 @@
             <a class="lightbox-close" lightbox-close>&times;</a>
             <div class="media-container" id="player"></div>
         </div>
-        <!-- Button trigger modal -->
-        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="modalButton">
-          Launch demo modal
-        </button>
-        
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h3>Sign up to get the latest updates from Lantern</h3>
-                    <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
-                        <input type="hidden" name="_charset_">
-                        <div class="input-group input-append">
-                            <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
-                                ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
-                                class="input-xlarge form-control" placeholder="email@example.com">
-                            <span class="input-group-btn">
-                                <input type="submit" name="subscribe" class="btn btn-inverse"
-                                    ng-disabled="signupForm.$invalid"
-                                    value="+">
-                            </span>
-                        </div><!-- /input-group -->
-                    </form>
-                </div>
-            </div>
-          </div>
-        </div>
         <div id="content-container">
             <header id="topbar" class="header sticky">
                 <div id="logo-header" class="clearfix">
@@ -155,6 +126,7 @@
                         <ul class="section-list">
                             <li><a href="#about" ng-bind-template="{{'ABOUT' | translate}}">About</a></li>
                             <li><a href="#faq" ng-bind-template="{{'FAQ' | translate}}">FAQ</a></li>
+                            <li><a href="blog.html" ng-bind-template="{{'BLOG' | translate}}">Blog</a></li>
                             <li><a href="https://rally.org/getlantern" target="_blank" ng-bind-template="{{'DONATE' | translate}}">Donate</a></li>
                             <!-- <li><a href="/blog.html" ng-bind-template="{{'BLOG' | translate}}">Blog</a></li> -->
                         </ul>
@@ -188,6 +160,42 @@
                         <p ng-bind-template="{{'LANTERN_DESCRIPTION_2' | translate}}">Through our new peer-to peer censorship circumvention software...</p>
                         <p ng-bind-template="{{'LANTERN_DESCRIPTION_3' | translate}}">Together, ...</p>
                     </div>
+                </div>
+            </section>
+            <section class="section signup">
+                <div id="waitlist" class="clearfix">
+                    <h3>Want a Lantern invitation? Sign up for our wailist:</h3>
+                    <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
+                        <input type="hidden" name="_charset_">
+                        <!--<h5 class="form-title" ng-bind-template="{{'WAITLIST' | translate}}">Invitation waitlist:</h5>-->
+                        <div class="input-group input-append">
+                            <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
+                                ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
+                                class="input-xlarge form-control" placeholder="email@example.com">
+                            <span class="input-group-btn">
+                                <input type="submit" name="subscribe" class="btn btn-inverse"
+                                    ng-disabled="signupForm.$invalid"
+                                    value="+">
+                            </span>
+                        </div><!-- /input-group -->
+                    </form>
+                </div>
+                <div id="mailinglist" class="clearfix">
+                    <h3>Looking to learn more before requesting an invite?</h3>
+                    <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
+                        <input type="hidden" name="_charset_">
+                        <!--<h5 class="form-title" ng-bind-template="{{'MAILINGLIST' | translate}}">Sign up here:</h5>-->
+                        <div class="input-group input-append">
+                            <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
+                                ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
+                                class="input-xlarge form-control" placeholder="email@example.com">
+                            <span class="input-group-btn">
+                                <input type="submit" name="subscribe" class="btn btn-inverse"
+                                    ng-disabled="signupForm.$invalid"
+                                    value="+">
+                            </span>
+                        </div><!-- /input-group -->
+                    </form>
                 </div>
             </section>
             <section class="section watch clearfix">
@@ -241,7 +249,7 @@
                             </li>
                         </ul>
                         <a ng-bind-template="{{'MORE_QUESTIONS' | translate}}" class="faq-link" ng-click="isCollapsed = !isCollapsed" ng-show="isCollapsed">More Questions and Answers</a>
-                        <a ng-bind-template="{{'LESS_QUESTIONS' | translate}}" class="faq-link" ng-click="isCollapsed = !isCollapsed" ng-hide="isCollapsed">Less Questions and Answers</a>
+                        <a ng-bind-template="{{'LESS_QUESTIONS' | translate}}" class="faq-link" ng-click="isCollapsed = !isCollapsed" ng-hide="isCollapsed">Fewer Questions and Answers</a>
                     </div>
                 </div>
             </section>
