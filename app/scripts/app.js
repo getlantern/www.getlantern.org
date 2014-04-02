@@ -127,7 +127,7 @@ $(window).scroll(function(){
             height:'80px'
         },100);
         $('.site-logo img').stop().animate({
-            'margin-top':'-62px',
+            'margin':'-62px 0px 0px 0px',
         },100);
         $('#rally-banner').css({
             position:'static',
@@ -155,7 +155,7 @@ else
             height:'auto'
         },100);
         $('.site-logo img').stop().animate({
-            'margin-top':'-98px',
+            'margin':'-98px 0px 0px -14%',
         },100);
         $('#rally-banner').css({
             position:'absolute',

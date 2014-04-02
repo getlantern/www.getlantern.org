@@ -1,0 +1,68 @@
+.signup {
+    background-color: #121e27;
+    color: #ffffff;
+    text-align: center;
+    @media screen and (min-width: $break-small) {
+        padding-bottom: 60px;
+    }
+    #waitlist, #mailinglist {
+        width: 48%;
+        display: inline-block;
+        @media screen and (max-width: 875px) {
+            width: 100%;
+        }
+        h3 {
+            margin: 80px 0 10px 0;
+            color: $lnt-yellow;
+            text-transform: uppercase;
+            font-family: 'AvenirNextLTPro-DemiCn';
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 1.5em;
+            @media screen and (max-width: 1100px) {
+                text-align: center;
+                margin: 30px 0 0 0;
+            }
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 15px 10px;
+            h5 {
+                text-transform: uppercase;
+                float: left;
+                *[dir=rtl] & {
+                    float: right;
+                    margin-left: 8px;
+                }
+                color: #ffffff;
+                margin-right: 8px;
+                font-family: 'AvenirNextLTPro-MediumCn';
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                font-size: 1.3em;
+                margin-top: 12px;
+                @media screen and (max-width: 875px) {
+                    float: none;
+                    margin-bottom: 0;
+                }
+            }
+            .input-group {
+                border: 2px solid #1e2a33;
+                input {
+                    border-radius: 0;
+                    font-size: 1.1em;
+                }
+                .input-group-btn input{
+                    background-color: lighten(#1e2a33, 10%);
+                    color: #6c7477;
+                    height: 34px;
+                    line-height: 10px;
+                    &:disabled {
+                        background-color: lighten(#1e2a33, 30%);
+                    }
+                }
+            }
+        }
+    }
+}
