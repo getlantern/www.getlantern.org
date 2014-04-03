@@ -8,6 +8,14 @@
     font-family: 'AvenirNextLTPro-MediumCn';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    /*FOR STATIC HEADER*/
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    @media screen and (max-width: 875px) {
+        position: static;
+    }
     
     #logo-header {
         background-color: #121e27;
@@ -156,6 +164,8 @@
                     float: left;
                     *[dir=rtl] & {
                         float: right;
+                        text-align: left;
+                        left: 0;
                     }
                     min-width: 160px;
                     padding: 5px 0;
@@ -263,27 +273,37 @@
                     text-decoration: none;
                     color: #bbb;
                 }
+                @media screen and (max-width: 875px) {
+                    font-size: 1em;
+                }
             }
             li {
                 padding: 0 20px;
+                @media screen and (max-width: 875px) {
+                    padding: 0 10px;
+                }
             }
         }
     }
     .social-media {
         float: right;
+        margin-right: 4.5%;
         *[dir=rtl] & {
             float: left;
+            margin-left: 4.5%;
+            margin-right: 0;
         }
-        margin-right: 4.5%;
         position: relative;
         @media screen and (max-width: 875px) {
             float: none;
+            width: 100%;
             text-align: center;
             *[dir=rtl] & {
                 float: none;
             }
         }
         .social-media-icons {
+            display: inline-block;
             li {
                 display: inline-block;
                 @media screen and (max-width: $break-small) {
@@ -311,18 +331,10 @@
         }
     }
 }
-/* #sumotest-badge {
-    display:none !important;
-} */
-.sticky {
-    position: fixed;
-    top: 0;
-    z-index: 10;
-}
-.test {
-  height: 120px;
-  position: fixed;
-}
-#modalButton {
-    display: none;
+.header-spacer {
+    height: 207px; 
+    background-color: #10283a;
+    @media screen and (max-width: 875px) {
+        height: 0;
+    }
 }

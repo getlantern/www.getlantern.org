@@ -4,7 +4,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9" id="ng-app" ng-app="lantern_www"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" id="ng-app" ng-app="lantern_www"> <!--<![endif]-->
     <head>
-        <meta charset="utf-8"/>
+        <meta charset="utf-8"/>mc_fomc_form_input
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
         <title ng-bind-template="{{'LANTERN' | translate}}">Lantern</title>
         <meta name="description" content="Defeat internet censorship. Give or get access to the open internet by sharing connections through your social network." ng-attr-content="{{'META_DESC' | translate}}">
@@ -142,7 +142,7 @@
                     </nav>
                 </div>
             </header>
-            <section style="height:207px; background-color: #10283a;">
+            <section class="header-spacer">
                 
             </section>
             <section class="section download" ng-controller="DownloadCtrl">
@@ -162,7 +162,7 @@
                     </div>
                 </div>
             </section>
-            <section class="section signup">
+            <section class="section signup" ng-controller="SignupCtrl">
                 <div id="waitlist" class="clearfix">
                     <h3>Want a Lantern invitation? Sign up for our wailist:</h3>
                     <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
@@ -197,6 +197,49 @@
                         </div><!-- /input-group -->
                     </form>
                 </div>
+                <!-- Begin MailChimp Signup Form -->
+                <div id="mc_embed_signup">
+                    <form action="http://getlantern.us2.list-manage1.com/subscribe/post?u=0ac18298d5d0330dcda8f48aa&amp;id=92e39e38d3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <div class="mc-field-group input-group input-append email-input" ng-class="mc_email_class">
+                        	<input type="email" value="" name="EMAIL" class="required email input-xlarge form-control" id="mce-EMAIL" ng-model="email" required spellcheck="false" 
+                                ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/" placeholder="email@example.com">
+                            <span class="input-group-btn">
+                                <input class="btn btn-inverse next"
+                                    ng-click="onEmailSubmit()"
+                                    ng-disabled="signupForm.$invalid"
+                                    value=">">
+                            </span>
+                        </div>
+                    	<div id="mce-responses" class="clear">
+                    		<div class="response" id="mce-error-response" style="display:none"></div>
+                    		<div class="response" id="mce-success-response" style="display:none"></div>
+                    	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                        <div class="mc-field-group input-group select-options" ng-class="mc_region_class">
+                            <strong>What kind of region are you from? </strong>
+                            <ul>
+                                <li><input type="radio" value="1" name="group[16361]" id="mce-group[16361]-16361-0"><label for="mce-group[16361]-16361-0">Censored</label></li>
+                                <li><input type="radio" value="2" name="group[16361]" id="mce-group[16361]-16361-1"><label for="mce-group[16361]-16361-1">Uncensored</label></li>
+                            </ul>
+                            <span class="input-group-btn">
+                                <input class="btn btn-inverse next"
+                                    ng-click="onRegionSubmit()"
+                                    ng-disabled="signupForm.$invalid"
+                                    value=">">
+                            </span>
+                        </div>
+                        <div class="mc-field-group input-group select-options" ng-class="mc_list_class">
+                            <strong>What list do you want to join? </strong>
+                            <ul>
+                                <li><input type="radio" value="4" name="group[16365]" id="mce-group[16365]-16365-0"><label for="mce-group[16365]-16365-0">Waitlist</label></li>
+                                <li><input type="radio" value="8" name="group[16365]" id="mce-group[16365]-16365-1"><label for="mce-group[16365]-16365-1">Mailing List</label></li>
+                            </ul>   
+                            <div style="position: absolute; left: -5000px;"><input type="text" name="b_0ac18298d5d0330dcda8f48aa_92e39e38d3" value=""></div>
+                            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                        </div>
+                    </form>
+                </div>
+                
+                <!--End mc_embed_signup-->
             </section>
             <section class="section watch clearfix">
                 <div class="watch-text">
@@ -301,6 +344,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         <script src="scripts/app.js"></script>
         <script src="scripts/constants.js"></script>
         <script src="scripts/controllers/download.js"></script>
+        <script src="scripts/controllers/signup.js"></script>
         <script src="scripts/directives/lightbox.js"></script>
         <script src="scripts/directives/signup.js"></script>
         <script src="scripts/directives/videoOnClick.js"></script>
