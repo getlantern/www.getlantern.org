@@ -6,42 +6,36 @@
         padding-bottom: 60px;
     }
     #waitlist, #mailinglist, #mc_embed_signup {
-        width: 48%;
+        width: 55%;
         display: inline-block;
         @media screen and (max-width: 875px) {
             width: 100%;
         }
         h3 {
-            margin: 80px 0 10px 0;
+            margin: 45px 0 10px 0;
             color: $lnt-yellow;
             text-transform: uppercase;
             font-family: 'AvenirNextLTPro-DemiCn';
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            font-size: 1.5em;
+            font-size: 2.7em;
             @media screen and (max-width: 1100px) {
                 text-align: center;
                 margin: 30px 0 0 0;
             }
         }
         form {
-            max-width: 500px;
+            max-width: 100%;
             margin: 0 auto;
             padding: 15px 10px;
             position: relative;
             h5 {
-                text-transform: uppercase;
-                float: left;
-                *[dir=rtl] & {
-                    float: right;
-                    margin-left: 8px;
-                }
-                color: #ffffff;
-                margin-right: 8px;
+                
+                color: $lnt-yellow;
                 font-family: 'AvenirNextLTPro-MediumCn';
                 -webkit-font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;
-                font-size: 1.3em;
+                font-size: 1.5em;
                 margin-top: 12px;
                 @media screen and (max-width: 875px) {
                     float: none;
@@ -66,44 +60,42 @@
             }
             .mc-field-group {
                 width: 100%;
-                position: absolute;
-                top: 0;
-                opacity: 0;
-                height: 0;
                 border: 0;
-                margin-top: 20px;
-                
-                -webkit-transition: opacity 0.3s ease-in-out, margin-top 0.3s ease-in-out;
-                -moz-transition: opacity 0.3s ease-in-out, margin-top 0.3s ease-in-out;
-                -o-transition: opacity 0.3s ease-in-out, margin-top 0.3s ease-in-out;
-                transition: opacity 0.3s ease-in-out, margin-top 0.3s ease-in-out;
-                &.email-input {
-                    padding: 10px 0;
-                    height: 54px;
+            }
+            .select-options {
+                .newsletter {
+                    width: 430px;
+                    margin: 0 auto;
+                    li {
+                        display: block;
+                        text-align: left;
+                    }
                 }
-                &.current {
-                    opacity: 1;
-                    margin-top: 0;
-                    z-index: 10;
-                    height: auto;
-                }
-                .input-group-btn {
-                    .btn {
-                        width: 35px;
+                ul {
+                    li {
+                        display: inline-block;
+                        margin: 0 15px;
+                        min-width: 185px;
+                        vertical-align: top;
+                        text-align: center;
+                        input {
+                            vertical-align: top;
+                        }
+                        label {
+                            margin-left: 5px;
+                            text-align: center;
+                            font-family: 'AvenirNextLTPro-MediumCn';
+                            -webkit-font-smoothing: antialiased;
+                            -moz-osx-font-smoothing: grayscale;
+                            font-size: 1.5em;
+                            font-weight: normal;
+                        }
                     }
                 }
             }
-            .select-options {
-                text-align: left;
-                strong {
-                    float: left;
-                }
-                ul {
-                    float: left;
-                }
-                .button {
-                    float: right;
-                }
+            .input-append {
+                width: 300px;
+                margin: 20px auto 0;
             }
         }
     }
