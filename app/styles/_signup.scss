@@ -2,100 +2,135 @@
     background-color: #121e27;
     color: #ffffff;
     text-align: center;
-    @media screen and (min-width: $break-small) {
-        padding-bottom: 60px;
+    padding: 0 10% 30px 10%;
+    @media screen and (max-width: 1100px) {
+        padding: 0 5% 30px 5%;
+    }
+    @media screen and (max-width: 990px) {
+        padding: 0 0 30px 0;
+    }
+    @media screen and (max-width: 875px) {
+        padding: 0 5% 30px 5%;
+    }
+    @media screen and (max-width: $break-small) {
+        padding: 0 0 30px 0;
     }
     #waitlist, #mailinglist, #mc_embed_signup {
-        width: 55%;
+        width: 100%%;
         display: inline-block;
         @media screen and (max-width: 875px) {
-            width: 100%;
+            width: 98%;
         }
         h3 {
-            margin: 45px 0 10px 0;
+            margin: 45px 0 50px 0;
             color: $lnt-yellow;
             text-transform: uppercase;
             font-family: 'AvenirNextLTPro-DemiCn';
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             font-size: 2.7em;
-            @media screen and (max-width: 1100px) {
-                text-align: center;
-                margin: 30px 0 0 0;
-            }
         }
         form {
             max-width: 100%;
             margin: 0 auto;
             padding: 15px 10px;
             position: relative;
-            h5 {
-                
-                color: $lnt-yellow;
-                font-family: 'AvenirNextLTPro-MediumCn';
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-                font-size: 1.5em;
-                margin-top: 12px;
-                @media screen and (max-width: 875px) {
-                    float: none;
-                    margin-bottom: 0;
-                }
-            }
-            .input-group {
-                border: 2px solid #1e2a33;
-                input {
-                    border-radius: 0;
-                    font-size: 1.1em;
-                }
-                .input-group-btn input{
-                    background-color: lighten(#1e2a33, 10%);
-                    color: #6c7477;
-                    height: 34px;
-                    line-height: 10px;
-                    &:disabled {
-                        background-color: lighten(#1e2a33, 30%);
+            
+            .lantern-form-section {
+                display: inline-block;
+                width: 32%;
+                padding-left: 5%;
+                text-align: left;
+                vertical-align: top;
+                @media screen and (max-width: 990px) {
+                    display:block;
+                    width: 100%;
+                    *[dir=rtl] & {
+                        text-align: right;
                     }
                 }
-            }
-            .mc-field-group {
-                width: 100%;
-                border: 0;
-            }
-            .select-options {
-                .newsletter {
-                    width: 430px;
-                    margin: 0 auto;
-                    li {
-                        display: block;
-                        text-align: left;
+                h5 {
+                    color: $lnt-yellow;
+                    font-family: 'AvenirNextLTPro-MediumCn';
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    font-size: 1.8em;
+                    margin-top: 12px;
+                    @media screen and (max-width: 875px) {
+                        float: none;
+                        margin-bottom: 0;
+                    }
+                    
+                    span {
+                        color: #fff;
+                        font-size: 1.2em;
+                    }
+                    p {
+                        display: inline;
+                        *[dir=ltr] & {
+                            margin: 0 0 0 5px;
+                        }
+                        *[dir=rtl] & {
+                            margin: 0 5px 0 0;
+                        }
                     }
                 }
-                ul {
-                    li {
-                        display: inline-block;
-                        margin: 0 15px;
-                        min-width: 185px;
-                        vertical-align: top;
-                        text-align: center;
-                        input {
+                .input-group {
+                    border: 2px solid #1e2a33;
+                    input {
+                        border-radius: 0;
+                        font-size: 1.1em;
+                    }
+                    .input-group-btn input{
+                        background-color: lighten(#1e2a33, 10%);
+                        color: #6c7477;
+                        height: 34px;
+                        line-height: 10px;
+                        &:disabled {
+                            background-color: lighten(#1e2a33, 30%);
+                        }
+                    }
+                }
+                .mc-field-group {
+                    width: 100%;
+                    border: 0;
+                }
+                .select-options {
+                    ul {
+                        padding: 0;
+                        li {
+                            display: block;
+                            margin: 0 2px;
+                            min-width: 251px;
                             vertical-align: top;
-                        }
-                        label {
-                            margin-left: 5px;
-                            text-align: center;
-                            font-family: 'AvenirNextLTPro-MediumCn';
-                            -webkit-font-smoothing: antialiased;
-                            -moz-osx-font-smoothing: grayscale;
-                            font-size: 1.5em;
-                            font-weight: normal;
+                            *[dir=ltr] & {
+                                text-align: left;
+                            }
+                            *[dir=rtl] & {
+                                text-align: right;
+                            }
+                            label {
+                                margin: 0 5px 5px 5px;
+                                text-align: center;
+                                font-family: 'AvenirNextLTPro-MediumCn';
+                                -webkit-font-smoothing: antialiased;
+                                -moz-osx-font-smoothing: grayscale;
+                                font-size: 1.5em;
+                                font-weight: normal;
+                            }
                         }
                     }
                 }
-            }
-            .input-append {
-                width: 300px;
-                margin: 20px auto 0;
+                .input-append {
+                    margin: 20px auto 0;
+                    max-width: 400px;
+                    *[dir=ltr] & {
+                        float: left;
+                    }
+                    *[dir=rtl] & {
+                        float: right;
+                    }
+                }
             }
         }
     }
