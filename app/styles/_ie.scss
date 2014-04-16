@@ -2,18 +2,18 @@
   background-color: #000;
 }
 
-.no-rgba .panel { background: url(../images/transparent.png) repeat; }
+.no-rgba .panel { background: image-url("transparent.png", false, false) repeat; }
 
 .lt-ie9 {
   .section { padding: 54px 0 94px; }
-  .panel { 
-    width: 80%; 
+  .panel {
+    width: 80%;
 
-    .panel-title { 
-      font-size: 48px; 
+    .panel-title {
+      font-size: 48px;
     }
 
-    .panel-text { 
+    .panel-text {
       font-size: 22px;
     }
 

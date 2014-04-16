@@ -9,53 +9,23 @@
         <title ng-bind-template="{{'LANTERN' | translate}}">Lantern</title>
         <meta name="description" content="Defeat internet censorship. Give or get access to the open internet by sharing connections through your social network." ng-attr-content="{{'META_DESC' | translate}}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        
-        <!--
-        /**
-         * @license
-         * MyFonts Webfont Build ID 2745063, 2014-02-11T15:01:46-0500
-         * 
-         * The fonts listed in this notice are subject to the End User License
-         * Agreement(s) entered into by the website owner. All other parties are 
-         * explicitly restricted from using the Licensed Webfonts(s).
-         * 
-         * You may obtain a valid license at the URLs below.
-         * 
-         * Webfont: Avenir Next Pro Demi by Linotype
-         * URL: http://www.myfonts.com/fonts/linotype/avenir-next-pro/pro-demi/
-         * Licensed pageviews: 500,000
-         * 
-         * Webfont: Avenir Next Pro Medium by Linotype
-         * URL: http://www.myfonts.com/fonts/linotype/avenir-next-pro/pro-medium/
-         * Licensed pageviews: 250,000
-         * 
-         * What 
-         * License: http://www.myfonts.com/viewlicense?type=web&buildid=2745063
-         * Webfonts copyright: Copyright &#x00A9; 2004 - 2007 Linotype GmbH, www.linotype.com.
-         * All rights reserved. This font software may not be reproduced, modified, disclosed or
-         * transferred without the express written approval of Linotype GmbH. Avenir is a
-         * trademark of Linotype GmbH
-         * 
-         * © 2014 MyFonts Inc
-        */
-        
-        -->
         <link rel="stylesheet" type="text/css" href="styles/MyFontsWebfontsKit.css">
-        
-        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+        <!-- build:css({.tmp,app}) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
-        
+
         <!-- build:js scripts/loadfirst.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
-        
+
         <!-- Latest compiled and minified JavaScript -->
         <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     </head>
-    <body class="ng-cloak" lang="{{activeLang.code}}" dir="{{activeLang.dir}}">
+    <body>
         <!--[if lt IE 8]>
           <p class="chromeframe">You are using an outdated browser. Please <a href="https://www.google.com/chrome/">upgrade your browser</a> or <a href="https://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> and try again.</p>
         <![endif]-->
@@ -69,7 +39,23 @@
           <script src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js"></script>
         -->
 
+<noscript>
+<div lang="en" dir="ltr">JavaScript is required.</div>
+<div lang="zh_CN" dir="ltr">需要启用JavaScript。</div>
+<div lang="fa_IR" dir="rtl">جاوا اسکریپت مورد نیاز است.</div>
+<div lang="ar" dir="rtl">مطلوب جافا سكريبت.</div>
+</noscript>
+
+<div class="ng-cloak" lang="{{activeLang.code}}" dir="{{activeLang.dir}}">
+
         <!-- site content starts here -->
+
+        <div class="checkdomain {{domainType|lowercase}}" ng-show="domainType == 'MIRROR' || domainType == 'UNRECOGNIZED'">
+          <span ng-show="domainType == 'MIRROR'" ng-bind-template="{{'OFFICIAL_MIRROR' | translate}}">You are viewing...</span>
+          <span ng-show="domainType == 'UNRECOGNIZED'" ng-bind-template="{{'UNOFFICIAL_MIRROR' | translate}}">Caution...</span>
+          <a ng-href="{{valByLang(BEWARE_OF_PHONIES_URLS)}}" target="_blank" ng-bind-template="{{'BEWARE_OF_PHONIES' | translate}}">Beware of phonies</a>
+        </div>
+
         <div class="lightbox hide" lightbox>
             <a class="lightbox-close" lightbox-close>&times;</a>
             <div class="media-container" id="player"></div>
@@ -82,7 +68,7 @@
                             <img src="images/lantern-header-logo-scaled.png" alt="Lantern" />
                         </a>
                     </div>
-                    
+
                     <nav class="languages" ng-show="NLANGS > 1">
                         <ul class="navlink-list lang-list" dir="ltr">
                             <li>
@@ -142,7 +128,7 @@
                 </div>
             </header>
             <section class="header-spacer">
-                
+
             </section>
             <section class="section download" ng-controller="DownloadCtrl">
                 <div id="about" class="clearfix">
@@ -172,7 +158,7 @@
                                 <ul class="newsletter">
                                     <li><input type="radio" value="4" name="group[16365]" id="mce-group[16365]-16365-0"><label for="mce-group[16365]-16365-0" ng-bind-template="{{'EMAIL_WAITLIST_NEWSLETTER' | translate}}">Invitation waitlist &amp; newsletter</label></li>
                                     <li><input type="radio" value="8" name="group[16365]" id="mce-group[16365]-16365-1"><label for="mce-group[16365]-16365-1" ng-bind-template="{{'EMAIL_NEWSLETTER_ONLY' | translate}}">Newsletter only</label></li>
-                                </ul>   
+                                </ul>
                             </div>
                         </div>
                         <div class="lantern-form-section">
@@ -187,13 +173,13 @@
                         <div class="lantern-form-section">
                             <h5><span>3.</span><p ng-bind-template="{{'EMAIL_INPUT' | translate}}">Enter your e-mail address:</p></h5>
                             <div class="mc-field-group input-group input-append">
-                                <input type="email" value="" name="EMAIL" class="required email input-xlarge form-control" id="mce-EMAIL" ng-model="email" required spellcheck="false" 
+                                <input type="email" value="" name="EMAIL" class="required email input-xlarge form-control" id="mce-EMAIL" ng-model="email" required spellcheck="false"
                                     ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/" placeholder="email@example.com">
                                 <span class="input-group-btn">
                                     <div style="position: absolute; left: -5000px;"><input type="text" name="b_0ac18298d5d0330dcda8f48aa_92e39e38d3" value=""></div>
                                     <input type="submit" name="subscribe"  id="mc-embedded-subscribe" class="btn btn-inverse"
                                         ng-disabled="signupForm.$invalid"
-                                        value="+">  
+                                        value="+">
                                 </span>
                             </div>
                         </div>
@@ -230,7 +216,7 @@
                                 </div>
                             </div>
                         </li>
-                        
+
                     </ul>
                     <div ng-controller="CollapseCtrl">
                         <ul class="more_questions" collapse="isCollapsed">
@@ -262,7 +248,7 @@
             <div class="wrap clearfix">
                 <nav class="clearfix">
                     <ul class="navlink-list main-nav">
-                        <li><a target="_blank" ng-href="{{FORUMS_URL}}" ng-bind-template="{{'FORUMS' | translate}}">Forums</a></li>
+                        <li><a target="_blank" ng-href="{{valByLang(FORUMS_URLS)}}" ng-bind-template="{{'FORUMS' | translate}}">Forums</a></li>
                         <li><a target="_blank" ng-href="{{DOCS_URL}}" ng-bind-template="{{'DOCS' | translate}}">Docs</a></li>
                         <li><a target="_blank" ng-href="{{PRIVACY_URL}}" ng-bind-template="{{'PRIVACY' | translate}}">Privacy</a></li>
                         <li><a target="_blank" ng-href="{{GET_INVOLVED_URL}}" ng-bind-template="{{'GET_INVOLVED' | translate}}">Get Involved</a></li>
@@ -270,8 +256,7 @@
                 </nav>
             </div>
         </footer>
-
-        <!-- site content ends here -->
+</div><!-- site content ends here -->
 
 <script>
 window.session = {options: {gapi_location: false}};
@@ -309,6 +294,6 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         <!-- generated by "grunt jsFromJSON"; populates window.translations with data from locale/*.json -->
         <script src="scripts/jsFromJSON/translations.js"></script>
         <!-- endbuild -->
-        
+
     </body>
 </html>

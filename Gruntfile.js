@@ -291,7 +291,7 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '*.html',
             'images/{,*/}*.{gif,webp}',
-            'styles/fonts/*'
+            'styles/fonts/*.{ttf,svg,eot,woff}'
           ]
         }, {
           expand: true,
@@ -386,7 +386,7 @@ module.exports = function (grunt) {
             cwd: '<%= yeoman.dist %>'
           }
         },
-      command: 'jitsu deploy'
+      command: 'jitsu deploy && ../deploytos3.bash'
       }
     },
 
@@ -428,7 +428,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'jsFromJSON:server',
-      'bower-install',
+    //'bower-install',
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
@@ -452,7 +452,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'jsFromJSON:server',
-    'bower-install',
+  //'bower-install',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
@@ -474,6 +474,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('deploy', [
+    'clean',
     'build',
     'shell'
   ]);

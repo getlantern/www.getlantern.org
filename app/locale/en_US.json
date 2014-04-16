@@ -1,5 +1,8 @@
 {
     "HELP_TRANSLATE": "Help Translate",
+    "OFFICIAL_MIRROR": "You are viewing the one and only official mirror of getlantern.org.",
+    "UNOFFICIAL_MIRROR": "Caution: This does not appear to be an official getlantern.org mirror!",
+    "BEWARE_OF_PHONIES": "Beware of phonies",
     "ABOUT": "About",
     "FAQ": "FAQ",
     "BLOG": "Blog",

@@ -1,5 +1,8 @@
 {
     "HELP_TRANSLATE": "‫کمک در ترجمه",
+    "OFFICIAL_MIRROR": "شما در حال مشاهده تنها میرور رسمی getlantern.org میباشید.",
+    "UNOFFICIAL_MIRROR": "هشدار: بنظر نمیرسد که این یک میرور رسمی از getlantern.org باشد!",
+    "BEWARE_OF_PHONIES": "مراقب تقلبی ها باشید",
     "ABOUT": "‫‫درباره‬",
     "FAQ": "‫سوالات متداول",
     "COPYRIGHT": "© 2014 Brave New Software",

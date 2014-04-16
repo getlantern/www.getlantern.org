@@ -50,17 +50,10 @@ For easy copy/paste into Terminal:
 - For building stylesheets:
   - [Ruby](http://www.ruby-lang.org/) (comes with OS X)
   - [Compass](http://compass-style.org/) (gem install compass)
-- For deploying to App Engine:
-  - [Python 2.7](http://python.org/) (comes with OS X)
-  - [App Engine Python SDK](https://developers.google.com/appengine/downloads#Google_App_Engine_SDK_for_Python)
-    - Make sure to run the GoogleAppEngineLauncher at least once so that it can install
-      a recent SDK and create symlinks to the command-line tools.
-    - On OS X, you may get an error message when you run the GoogleAppEngineLauncher
-      that complains about it either being corrupted or being unable to find python.
-      - To fix this, create a symlink from python2.7 to python:
-        `sudo ln -s /usr/bin/python2.7 /usr/bin/python`
 - For deploying to Nodejitsu:
   - [jitsu](https://github.com/nodejitsu/jitsu#one-line-jitsu-install)
+- For deploying to S3:
+  - [s3_website](https://rubygems.org/gems/s3_website) (gem install s3\_website)
 - For managing translations:
   - [Python 2.7](http://python.org/) (comes with OS X)
   - [Transifex Client](https://pypi.python.org/pypi/transifex-client)
@@ -137,6 +130,8 @@ version to make sure it looks the same as the development version.
 
 ## Deployment
 
-First make sure you have the Nodejitsu credentials for the lantern\_www user,
+First make sure you have the Nodejitsu credentials for the lantern\_www user in
+~/.jitsuconf (if not run "jitsu login" to create it) as well as
+https://github.com/getlantern/too-many-secrets checked out alongside this repo,
 and then run "grunt deploy". This will create a fresh build in the "dist"
-directory and then run "jitsu deploy" from within it.
+directory and then deploy it to Nodejitsu as well as S3.
