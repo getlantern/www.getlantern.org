@@ -37,6 +37,8 @@ For easy copy/paste into Terminal:
     # start up the development web server
     grunt serve
 
+    # setup and start ghost blog
+    cd blog && npm install && bower install && npm start
 
 ## Dependencies
 

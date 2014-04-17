@@ -9,18 +9,52 @@
         <title ng-bind-template="{{'LANTERN' | translate}}">Lantern</title>
         <meta name="description" content="Defeat internet censorship. Give or get access to the open internet by sharing connections through your social network." ng-attr-content="{{'META_DESC' | translate}}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="styles/MyFontsWebfontsKit.css">
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
         <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
         <!-- build:css({.tmp,app}) styles/main.css -->
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        
+        <!--
+        /**
+         * @license
+         * MyFonts Webfont Build ID 2745063, 2014-02-11T15:01:46-0500
+         * 
+         * The fonts listed in this notice are subject to the End User License
+         * Agreement(s) entered into by the website owner. All other parties are 
+         * explicitly restricted from using the Licensed Webfonts(s).
+         * 
+         * You may obtain a valid license at the URLs below.
+         * 
+         * Webfont: Avenir Next Pro Demi by Linotype
+         * URL: http://www.myfonts.com/fonts/linotype/avenir-next-pro/pro-demi/
+         * Licensed pageviews: 500,000
+         * 
+         * Webfont: Avenir Next Pro Medium by Linotype
+         * URL: http://www.myfonts.com/fonts/linotype/avenir-next-pro/pro-medium/
+         * Licensed pageviews: 250,000
+         * 
+         * 
+         * License: http://www.myfonts.com/viewlicense?type=web&buildid=2745063
+         * Webfonts copyright: Copyright &#x00A9; 2004 - 2007 Linotype GmbH, www.linotype.com.
+         * All rights reserved. This font software may not be reproduced, modified, disclosed or
+         * transferred without the express written approval of Linotype GmbH. Avenir is a
+         * trademark of Linotype GmbH
+         * 
+         * © 2014 MyFonts Inc
+        */
+        
+        -->
+        <link rel="stylesheet" type="text/css" href="styles/MyFontsWebfontsKit.css">
+        
+        <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
-
+        
         <!-- build:js scripts/loadfirst.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
-
+        
         <!-- Latest compiled and minified JavaScript -->
         <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
@@ -68,7 +102,7 @@
                             <img src="images/lantern-header-logo-scaled.png" alt="Lantern" />
                         </a>
                     </div>
-
+                    
                     <nav class="languages" ng-show="NLANGS > 1">
                         <ul class="navlink-list lang-list" dir="ltr">
                             <li>
@@ -112,6 +146,7 @@
                         <ul class="section-list">
                             <li><a href="#about" ng-bind-template="{{'ABOUT' | translate}}">About</a></li>
                             <li><a href="#faq" ng-bind-template="{{'FAQ' | translate}}">FAQ</a></li>
+                            <li><a href="blog.html" ng-bind-template="{{'BLOG' | translate}}">Blog</a></li>
                             <li><a href="https://rally.org/getlantern" target="_blank" ng-bind-template="{{'DONATE' | translate}}">Donate</a></li>
                             <!-- <li><a href="/blog.html" ng-bind-template="{{'BLOG' | translate}}">Blog</a></li> -->
                         </ul>
@@ -127,8 +162,8 @@
                     </nav>
                 </div>
             </header>
-            <section class="header-spacer">
-
+            <section style="height:207px; background-color: #10283a;">
+                
             </section>
             <section class="section download" ng-controller="DownloadCtrl">
                 <div id="about" class="clearfix">
@@ -148,41 +183,40 @@
                 </div>
             </section>
             <section class="section signup">
-                <!-- Begin MailChimp Signup Form -->
-                <div id="mc_embed_signup">
-                    <form action="http://getlantern.us2.list-manage1.com/subscribe/post?u=0ac18298d5d0330dcda8f48aa&amp;id=92e39e38d3" method="POST" id="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate name="signupForm" ng-submit="handleSignup()" signup-form>
-                        <h3 ng-bind-template="{{'EMAIL_SIGNUP' | translate}}">Sign up here</h3>
-                        <div class="lantern-form-section">
-                            <h5><span>1.</span><p ng-bind-template="{{'EMAIL_CHOOSE_OPTION' | translate}}">Choose one option:</p></h5>
-                            <div class="mc-field-group input-group select-options">
-                                <ul class="newsletter">
-                                    <li><input type="radio" value="4" name="group[16365]" id="mce-group[16365]-16365-0"><label for="mce-group[16365]-16365-0" ng-bind-template="{{'EMAIL_WAITLIST_NEWSLETTER' | translate}}">Invitation waitlist &amp; newsletter</label></li>
-                                    <li><input type="radio" value="8" name="group[16365]" id="mce-group[16365]-16365-1"><label for="mce-group[16365]-16365-1" ng-bind-template="{{'EMAIL_NEWSLETTER_ONLY' | translate}}">Newsletter only</label></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="lantern-form-section">
-                            <h5><span>2.</span><p ng-bind-template="{{'EMAIL_CHOOSE_OPTION' | translate}}">You are in a...</p></h5>
-                            <div class="mc-field-group input-group select-options">
-                                <ul>
-                                    <li><input type="radio" value="1" name="group[16361]" id="mce-group[16361]-16361-0"><label for="mce-group[16361]-16361-0" ng-bind-template="{{'EMAIL_CENSORED' | translate}}">Censored region</label></li>
-                                    <li><input type="radio" value="2" name="group[16361]" id="mce-group[16361]-16361-1"><label for="mce-group[16361]-16361-1" ng-bind-template="{{'EMAIL_UNCENSORED' | translate}}">Uncensored region</label></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="lantern-form-section">
-                            <h5><span>3.</span><p ng-bind-template="{{'EMAIL_INPUT' | translate}}">Enter your e-mail address:</p></h5>
-                            <div class="mc-field-group input-group input-append">
-                                <input type="email" value="" name="EMAIL" class="required email input-xlarge form-control" id="mce-EMAIL" ng-model="email" required spellcheck="false"
-                                    ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/" placeholder="email@example.com">
-                                <span class="input-group-btn">
-                                    <div style="position: absolute; left: -5000px;"><input type="text" name="b_0ac18298d5d0330dcda8f48aa_92e39e38d3" value=""></div>
-                                    <input type="submit" name="subscribe"  id="mc-embedded-subscribe" class="btn btn-inverse"
-                                        ng-disabled="signupForm.$invalid"
-                                        value="+">
-                                </span>
-                            </div>
-                        </div>
+                <div id="waitlist" class="clearfix">
+                    <h3>Want a Lantern invitation? Sign up for our wailist:</h3>
+                    <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
+                        <input type="hidden" name="_charset_">
+                        <!--<h5 class="form-title" ng-bind-template="{{'WAITLIST' | translate}}">Invitation waitlist:</h5>-->
+                        <div class="input-group input-append">
+                            <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
+                                ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
+                                class="input-xlarge form-control" placeholder="email@example.com">
+                            <span class="input-group-btn">
+                                <input type="submit" name="subscribe" class="btn btn-inverse"
+                                    ng-disabled="signupForm.$invalid"
+                                    value="+">
+                            </span>
+                        </div><!-- /input-group -->
+                    </form>
+                </div>
+                <div id="mailinglist" class="clearfix">
+                    <h3>Looking to learn more before requesting an invite?</h3>
+                    <form novalidate name="signupForm" method="POST" ng-submit="handleSignup()" signup-form>
+                        <input type="hidden" name="_charset_">
+                        <!--<h5 class="form-title" ng-bind-template="{{'MAILINGLIST' | translate}}">Sign up here:</h5>-->
+                        <div class="input-group input-append">
+                            <input type="email" name="EMAIL" ng-model="email" required spellcheck="false"
+                                ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/"
+                                class="input-xlarge form-control" placeholder="email@example.com">
+                            <span class="input-group-btn">
+                                <input type="submit" name="subscribe" class="btn btn-inverse"
+                                    ng-disabled="signupForm.$invalid"
+                                    value="+">
+                            </span>
+                        </div><!-- /input-group -->
+                    </form>
+                </div>
             </section>
             <section class="section watch clearfix">
                 <div class="watch-text">
@@ -216,7 +250,7 @@
                                 </div>
                             </div>
                         </li>
-
+                        
                     </ul>
                     <div ng-controller="CollapseCtrl">
                         <ul class="more_questions" collapse="isCollapsed">
@@ -294,6 +328,6 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         <!-- generated by "grunt jsFromJSON"; populates window.translations with data from locale/*.json -->
         <script src="scripts/jsFromJSON/translations.js"></script>
         <!-- endbuild -->
-
+        
     </body>
 </html>
