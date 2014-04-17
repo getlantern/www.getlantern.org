@@ -20,10 +20,6 @@
         <!-- build:js scripts/loadfirst.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
-
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -49,13 +45,16 @@
 <div class="ng-cloak" lang="{{activeLang.code}}" dir="{{activeLang.dir}}">
 
         <!-- site content starts here -->
+        <section class="header-spacer">
 
+        </section>
+        <!--
         <div class="checkdomain {{domainType|lowercase}}" ng-show="domainType == 'MIRROR' || domainType == 'UNRECOGNIZED'">
           <span ng-show="domainType == 'MIRROR'" ng-bind-template="{{'OFFICIAL_MIRROR' | translate}}">You are viewing...</span>
           <span ng-show="domainType == 'UNRECOGNIZED'" ng-bind-template="{{'UNOFFICIAL_MIRROR' | translate}}">Caution...</span>
           <a ng-href="{{valByLang(BEWARE_OF_PHONIES_URLS)}}" target="_blank" ng-bind-template="{{'BEWARE_OF_PHONIES' | translate}}">Beware of phonies</a>
         </div>
-
+        -->
         <div class="lightbox hide" lightbox>
             <a class="lightbox-close" lightbox-close>&times;</a>
             <div class="media-container" id="player"></div>
@@ -68,7 +67,6 @@
                             <img src="images/lantern-header-logo-scaled.png" alt="Lantern" />
                         </a>
                     </div>
-
                     <nav class="languages" ng-show="NLANGS > 1">
                         <ul class="navlink-list lang-list" dir="ltr">
                             <li>
@@ -127,9 +125,6 @@
                     </nav>
                 </div>
             </header>
-            <section class="header-spacer">
-
-            </section>
             <section class="section download" ng-controller="DownloadCtrl">
                 <div id="about" class="clearfix">
                     <div class="download-text">
@@ -183,6 +178,8 @@
                                 </span>
                             </div>
                         </div>
+                    </form>
+                </div>
             </section>
             <section class="section watch clearfix">
                 <div class="watch-text">
@@ -268,7 +265,6 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
         <!-- these get automatically minified and concatenated at build time -->
         <!-- build:js scripts/loadlast.js -->
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/session.js/session.js"></script>
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-cookies/angular-cookies.js"></script>
@@ -279,9 +275,6 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         <script src="bower_components/angular-bootstrap/src/collapse/collapse.js"></script>
         <script src="bower_components/angular-bootstrap/src/modal/modal.js"></script>
         <script src="bower_components/angular-bootstrap/src/dropdownToggle/dropdownToggle.js"></script>
-        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="bower_components/jquery-waypoints/waypoints.min.js"></script>
-        <script src="bower_components/jquery-waypoints/shortcuts/sticky-elements/waypoints-sticky.min.js"></script>
 
         <script src="scripts/app.js"></script>
         <script src="scripts/constants.js"></script>

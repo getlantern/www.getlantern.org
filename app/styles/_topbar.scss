@@ -22,6 +22,21 @@
         padding: 20px 0;
         position: relative;
         height: 160px;
+        @media screen and (min-width: 875px) {
+            &.small {
+                @include single-transition(height, .2s);
+                height: 60px;
+                .site-logo {
+                    @include transition(width, height, .2s);
+                    width: 300px;
+                    height: 80px;
+                    img {
+                        @include single-transition(margin, .2s);
+                        margin: -62px 0px 0px 0px;
+                    }
+                }
+            }
+        }
         .site-logo {
             float: left;
             position: absolute;
@@ -190,35 +205,6 @@
                         }
                     }
                 }
-            }
-        }
-        
-        #rally-banner {
-            position: absolute;
-            top: 60px;
-            margin-right: 15px;
-            *[dir=ltr] & {
-                right: 4.5%;
-            }
-            *[dir=rtl] & {
-                left: 4.5%;
-            }
-            @media screen and (max-width: 800px) {
-                display: none;
-                position: static;
-                text-align: center;
-                margin-top: 15px;
-            }
-            h4 {
-                margin: 0px 0px;
-                color: #fff;
-                font-family: 'AvenirNextLTPro-MediumCn';
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-                font-size: 2.2em;
-            }
-            img {
-                width: 140px;
             }
         }
     }

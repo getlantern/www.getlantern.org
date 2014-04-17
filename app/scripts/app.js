@@ -63,7 +63,7 @@ angular.module('lantern_www', [
       }
     } else if (domainType === 'UNRECOGNIZED') {
       __log('redirecting to official mirror...');
-      $window.location.replace(constants.MIRROR_URL);
+      // $window.location.replace(constants.MIRROR_URL);
     }
 
     constants.NLANGS = Object.keys(constants.LANGS).length;
@@ -108,76 +108,5 @@ function __urlHashLang(langsAvail) {
 function CollapseCtrl($scope) {
     $scope.isCollapsed = true;
     $scope.mc_form_input = "current";
-}
-
-var width = $(window).width(); 
-
-$(window).on('resize', function(){
-    var width = $(window).width(); 
-});
-
-if (width >= 875){
-    
-    $(function(){
-      $('#logo-header').data('size','big');
-    });
-    
-    $(window).scroll(function(){
-      if($(document).scrollTop() > 0)
-    {
-        if($('#logo-header').data('size') == 'big')
-        {
-            $('#logo-header').data('size','small');
-            $('#logo-header').stop().animate({
-                height:'60px'
-            },100);
-            $('.site-logo').stop().animate({
-                width:'300px',
-                height:'80px'
-            },100);
-            $('.site-logo img').stop().animate({
-                'margin':'-62px 0px 0px 0px',
-            },100);
-            $('#rally-banner').css({
-                position:'static',
-                float:'right'
-            });
-            $('#rally-banner h4').css({
-                display:'inline',
-                'font-size':'1.8em',
-            });
-            $('#rally-banner img').css({
-                width:'100px',
-            },100);
-        }
-    }
-    else
-      {
-        if($('#logo-header').data('size') == 'small')
-          {
-            $('#logo-header').data('size','big');
-            $('#logo-header').stop().animate({
-                height:'160px'
-            },100);
-            $('.site-logo').stop().animate({
-                width:'600px',
-                height:'auto'
-            },100);
-            $('.site-logo img').stop().animate({
-                'margin':'-98px 0px 0px -14%',
-            },100);
-            $('#rally-banner').css({
-                position:'absolute',
-            });
-            $('#rally-banner h4').css({
-                display:'block',
-                'font-size':'2.2em'
-            });
-            $('#rally-banner img').css({
-                width:'140px',
-            },100);
-          }  
-      }
-    });
 }
     
