@@ -115,7 +115,14 @@
                                 text-align: right;
                             }
                             label {
-                                margin: 0 2px 5px 2px;
+                                margin-top: 0;
+                                margin-bottom: 5px;
+                                *[dir=ltr] & {
+                                    margin-left: 5px;
+                                }
+                                *[dir=rtl] & {
+                                    margin-right: 5px;
+                                }
                                 text-align: center;
                                 font-family: 'AvenirNextLTPro-MediumCn';
                                 -webkit-font-smoothing: antialiased;
