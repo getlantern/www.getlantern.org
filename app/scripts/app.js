@@ -16,7 +16,7 @@ angular.module('lantern_www', [
         negotiatedLang() ||
         constants.DEFAULT_LANGCODE);
     $translateProvider.fallbackLanguage(constants.DEFAULT_LANGCODE);
-    
+
     function negotiatedLang() {
       // requires session.js
       var langPref = window.session && window.session.locale && window.session.locale.lang;

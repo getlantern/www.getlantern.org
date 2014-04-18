@@ -1,3 +1,22 @@
+@import url("//hello.myfonts.net/count/29e39d");
+
+@font-face {
+    font-family: 'AvenirNextLTPro-DemiCn';
+    src: font-url('29E39D_0_0.eot');
+    src: font-url('29E39D_0_0.eot?#iefix') format('embedded-opentype'),
+         font-url('29E39D_0_0.woff') format('woff'),
+         font-url('29E39D_0_0.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'AvenirNextLTPro-MediumCn';
+    src: font-url('29E39D_1_0.eot');
+    src: font-url('29E39D_1_0.eot?#iefix') format('embedded-opentype'),
+         font-url('29E39D_1_0.woff') format('woff'),
+         font-url('29E39D_1_0.ttf') format('truetype');
+}
+
 /*
 @font-face {
   font-family: 'Open Sans';
@@ -17,7 +36,6 @@
   font-weight: 700;
   src: local('Open Sans Bold'), local('OpenSans-Bold'), font-url('OpenSans-Bold.ttf') format('truetype');
 }
-*/
 
 @font-face {
   font-family: 'Oswald';
@@ -32,8 +50,9 @@
   src: local('Oswald Bold'), local('Oswald-Bold'), font-url('Oswald-Bold.ttf') format('truetype');
 }
 @font-face {
-    font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-style: normal;
     font-weight: 300;
 }
+*/
 //@import url(//fonts.googleapis.com/css?family=Quattrocento+Sans:400,700);
