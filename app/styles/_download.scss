@@ -1,6 +1,5 @@
 .download {
     background-color: #f5f5f5;
-    background: image-url("lantern-bg.png", false, false) no-repeat center center;
     background-size: cover;
     /* background-image: -webkit-gradient(
         linear,
@@ -124,10 +123,10 @@
             }
         }
     }
-    
+
     .video-panel {
         *[dir=rtl] & {
-            float: left;    
+            float: left;
         }
         *[dir=ltr] & {
             float: right;
@@ -140,7 +139,7 @@
             width: 90%;
             margin: 0 auto;
             *[dir=rtl] & {
-                float: none;    
+                float: none;
             }
             *[dir=ltr] & {
                 float: none;
@@ -169,7 +168,7 @@
             width: $wdth;
             height: $hght;
             position: absolute;
-            top: 50%;   
+            top: 50%;
             left: 50%;
             margin-top: -$hght / 2.0;
             margin-left: -$wdth / 2.0;
