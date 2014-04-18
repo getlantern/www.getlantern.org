@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('lantern_www')
-    .directive("scrollClass", function ($window) {
+    .directive("scrollClass", ['$window', function ($window) {
         return {
             scope: {
                 scrollClass: "@",
@@ -20,4 +20,4 @@ angular.module('lantern_www')
                 });
             }
         };
-    });
+    }]);
