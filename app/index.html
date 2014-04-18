@@ -94,8 +94,8 @@
             <div class="media-container" id="player"></div>
         </div>
         <div id="content-container">
-            <header id="topbar" class="header sticky" ng-controller="NavCtrl">
-                <div id="logo-header" class="clearfix" scroll-class="small" offset='1'>
+            <header id="topbar" class="header sticky" ng-init="isCollapsed = true">
+                <div id="logo-header" class="clearfix" scroll-class="small" offset="1">
                     <div class="site-logo clearfix">
                         <a href="/" class="clearfix">
                             <img src="images/lantern-header-logo-scaled.png" alt="Lantern" />
@@ -241,9 +241,9 @@
                                 </div>
                             </div>
                         </li>
-                        
+
                     </ul>
-                    <div ng-controller="NavCtrl">
+                    <div ng-init="isCollapsed = true">
                         <ul class="more_questions" collapse="isCollapsed">
                             <li class="clearfix" ng-repeat="faq in faqs.slice(5,15)">
                                 <button ng-click="faq.expanded=!faq.expanded" class="expander">{{!faq.expanded && '+' || '-'}}</button>

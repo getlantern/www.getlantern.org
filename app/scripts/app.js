@@ -104,9 +104,3 @@ function __urlHashLang(langsAvail) {
     return hash;
   }
 }
-
-function NavCtrl($scope) {
-    $scope.isCollapsed = true;
-    $scope.mc_form_input = "current";
-}
-    
