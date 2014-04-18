@@ -55,6 +55,13 @@ input:focus, textarea:focus {
   padding: 20px;
   text-align: center;
 
+  background-color: rgba(255,255,255,.75);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+
   &.unrecognized {
     color: $state-danger-text;
   }
