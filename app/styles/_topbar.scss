@@ -22,6 +22,7 @@
         padding: 20px 0;
         position: relative;
         height: 160px;
+        @include single-transition(height, .2s);
         @media screen and (min-width: 875px) {
             &.small {
                 @include single-transition(height, .2s);
@@ -44,6 +45,7 @@
             height: 160px;
             width: 600px;
             overflow: hidden;
+            @include transition(width, height, .2s);
             @media screen and (max-width: $break-small) {
                 float:none;
                 height: 170px;
@@ -64,6 +66,7 @@
                     *[dir=rtl] & {
                         margin-right: -14%;
                     }
+                    @include single-transition(margin, .2s);
                     @media screen and (max-width: $break-small) {
                         margin-top: -98px;
                         *[dir=ltr] & {
@@ -134,7 +137,7 @@
                     }
                 }
                 &.lang-list, &.lang-list a {
-                    font-size: 1.1em;
+                    font-size: 18px;
                     &.active-lang {
                         font-family: 'AvenirNextLTPro-MediumCn';
                         -webkit-font-smoothing: antialiased;

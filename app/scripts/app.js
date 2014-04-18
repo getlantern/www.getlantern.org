@@ -105,7 +105,7 @@ function __urlHashLang(langsAvail) {
   }
 }
 
-function CollapseCtrl($scope) {
+function NavCtrl($scope) {
     $scope.isCollapsed = true;
     $scope.mc_form_input = "current";
 }

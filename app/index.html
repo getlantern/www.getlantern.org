@@ -94,8 +94,8 @@
             <div class="media-container" id="player"></div>
         </div>
         <div id="content-container">
-            <header id="topbar" class="header sticky">
-                <div id="logo-header" class="clearfix">
+            <header id="topbar" class="header sticky" ng-controller="NavCtrl">
+                <div id="logo-header" class="clearfix" scroll-class="small" offset='1'>
                     <div class="site-logo clearfix">
                         <a href="/" class="clearfix">
                             <img src="images/lantern-header-logo-scaled.png" alt="Lantern" />
@@ -115,7 +115,7 @@
                             <li role="presentation" class="ng-scope">
                                 <a role="menuitem" ng-href="#zh_CN" ng-class="{'hidden': activeLang.code == 'zh_CN'}" ng-click="changeLang('zh_CN')" class="lang ng-binding" href="#zh_CN">中文</a>
                             </li>
-                            <li class="dropdown" ng-controller="CollapseCtrl">
+                            <li class="dropdown">
                                 <a ng-click="isCollapsed = !isCollapsed">
                                     <b ng-bind-template="{{'MORE' | translate}}">More </b><span class="caret"></span>
                                 </a>
@@ -243,7 +243,7 @@
                         </li>
                         
                     </ul>
-                    <div ng-controller="CollapseCtrl">
+                    <div ng-controller="NavCtrl">
                         <ul class="more_questions" collapse="isCollapsed">
                             <li class="clearfix" ng-repeat="faq in faqs.slice(5,15)">
                                 <button ng-click="faq.expanded=!faq.expanded" class="expander">{{!faq.expanded && '+' || '-'}}</button>
@@ -309,6 +309,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         <script src="scripts/controllers/download.js"></script>
         <script src="scripts/directives/lightbox.js"></script>
         <script src="scripts/directives/signup.js"></script>
+        <script src="scripts/directives/windowScroll.js"></script>
         <script src="scripts/directives/videoOnClick.js"></script>
         <script src="scripts/services/osSniffer.js"></script>
         <script src="scripts/services/installerDataFetcher.js"></script>
