@@ -219,12 +219,17 @@
     position: relative;
     z-index: 1;
     .section-nav {
-        float: left;
         font-family: 'AvenirNextLTPro-DemiCn';
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-transform: uppercase;
         font-size: 1.6em;
+        *[dir=ltr] & {
+            float: left;
+        }
+        *[dir=rtl] & {
+            float: right;
+        }
         @media screen and (min-width: 1200px) {
             *[dir=ltr] & {
                 margin-left: 4.5%;
@@ -242,12 +247,14 @@
             }
         }
         @media screen and (max-width: 875px) {
-            float:  none;
-            text-align: center;
-        }
-        
-        *[dir=rtl] & {
-            float: right;
+            *[dir=ltr] & {
+                float:  none;
+                text-align: center;
+            }
+            *[dir=rtl] & {
+                float:  none;
+                text-align: center;
+            }
         }
         
         .section-list {
