@@ -61,6 +61,9 @@
                     -moz-osx-font-smoothing: grayscale;
                     font-size: 1.8em;
                     margin-top: 12px;
+                    *[dir=rtl] & {
+                        text-align: right;
+                    }
                     @media screen and (max-width: 875px) {
                         float: none;
                         margin-bottom: 0;
