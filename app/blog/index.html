@@ -12,32 +12,84 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
     
     <link rel="stylesheet" type="text/css" href="assets/css/screen.css?v=f1790eeff8" />
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400" />
-
+    <link rel="stylesheet" href="../styles/main.css">
+    
+    <!-- build:js scripts/loadfirst.js -->
+    <script src="../bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
     
     <meta name="generator" content="Ghost 0.4" />
 <link rel="alternate" type="application/rss+xml" title="Lantern" href="rss/index.html">
 <link rel="canonical" href="http://blog.getlantern.org/" />
 </head>
+
 <body class="home-template">
 
-    
-    
+<section class="header-spacer">
+</section>
 
-
-
-
-<header class="site-head" style="background-image: url(content/images/2014/Apr/lantern-bg.png)">
-    <div class="vertical">
-        <div class="site-head-content inner">
-            
-            <h1 class="blog-title">Lantern</h1>
-            <h2 class="blog-description">Lantern is a network of people working together to defeat internet censorship around the world.</h2>
+<header id="topbar" class="header sticky" ng-init="isCollapsed = true" ng-app="lantern_www">
+    <div id="logo-header" class="clearfix" scroll-class="small" offset="1">
+        <div class="site-logo clearfix">
+            <a href="/" class="clearfix">
+                <img src="../images/lantern-header-logo-scaled.png" alt="Lantern" />
+            </a>
         </div>
+        <nav class="languages" ng-show="NLANGS > 1">
+            <ul class="navlink-list lang-list" dir="ltr">
+                <li>
+                    <a class="active-lang">{{activeLang.name}}</a>
+                </li>
+                <li role="presentation" class="ng-scope">
+                    <a role="menuitem" ng-href="#en_US" ng-class="{'hidden': activeLang.code == 'en_US'}" ng-click="changeLang('en_US')" class="lang ng-binding" href="#en_US">English</a>
+                </li>
+                <li role="presentation" class="ng-scope">
+                    <a role="menuitem" ng-href="#fa_IR" ng-class="{'hidden': activeLang.code == 'fa_IR'}" ng-click="changeLang('fa_IR')" class="lang ng-binding" href="#fa_IR">فارسی</a>
+                </li>
+                <li role="presentation" class="ng-scope">
+                    <a role="menuitem" ng-href="#zh_CN" ng-class="{'hidden': activeLang.code == 'zh_CN'}" ng-click="changeLang('zh_CN')" class="lang ng-binding" href="#zh_CN">中文</a>
+                </li>
+                <li class="dropdown">
+                    <a ng-click="isCollapsed = !isCollapsed">
+                        <b ng-bind-template="{{'MORE' | translate}}">More </b><span class="caret"></span>
+                    </a>
+                    <ul collapse="isCollapsed" class="menu" role="menu">
+                        <li ng-repeat="lang in LANGS" role="presentation">
+                            <a role="menuitem" ng-href="#{{lang.code}}" ng-class="{'active-lang': lang.code == activeLang.code}" ng-click="changeLang(lang.code)" class="lang">{{lang.name}}</a>
+                        </li>
+                        <li>
+                            <strong><a ng-href="{{HELP_TRANSLATE_URL}}" target="_blank" ng-bind-template="{{'HELP_TRANSLATE' | translate}}">
+                                Help Translate
+                            </a></strong>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div id="header-nav" class="clearfix">
+        <nav class="section-nav">
+            <ul class="section-list">
+                <li><a href="#about" ng-bind-template="{{'ABOUT' | translate}}">About</a></li>
+                <li><a href="#faq" ng-bind-template="{{'FAQ' | translate}}">FAQ</a></li>
+                <!--<li><a href="../blog" ng-bind-template="{{'BLOG' | translate}}">Blog</a></li>-->
+                <li><a href="https://rally.org/getlantern" target="_blank" ng-bind-template="{{'DONATE' | translate}}">Donate</a></li>
+            </ul>
+        </nav>
+        <nav class="social-media">
+            <!-- XXX DRY .social-media-icons in header -->
+            <ul class="social-media-icons">
+                <li><a target="_blank" ng-href="{{TWITTER_URL}}"><span class="icon-twitter"></span></a></li>
+                <li><a target="_blank" ng-href="{{FACEBOOK_URL}}"><span class="icon-facebook"></span></a></li>
+                <li><a target="_blank" ng-href="{{TUMBLR_URL}}"><span class="icon-tumblr"></span></a></li>
+                <li><a target="_blank" ng-href="{{GITHUB_URL}}"><span class="icon-github"></span></a></li>
+            </ul>
+        </nav>
     </div>
 </header>
 
@@ -96,6 +148,32 @@
     
     <script type="text/javascript" src="assets/js/jquery.fitvids.js?v=f1790eeff8"></script>
     <script type="text/javascript" src="assets/js/index.js?v=f1790eeff8"></script>
+
+            <!-- these get automatically minified and concatenated at build time -->
+        <!-- build:js scripts/loadlast.js -->
+        <script src="../bower_components/session.js/session.js"></script>
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="../bower_components/angular-translate/angular-translate.js"></script>
+        <script src="../bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+        <script src="../bower_components/angular-bootstrap/src/transition/transition.js"></script>
+        <script src="../bower_components/angular-bootstrap/src/collapse/collapse.js"></script>
+        <script src="../bower_components/angular-bootstrap/src/modal/modal.js"></script>
+        <script src="../bower_components/angular-bootstrap/src/dropdownToggle/dropdownToggle.js"></script>
+
+        <script src="../scripts/app.js"></script>
+        <script src="../scripts/constants.js"></script>
+        <script src="../scripts/controllers/download.js"></script>
+        <script src="../scripts/directives/lightbox.js"></script>
+        <script src="../scripts/directives/signup.js"></script>
+        <script src="../scripts/directives/windowScroll.js"></script>
+        <script src="../scripts/directives/videoOnClick.js"></script>
+        <script src="../scripts/services/osSniffer.js"></script>
+        <script src="../scripts/services/installerDataFetcher.js"></script>
+        <!-- generated by "grunt jsFromJSON"; populates window.translations with data from locale/*.json -->
+        <script src="../scripts/jsFromJSON/translations.js"></script>
+        <!-- endbuild -->
 
 </body>
 </html>

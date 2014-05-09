@@ -117,9 +117,9 @@ table { border-collapse: collapse; border-spacing: 0; }
 /* Apply these base styles to all icons */
 .icon-ghost:before,
 .icon-feed:before,
-.icon-twitter:before,
+/*.icon-twitter:before*/,
 .icon-google-plus:before,
-.icon-facebook:before {
+/*.icon-facebook:before*/ {
     font-family: 'icons';
     speak: none;
     font-style: normal;
