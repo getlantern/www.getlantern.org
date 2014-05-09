@@ -63,7 +63,7 @@ angular.module('lantern_www', [
       }
     } else if (domainType === 'UNRECOGNIZED') {
       __log('redirecting to official mirror...');
-      //$window.location.replace(constants.MIRROR_URL);
+      $window.location.replace(constants.MIRROR_URL);
     }
 
     constants.NLANGS = Object.keys(constants.LANGS).length;
