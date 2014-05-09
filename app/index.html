@@ -138,15 +138,15 @@
             </section>
             <section class="section signup">
                 <!-- Begin MailChimp Signup Form -->
-                <div id="mc_embed_signup">
-                    <form action="http://getlantern.us2.list-manage1.com/subscribe/post?u=0ac18298d5d0330dcda8f48aa&amp;id=92e39e38d3" method="POST" id="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate name="signupForm" ng-submit="handleSignup()" signup-form>
+                <div id="mc_embed_signup" controller="SignupCtrl">
+                    <form action="http://getlantern.us2.list-manage1.com/subscribe/post?u=0ac18298d5d0330dcda8f48aa&amp;id=15830df463" method="POST" id="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate name="signupForm">
                         <h3 ng-bind-template="{{'EMAIL_SIGNUP' | translate}}">Sign up here</h3>
                         <div class="lantern-form-section">
                             <h5><span>1.</span><p ng-bind-template="{{'EMAIL_CHOOSE_OPTION' | translate}}">Choose one option:</p></h5>
                             <div class="mc-field-group input-group select-options">
                                 <ul class="newsletter">
-                                    <li><input type="radio" value="4" name="group[16365]" id="mce-group[16365]-16365-0"><label for="mce-group[16365]-16365-0" ng-bind-template="{{'EMAIL_WAITLIST_NEWSLETTER' | translate}}">Invitation waitlist &amp; newsletter</label></li>
-                                    <li><input type="radio" value="8" name="group[16365]" id="mce-group[16365]-16365-1"><label for="mce-group[16365]-16365-1" ng-bind-template="{{'EMAIL_NEWSLETTER_ONLY' | translate}}">Newsletter only</label></li>
+                                    <li><input type="radio" value="4" name="group[16517]" id="mce-group[16517]-16517-0"><label for="mce-group[16517]-16517-0" ng-bind-template="{{'EMAIL_WAITLIST_NEWSLETTER' | translate}}">Invitation waitlist &amp; newsletter</label></li>
+                                    <li><input type="radio" value="8" name="group[16517]" id="mce-group[16517]-16517-1"><label for="mce-group[16517]-16517-1" ng-bind-template="{{'EMAIL_NEWSLETTER_ONLY' | translate}}">Newsletter only</label></li>
                                 </ul>
                             </div>
                         </div>
@@ -154,8 +154,8 @@
                             <h5><span>2.</span><p ng-bind-template="{{'EMAIL_CHOOSE_OPTION' | translate}}">You are in a...</p></h5>
                             <div class="mc-field-group input-group select-options">
                                 <ul>
-                                    <li><input type="radio" value="1" name="group[16361]" id="mce-group[16361]-16361-0"><label for="mce-group[16361]-16361-0" ng-bind-template="{{'EMAIL_CENSORED' | translate}}">Censored region</label></li>
-                                    <li><input type="radio" value="2" name="group[16361]" id="mce-group[16361]-16361-1"><label for="mce-group[16361]-16361-1" ng-bind-template="{{'EMAIL_UNCENSORED' | translate}}">Uncensored region</label></li>
+                                    <li><input type="radio" value="1" name="group[16513]" id="mce-group[16513]-16513-0"><label for="mce-group[16513]-16513-0" ng-bind-template="{{'EMAIL_CENSORED' | translate}}">Censored region</label></li>
+                                    <li><input type="radio" value="2" name="group[16513]" id="mce-group[16513]-16513-1"><label for="mce-group[16513]-16513-1" ng-bind-template="{{'EMAIL_UNCENSORED' | translate}}">Uncensored region</label></li>
                                 </ul>
                             </div>
                         </div>
@@ -165,7 +165,11 @@
                                 <input type="email" value="" name="EMAIL" class="required email input-xlarge form-control" id="mce-EMAIL" ng-model="email" required spellcheck="false"
                                     ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/" placeholder="email@example.com">
                                 <span class="input-group-btn">
-                                    <div style="position: absolute; left: -5000px;"><input type="text" name="b_0ac18298d5d0330dcda8f48aa_92e39e38d3" value="+"></div>
+                                    <div id="mce-responses" class="clear">
+                                            <div class="response" id="mce-error-response" style="display:none"></div>
+                                        <div class="response" id="mce-success-response" style="display:none"></div>
+                                </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                    <div style="position: absolute; left: -5000px;"><input type="text" name="b_0ac18298d5d0330dcda8f48aa_15830df463" value="+"></div>
                                     <input type="submit" name="subscribe"  id="mc-embedded-subscribe" class="btn btn-inverse"
                                         ng-disabled="signupForm.$invalid"
                                         value="+">
@@ -173,47 +177,6 @@
                             </div>
                         </div>
                     </form>
-                    
-                    <!-- Begin MailChimp Signup Form -->
-<div id="mc_embed_signup">
-<form action="http://getlantern.us2.list-manage.com/subscribe/post?u=0ac18298d5d0330dcda8f48aa&amp;id=92e39e38d3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-    <h2>Subscribe to our mailing list</h2>
-<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-<div class="mc-field-group">
-	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
-</label>
-	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-</div>
-<div class="mc-field-group">
-	<label for="mce-FNAME">First Name </label>
-	<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
-</div>
-<div class="mc-field-group">
-	<label for="mce-LNAME">Last Name </label>
-	<input type="text" value="" name="LNAME" class="" id="mce-LNAME">
-</div>
-<div class="mc-field-group input-group">
-    <strong>What kind of region are you from? </strong>
-    <ul><li><input type="radio" value="1" name="group[16361]" id="mce-group[16361]-16361-0"><label for="mce-group[16361]-16361-0">Censored</label></li>
-<li><input type="radio" value="2" name="group[16361]" id="mce-group[16361]-16361-1"><label for="mce-group[16361]-16361-1">Uncensored</label></li>
-</ul>
-</div>
-<div class="mc-field-group input-group">
-    <strong>What list do you want to join? </strong>
-    <ul><li><input type="radio" value="4" name="group[16365]" id="mce-group[16365]-16365-0"><label for="mce-group[16365]-16365-0">Waitlist</label></li>
-<li><input type="radio" value="8" name="group[16365]" id="mce-group[16365]-16365-1"><label for="mce-group[16365]-16365-1">Mailing List</label></li>
-</ul>
-</div>
-	<div id="mce-responses" class="clear">
-		<div class="response" id="mce-error-response" style="display:none"></div>
-		<div class="response" id="mce-success-response" style="display:none"></div>
-	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style="position: absolute; left: -5000px;"><input type="text" name="b_0ac18298d5d0330dcda8f48aa_92e39e38d3" value=""></div>
-	<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-</form>
-</div>
-
-<!--End mc_embed_signup-->
                 </div>
             </section>
             <section class="section watch clearfix">

@@ -102,6 +102,9 @@
                 .mc-field-group {
                     width: 100%;
                     border: 0;
+                    .input-group-btn {
+                        font-size: 20px;
+                    }
                 }
                 .select-options {
                     ul {
