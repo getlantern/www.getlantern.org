@@ -1,0 +1,278 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" id="ng-app" ng-app="lantern_www"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" id="ng-app" ng-app="lantern_www"> <![endif]-->
+    <!--[if IE 8]>         <html class="no-js lt-ie9" id="ng-app" ng-app="lantern_www"> <![endif]-->
+      <!--[if gt IE 8]><!--> <html class="no-js" id="ng-app" ng-app="lantern_www"> <!--<![endif]-->
+        <head>
+          <meta charset="utf-8"/>
+          <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+          <title ng-bind-template="{{'LANTERN' | translate}}">Lantern</title>
+          <meta name="description" content="Defeat internet censorship. Give or get access to the open internet by sharing connections through your social network." ng-attr-content="{{'META_DESC' | translate}}">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="icon" type="image/x-icon" href="favicon.ico" />
+          <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+          <!-- build:css({.tmp,app}) ../styles/main.css -->
+          <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+          <!-- build:css(.tmp) ../styles/main.css -->
+          <link rel="stylesheet" href="../styles/main.css">
+          <!-- endbuild -->
+
+          <!-- build:js ../scripts/loadfirst.js -->
+          <script src="../bower_components/modernizr/modernizr.js"></script>
+          <!-- endbuild -->
+        </head>
+        <body>
+          <!--[if lt IE 8]>
+          <p class="chromeframe">You are using an outdated browser. Please <a href="https://www.google.com/chrome/">upgrade your browser</a> or <a href="https://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> and try again.</p>
+          <![endif]-->
+
+          <!--[if lt IE 9]>
+          <script src="../bower_components/es5-shim/es5-shim.min.js"></script>
+          <script src="../bower_components/json3/lib/json3.min.js"></script>
+          <![endif]-->
+
+          <!-- uncomment out to enable firebug lite (useful for IE)
+          <script src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js"></script>
+          -->
+
+          <noscript>
+            <div lang="en" dir="ltr">JavaScript is required.</div>
+            <div lang="zh_CN" dir="ltr">需要启用JavaScript。</div>
+            <div lang="fa_IR" dir="rtl">جاوا اسکریپت مورد نیاز است.</div>
+            <div lang="ar" dir="rtl">مطلوب جافا سكريبت.</div>
+          </noscript>
+
+          <div class="ng-cloak" lang="{{activeLang.code}}" dir="{{activeLang.dir}}">
+
+            <!-- site content starts here -->
+            <section class="header-spacer">
+
+            </section>
+            <div class="checkdomain {{domainType|lowercase}}" ng-show="domainType == 'MIRROR' || domainType == 'UNRECOGNIZED'">
+              <span ng-show="domainType == 'MIRROR'" ng-bind-template="{{'OFFICIAL_MIRROR' | translate}}">You are viewing...</span>
+              <span ng-show="domainType == 'UNRECOGNIZED'" ng-bind-template="{{'UNOFFICIAL_MIRROR' | translate}}">Caution...</span>
+              <a ng-href="{{valByLang(BEWARE_OF_PHONIES_URLS)}}" target="_blank" ng-bind-template="{{'BEWARE_OF_PHONIES' | translate}}">Beware of phonies</a>
+            </div>
+            <div class="lightbox hide" lightbox>
+              <a class="lightbox-close" lightbox-close>&times;</a>
+              <div class="media-container" id="player"></div>
+            </div>
+            <div id="content-container">
+              <header id="topbar" class="header sticky" ng-init="isCollapsed = true">
+              <div id="logo-header" class="clearfix" scroll-class="small" offset="1">
+                <div class="site-logo clearfix">
+                  <a href="/" class="clearfix">
+                    <img src="../images/lantern-header-logo-scaled.png" alt="Lantern" />
+                  </a>
+                </div>
+                <nav class="languages" ng-show="NLANGS > 1">
+                <ul class="navlink-list lang-list" dir="ltr">
+                  <li>
+                  <a class="active-lang">{{activeLang.name}}</a>
+                  </li>
+                  <li role="presentation" class="ng-scope">
+                  <a role="menuitem" ng-href="#en_US" ng-class="{'hidden': activeLang.code == 'en_US'}" ng-click="changeLang('en_US')" class="lang ng-binding" href="#en_US">English</a>
+                  </li>
+                  <li role="presentation" class="ng-scope">
+                  <a role="menuitem" ng-href="#fa_IR" ng-class="{'hidden': activeLang.code == 'fa_IR'}" ng-click="changeLang('fa_IR')" class="lang ng-binding" href="#fa_IR">فارسی</a>
+                  </li>
+                  <li role="presentation" class="ng-scope">
+                  <a role="menuitem" ng-href="#zh_CN" ng-class="{'hidden': activeLang.code == 'zh_CN'}" ng-click="changeLang('zh_CN')" class="lang ng-binding" href="#zh_CN">中文</a>
+                  </li>
+                  <li class="dropdown">
+                  <a ng-click="isCollapsed = !isCollapsed">
+                    <b ng-bind-template="{{'MORE' | translate}}">More </b><span class="caret"></span>
+                  </a>
+                  <ul collapse="isCollapsed" class="menu" role="menu">
+                    <li ng-repeat="lang in LANGS" role="presentation">
+                    <a role="menuitem" ng-href="#{{lang.code}}" ng-class="{'active-lang': lang.code == activeLang.code}" ng-click="changeLang(lang.code)" class="lang">{{lang.name}}</a>
+                    </li>
+                    <li>
+                    <strong><a ng-href="{{HELP_TRANSLATE_URL}}" target="_blank" ng-bind-template="{{'HELP_TRANSLATE' | translate}}">
+                        Help Translate
+                    </a></strong>
+                    </li>
+                  </ul>
+                  </li>
+                </ul>
+                </nav>
+              </div>
+              <div id="header-nav" class="clearfix">
+                <nav class="section-nav">
+                <ul class="section-list">
+                  <li><a href="#about" ng-bind-template="{{'ABOUT' | translate}}">About</a></li>
+                  <li><a href="#faq" ng-bind-template="{{'FAQ' | translate}}">FAQ</a></li>
+                  <!--<li><a href="../blog" ng-bind-template="{{'BLOG' | translate}}">Blog</a></li>-->
+                  <li><a href="https://rally.org/getlantern" target="_blank" ng-bind-template="{{'DONATE' | translate}}">Donate</a></li>
+                </ul>
+                </nav>
+                <nav class="social-media">
+                <!-- XXX DRY .social-media-icons in header -->
+                <ul class="social-media-icons">
+                  <li><a target="_blank" ng-href="{{TWITTER_URL}}"><span class="icon-twitter"></span></a></li>
+                  <li><a target="_blank" ng-href="{{FACEBOOK_URL}}"><span class="icon-facebook"></span></a></li>
+                  <li><a target="_blank" ng-href="{{TUMBLR_URL}}"><span class="icon-tumblr"></span></a></li>
+                  <li><a target="_blank" ng-href="{{GITHUB_URL}}"><span class="icon-github"></span></a></li>
+                </ul>
+                </nav>
+              </div>
+              </header>
+              <section class="section docs" ng-controller="DownloadCtrl">
+              <div id="eabout" class="clearfix">
+                <div class="doc-text">
+                  <h3>Installation: Linux</h3>
+                </div>
+                <div class="doc-text">
+                    <p>Currently packaged installation on Linux is only available on Ubuntu. Contributions for other Linux distros and improvements to make better use of package managers are much appreciated. Other distros can also always <a href="https://github.com/getlantern/lantern/blob/master/README.md#setting-up-a-development-environment">build from source</a>.</p>
+
+                    <p>The invitation to lantern has a link to an installation script. This script:</p>
+
+                    <ul>
+                      <li>Downloads a .deb file.</li>
+                      <li>Creates the uninstall script in /opt/lantern-net-installer,</li>
+                      <li>Creates a user preferences directory (where, BTW, 'cause ~/.lantern
+                      doesn't seem to appear until first launch?), and</li>
+                      <li>Does <em>not</em> auto-launch a lantern service; </li>
+                      </ul><h3>
+                      <a name="user-content-installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h3>
+
+                    <ol>
+                      <li>Click the link named "Ubuntu 12.04+" in the installer. A new tab should open telling you a download should begin.</li>
+                      <li>A popup should appear, asking you to save a file named "lantern-net-installer_unix.sh". Download the file.
+                      <img src="https://camo.githubusercontent.com/f07e390fe34b0ad8a21ae3b87632cc56ffc411cb/687474703a2f2f692e696d6775722e636f6d2f6a7573744c797a2e706e67" alt="download popup" data-canonical-src="http://i.imgur.com/justLyz.png">
+                      </li>
+                      <li>Open up a new instance of the terminal by clicking the Ubuntu button on the main menu bar of Ubuntu and typing "terminal".</li>
+                      <li>Click on the "terminal" icon to launch a new instance.
+                      <img src="https://camo.githubusercontent.com/598e930f08d143a3daa861a6ded0fff33979ff49/687474703a2f2f692e696d6775722e636f6d2f41476f364876652e706e67" alt="finding terminal" data-canonical-src="http://i.imgur.com/AGo6Hve.png">
+                      </li>
+                      <li>Change to the directory where you downloaded the file from the browser:
+
+                      <ul>
+                        <li><code>cd Downloads/</code></li>
+                      </ul>
+                      </li>
+                      <li>Make the install script executable:
+
+                      <ul>
+                        <li><code>chmod 700 lantern-net-installer_unix.sh</code></li>
+                      </ul>
+                      </li>
+                      <li>Execute the install script:
+
+                        <ul>
+                        <li><code>sudo ./lantern-net-installer_unix.sh</code></li>
+                        </ul>
+                        <li>Note: if you receive a message regarding no suitable Java Virtual Machine, you need to download Java.
+
+                          <li>See <a href="https://help.ubuntu.com/community/Java">https://help.ubuntu.com/community/Java</a> if you need help completing this.
+                          running install script</li>
+                        </li>
+                      </li>
+                      <li>A message should appear saying that the installer is starting and a popup should appear titled "Lantern Fetcher". Wait while the fetcher fetches the Lantern program.
+                      <img src="https://camo.githubusercontent.com/e5815c351b419b1117b6a07eade4d11bf5cc644a/687474703a2f2f692e696d6775722e636f6d2f533268426945592e706e67" alt="installing" data-canonical-src="http://i.imgur.com/S2hBiEY.png">
+                      </li>
+                      <li>The installer will finish and give no message.</li>
+                      <li>Open up the Lantern program by clicking the Ubuntu button on the main menu bar of Ubuntu and typing "lantern".</li>
+                      <li>Click on the "Lantern" icon to launch the program.</li>
+
+                        <li>Note: if you receive a message regarding Chrome not being installed, you need to download Chrome.
+
+                          <li>See <a href="https://www.google.com/intl/en/chrome/browser/">https://www.google.com/intl/en/chrome/browser/</a> if you need help completing this.
+                          <img src="https://camo.githubusercontent.com/ac03fd062bb2cddd35dc305e0fa1f6f910c320f0/687474703a2f2f692e696d6775722e636f6d2f706242633152672e706e67" alt="running lantern" data-canonical-src="http://i.imgur.com/pbBc1Rg.png">
+                          </li>
+                        </li>
+                      </li>
+                      <li>Wait while Lantern starts up.
+                      <img src="https://camo.githubusercontent.com/41fb2c1d5f3159ade93479b144822778a5f9f8ec/687474703a2f2f692e696d6775722e636f6d2f366d33676832352e706e67" alt="waiting for lantern to load" data-canonical-src="http://i.imgur.com/6m3gh25.png">
+                      </li>
+                      <li> Welcome to Lantern!
+                      <img src="https://camo.githubusercontent.com/0b0057f421e527b1e49f88c048c386209e862562/687474703a2f2f692e696d6775722e636f6d2f6e6e586f466a722e706e67" alt="welcome to lantern" data-canonical-src="http://i.imgur.com/nnXoFjr.png">
+                      </li>
+                    </ol>
+                  <p style="margin-top:25px;">After you've run the installer the next step is to <a class="internal present" href="/docs/Setup">Setup</a> Lantern.</p>
+
+                    <h3>
+                      <a name="user-content-uninstallation" class="anchor" href="#uninstallation"><span class="octicon octicon-link"></span></a>Uninstallation</h3>
+
+                    <ol>
+                      <li>Change directories to "/usr/local/lantern-net-installer/"
+
+                      <ul>
+                        <li><code>cd /usr/local/lantern-net-installer/</code></li>
+                      </ul>
+                      </li>
+                      <li>Run the uninstall program.
+
+                      <ul>
+                        <li><code>sudo ./uninstall</code></li>
+                        <li><img src="https://camo.githubusercontent.com/131f472944de4e80e3d5205bee67e9917399d7b9/687474703a2f2f692e696d6775722e636f6d2f505733686943462e706e67" alt="run uninstall script" data-canonical-src="http://i.imgur.com/PW3hiCF.png"></li>
+                      </ul>
+                      </li>
+                      <li>A window should popup.  Click "Next &gt;" to continue uninstallation.
+                      <img src="https://camo.githubusercontent.com/25c47491c1247a64ac788b12a3626c2c5d29f1c6/687474703a2f2f692e696d6775722e636f6d2f507545505a72422e706e67" alt="uninstall program" data-canonical-src="http://i.imgur.com/PuEPZrB.png">
+                      </li>
+                      <li>The uninstall process should begin.  When finished, click "Finish".
+                      <img src="https://camo.githubusercontent.com/1d949a94a46467a2be01d131d1c56d0a7baaffaf/687474703a2f2f692e696d6775722e636f6d2f37585a61796a442e706e67" alt="uninstall complete" data-canonical-src="http://i.imgur.com/7XZayjD.png">
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+              </section>
+
+              <!-- for http://compass-style.org/reference/compass/layout/sticky_footer/ -->
+              <div id="root_footer"></div>
+            </div>
+
+            <footer id="footer" class="footer">
+            <div class="wrap clearfix">
+              <nav class="clearfix">
+              <ul class="navlink-list main-nav">
+                <li><a target="_blank" ng-href="{{valByLang(FORUMS_URLS)}}" ng-bind-template="{{'FORUMS' | translate}}">Forums</a></li>
+                <li><a target="_blank" ng-href="{{DOCS_URL}}" ng-bind-template="{{'DOCS' | translate}}">Docs</a></li>
+                <li><a target="_blank" ng-href="{{PRIVACY_URL}}" ng-bind-template="{{'PRIVACY' | translate}}">Privacy</a></li>
+                <li><a target="_blank" ng-href="{{GET_INVOLVED_URL}}" ng-bind-template="{{'GET_INVOLVED' | translate}}">Get Involved</a></li>
+              </ul>
+              </nav>
+            </div>
+            </footer>
+          </div><!-- site content ends here -->
+
+          <script>
+            window.session = {options: {gapi_location: false}};
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+              </script>
+
+              <!-- these get automatically minified and concatenated at build time -->
+              <!-- build:js ../scripts/loadlast.js -->
+              <script src="../bower_components/session.js/session.js"></script>
+              <script src="../bower_components/angular/angular.js"></script>
+              <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+              <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+              <script src="../bower_components/angular-translate/angular-translate.js"></script>
+              <script src="../bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+              <script src="../bower_components/angular-bootstrap/src/transition/transition.js"></script>
+              <script src="../bower_components/angular-bootstrap/src/collapse/collapse.js"></script>
+              <script src="../bower_components/angular-bootstrap/src/modal/modal.js"></script>
+              <script src="../bower_components/angular-bootstrap/src/dropdownToggle/dropdownToggle.js"></script>
+
+              <script src="../scripts/app.js"></script>
+              <script src="../scripts/constants.js"></script>
+              <script src="../scripts/controllers/download.js"></script>
+              <script src="../scripts/directives/lightbox.js"></script>
+              <script src="../scripts/directives/signup.js"></script>
+              <script src="../scripts/directives/windowScroll.js"></script>
+              <script src="../scripts/directives/videoOnClick.js"></script>
+              <script src="../scripts/services/osSniffer.js"></script>
+              <script src="../scripts/services/installerDataFetcher.js"></script>
+              <!-- generated by "grunt jsFromJSON"; populates window.translations with data from locale/*.json -->
+              <script src="../scripts/jsFromJSON/translations.js"></script>
+              <!-- endbuild -->
+
+            </body>
+          </html>

@@ -1,0 +1,84 @@
+.docs {
+  background-color: #f5f5f5;
+  background-size: cover;
+  /* background-image: -webkit-gradient(
+  linear,
+  right top,
+  left top,
+  color-stop(0.5, #36444E),
+  color-stop(1, #131F28)
+  );
+  background-image: -o-linear-gradient(left, #36444E 50%, #131F28 100%);
+  background-image: -moz-linear-gradient(left, #36444E 50%, #131F28 100%);
+  background-image: -webkit-linear-gradient(left, #36444E 50%, #131F28 100%);
+  background-image: -ms-linear-gradient(left, #36444E 50%, #131F28 100%);
+  background-image: linear-gradient(to left, #36444E 50%, #131F28 100%);
+   */
+  /* fallback */
+  background-color: #10283a;
+  color: #ffffff;
+  @media screen and (min-width: $break-small) {
+    padding-bottom: 250px;
+  }
+
+  .doc-text {
+    *[dir=ltr] & {
+      float: left;
+      margin-left: 6%;
+      }
+    *[dir=rtl] & {
+      float: right;
+      margin-right: 6%;
+      }
+      width: 25%;
+      font-family: 'AvenirNextLTPro-MediumCn';
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      float: none;
+      width: 90%;
+      margin: 0 auto;
+
+      h3 {
+        margin: 50px 0 10px 0;
+        color: $lnt-yellow;
+        text-transform: uppercase;
+        font-family: 'AvenirNextLTPro-DemiCn';
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 2em;
+      }
+      p {
+        margin-bottom: 10px;
+        font-size: 1.5em;
+        @media screen and (max-width: 1100px) {
+          padding: 0 15px;
+          &:first-of-type {
+            margin-top: 20px;
+              }
+          }
+          @media screen and (max-width: $break-small) {
+            padding: 5px;
+          }
+      }
+      li {
+        margin-top: 15px;
+        font-size: 1.2em;
+        -webkit-font-smoothing: antialiased;
+        box-sizing: border-box;
+        font-family: 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        line-height: 24px;
+      }
+      li code {
+        line-height: 24px;
+        font-family: 'Source Code Pro', monospace;
+        border: 1px solid #ddd;
+        background-color: #f8f8f8;
+        border-radius: 3px;
+      }
+
+      li img {
+        margin-top: 20px;
+        width: 90%;
+      }
+  }
+}   
