@@ -135,7 +135,7 @@ angular.module('lantern_www')
       fr_FR: 'https://groups.google.com/group/lantern-users-fr',
       zh_CN: 'https://lanternforum.greatfire.org/',
     },
-    DOCS_URL: 'https://github.com/getlantern/lantern/wiki',
+    DOCS_URL: '/docs',
     HELP_TRANSLATE_URL: 'https://github.com/getlantern/lantern/wiki/Translating-Lantern',
     PRIVACY_URL: 'https://github.com/getlantern/lantern/wiki/Privacy',
     GET_INVOLVED_URL: 'https://github.com/getlantern/lantern/wiki/Get-Involved',
