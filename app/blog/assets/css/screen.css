@@ -170,7 +170,7 @@ body {
     line-height: 1.6em;
     color: #3A4145;
 }
-
+/*
 ::-moz-selection {
     color: #222;
     background: #D6EDFF;
@@ -182,7 +182,7 @@ body {
     background: #D6EDFF;
     text-shadow: none;
 }
-
+*/
 h1, h2, h3,
 h4, h5, h6 {
     text-rendering: optimizeLegibility;
@@ -222,7 +222,7 @@ h6 {
 }
 
 a {
-    color: #4a4a4a;
+    /* color: #4a4a4a;*/
     transition: color ease 0.3s;
 }
 
@@ -1138,6 +1138,12 @@ margin on the iframe, cause it breaks stuff. */
         font-size: 1.1rem;
     }
 
+}
+
+/* Blog Spacer */
+.home-template .header-spacer {
+    height: 230px;
+    background-color: #f3f3f3;
 }
 
 /* ==========================================================================

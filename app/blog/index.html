@@ -33,7 +33,7 @@
 <section class="header-spacer">
 </section>
 
-<header id="topbar" class="header sticky" ng-init="isCollapsed = true" ng-app="lantern_www">
+<header id="topbar" class="header sticky" ng-init="isCollapsed = true" ng-app="lantern_www" dir="{{activeLang.dir}}">
     <div id="logo-header" class="clearfix" scroll-class="small" offset="1">
         <div class="site-logo clearfix">
             <a href="/" class="clearfix">
@@ -75,8 +75,8 @@
     <div id="header-nav" class="clearfix">
         <nav class="section-nav">
             <ul class="section-list">
-                <li><a href="#about" ng-bind-template="{{'ABOUT' | translate}}">About</a></li>
-                <li><a href="#faq" ng-bind-template="{{'FAQ' | translate}}">FAQ</a></li>
+                <li><a href="../#about" ng-bind-template="{{'ABOUT' | translate}}">About</a></li>
+                <li><a href="../#faq" ng-bind-template="{{'FAQ' | translate}}">FAQ</a></li>
                 <!--<li><a href="../blog" ng-bind-template="{{'BLOG' | translate}}">Blog</a></li>-->
                 <li><a href="https://rally.org/getlantern" target="_blank" ng-bind-template="{{'DONATE' | translate}}">Donate</a></li>
             </ul>
