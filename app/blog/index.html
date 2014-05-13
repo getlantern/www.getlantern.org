@@ -33,7 +33,7 @@
 <section class="header-spacer">
 </section>
 
-<header id="topbar" class="header sticky" ng-init="isCollapsed = true" ng-app="lantern_www" dir="{{activeLang.dir}}">
+<header id="topbar" class="header sticky" ng-init="isCollapsed = true" ng-app="lantern_www" dir="{{activeLang.dir}}" ng-cloak>
     <div id="logo-header" class="clearfix" scroll-class="small" offset="1">
         <div class="site-logo clearfix">
             <a href="/" class="clearfix">
@@ -84,8 +84,8 @@
         <nav class="social-media">
             <!-- XXX DRY .social-media-icons in header -->
             <ul class="social-media-icons">
-                <li><a target="_blank" ng-href="{{TWITTER_URL}}"><span class="icon-twitter"></span></a></li>
-                <li><a target="_blank" ng-href="{{FACEBOOK_URL}}"><span class="icon-facebook"></span></a></li>
+                <li><a target="_blank" ng-href="{{TWITTER_URL}}"><span class="nav-icon-twitter"></span></a></li>
+                <li><a target="_blank" ng-href="{{FACEBOOK_URL}}"><span class="nav-icon-facebook"></span></a></li>
                 <li><a target="_blank" ng-href="{{TUMBLR_URL}}"><span class="icon-tumblr"></span></a></li>
                 <li><a target="_blank" ng-href="{{GITHUB_URL}}"><span class="icon-github"></span></a></li>
             </ul>

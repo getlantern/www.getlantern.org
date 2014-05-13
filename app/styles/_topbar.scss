@@ -334,3 +334,10 @@
         height: 0;
     }
 }
+.home-template .header-spacer {
+    height: 230px; 
+    background-color: #f3f3f3;
+    @media screen and (max-width: 875px) {
+        height: 0;
+    }
+}
