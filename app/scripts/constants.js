@@ -116,6 +116,7 @@ angular.module('lantern_www')
       'localhost': 'DEV',
       '127.0.0.1': 'DEV',
       '0.0.0.0': 'DEV',
+      '107.170.244.214': 'DEV',
       'getlantern.org': 'CANONICAL',
       'www.getlantern.org': 'CANONICAL',
       'getlantern.nodejitsu.com': 'CANONICAL',
