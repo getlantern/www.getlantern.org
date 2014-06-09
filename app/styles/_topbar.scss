@@ -230,7 +230,7 @@
         *[dir=rtl] & {
             float: right;
         }
-        @media screen and (min-width: 1200px) {
+        @media only screen and (min-width: 1200px) {
             *[dir=ltr] & {
                 margin-left: 4.5%;
             }
@@ -310,7 +310,7 @@
                     @include single-transition(color, .3s);
                     transition: color 0.3s;
                     display: block;
-                    color: #ababab;
+                    color: #ababab !important;
                     padding: 5px;
                     width: 20px;
                     height: 42px;
@@ -330,6 +330,13 @@
 .header-spacer {
     height: 207px; 
     background-color: #10283a;
+    @media screen and (max-width: 875px) {
+        height: 0;
+    }
+}
+.home-template .header-spacer {
+    height: 230px; 
+    background-color: #f3f3f3;
     @media screen and (max-width: 875px) {
         height: 0;
     }

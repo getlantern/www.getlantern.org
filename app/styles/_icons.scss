@@ -31,7 +31,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-windows8, .icon-windows, .icon-apple, .icon-youtube, .icon-twitter, .icon-tumblr, .icon-googleplus, .icon-github, .icon-ubuntu, .icon-facebook, .icon-globe {
+.icon-windows8, .icon-windows, .icon-apple, .icon-youtube, .icon-twitter, .nav-icon-twitter, .icon-tumblr, .icon-googleplus, .icon-github, .icon-ubuntu, .icon-facebook, .nav-icon-facebook, .icon-globe {
   font-family: 'getlantern-org-icons';
   speak: none;
   font-style: normal;
@@ -50,7 +50,7 @@ you can use the generic selector below, but it's slower:
 .icon-youtube:before {
   content: "\f167";
 }
-.icon-twitter:before {
+.icon-twitter:before, .nav-icon-twitter:before {
   content: "\e012";
 }
 .icon-tumblr:before {
@@ -65,7 +65,7 @@ you can use the generic selector below, but it's slower:
 .icon-ubuntu:before {
   content: "\e015";
 }
-.icon-facebook:before {
+.icon-facebook:before, .nav-icon-facebook:before {
   content: "\e000";
 }
 .icon-globe:before {
