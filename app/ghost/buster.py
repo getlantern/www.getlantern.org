@@ -49,7 +49,7 @@ def main():
         # remove query string since Ghost 0.4
         file_regex = re.compile(r'.*?(\?.*)')
 
-        header = open("header.html", "r").read()
+        head = open("header.html", "r").read()
         footer = open("footer.html", "r").read()
         nav = open("nav.html", "r").read()
 
@@ -57,6 +57,12 @@ def main():
             for filename in filenames:
                 full = os.path.abspath(os.path.join(root, filename)) 
                 # skip non-html files
+
+                if file_regex.match(filename):
+                    newname = re.sub(r'\?.*', '', filename)
+                    print "Rename", filename, "=>", newname
+                    os.rename(os.path.join(root, filename), os.path.join(root, newname))
+
                 if not full.endswith(".html"):
                     continue
 
@@ -64,32 +70,27 @@ def main():
                     data = file.read()   
                     soup = BeautifulSoup(data)
                     html = soup.find('html')
-
+                    if html is None:
+                      continue
                     # add angular attributes
                     html['id'] = 'ng-app'
                     html['ng-app'] = 'lantern_www'
                     header = soup.find('header', attrs={'class':'site-head'})
                     postHeader = soup.find('header', attrs={'class':'post-header'})
-
                     # remove existing ghost headers
                     if header:
                         header.extract()
-                    #elif postHeader:
-                    #    postHeader.contents = ''
+                    elif postHeader:
+                        postHeader.contents = ''
                     wh = soup.prettify().replace("""</head>""",
-                        """%s</head>""" % header)
-                    #wh = wh.encode('utf-8').replace("""<main""",
-                    #    """%s<main""" % nav)
-                    #wf = wh.replace("""</body>""", 
-                    #    """%s</body>""" % footer)
+                        """%s</head>""" % head)
+                    wh = wh.encode('utf-8').replace("""<main""",
+                        """%s<main""" % nav)
+                    wf = wh.replace("""</body>""", 
+                        """%s</body>""" % footer)
                     file.seek(0)
-                    file.write(wh.encode('utf-8'))
+                    file.write(wf)
                     file.truncate()
-
-                if file_regex.match(filename):
-                    newname = re.sub(r'\?.*', '', filename)
-                    print "Rename", filename, "=>", newname
-                    os.rename(os.path.join(root, filename), os.path.join(root, newname))
 
     elif arguments['preview']:
         os.chdir(static_path)
