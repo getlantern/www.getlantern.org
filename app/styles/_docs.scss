@@ -20,6 +20,17 @@
             color: #cbd687;
         }
     }
+    li {
+        font-family: 'AvenirNextLTPro-MediumCn';
+        a.reference {
+            color: #fff;
+            text-decoration: none;
+            line-height: 1.4em;
+        }
+        a:hover {
+            color: #428bca;
+        }
+    }
     h4 {
         color: #fff;
     }
