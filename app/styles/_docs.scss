@@ -4,6 +4,7 @@
         display: none;
     }
 
+    max-width: 25%;
     position: absolute;
     min-height: 100%;
     height: auto;
@@ -41,6 +42,9 @@
     }
     p.searchtip {
         display: none;
+    }
+    p.topless {
+        font-family: 'AvenirNextLTPro-MediumCn';
     }
 }
 .docs {
