@@ -1,4 +1,9 @@
 .sidebar {
+
+    @media only screen and (max-width : 700px) {
+        display: none;
+    }
+
     position: absolute;
     min-height: 100%;
     height: auto;
@@ -45,6 +50,12 @@
   margin-left: 20%;
   min-height: 650px;
 
+    @media only screen and (max-width : 640px) {
+        margin-left: 0px;
+        width: 100%;
+    }
+ 
+
   /* background-image: -webkit-gradient(
   linear,
   right top,
@@ -79,12 +90,6 @@
       float: right;
       margin-right: 9%;
       }
-
-      @media screen and (max-width: 1100px) {
-          margin-left: 30% !important;
-          width: 70%;
-      }
-
 
       width: 25%;
       font-family: 'AvenirNextLTPro-MediumCn';
