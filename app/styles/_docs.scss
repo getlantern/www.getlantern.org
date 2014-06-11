@@ -66,6 +66,10 @@
     color: $lnt-yellow;
   }
 
+  em {
+    font-style: normal;
+  }
+
   .doc-text {
     *[dir=ltr] & {
       float: left;
