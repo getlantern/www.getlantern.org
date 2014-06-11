@@ -3,7 +3,7 @@
     min-height: 100%;
     height: auto;
     overflow: auto;
-    padding-left: 20px;
+    padding-left: 3%;
     width: 30%;
     padding-bottom: 50px;
     -webkit-transition: left 0.4s cubic-bezier(.02,.01,.47,1);
@@ -61,8 +61,9 @@
   /* fallback */
   background-color: #10283a;
   color: #ffffff;
-  @media screen and (min-width: $break-small) {
-    padding-bottom: 250px;
+
+  h1 {
+    color: $lnt-yellow;
   }
 
   .doc-text {
@@ -74,6 +75,13 @@
       float: right;
       margin-right: 9%;
       }
+
+      @media screen and (max-width: 1100px) {
+          margin-left: 30% !important;
+          width: 70%;
+      }
+
+
       width: 25%;
       font-family: 'AvenirNextLTPro-MediumCn';
       -webkit-font-smoothing: antialiased;
