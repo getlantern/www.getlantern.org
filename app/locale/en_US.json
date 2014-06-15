@@ -115,5 +115,13 @@
     "LANTERN_CLOUD_SERVERS_4": "Since our Rally integration is not yet working please get in touch at contact [at] getlantern.org and we can take your donation and fire up a dedicated server for you.",
     "QUITTING_LANTERN_1": "We encourage you to just leave Lantern running in the background, so it can help censored users get access even while you're doing other tasks. If you close the Network Map window, a lantern icon still appears in your notification area.",
     "QUITTING_LANTERN_2": "The following instructions show you how to quit the Lantern application on different operating systems.",
-    "QUITTING_LANTERN_3": "Click the <strong>Lantern</strong> icon and select <strong>Quit Lantern</strong>."
+    "QUITTING_LANTERN_3": "Click the <strong>Lantern</strong> icon and select <strong>Quit Lantern</strong>.",
+    "EMAILING_HEADER": "Occasionally the core Lantern developers will request for you to email them your logs to better diagnose an issue.",
+    "EMAILING_HEADER2": "To do this you need to find the logs directory on your platform:",
+    "EMAILING_HEADER3": "The directory should have files in it like <tt class=\"docutils literal\"><span class=\"pre\">java.log</span></tt>, <tt class=\"docutils literal\"><span class=\"pre\">installer.log</span></tt> and others. Zip up the whole directory in to a single zip file. Sometimes it may only contain java.log, which is the most important file. You can zip it to be smaller, or just send it as is.",
+    "EMAILING_HEADER4": "Attach the zip or the java log file to an email sent to contact [at] getlantern.org. If you are very security focused and want a pgp email address to send it to let us know and we can provide one.",
+    "EMAILING_LOGS_1": "Windows Vista/7/8",
+    "EMAILING_LOGS_2": "Windows XP",
+    "EMAILING_LOGS_3": "OSX",
+    "EMAILING_LOGS_4": "Ubuntu"
 }

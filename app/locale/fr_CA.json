@@ -102,5 +102,13 @@
     "QUITTING_LANTERN": "Quitter Lantern",
     "QUITTING_LANTERN_1": "Nous vous encourageons à laisser Lantern tourner en arrière-plan afin qu'il puisse aider les utilisateurs censurés à obtenir l'accès même lorsque vous exécutez d'autres tâches. Si vous fermez la fenêtre de la carte du réseau, une icône Lantern apparaît encore dans votre barre de notification.",
     "QUITTING_LANTERN_2": "Les instructions suivantes vous indique comment quitter l'application Lantern sur différents systèmes d'exploitation.",
-    "QUITTING_LANTERN_3": "Cliquez sur l'icône <strong>Lantern</strong> et choisissez <strong>Quitter Lantern</strong>."
+    "QUITTING_LANTERN_3": "Cliquez sur l'icône <strong>Lantern</strong> et choisissez <strong>Quitter Lantern</strong>.",
+    "EMAILING_HEADER": "Occasionnellement, les développeurs principaux de Lantern vous demanderons de leur envoyer par courriel vos journaux afin de mieux diagnostiquer un problème.",
+    "EMAILING_HEADER2": "Pour ce faire vous devez trouver le répertoire des journaux sur votre plate-forme :",
+    "EMAILING_HEADER3": "Le répertoire devrait contenir des fichiers tels que ``java.log``, ``installer.log`` et autres. Compressez tout le répertoire en un seul fichier zip. java.log peut parfois être le seul fichier présent, c'est le fichier le plus important. Vous pouvez le compresser pour qu'il soit plus petit ou l'envoyer tel quel.",
+    "EMAILING_HEADER4": "Joignez le zip ou le fichier java.log à un courriel envoyé à contact [à] getlantern.org. Si vous insistez beaucoup sur la sécurité et voulez une adresse courriel pgp vers laquelle l'envoyer, faites-en la demande et nous vous en fournirons une.",
+    "EMAILING_LOGS_1": "Windows Vista/7/8",
+    "EMAILING_LOGS_2": "Windows XP",
+    "EMAILING_LOGS_3": "OSX",
+    "EMAILING_LOGS_4": "Ubuntu"
 }

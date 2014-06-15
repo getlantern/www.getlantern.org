@@ -94,5 +94,14 @@
     "CONTRIBUTE_ANSWER_1": "‫لطفاً <a href=\"https://github.com/getlantern/lantern/wiki/Get-Involved\" target=\"_blank\">پیگیری</a> را ببینید.",
     "MORE_QUESTIONS_QUESTION": "‫من پرسش‌های بیشتری دارم، به کجا مراجعه کنم؟",
     "MORE_QUESTIONS_ANSWER_1": "‫اگر سوالات فنی بیشتری دارید، لطفا <a href=\"https://github.com/getlantern/lantern/wiki/%5Bdevelopers%5D-Questions-and-Answers\" target=\"_blank\">سوال و جواب توسعه‌دهندگان</a> را ببینید. همچنین می‌توانید در <a href=\"https://groups.google.com/group/lantern-users-fa\" target=\"_blank\">فروم کاربران</a> یا <a href=\"https://groups.google.com/group/lantern-devel\" target=\"_blank\">فروم توسعه‌دهندگان</a> پست بگذارید.",
-    "LANTERN_FORUM": "‫فروم لنترن."
+    "LANTERN_FORUM": "‫فروم لنترن.",
+    "EMAILING_LANTERN_LOGS": "ایمیل کردن لاگهای لنترن",
+    "EMAILING_HEADER": "هر از چند گاه، به منظور بهتر شدن تشخیص یک مشکل، برنامه‌نویسان لنترن از شما خواهند خواست تا لاگهای خود را برای‌شان ایمیل کنید.",
+    "EMAILING_HEADER2": "برای این کار نیاز دارید تا شاخۀ لاگها را در پلتفرم خود پیدا کنید:",
+    "EMAILING_HEADER3": "داخل این شاخه‌ها باید فایل‌هایی مانند java.log، installer.log و مانند آنها وجود داشته باشد. کل این شاخه را در یک فایل زیپ (zip) فشرده کنید. گاهی اوقات ممکن است این شاخه، یک فایل java.log را هم شامل شود که از سایر فایلها مهمتر است. شما می‌توانید آن را فشرده کرده و یا به همان صورتی که هست بفرستید.",
+    "EMAILING_HEADER4": "فایل‌های فشرده و یا فایل جاوا را به یک ایمیل ضمیمه کرده و به <a class=\"external reference\" href=\"mailto:team@getlantern.org\">team@getlantern.org</a> ارسال کنید. در صورتی که می‌خواهید با استفاده از پی‌جی‌پی (PGP) ایمیل خود را رمزگذاری کنید، به ما اطلاع دهید تا کلید عمومی خود را در اختیارتان قرار دهیم.",
+    "EMAILING_LOGS_1": "ویندوز ویستا/۷/۸",
+    "EMAILING_LOGS_2": "ویندوز ایکس‌پی",
+    "EMAILING_LOGS_3": "مک اواس‌ایکس",
+    "EMAILING_LOGS_4": "اوبونتو"
 }

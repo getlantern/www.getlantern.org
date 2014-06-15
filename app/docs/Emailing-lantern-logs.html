@@ -188,10 +188,10 @@
 <li class="toctree-l1"><a class="reference internal" href="Proxied-sites-configuration.html" ng-bind-template="{{'CONFIGURING_PROXIED_SITES' | translate}}">Configuring Proxied Sites</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Switching-Google-Accounts.html" ng-bind-template="{{'SWITCHING_GOOGLE_ACCOUNTS' | translate}}">Switching Google Accounts</a></li>
 <li class="toctree-l1"><a class="current reference internal" href="" ng-bind-template="{{'EMAILING_LANTERN_LOGS' | translate}}">Emailing Lantern Logs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#windows-vista-7-8">Windows Vista/7/8</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#windows-xp">Windows XP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#osx">OSX</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ubuntu">Ubuntu</a></li>
+    <li class="toctree-l2"><a class="reference internal" href="#windows-vista-7-8" translate="{{'EMAILING_LOGS_1'}}">Windows Vista/7/8</a></li>
+    <li class="toctree-l2"><a class="reference internal" href="#windows-xp" translate="{{'EMAILING_LOGS_2'}}">Windows XP</a></li>
+    <li class="toctree-l2"><a class="reference internal" href="#osx" translate="{{'EMAILING_LOGS_3'}}">OSX</a></li>
+    <li class="toctree-l2"><a class="reference internal" href="#ubuntu" translate="{{'EMAILING_LOGS_4'}}">Ubuntu</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Lantern-Cloud-Servers.html" ng-bind-template="{{'LANTERN_CLOUD_SERVERS' | translate}}">Lantern Cloud Servers</a></li>
@@ -234,29 +234,29 @@
           <div class="body doc-text">
             
   <div class="section" id="emailing-lantern-logs">
-<span id="sending-lantern-logs"></span><h1>Emailing Lantern Logs<a class="headerlink" href="#emailing-lantern-logs" title="Permalink to this headline">¶</a></h1>
-<p>Occasionally the core Lantern developers will request for you to email them your logs to better diagnose an issue.</p>
-<p>To do this you need to find the logs directory on your platform:</p>
+      <span id="sending-lantern-logs"></span><h1 ng-bind-template="{{'EMAILING_LANTERN_LOGS' | translate}}">Emailing Lantern Logs<a class="headerlink" href="#emailing-lantern-logs" title="Permalink to this headline">¶</a></h1>
+<p translate="{{'EMAILING_HEADER'}}">Occasionally the core Lantern developers will request for you to email them your logs to better diagnose an issue.</p>
+<p translate="{{'EMAILING_HEADER2'}}">To do this you need to find the logs directory on your platform:</p>
 <div class="section" id="windows-vista-7-8">
-<h2>Windows Vista/7/8<a class="headerlink" href="#windows-vista-7-8" title="Permalink to this headline">¶</a></h2>
+    <h2 translate="{{'EMAILING_LOGS_1'}}">Windows Vista/7/8<a class="headerlink" href="#windows-vista-7-8" title="Permalink to this headline">¶</a></h2>
 <p><tt class="docutils literal"><span class="pre">C:\Users\USERNAME\AppData\Roaming\Lantern\logs</span></tt></p>
 </div>
 <div class="section" id="windows-xp">
-<h2>Windows XP<a class="headerlink" href="#windows-xp" title="Permalink to this headline">¶</a></h2>
+    <h2 translate="{{'EMAILING_LOGS_2'}}">Windows XP<a class="headerlink" href="#windows-xp" title="Permalink to this headline">¶</a></h2>
 <p><tt class="docutils literal"><span class="pre">C:\Documents</span> <span class="pre">and</span> <span class="pre">Settings\USERNAME\Application</span> <span class="pre">Data\Lantern\Logs</span></tt></p>
 </div>
 <div class="section" id="osx">
-<h2>OSX<a class="headerlink" href="#osx" title="Permalink to this headline">¶</a></h2>
+    <h2 translate="{{'EMAILING_LOGS_3'}}">OSX<a class="headerlink" href="#osx" title="Permalink to this headline">¶</a></h2>
 <p><tt class="docutils literal"><span class="pre">~/Library/Logs/Lantern</span></tt></p>
 </div>
 <div class="section" id="ubuntu">
-<h2>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h2>
+    <h2 translate="{{'EMAILING_LOGS_4'}}">Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h2>
 <p><tt class="docutils literal"><span class="pre">~/.lantern/logs</span></tt></p>
-<p>The directory should have files in it like <tt class="docutils literal"><span class="pre">java.log</span></tt>, <tt class="docutils literal"><span class="pre">installer.log</span></tt> and others.
+<p translate="{{'EMAILING_HEADER3'}}">The directory should have files in it like <tt class="docutils literal"><span class="pre">java.log</span></tt>, <tt class="docutils literal"><span class="pre">installer.log</span></tt> and others.
 Zip up the whole directory in to a single zip file.
 Sometimes it may only contain java.log, which is the most important file.
 You can zip it to be smaller, or just send it as is.</p>
-<p>Attach the zip or the java log file to an email sent to contact [at]
+<p translate="{{'EMAILING_HEADER4'}}">Attach the zip or the java log file to an email sent to contact [at]
 getlantern.org. If you are very security focused and want a pgp email
 address to send it to let us know and we can provide one.</p>
 </div>

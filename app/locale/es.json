@@ -101,5 +101,9 @@
     "LANTERN_CLOUD_SERVERS_4": "Como nuestra integración con rally.org aún no está operativa, por favor contacte mediante contact [en] getlantern.org y podremos recoger su donación e iniciar un servidor dedicado para usted.",
     "QUITTING_LANTERN_1": "Le animamos a que simplemente deje Lantern ejecutándose en segundo plano, para que pueda ayudar a usuarios bajo censura a obtener acceso incluso mientras está haciendo otras tareas. Si cierra la ventana de Mapa de Red, todavía aparecerá un icono de Lantern en su barra de menú.",
     "QUITTING_LANTERN_2": "Las siguientes instrucciones le muetran cómo salir de la aplicación Lantern en diferentes sistemas operativos.",
-    "QUITTING_LANTERN_3": "Haga clic en el icono <strong>Lantern</strong> y seleccione <strong>Salir de Lantern</strong>."
+    "QUITTING_LANTERN_3": "Haga clic en el icono <strong>Lantern</strong> y seleccione <strong>Salir de Lantern</strong>.",
+    "EMAILING_LOGS_1": "Windows Vista/7/8",
+    "EMAILING_LOGS_2": "Windows XP",
+    "EMAILING_LOGS_3": "OSX",
+    "EMAILING_LOGS_4": "Ubuntu"
 }
