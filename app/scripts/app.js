@@ -73,7 +73,7 @@ angular.module('lantern_www', [
 
     $rootScope.changeLang = function (langCode) {
       $rootScope.activeLang = constants.LANGS[langCode];
-      $translate.uses(langCode);
+      $translate.use(langCode);
     };
 
     var langOverride = __urlHashLang(constants.LANGS) || $translateCookieStorage.get($translate.storageKey());
