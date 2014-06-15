@@ -12,9 +12,11 @@ angular.module('lantern_www')
                      if (this.pageYOffset >= scope.offset) {
                          //scope.boolChangeClass = true;
                          element.addClass(scope.scrollClass);
+                         angular.element('.sphinxsidebarwrapper').addClass('enclosed');
                      } else {
                          //scope.boolChangeClass = false;
                          element.removeClass(scope.scrollClass);
+                         angular.element('.sphinxsidebarwrapper').removeClass('enclosed');
                      }
                     scope.$apply();
                 });

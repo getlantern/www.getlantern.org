@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html class="no-js" id="ng-app" ng-app="lantern_www">
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="description" content="Defeat internet censorship. Give or get
+    access to the open internet by sharing connections through your social
+    network." ng-attr-content="{{'META_DESC' | translate}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <!-- build:css({.tmp,app}) ../styles/main.css -->
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css(.tmp) ../styles/main.css -->
+    <link rel="stylesheet" href="/styles/main.css">
+    <!-- endbuild -->
+
+    <!-- build:js ../scripts/loadfirst.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+
+    
+    <title>Using Lantern &mdash; Lantern 1.0 documentation</title>
+    
+    <!--<link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css"
+    type="text/css" />-->
+    <!--<link rel="stylesheet" href="_static/lanternDoc.css">-->
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Lantern 1.0 documentation" href="index.html" />
+    <link rel="next" title="Quitting Lantern" href="Quitting-Lantern.html" />
+    <link rel="prev" title="Setting Up Lantern" href="Setup.html" /> 
+  </head>
+  <body>
+      <!--[if lt IE 8]>
+      <p class="chromeframe">You are using an outdated browser. Please <a href="https://www.google.com/chrome/">upgrade your browser</a> or <a href="https://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> and try again.</p>
+      <![endif]-->
+
+      <!--[if lt IE 9]>
+      <script src="bower_components/es5-shim/es5-shim.min.js"></script>
+      <script src="bower_components/json3/lib/json3.min.js"></script>
+      <![endif]-->
+
+      <!-- uncomment out to enable firebug lite (useful for IE)
+      <script src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js"></script>
+      -->
+
+<noscript>
+<div lang="en" dir="ltr">JavaScript is required.</div>
+<div lang="zh_CN" dir="ltr">需要启用JavaScript。</div>
+<div lang="fa_IR" dir="rtl">جاوا اسکریپت مورد نیاز است.</div>
+<div lang="ar" dir="rtl">مطلوب جافا سكريبت.</div>
+</noscript>
+
+<div class="ng-cloak" lang="{{activeLang.code}}" dir="{{activeLang.dir}}">
+
+        <div class="checkdomain {{domainType|lowercase}}" ng-show="domainType == 'MIRROR' || domainType == 'UNRECOGNIZED'">
+            <span ng-show="domainType == 'MIRROR'"
+                ng-bind-template="{{'OFFICIAL_MIRROR' |
+                translate}}">You are viewing...</span>
+            <span ng-show="domainType == 'UNRECOGNIZED'"
+                ng-bind-template="{{'UNOFFICIAL_MIRROR' |
+                translate}}">Caution...</span>
+            <a ng-href="{{valByLang(BEWARE_OF_PHONIES_URLS)}}"
+                target="_blank" ng-bind-template="{{'BEWARE_OF_PHONIES'
+                | translate}}">Beware of phonies</a>
+        </div>
+        <div class="lightbox hide" lightbox>
+            <a class="lightbox-close" lightbox-close>&times;</a>
+            <div class="media-container" id="player"></div>
+        </div>
+<div id="content-container" class="toc">
+    <header id="topbar" class="header sticky" ng-init="isCollapsed = true">
+              <div id="logo-header" class="clearfix" scroll-class="small" offset="1">
+                <div class="site-logo clearfix">
+                  <a href="/" class="clearfix">
+                    <img src="../images/lantern-header-logo-scaled.png" alt="Lantern" />
+                  </a>
+                </div>
+                <nav class="languages" ng-show="NLANGS > 1">
+                <ul class="navlink-list lang-list" dir="ltr">
+                  <li>
+                  <a class="active-lang">{{activeLang.name}}</a>
+                  </li>
+                  <li role="presentation" class="ng-scope">
+                  <a role="menuitem" ng-href="#en_US" ng-class="{'hidden': activeLang.code == 'en_US'}" ng-click="changeLang('en_US')" class="lang ng-binding" href="#en_US">English</a>
+                  </li>
+                  <li role="presentation" class="ng-scope">
+                  <a role="menuitem" ng-href="#fa_IR" ng-class="{'hidden': activeLang.code == 'fa_IR'}" ng-click="changeLang('fa_IR')" class="lang ng-binding" href="#fa_IR">فارسی</a>
+                  </li>
+                  <li role="presentation" class="ng-scope">
+                  <a role="menuitem" ng-href="#zh_CN" ng-class="{'hidden': activeLang.code == 'zh_CN'}" ng-click="changeLang('zh_CN')" class="lang ng-binding" href="#zh_CN">中文</a>
+                  </li>
+                  <li class="dropdown">
+                  <a ng-click="isCollapsed = !isCollapsed">
+                      <b ng-bind-template="{{'MORE' | translate}}">More </b><span class="caret"></span>
+                  </a>
+                  <ul collapse="isCollapsed" class="menu" role="menu">
+                    <li ng-repeat="lang in LANGS" role="presentation">
+                    <a role="menuitem" ng-href="#{{lang.code}}" ng-class="{'active-lang': lang.code == activeLang.code}" ng-click="changeLang(lang.code)" class="lang">{{lang.name}}</a>
+                    </li>
+                    <li>
+                    <strong><a ng-href=""
+                            target="_blank"
+                            ng-bind-template="{{'HELP_TRANSLATE' |
+                            translate}}">
+                        Help Translate
+                    </a></strong>
+                    </li>
+                  </ul>
+                  </li>
+                </ul>
+                </nav>
+              </div>
+              <div id="header-nav" class="clearfix">
+                <nav class="section-nav">
+                <ul class="section-list">
+                    <li><a href="/#about" ng-bind-template="{{'ABOUT' |
+                        translate}}">About</a></li>
+                    <li><a href="/#faq" ng-bind-template="{{'FAQ' |
+                        translate}}">FAQ</a></li>
+                    <li><a href="/blog" ng-bind-template="{{'BLOG' |
+                        translate}}">Blog</a></li>
+                    <li><a href="/docs" ng-bind-template="{{'DOCS' |
+                        translate}}">Docs</a></li>
+                  <li><a href="https://rally.org/getlantern" target="_blank"
+                      ng-bind-template="{{'DONATE' | translate}}">Donate</a></li>
+                </ul>
+                </nav>
+                <nav class="social-media">
+                <!-- XXX DRY .social-media-icons in header -->
+                <ul class="social-media-icons">
+                  <li><a target="_blank" ng-href=""><span class="icon-twitter"></span></a></li>
+                  <li><a target="_blank" ng-href=""><span class="icon-facebook"></span></a></li>
+                  <li><a target="_blank" ng-href=""><span class="icon-tumblr"></span></a></li>
+                  <li><a target="_blank" ng-href=""><span class="icon-github"></span></a></li>
+                </ul>
+                </nav>
+              </div>
+              </header>
+            
+     
+    <!--<div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Quitting-Lantern.html" title="Quitting Lantern"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Setup.html" title="Setting Up Lantern"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Lantern 1.0 documentation</a> &raquo;</li> 
+      </ul>
+  </div>-->
+
+  
+
+      <div class="sidebar section">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul class="current">
+
+       <li class="toctree-l1"><a class="reference internal" href="Downloading.html" ng-bind-template="{{'DOWNLOADING_LANTERN' | translate}}">Downloading Lantern</a></li>
+      <li class="toctree-l1"><a class="reference internal" href="Installing.html" ng-bind-template="{{'INSTALLING_LANTERN' | translate}}">Installing and Uninstalling</a></li>
+      <li class="toctree-l1"><a class="reference internal" href="Setup.html" ng-bind-template="{{'SETTING_UP_LANTERN' | translate}}">Setting Up Lantern</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Using Lantern</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#users-getting-access">Users <strong>Getting Access</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#users-giving-access">Users <strong>Giving Access</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#all-users">All Users</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#exploring-the-lantern-network">Exploring the Lantern Network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-friends">Adding Friends</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#leave-lantern-running">Leave Lantern Running</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quitting-lantern">Quitting Lantern</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="Quitting-Lantern.html" ng-bind-template="{{'QUITTING_LANTERN' | translate}}">Quitting Lantern</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="" ng-bind-template="{{'UPGRADING_LANTERN' | translate}}">Upgrading to a New Version of Lantern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Proxied-sites-configuration.html" ng-bind-template="{{'CONFIGURING_PROXIED_SITES' | translate}}">Configuring Proxied Sites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Switching-Google-Accounts.html" ng-bind-template="{{'SWITCHING_GOOGLE_ACCOUNTS' | translate}}">Switching Google Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Emailing-lantern-logs.html" ng-bind-template="{{'EMAILING_LANTERN_LOGS' | translate}}">Emailing Lantern Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lantern-Cloud-Servers.html" ng-bind-template="{{'LANTERN_CLOUD_SERVERS' | translate}}">Lantern Cloud Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Privacy.html" ng-bind-template="{{'PRIVACY' | translate}}">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Translating-Lantern.html" ng-bind-template="{{'TRANSLATING_LANTERN' | translate}}">Translating Lantern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Questions-and-Answers.html" ng-bind-template="{{'QUESTIONS_AND_ANSWERS' | translate}}">Questions and Answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Get_Involved.html" ng-bind-template="{{'GET_INVOLVED' | translate}}">Getting Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Jobs.html" ng-bind-template="{{'JOBS' | translate}}">Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html" ng-bind-template="{{'GLOSSARY' | translate}}">Glossary</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Setup.html"
+                        title="previous chapter">Setting Up Lantern</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Quitting-Lantern.html"
+                        title="next chapter">Quitting Lantern</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+
+
+
+    <div class="section docs document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body doc-text">
+            
+  <div class="section" id="using-lantern">
+      <h1 ng-bind-template="{{'USING_LANTERN' | translate}}">Using Lantern<a class="headerlink" href="#using-lantern" title="Permalink to this headline">¶</a></h1>
+      <p>After you&#8217;ve finished <a class="reference internal" href="Setup.html" ng-bind-template="{{'SETTING_UP_LANTERN' | translate}}"><em>Setting Up Lantern</em></a> you&#8217;re ready to start using Lantern.</p>
+<div class="section" id="users-getting-access">
+<h2>Users <strong>Getting Access</strong><a class="headerlink" href="#users-getting-access" title="Permalink to this headline">¶</a></h2>
+<p>If you are in a censored region and have installed Lantern, simply open your favorite browser and navigate to any blocked site.
+Any browser should work, as Lantern configures itself to handle any connection from your computer.</p>
+<img alt="working lantern" src="https://www.evernote.com/shard/s209/sh/ebdd003b-5c06-430f-a239-ea4a28c444cf/3f6d143232be6ffe1b1d0edcc5cf309d/deep/0/Fullscreen%208/18/13%209:00%20PM.png" />
+<p>While your browsing is connecting Lantern reports on the activity.
+On the map there will be a line between your computer and the computers of your friends.
+If your friends aren&#8217;t available you may see that you are connected to one of the Lantern fallback servers.
+See <a class="reference internal" href="Lantern-Cloud-Servers.html#lantern-cloud-servers"><em>Lantern Cloud Servers</em></a>.</p>
+<p>You can see your bandwidth going up and down in the top-right corner of Lantern.
+This will change as you browse.</p>
+<p>If you can&#8217;t access a web site, you may have to add it to your Proxy Site List.
+See <a class="reference internal" href="Proxied-sites-configuration.html#config-proxied-sites"><em>Configuring Proxied Sites</em></a>.</p>
+<p>If you are still unable to get access, you can try to invite more friends in uncensored countries who can share their connection with you.
+You could also sponsor a cloud server to help the lantern network.
+See <a class="reference internal" href="Lantern-Cloud-Servers.html#lantern-cloud-servers"><em>Lantern Cloud Servers</em></a>.</p>
+<p>We also have a <a class="reference external" href="https://groups.google.com/forum/#!forum/lantern-users-en">forum</a> where you can get help.</p>
+</div>
+<div class="section" id="users-giving-access">
+<h2>Users <strong>Giving Access</strong><a class="headerlink" href="#users-giving-access" title="Permalink to this headline">¶</a></h2>
+<p>Users who are giving access often will not have immediate connections.
+If you want to make sure that Lantern is working you can try out <strong>Get Access</strong> mode.</p>
+<img alt="getting access" src="https://www.evernote.com/shard/s209/sh/e1e59fee-9976-47c0-a9b9-856c4888c521/f34171fc3725a47efb0cdbfd3f163b2a/deep/0/Lantern%20and%20Freedom%20House.png" />
+<p>Just go to &#8216;settings&#8217; and change the mode &#8216;getting access&#8217;, and try the steps above.</p>
+</div>
+<div class="section" id="all-users">
+<h2>All Users<a class="headerlink" href="#all-users" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exploring-the-lantern-network">
+<h3>Exploring the Lantern Network<a class="headerlink" href="#exploring-the-lantern-network" title="Permalink to this headline">¶</a></h3>
+<img alt="lantern network" src="https://www.evernote.com/shard/s209/sh/57a422d3-27f1-4b45-b05c-09b87636ab23/8b8d1d84c456798cd0f3e045590dc3e7/deep/0/Lantern.png" />
+<p>You can explore the map of the Lantern network.
+The bottom of the screen shows the global statistics for everyone on the network - how many users are online now, have ever been online, and the total bandwidth transferred.
+If you mouse over a country it will show you similar statistics for that country.
+You can also mouse over your own user and the users you&#8217;re connecting to, as dots on the map.</p>
+</div>
+<div class="section" id="adding-friends">
+<span id="id1"></span><h3>Adding Friends<a class="headerlink" href="#adding-friends" title="Permalink to this headline">¶</a></h3>
+<p>Building your Lantern network by adding friends is the main task for users Giving Access from open countries.
+Adding others in uncensored countries is key for expanding the network.
+And any friend in a censored country that you add to your roster will instantly benefit from your connection and those of your other friends.</p>
+<p>And it is critical for users Getting Access to invite more trusted users, to improve the network.
+Adding friends in uncensored countries is directly beneficial for better connections.
+But helping other friends within your country also helps build the Lantern network and connect you to more Lantern proxies.</p>
+<img alt="add friends" src="https://www.evernote.com/shard/s209/sh/69dfc002-b2c8-4f31-9c77-baf39d9e97a2/ecd8f30823d03d085fd271a6f77923c5/deep/0/Lantern.png" />
+<p>You can add friends at any time with the friend button on the lower right.</p>
+<img alt="friends" src="https://www.evernote.com/shard/s209/sh/5f777d62-6c2f-405d-b065-1fb8ba948e6c/c3493f15bd539a174f5a901d5404dea9/deep/0/Lantern.png" />
+<p>This brings up the &#8216;Lantern Friends&#8217; screen.
+You can enter the email address of any friend who has a google account.
+Any gmail address will definitely work.
+If you aren&#8217;t sure you can just try to add them, as many people have other email addresses set up to work with Google.
+Adding them will send an invitation to join Lantern, with a link to the download.
+Once they sign on at the same time as you are on their status in your friends window will change.</p>
+<p>The image below shows friends successfully transferring from a user in &#8216;give&#8217; mode.</p>
+<img alt="friends transferring" src="https://www.evernote.com/shard/s209/sh/ba32dfb0-959d-494b-9065-2053aab61875/839570ec5c5e0df068455bc7a00daa96/deep/0/Lantern%20and%20Editing%20Using%20Lantern%20%C2%B7%20getlantern/lantern%20Wiki.png" />
+<p>Note that there will not always be connection lines between friends.
+This happens when the rough location can not be established.
+You will always be able to see if transferring is happening by looking in the upper right corner, or watching the friends list.</p>
+<p>Removing people from your friend list will make it so they can not access your connection to the internet and vice versa.</p>
+</div>
+<div class="section" id="leave-lantern-running">
+<h3>Leave Lantern Running<a class="headerlink" href="#leave-lantern-running" title="Permalink to this headline">¶</a></h3>
+<p>We encourage you to leave Lantern running, so that it can be helping others even if you are not using it right then.
+Closing the Lantern window does not stop Lantern.
+The Lantern icon still appears in your menubar.</p>
+</div>
+<div class="section" id="quitting-lantern">
+<h3>Quitting Lantern<a class="headerlink" href="#quitting-lantern" title="Permalink to this headline">¶</a></h3>
+<p>To quit Lantern, click the Lantern icon and select &#8216;Quit Lantern&#8217;.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+ 
+      <div class="clearer"></div>
+    </div>
+    <!--<div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Quitting-Lantern.html" title="Quitting Lantern"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Setup.html" title="Setting Up Lantern"
+             >previous</a> |</li>
+        <li><a href="index.html">Lantern 1.0 documentation</a> &raquo;</li> 
+      </ul>
+  </div>-->
+<!--<footer id="footer" class="footer">
+<div class="wrap clearfix">
+    <nav class="clearfix">
+    <ul class="navlink-list main-nav">
+        <li><a target="_blank"
+            ng-href="{{valByLang(FORUMS_URLS)}}"
+            ng-bind-template="{{'FORUMS' | translate}}">Forums</a></li>
+        <li><a ng-href="/docs"
+            ng-bind-template="{{'DOCS' | translate}}">Docs</a></li>
+        <li><a ng-href="/docs/Privacy.html"
+            ng-bind-template="{{'PRIVACY' | translate}}">Privacy</a></li>
+        <li><a ng-href="/docs/Get_Involved.html"
+            ng-bind-template="{{'GET_INVOLVED' | translate}}">Get Involved</a></li>
+    </ul>
+    </nav>
+</div>
+</footer>-->
+ <!-- build:js scripts/loadlast.js -->
+        <script src="/bower_components/session.js/session.js"></script>
+        <script src="/bower_components/angular/angular.js"></script>
+        <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="/bower_components/angular-translate/angular-translate.js"></script>
+        <script src="/bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+        <script src="/bower_components/angular-bootstrap/src/transition/transition.js"></script>
+        <script src="/bower_components/angular-bootstrap/src/collapse/collapse.js"></script>
+        <script src="/bower_components/angular-bootstrap/src/modal/modal.js"></script>
+        <script src="/bower_components/angular-bootstrap/src/dropdownToggle/dropdownToggle.js"></script>
+
+        <script src="/scripts/app.js"></script>
+        <script src="/scripts/constants.js"></script>
+        <script src="/scripts/controllers/download.js"></script>
+        <script src="/scripts/directives/lightbox.js"></script>
+        <script src="/scripts/directives/signup.js"></script>
+        <script src="/scripts/directives/windowScroll.js"></script>
+        <script src="/scripts/directives/videoOnClick.js"></script>
+        <script src="/scripts/services/osSniffer.js"></script>
+        <script src="/scripts/services/installerDataFetcher.js"></script>
+        <!-- generated by "grunt jsFromJSON"; populates window.translations with data from locale/*.json -->
+        <script src="/scripts/jsFromJSON/translations.js"></script>
+        <!-- endbuild-->
+          
+
+  </body>
+</html>

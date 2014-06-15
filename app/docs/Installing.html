@@ -1,0 +1,573 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html class="no-js" id="ng-app" ng-app="lantern_www">
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="description" content="Defeat internet censorship. Give or get
+    access to the open internet by sharing connections through your social
+    network." ng-attr-content="{{'META_DESC' | translate}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <!-- build:css({.tmp,app}) ../styles/main.css -->
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css(.tmp) ../styles/main.css -->
+    <link rel="stylesheet" href="/styles/main.css">
+    <!-- endbuild -->
+
+    <!-- build:js ../scripts/loadfirst.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+
+    
+    <title>Installing and Uninstalling &mdash; Lantern 1.0 documentation</title>
+    
+    <!--<link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css"
+    type="text/css" />-->
+    <!--<link rel="stylesheet" href="_static/lanternDoc.css">-->
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Lantern 1.0 documentation" href="index.html" />
+    <link rel="next" title="Setting Up Lantern" href="Setup.html" />
+    <link rel="prev" title="Downloading Lantern" href="Downloading.html" /> 
+  </head>
+  <body>
+      <!--[if lt IE 8]>
+      <p class="chromeframe">You are using an outdated browser. Please <a href="https://www.google.com/chrome/">upgrade your browser</a> or <a href="https://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> and try again.</p>
+      <![endif]-->
+
+      <!--[if lt IE 9]>
+      <script src="bower_components/es5-shim/es5-shim.min.js"></script>
+      <script src="bower_components/json3/lib/json3.min.js"></script>
+      <![endif]-->
+
+      <!-- uncomment out to enable firebug lite (useful for IE)
+      <script src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js"></script>
+      -->
+
+<noscript>
+<div lang="en" dir="ltr">JavaScript is required.</div>
+<div lang="zh_CN" dir="ltr">需要启用JavaScript。</div>
+<div lang="fa_IR" dir="rtl">جاوا اسکریپت مورد نیاز است.</div>
+<div lang="ar" dir="rtl">مطلوب جافا سكريبت.</div>
+</noscript>
+
+<div class="ng-cloak" lang="{{activeLang.code}}" dir="{{activeLang.dir}}">
+
+        <div class="checkdomain {{domainType|lowercase}}" ng-show="domainType == 'MIRROR' || domainType == 'UNRECOGNIZED'">
+            <span ng-show="domainType == 'MIRROR'"
+                ng-bind-template="{{'OFFICIAL_MIRROR' |
+                translate}}">You are viewing...</span>
+            <span ng-show="domainType == 'UNRECOGNIZED'"
+                ng-bind-template="{{'UNOFFICIAL_MIRROR' |
+                translate}}">Caution...</span>
+            <a ng-href="{{valByLang(BEWARE_OF_PHONIES_URLS)}}"
+                target="_blank" ng-bind-template="{{'BEWARE_OF_PHONIES'
+                | translate}}">Beware of phonies</a>
+        </div>
+        <div class="lightbox hide" lightbox>
+            <a class="lightbox-close" lightbox-close>&times;</a>
+            <div class="media-container" id="player"></div>
+        </div>
+<div id="content-container" class="toc">
+    <header id="topbar" class="header sticky" ng-init="isCollapsed = true">
+              <div id="logo-header" class="clearfix" scroll-class="small" offset="1">
+                <div class="site-logo clearfix">
+                  <a href="/" class="clearfix">
+                    <img src="../images/lantern-header-logo-scaled.png" alt="Lantern" />
+                  </a>
+                </div>
+                <nav class="languages" ng-show="NLANGS > 1">
+                <ul class="navlink-list lang-list" dir="ltr">
+                  <li>
+                  <a class="active-lang">{{activeLang.name}}</a>
+                  </li>
+                  <li role="presentation" class="ng-scope">
+                  <a role="menuitem" ng-href="#en_US" ng-class="{'hidden': activeLang.code == 'en_US'}" ng-click="changeLang('en_US')" class="lang ng-binding" href="#en_US">English</a>
+                  </li>
+                  <li role="presentation" class="ng-scope">
+                  <a role="menuitem" ng-href="#fa_IR" ng-class="{'hidden': activeLang.code == 'fa_IR'}" ng-click="changeLang('fa_IR')" class="lang ng-binding" href="#fa_IR">فارسی</a>
+                  </li>
+                  <li role="presentation" class="ng-scope">
+                  <a role="menuitem" ng-href="#zh_CN" ng-class="{'hidden': activeLang.code == 'zh_CN'}" ng-click="changeLang('zh_CN')" class="lang ng-binding" href="#zh_CN">中文</a>
+                  </li>
+                  <li class="dropdown">
+                  <a ng-click="isCollapsed = !isCollapsed">
+                      <b ng-bind-template="{{'MORE' | translate}}">More </b><span class="caret"></span>
+                  </a>
+                  <ul collapse="isCollapsed" class="menu" role="menu">
+                    <li ng-repeat="lang in LANGS" role="presentation">
+                    <a role="menuitem" ng-href="#{{lang.code}}" ng-class="{'active-lang': lang.code == activeLang.code}" ng-click="changeLang(lang.code)" class="lang">{{lang.name}}</a>
+                    </li>
+                    <li>
+                    <strong><a ng-href=""
+                            target="_blank"
+                            ng-bind-template="{{'HELP_TRANSLATE' |
+                            translate}}">
+                        Help Translate
+                    </a></strong>
+                    </li>
+                  </ul>
+                  </li>
+                </ul>
+                </nav>
+              </div>
+              <div id="header-nav" class="clearfix">
+                <nav class="section-nav">
+                <ul class="section-list">
+                    <li><a href="/#about" ng-bind-template="{{'ABOUT' |
+                        translate}}">About</a></li>
+                    <li><a href="/#faq" ng-bind-template="{{'FAQ' |
+                        translate}}">FAQ</a></li>
+                    <li><a href="/blog" ng-bind-template="{{'BLOG' |
+                        translate}}">Blog</a></li>
+                    <li><a href="/docs" ng-bind-template="{{'DOCS' |
+                        translate}}">Docs</a></li>
+                  <li><a href="https://rally.org/getlantern" target="_blank"
+                      ng-bind-template="{{'DONATE' | translate}}">Donate</a></li>
+                </ul>
+                </nav>
+                <nav class="social-media">
+                <!-- XXX DRY .social-media-icons in header -->
+                <ul class="social-media-icons">
+                  <li><a target="_blank" ng-href=""><span class="icon-twitter"></span></a></li>
+                  <li><a target="_blank" ng-href=""><span class="icon-facebook"></span></a></li>
+                  <li><a target="_blank" ng-href=""><span class="icon-tumblr"></span></a></li>
+                  <li><a target="_blank" ng-href=""><span class="icon-github"></span></a></li>
+                </ul>
+                </nav>
+              </div>
+              </header>
+            
+     
+    <!--<div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Setup.html" title="Setting Up Lantern"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Downloading.html" title="Downloading Lantern"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Lantern 1.0 documentation</a> &raquo;</li> 
+      </ul>
+  </div>-->
+
+  
+
+      <div class="sidebar section">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Downloading.html" ng-bind-template="{{'DOWNLOADING_LANTERN' | translate}}">Downloading Lantern</a></li>
+<li class="toctree-l1"><a class="current reference internal" href="Installing.html" ng-bind-template="{{'INSTALLING_LANTERN' | translate}}">Installing and Uninstalling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#linux">Linux</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#supported-versions">Supported Versions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing">Installing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uninstalling">Uninstalling</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mac">Mac</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Supported Versions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Installing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Uninstalling</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#windows">Windows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Supported Versions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Installing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Uninstalling</a></li>
+</ul>
+</li>
+</ul>
+</li>
+       <li class="toctree-l1"><a class="reference internal" href="Setup.html" ng-bind-template="{{'SETTING_UP_LANTERN' | translate}}">Setting Up Lantern</a></li>
+      <li class="toctree-l1"><a class="reference internal" href="Using-Lantern.html" ng-bind-template="{{'USING_LANTERN' | translate}}">Using Lantern</a><<li class="toctree-l1 current"><a class="current reference internal" href="Quitting-Lantern.html" ng-bind-template="{{'QUITTING_LANTERN' | translate}}">Quitting Lantern</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Upgrading-to-a-New-Version-of-Lantern.html" ng-bind-template="{{'UPGRADING_LANTERN' | translate}}">Upgrading to a New Version of Lantern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Proxied-sites-configuration.html" ng-bind-template="{{'CONFIGURING_PROXIED_SITES' | translate}}">Configuring Proxied Sites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Switching-Google-Accounts.html" ng-bind-template="{{'SWITCHING_GOOGLE_ACCOUNTS' | translate}}">Switching Google Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Emailing-lantern-logs.html" ng-bind-template="{{'EMAILING_LANTERN_LOGS' | translate}}">Emailing Lantern Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lantern-Cloud-Servers.html" ng-bind-template="{{'LANTERN_CLOUD_SERVERS' | translate}}">Lantern Cloud Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Privacy.html" ng-bind-template="{{'PRIVACY' | translate}}">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Translating-Lantern.html" ng-bind-template="{{'TRANSLATING_LANTERN' | translate}}">Translating Lantern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Questions-and-Answers.html" ng-bind-template="{{'QUESTIONS_AND_ANSWERS' | translate}}">Questions and Answers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="" ng-bind-template="{{'GET_INVOLVED' | translate}}">Getting Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Jobs.html" ng-bind-template="{{'JOBS' | translate}}">Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html" ng-bind-template="{{'GLOSSARY' | translate}}">Glossary</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Downloading.html"
+                        title="previous chapter">Downloading Lantern</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Setup.html"
+                        title="next chapter">Setting Up Lantern</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+
+
+
+    <div class="section docs document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body doc-text">
+            
+  <div class="section" id="installing-and-uninstalling">
+      <h1 ng-bind-template="{{'INSTALLING_LANTERN' | translate}}">Installing and Uninstalling<a class="headerlink" href="#installing-and-uninstalling" title="Permalink to this headline">¶</a></h1>
+<p>This section provides details on how to install and uninstall Lantern on multiple operating systems.</p>
+<p>Once you are invited, you will receive an email with links to download the installer for your operating system.</p>
+<img alt="Lantern Invitation" src="https://github-camo.global.ssl.fastly.net/6a8e1af9a0053337263343727132eacab1920d88/687474703a2f2f692e696d6775722e636f6d2f347652615436382e706e67" />
+<div class="section" id="linux">
+<h2>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="supported-versions">
+<h3>Supported Versions<a class="headerlink" href="#supported-versions" title="Permalink to this headline">¶</a></h3>
+<p>Currently, installation on Linux is only available on Ubuntu.
+We greatly appreciate any <a class="reference external" href="../../developer/html/contributing.html">contributions</a> for other Linux distributions or help with improvements to make better use of package managers. You can also <a class="reference external" href="https://github.com/getlantern/lantern/blob/master/README.md#wiki-setting-up-a-development-environment">build from source</a>.</p>
+</div>
+<div class="section" id="installing">
+<h3>Installing<a class="headerlink" href="#installing" title="Permalink to this headline">¶</a></h3>
+<p>The invitation to Lantern has a link to an installation script that:</p>
+<ul class="simple">
+<li>Downloads a <cite>.deb</cite> file.</li>
+<li>Creates the uninstall script in the <cite>/opt/lantern-net-installer</cite> directory.</li>
+<li>Creates a user preferences directory.</li>
+<li>Does <em>not</em> auto-launch a Lantern service.</li>
+</ul>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>Click <strong>Ubuntu 12.04+</strong> in the invitation email.</dt>
+<dd><p class="first">A browser window opens and dialog appears asking you to open or save the installer.</p>
+<img alt="Open File Dialog" class="last" src="http://i.imgur.com/justLyz.png" />
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Open a new terminal window and change to the directory where you downloaded the installer.</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre>cd Downloads/
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Make the installation script executable.</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre>chmod 700 lantern-net-installer_unix.sh
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Run the installation script.</dt>
+<dd><div class="first highlight-python"><div class="highlight"><pre>sudo ./lantern-net-installer_unix.sh
+</pre></div>
+</div>
+<p>The terminal window displays a message indicating the installer is starting and the Lantern Fetcher dialog appears.</p>
+<img alt="Terminal window and Lantern Fetcher dialog indicating the status of the download." src="http://i.imgur.com/S2hBiEY.png" />
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p>There is no status message indicating the installation is complete.</p>
+<p class="last">If you receive a message indicating there is no suitable Java Virtual Machine, you need to install Java. See the <a class="reference external" href="https://help.ubuntu.com/community/Java">Ubuntu documentation</a> for details.</p>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+<ol class="arabic" start="5">
+<li><p class="first">Click the <strong>Ubuntu</strong> button and type Lantern.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Click the <strong>Lantern</strong> icon.</dt>
+<dd><p class="first">The Lantern Setup window appears.</p>
+<img alt="The Lantern Setup window prompting you to click Give Access or Get Access." src="http://i.imgur.com/nnXoFjr.png" />
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p>If you receive a message about Google Chrome not being installed, you need to download it.</p>
+<p class="last">See <a class="reference external" href="https://www.google.com/intl/en/chrome/browser/">https://www.google.com/intl/en/chrome/browser/</a> for details.</p>
+</div>
+</dd>
+</dl>
+</li>
+<li><p class="first">See <a class="reference internal" href="Setup.html#setting-up-lantern"><em>Setting Up Lantern</em></a>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="uninstalling">
+<h3>Uninstalling<a class="headerlink" href="#uninstalling" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>In a terminal window, change to the installation directory.</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre>cd /usr/local/lantern-net-installer/
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Run the uninstall program.</dt>
+<dd><div class="first highlight-python"><div class="highlight"><pre>sudo ./uninstall
+</pre></div>
+</div>
+<p>The Lantern Uninstall window appears.</p>
+<img alt="A terminal window showing the command to uninstall Lantern." class="last" src="http://i.imgur.com/PW3hiCF.png" />
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Click <strong>Next</strong> to start uninstalling Lantern.</dt>
+<dd><p class="first">A message appears when the uninstallation is complete.</p>
+<img alt="The Lantern Uninstall window showing a message indicating that Lantern has been successfully uninstalled." class="last" src="http://i.imgur.com/7XZayjD.png" />
+</dd>
+</dl>
+</li>
+<li><p class="first">Click <strong>Finish</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="mac">
+<h2>Mac<a class="headerlink" href="#mac" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Supported Versions<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Lantern supports OS/X version 10.6 and higher,
+64-bit only.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">During installation, Lantern checks if you have Java installed. If not, it will download the Java Runtime Environment from the web.</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Installing<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Click the <strong>Mac OS X 10.6+</strong> link in the invitation email.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Double-click the downloaded <strong>.dmg</strong> file, then double-click on the <strong>Lantern Installer</strong> icon.</dt>
+<dd><p class="first">The Lantern Fetcher window appears and starts downloading the most recent installation files.</p>
+<img alt="Lantern Downloader" src="https://www.evernote.com/shard/s209/sh/b39a5f0d-4aa9-4518-8a26-fd0a86de8737/9d3090f5eab319830f4510bc13bba90e/deep/0/Lantern%20Fetcher.png" />
+<div class="last admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">As of beta2 the installer will <em>not</em> work if you are not running as an admin user. If you are not the admin user, nothing will happen when you click the installer icon. We are <a class="reference external" href="https://github.com/getlantern/lantern/issues/819">working</a> on getting it to prompt for the admin password instead of not responding.</p>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>In the password dialog that appears, enter your administrator user name and password. This allows Lantern to install and make changes to your proxy settings so that your internet connection can be shared.</dt>
+<dd><img alt="A window prompting you to enter a user name and password to allow changes." class="first" src="https://www.evernote.com/shard/s209/sh/c92df454-472a-4ce1-a578-fc06843802d7/04fd633f4deb9fbeecc44562dff2ea78/deep/0/Screenshot%208/16/13%207:52%20PM.png" />
+<p>The installer downloads and extracts the files. When the installation is complete, the Lantern window appears.</p>
+<img alt="The Lantern window appears prompting you to start the setup process." class="last" src="https://dl.dropboxusercontent.com/u/253631/Installing_Mac_Setup_Window.png" />
+</dd>
+</dl>
+</li>
+<li><p class="first">See <a class="reference internal" href="Setup.html#setting-up-lantern"><em>Setting Up Lantern</em></a>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h3>Uninstalling<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Right-click on the <strong>Lantern</strong> status bar icon and select <strong>Quit Lantern</strong>.</p>
+</li>
+<li><dl class="first docutils">
+<dt>In the <strong>Applications</strong> folder, move <strong>Lantern</strong> to the <strong>Trash</strong>.</dt>
+<dd><p class="first last">This also uninstalls Lantern&#8217;s Java Runtime Environment.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>To delete all your settings, open a terminal window and change to the directory in your <strong>Home</strong> directory.</dt>
+<dd><div class="first highlight-python"><div class="highlight"><pre>cd ~
+</pre></div>
+</div>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you don&#8217;t delete your settings, Lantern uses them the next time you install the application.</p>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Delete the <strong>./lantern</strong> directory.</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span class="n">rm</span> <span class="o">-</span><span class="n">r</span> <span class="o">.</span><span class="n">lantern</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="windows">
+<h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>Supported Versions<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Lantern supports Windows version XP and higher and requires that Google Chrome is installed.
+If you don&#8217;t have Chrome you can get it <a class="reference external" href="https://www.google.com/intl/en/chrome/browser/">here</a>.</p>
+</div>
+<div class="section" id="id5">
+<h3>Installing<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>Click the <strong>Windows XP+</strong> link in the invitation email.</dt>
+<dd><div class="first last admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">It is important to follow the next steps to make sure that the <a class="reference external" href="http://en.wikipedia.org/wiki/Digital_signature">digital signature</a> is valid.</p>
+</div>
+</dd>
+</dl>
+</li>
+<li><p class="first">Right click the Lantern (<strong>.exe</strong>) file that downloaded and click the <strong>Digital Signatures</strong> tab.</p>
+</li>
+<li><p class="first">After clicking on <strong>Details</strong>, in the <strong>General</strong> tab, click <strong>View Certificate</strong>.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Under <strong>Details</strong>, verify the signature.</dt>
+<dd><p class="first">Each .exe file is digitally signed by Brave New Software Project, Inc. For June 11, 2013 to June 11, 2016, the SHA1 thumbprint should be ‎44:99:0c:72:fb:a0:e6:dd:f9:2a:b9:34:46:02:e7:56:00:d8:be:3c.</p>
+<img alt="Certificate Details Window" class="last" src="http://i.imgur.com/iTljBxR.jpg" />
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Once you have verified the signature, double-click the Lantern icon (<strong>.exe</strong> file). If you are prompted to allow the installer to make changes to your computer, click <strong>Yes</strong>.</dt>
+<dd><p class="first">When installation is complete, the Lantern window appears.</p>
+<img alt="The Lantern window appears prompting you to start the setup process." class="last" src="http://i.imgur.com/K6yBha5.png)" />
+</dd>
+</dl>
+</li>
+<li><p class="first">See <a class="reference internal" href="Setup.html#setting-up-lantern"><em>Setting Up Lantern</em></a>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="id6">
+<h3>Uninstalling<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>Open the <strong>Control Panel</strong> and click <strong>Programs</strong>.</dt>
+<dd><img alt="The Windows Control Panel." class="first last" src="http://i.imgur.com/lF9ldIE.png" />
+</dd>
+</dl>
+</li>
+<li><p class="first">In the list of installed programs, click the <strong>Lantern</strong>.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Click the <strong>Uninstall/Change</strong> button.</dt>
+<dd><img alt="Uninstall Lantern" class="first last" src="http://i.imgur.com/0fTDSYF.png" />
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Click <strong>Next</strong>.</dt>
+<dd><p class="first">Lantern is uninstalled.</p>
+<img alt="Uninstall Window" class="last" src="http://i.imgur.com/TGQeclS.png" />
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+ 
+      <div class="clearer"></div>
+    </div>
+    <!--<div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Setup.html" title="Setting Up Lantern"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Downloading.html" title="Downloading Lantern"
+             >previous</a> |</li>
+        <li><a href="index.html">Lantern 1.0 documentation</a> &raquo;</li> 
+      </ul>
+  </div>-->
+<!--<footer id="footer" class="footer">
+<div class="wrap clearfix">
+    <nav class="clearfix">
+    <ul class="navlink-list main-nav">
+        <li><a target="_blank"
+            ng-href="{{valByLang(FORUMS_URLS)}}"
+            ng-bind-template="{{'FORUMS' | translate}}">Forums</a></li>
+        <li><a ng-href="/docs"
+            ng-bind-template="{{'DOCS' | translate}}">Docs</a></li>
+        <li><a ng-href="/docs/Privacy.html"
+            ng-bind-template="{{'PRIVACY' | translate}}">Privacy</a></li>
+        <li><a ng-href="/docs/Get_Involved.html"
+            ng-bind-template="{{'GET_INVOLVED' | translate}}">Get Involved</a></li>
+    </ul>
+    </nav>
+</div>
+</footer>-->
+ <!-- build:js scripts/loadlast.js -->
+        <script src="/bower_components/session.js/session.js"></script>
+        <script src="/bower_components/angular/angular.js"></script>
+        <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="/bower_components/angular-translate/angular-translate.js"></script>
+        <script src="/bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+        <script src="/bower_components/angular-bootstrap/src/transition/transition.js"></script>
+        <script src="/bower_components/angular-bootstrap/src/collapse/collapse.js"></script>
+        <script src="/bower_components/angular-bootstrap/src/modal/modal.js"></script>
+        <script src="/bower_components/angular-bootstrap/src/dropdownToggle/dropdownToggle.js"></script>
+
+        <script src="/scripts/app.js"></script>
+        <script src="/scripts/constants.js"></script>
+        <script src="/scripts/controllers/download.js"></script>
+        <script src="/scripts/directives/lightbox.js"></script>
+        <script src="/scripts/directives/signup.js"></script>
+        <script src="/scripts/directives/windowScroll.js"></script>
+        <script src="/scripts/directives/videoOnClick.js"></script>
+        <script src="/scripts/services/osSniffer.js"></script>
+        <script src="/scripts/services/installerDataFetcher.js"></script>
+        <!-- generated by "grunt jsFromJSON"; populates window.translations with data from locale/*.json -->
+        <script src="/scripts/jsFromJSON/translations.js"></script>
+        <!-- endbuild-->
+          
+
+  </body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html class="no-js" id="ng-app" ng-app="lantern_www">
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="description" content="Defeat internet censorship. Give or get
+    access to the open internet by sharing connections through your social
+    network." ng-attr-content="{{'META_DESC' | translate}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <!-- build:css({.tmp,app}) ../styles/main.css -->
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css(.tmp) ../styles/main.css -->
+    <link rel="stylesheet" href="/styles/main.css">
+    <!-- endbuild -->
+
+    <!-- build:js ../scripts/loadfirst.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+
+    
+    <title>Configuring Proxied Sites &mdash; Lantern 1.0 documentation</title>
+    
+    <!--<link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css"
+    type="text/css" />-->
+    <!--<link rel="stylesheet" href="_static/lanternDoc.css">-->
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Lantern 1.0 documentation" href="index.html" />
+    <link rel="next" title="Switching Google Accounts" href="Switching-Google-Accounts.html" />
+    <link rel="prev" title="Upgrading to a New Version of Lantern" href="Upgrading-to-a-New-Version-of-Lantern.html" /> 
+  </head>
+  <body>
+      <!--[if lt IE 8]>
+      <p class="chromeframe">You are using an outdated browser. Please <a href="https://www.google.com/chrome/">upgrade your browser</a> or <a href="https://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> and try again.</p>
+      <![endif]-->
+
+      <!--[if lt IE 9]>
+      <script src="bower_components/es5-shim/es5-shim.min.js"></script>
+      <script src="bower_components/json3/lib/json3.min.js"></script>
+      <![endif]-->
+
+      <!-- uncomment out to enable firebug lite (useful for IE)
+      <script src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js"></script>
+      -->
+
+<noscript>
+<div lang="en" dir="ltr">JavaScript is required.</div>
+<div lang="zh_CN" dir="ltr">需要启用JavaScript。</div>
+<div lang="fa_IR" dir="rtl">جاوا اسکریپت مورد نیاز است.</div>
+<div lang="ar" dir="rtl">مطلوب جافا سكريبت.</div>
+</noscript>
+
+<div class="ng-cloak" lang="{{activeLang.code}}" dir="{{activeLang.dir}}">
+
+        <div class="checkdomain {{domainType|lowercase}}" ng-show="domainType == 'MIRROR' || domainType == 'UNRECOGNIZED'">
+            <span ng-show="domainType == 'MIRROR'"
+                ng-bind-template="{{'OFFICIAL_MIRROR' |
+                translate}}">You are viewing...</span>
+            <span ng-show="domainType == 'UNRECOGNIZED'"
+                ng-bind-template="{{'UNOFFICIAL_MIRROR' |
+                translate}}">Caution...</span>
+            <a ng-href="{{valByLang(BEWARE_OF_PHONIES_URLS)}}"
+                target="_blank" ng-bind-template="{{'BEWARE_OF_PHONIES'
+                | translate}}">Beware of phonies</a>
+        </div>
+        <div class="lightbox hide" lightbox>
+            <a class="lightbox-close" lightbox-close>&times;</a>
+            <div class="media-container" id="player"></div>
+        </div>
+<div id="content-container" class="toc">
+    <header id="topbar" class="header sticky" ng-init="isCollapsed = true">
+              <div id="logo-header" class="clearfix" scroll-class="small" offset="1">
+                <div class="site-logo clearfix">
+                  <a href="/" class="clearfix">
+                    <img src="../images/lantern-header-logo-scaled.png" alt="Lantern" />
+                  </a>
+                </div>
+                <nav class="languages" ng-show="NLANGS > 1">
+                <ul class="navlink-list lang-list" dir="ltr">
+                  <li>
+                  <a class="active-lang">{{activeLang.name}}</a>
+                  </li>
+                  <li role="presentation" class="ng-scope">
+                  <a role="menuitem" ng-href="#en_US" ng-class="{'hidden': activeLang.code == 'en_US'}" ng-click="changeLang('en_US')" class="lang ng-binding" href="#en_US">English</a>
+                  </li>
+                  <li role="presentation" class="ng-scope">
+                  <a role="menuitem" ng-href="#fa_IR" ng-class="{'hidden': activeLang.code == 'fa_IR'}" ng-click="changeLang('fa_IR')" class="lang ng-binding" href="#fa_IR">فارسی</a>
+                  </li>
+                  <li role="presentation" class="ng-scope">
+                  <a role="menuitem" ng-href="#zh_CN" ng-class="{'hidden': activeLang.code == 'zh_CN'}" ng-click="changeLang('zh_CN')" class="lang ng-binding" href="#zh_CN">中文</a>
+                  </li>
+                  <li class="dropdown">
+                  <a ng-click="isCollapsed = !isCollapsed">
+                      <b ng-bind-template="{{'MORE' | translate}}">More </b><span class="caret"></span>
+                  </a>
+                  <ul collapse="isCollapsed" class="menu" role="menu">
+                    <li ng-repeat="lang in LANGS" role="presentation">
+                    <a role="menuitem" ng-href="#{{lang.code}}" ng-class="{'active-lang': lang.code == activeLang.code}" ng-click="changeLang(lang.code)" class="lang">{{lang.name}}</a>
+                    </li>
+                    <li>
+                    <strong><a ng-href=""
+                            target="_blank"
+                            ng-bind-template="{{'HELP_TRANSLATE' |
+                            translate}}">
+                        Help Translate
+                    </a></strong>
+                    </li>
+                  </ul>
+                  </li>
+                </ul>
+                </nav>
+              </div>
+              <div id="header-nav" class="clearfix">
+                <nav class="section-nav">
+                <ul class="section-list">
+                    <li><a href="/#about" ng-bind-template="{{'ABOUT' |
+                        translate}}">About</a></li>
+                    <li><a href="/#faq" ng-bind-template="{{'FAQ' |
+                        translate}}">FAQ</a></li>
+                    <li><a href="/blog" ng-bind-template="{{'BLOG' |
+                        translate}}">Blog</a></li>
+                    <li><a href="/docs" ng-bind-template="{{'DOCS' |
+                        translate}}">Docs</a></li>
+                  <li><a href="https://rally.org/getlantern" target="_blank"
+                      ng-bind-template="{{'DONATE' | translate}}">Donate</a></li>
+                </ul>
+                </nav>
+                <nav class="social-media">
+                <!-- XXX DRY .social-media-icons in header -->
+                <ul class="social-media-icons">
+                  <li><a target="_blank" ng-href=""><span class="icon-twitter"></span></a></li>
+                  <li><a target="_blank" ng-href=""><span class="icon-facebook"></span></a></li>
+                  <li><a target="_blank" ng-href=""><span class="icon-tumblr"></span></a></li>
+                  <li><a target="_blank" ng-href=""><span class="icon-github"></span></a></li>
+                </ul>
+                </nav>
+              </div>
+              </header>
+            
+     
+    <!--<div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Switching-Google-Accounts.html" title="Switching Google Accounts"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Upgrading-to-a-New-Version-of-Lantern.html" title="Upgrading to a New Version of Lantern"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Lantern 1.0 documentation</a> &raquo;</li> 
+      </ul>
+  </div>-->
+
+  
+
+      <div class="sidebar section">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul class="current">
+
+                      <li class="toctree-l1"><a class="reference internal" href="Downloading.html" ng-bind-template="{{'DOWNLOADING_LANTERN' | translate}}">Downloading Lantern</a></li>
+      <li class="toctree-l1"><a class="reference internal" href="Installing.html" ng-bind-template="{{'INSTALLING_LANTERN' | translate}}">Installing and Uninstalling</a></li>
+      <li class="toctree-l1"><a class="reference internal" href="Setup.html" ng-bind-template="{{'SETTING_UP_LANTERN' | translate}}">Setting Up Lantern</a></li>
+      <li class="toctree-l1"><a class="reference internal" href="Using-Lantern.html" ng-bind-template="{{'USING_LANTERN' | translate}}">Using Lantern</a><li class="toctree-l1 current"><a class="current reference internal" href="Quitting-Lantern.html" ng-bind-template="{{'QUITTING_LANTERN' | translate}}">Quitting Lantern</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Upgrading-to-a-New-Version-of-Lantern.html" ng-bind-template="{{'UPGRADING_LANTERN' | translate}}">Upgrading to a New Version of Lantern</a></li>
+<li class="toctree-l1"><a class="current reference internal" href="" ng-bind-template="{{'CONFIGURING_PROXIED_SITES' | translate}}">Configuring Proxied Sites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#initial-configuration">Initial Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-a-crowd-sourced-proxy-list">Using a crowd-sourced proxy list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#finding-sites">Finding Sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-a-new-site">Adding a new site</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-parts-of-a-site-s-address-to-use">What parts of a site&#8217;s address to use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bulk-adding-of-new-sites">Bulk Adding of new sites</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#removing-sites">Removing sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sharing">Sharing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#making-a-raw-list">Making a &#8216;raw&#8217; list</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Switching-Google-Accounts.html" ng-bind-template="{{'SWITCHING_GOOGLE_ACCOUNTS' | translate}}">Switching Google Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Emailing-lantern-logs.html" ng-bind-template="{{'EMAILING_LANTERN_LOGS' | translate}}">Emailing Lantern Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lantern-Cloud-Servers.html" ng-bind-template="{{'LANTERN_CLOUD_SERVERS' | translate}}">Lantern Cloud Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Privacy.html" ng-bind-template="{{'PRIVACY' | translate}}">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Translating-Lantern.html" ng-bind-template="{{'TRANSLATING_LANTERN' | translate}}">Translating Lantern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Questions-and-Answers.html" ng-bind-template="{{'QUESTIONS_AND_ANSWERS' | translate}}">Questions and Answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Get_Involved.html" ng-bind-template="{{'GET_INVOLVED' | translate}}">Getting Involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Jobs.html" ng-bind-template="{{'JOBS' | translate}}">Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html" ng-bind-template="{{'GLOSSARY' | translate}}">Glossary</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Upgrading-to-a-New-Version-of-Lantern.html"
+                        title="previous chapter">Upgrading to a New Version of Lantern</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Switching-Google-Accounts.html"
+                        title="next chapter">Switching Google Accounts</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+
+
+
+    <div class="section docs document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body doc-text">
+            
+  <div class="section" id="configuring-proxied-sites">
+      <span id="config-proxied-sites"></span><h1 ng-bind-template="{{'CONFIGURING_PROXIED_SITES' | translate}}">Configuring Proxied Sites<a class="headerlink" href="#configuring-proxied-sites" title="Permalink to this headline">¶</a></h1>
+<p>The Proxied Sites screen is part of the configuration for people using Lantern to Get Access, and is available through the globe icon in the lower right.</p>
+<p>This is where users Getting Access can set which sites to access through Lantern friends as opposed to accessing directly.
+By only accessing sites through Lantern that would otherwise be blocked, and accessing sites that aren&#8217;t blocked directly, your experience will be faster, and Lantern will be harder to block and more efficient. The Proxied Sites screen controls what sites are routed through Lantern rather than accessed directly.</p>
+<div class="section" id="initial-configuration">
+<h2>Initial Configuration<a class="headerlink" href="#initial-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Right now the initial list is just a number of commonly blocked sites.
+In the future we hope to build the list more dynamically based on what is actually blocked in each country.
+But for now we recommend adjusting it to your needs.
+If you run across a site that seems blocked, you can check if it&#8217;s on the list, and add it if it&#8217;s not.
+We also recommend removing sites from the list that are not actually blocked, as they will then load faster for you and help the network run more efficiently.</p>
+</div>
+<div class="section" id="using-a-crowd-sourced-proxy-list">
+<h2>Using a crowd-sourced proxy list<a class="headerlink" href="#using-a-crowd-sourced-proxy-list" title="Permalink to this headline">¶</a></h2>
+<p>While we don&#8217;t yet have a slick integration, we have set up a <a class="reference external" href="https://github.com/getlantern/lantern-proxied-sites-lists/wiki">Proxied Sites List Wiki</a> where you can find country specific lists of blocked sites.
+If you live in a country with a list and it&#8217;s been updated recently then it will likely work better for you than the default list that ships with Lantern.</p>
+<p>Simply go to one of the lists, then select and copy the whole list, and paste it in to your list of domains to proxy in your Lantern.
+Be sure you delete your existing list (or copy over it), so you don&#8217;t get duplicates and don&#8217;t proxy sites you don&#8217;t need to.</p>
+<p>If the list is really long it can be a pain to select it all by hand.
+Many sites will have a link to the &#8216;raw list&#8217;, which should be a long file with just sites.
+If you go there you can use ctrl-a (select all), ctrl-c (copy), and ctrl-v (paste) shortcuts.
+You should delete the default list, so you don&#8217;t get duplicates and don&#8217;t proxy sites you don&#8217;t need to.</p>
+</div>
+<div class="section" id="finding-sites">
+<h2>Finding Sites<a class="headerlink" href="#finding-sites" title="Permalink to this headline">¶</a></h2>
+<p>Before adding a new site, you can check to see if it is already on your proxy list.
+This can be done by scrolling through the list, but the search box on the right lets you find it more quickly:</p>
+</div>
+<div class="section" id="adding-a-new-site">
+<h2>Adding a new site<a class="headerlink" href="#adding-a-new-site" title="Permalink to this headline">¶</a></h2>
+<p>To add a new site, you just need to add it to a new line in the text box.
+You can do this anywhere you want.
+Just hit &#8216;enter&#8217; to make a new line and add the site on that line.</p>
+<p>Be sure to hit &#8216;update&#8217; after you&#8217;ve entered it.
+Lantern will save your changes, and the next time you access that site, it will be routed through a Lantern user in your network to circumvent any blocking.</p>
+<div class="section" id="what-parts-of-a-site-s-address-to-use">
+<h3>What parts of a site&#8217;s address to use<a class="headerlink" href="#what-parts-of-a-site-s-address-to-use" title="Permalink to this headline">¶</a></h3>
+<p>Rather than having you specify individual pages on a site you&#8217;d like to access through Lantern, Lantern allows you to specify entire sites at a time.
+In other words, you should enter only the domain name of sites you want to access through Lantern.
+For example, you wouldn&#8217;t enter the full address of the page <tt class="docutils literal"><span class="pre">nobelprize.org/nobel_prizes/peace/laureates/2010</span></tt>; instead you should just add whole site: <tt class="docutils literal"><span class="pre">nobelprize.org</span></tt>.
+Search terms are similar - just put the entire search engine, and all your searches on that search engine will go through Lantern.</p>
+<p>Subdomains</p>
+<p>If you have <tt class="docutils literal"><span class="pre">foo.blogspot.com</span></tt> and <tt class="docutils literal"><span class="pre">bar.blogspot.com</span></tt> in your list, they will both be accessed through Lantern, but <tt class="docutils literal"><span class="pre">baz.blogspot.com</span></tt> will not.
+However, if you have just <tt class="docutils literal"><span class="pre">blogspot.com</span></tt> in your list, then any blogspot.com site will be accessed through Lantern.</p>
+</div>
+<div class="section" id="bulk-adding-of-new-sites">
+<h3>Bulk Adding of new sites<a class="headerlink" href="#bulk-adding-of-new-sites" title="Permalink to this headline">¶</a></h3>
+<p>If you&#8217;ve got a list of sites to proxy from another source that doesn&#8217;t use Lantern&#8217;s format, you will likely have to clean up the formatting.
+For instance, if the list includes [comments](<a class="reference external" href="https://en.wikipedia.org/wiki/Comment_(computer_programming">https://en.wikipedia.org/wiki/Comment_(computer_programming</a>)), you will have to remove them, as Lantern currently does not support comments.
+Make sure that you meet all the formatting requirements above.
+If you know <a class="reference external" href="http://www.regular-expressions.info/">regular expressions</a> then those can be quite useful in cleaning up the list.</p>
+<p>Note that Lantern works well for bulk adding only of lists already in Lantern&#8217;s format.
+If you paste in a long list of sites that are not in Lantern&#8217;s format, you may get an &#8216;invalid line&#8217; error.
+Lantern will report that line, so we recommend copying that and then searching for it with Ctrl-F or Edit &gt; Find in the program you pasted the list from.
+In a pinch you can do this in Lantern too (in Windows and Ubuntu), but it&#8217;s best to work on your list outside of Lantern, then paste it in and keep editing until there are no more errors.</p>
+</div>
+</div>
+<div class="section" id="removing-sites">
+<h2>Removing sites<a class="headerlink" href="#removing-sites" title="Permalink to this headline">¶</a></h2>
+<p>We recommend scrolling through the list and removing any sites that you know are not blocked in your country.
+To remove sites just select them in the text field and hit &#8216;delete&#8217;.
+Be sure to hit &#8216;update&#8217; when you&#8217;re done.</p>
+</div>
+<div class="section" id="sharing">
+<h2>Sharing<a class="headerlink" href="#sharing" title="Permalink to this headline">¶</a></h2>
+<p>If you would like to share your list of proxied sites with a friend who&#8217;s using Lantern, simply select all the sites you&#8217;d like to share with your mouse, or click inside the text box and hit Ctrl-A (Command-A on OS X) to select them all.
+Then copy them to the clipboard with Ctrl-C (Command-C), and paste them into an email to your friend using Ctrl-V (Command-V).
+Your friend can then copy the sites you sent her and then paste them into her Proxied Sites screen in Lantern.</p>
+<p>If you&#8217;d like to share your list of proxied sites publicly, feel free to add them to a new page on the <a class="reference external" href="https://github.com/getlantern/lantern-proxied-sites-lists/wiki">Lantern Proxied Sites List Wiki</a>.
+Just click the green &#8216;New Page&#8217; button, give your page a name, then on the Create New Page screen, paste your list in between two lines containing only three back-tick characters, like so:</p>
+<p>```</p>
+<p>site1.com</p>
+<p>site2.com</p>
+<p>site3.com</p>
+<p>```</p>
+<p>Feel free to add a post to the <a class="reference external" href="https://groups.google.com/group/lantern-users-en">User Forums</a> with a link to the list you just created so other users can check it out!</p>
+<div class="section" id="making-a-raw-list">
+<h3>Making a &#8216;raw&#8217; list<a class="headerlink" href="#making-a-raw-list" title="Permalink to this headline">¶</a></h3>
+<p>If your list is super long it can be a pain for people to copy and paste it from the wiki.
+Some lists are put in the GitHub repository, and then linked to from the wiki page, so they can be copied much more easily.</p>
+<p>If you&#8217;re not that comfortable with tech then feel free to email a Lantern user&#8217;s group and someone can easily do it for you.
+If you are super comfortable with github just fork the repo and make a pull request.
+For everyone else read on.</p>
+<p>To add a new list to the repository you need a GitHub account.
+There should be a link to &#8216;sign up&#8217; in the upper right hand corner.
+Once you&#8217;ve done that go to <a class="reference external" href="https://github.com/getlantern/lantern-proxied-sites-lists">https://github.com/getlantern/lantern-proxied-sites-lists</a> and hit the &#8216;plus&#8217; button.</p>
+<p>This will &#8216;clone&#8217; the main repository, making a copy of all the files that are under your control.
+You can create and edit these files, and it won&#8217;t affect the main repository - they&#8217;re your private copy.
+You should then create a new file under a country folder.
+You can do this by just entering the folder name and then typing &#8216;/&#8217;.
+So just enter like `china/my-folder/list.txt&#8217;, and that will create it under the china folder.</p>
+<p>After you&#8217;ve made your list you can propose the changes to the core contributors.
+To do this you create a &#8216;pull request&#8217;.
+To do this you hit the green &#8216;compare &amp; review&#8217; button from your repository.
+And then hit &#8216;create pull request&#8217;.
+The contributors on the main site will then review and pull it in.</p>
+<p>Note you can also use pull requests to update or correct other lists.
+Just make the edits from your repository and then create a pull request.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+ 
+      <div class="clearer"></div>
+    </div>
+    <!--<div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Switching-Google-Accounts.html" title="Switching Google Accounts"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Upgrading-to-a-New-Version-of-Lantern.html" title="Upgrading to a New Version of Lantern"
+             >previous</a> |</li>
+        <li><a href="index.html">Lantern 1.0 documentation</a> &raquo;</li> 
+      </ul>
+  </div>-->
+<!--<footer id="footer" class="footer">
+<div class="wrap clearfix">
+    <nav class="clearfix">
+    <ul class="navlink-list main-nav">
+        <li><a target="_blank"
+            ng-href="{{valByLang(FORUMS_URLS)}}"
+            ng-bind-template="{{'FORUMS' | translate}}">Forums</a></li>
+        <li><a ng-href="/docs"
+            ng-bind-template="{{'DOCS' | translate}}">Docs</a></li>
+        <li><a ng-href="/docs/Privacy.html"
+            ng-bind-template="{{'PRIVACY' | translate}}">Privacy</a></li>
+        <li><a ng-href="/docs/Get_Involved.html"
+            ng-bind-template="{{'GET_INVOLVED' | translate}}">Get Involved</a></li>
+    </ul>
+    </nav>
+</div>
+</footer>-->
+ <!-- build:js scripts/loadlast.js -->
+        <script src="/bower_components/session.js/session.js"></script>
+        <script src="/bower_components/angular/angular.js"></script>
+        <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="/bower_components/angular-translate/angular-translate.js"></script>
+        <script src="/bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+        <script src="/bower_components/angular-bootstrap/src/transition/transition.js"></script>
+        <script src="/bower_components/angular-bootstrap/src/collapse/collapse.js"></script>
+        <script src="/bower_components/angular-bootstrap/src/modal/modal.js"></script>
+        <script src="/bower_components/angular-bootstrap/src/dropdownToggle/dropdownToggle.js"></script>
+
+        <script src="/scripts/app.js"></script>
+        <script src="/scripts/constants.js"></script>
+        <script src="/scripts/controllers/download.js"></script>
+        <script src="/scripts/directives/lightbox.js"></script>
+        <script src="/scripts/directives/signup.js"></script>
+        <script src="/scripts/directives/windowScroll.js"></script>
+        <script src="/scripts/directives/videoOnClick.js"></script>
+        <script src="/scripts/services/osSniffer.js"></script>
+        <script src="/scripts/services/installerDataFetcher.js"></script>
+        <!-- generated by "grunt jsFromJSON"; populates window.translations with data from locale/*.json -->
+        <script src="/scripts/jsFromJSON/translations.js"></script>
+        <!-- endbuild-->
+          
+
+  </body>
+</html>

@@ -1,18 +1,42 @@
+#content-container.toc {
+    background-color: #32424d;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+}
+
+#searchbox {
+    font-family: 'AvenirNextLTPro-DemiCn';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 .sidebar {
 
     @media only screen and (max-width : 700px) {
         display: none;
     }
 
-    max-width: 25%;
-    position: absolute;
-    min-height: 100%;
-    height: auto;
+    .sphinxsidebarwrapper {
+        min-height: 100%;
+        background-color: #32424d;
+        overflow-y: scroll;
+        padding-left: 8%;
+        padding-right: 50px;
+        padding-top: 200px;
+        padding-bottom: 150px;
+    }
+    .sphinxsidebarwrapper.enclosed {
+        padding-top: 80px;
+    }
+
+    height: 100%;
     overflow: auto;
-    padding-left: 3%;
-    padding-bottom: 50px;
-    -webkit-transition: left 0.4s cubic-bezier(.02,.01,.47,1);
-    font-size: 16px;
+    left: 0px;
+    position: fixed;
+    width: 25%;
+    background-color: #32424d;
+    font-size: 15px;
     h3 {
         margin: 50px 0 10px 0;
         color: $lnt-yellow;
@@ -31,7 +55,7 @@
         a.reference {
             color: #fff;
             text-decoration: none;
-            line-height: 1.4em;
+            line-height: 1.6em;
         }
         a:hover {
             color: #428bca;
@@ -51,8 +75,10 @@
 
   background-color: #f5f5f5;
   background-size: cover;
-  margin-left: 20%;
-  min-height: 650px;
+  margin-left: 25%;
+  min-height: 1000px;
+  padding-top: 200px;
+  position: absolute;
 
     @media only screen and (max-width : 640px) {
         margin-left: 0px;
