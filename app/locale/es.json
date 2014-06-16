@@ -105,5 +105,9 @@
     "EMAILING_LOGS_1": "Windows Vista/7/8",
     "EMAILING_LOGS_2": "Windows XP",
     "EMAILING_LOGS_3": "OSX",
-    "EMAILING_LOGS_4": "Ubuntu"
+    "EMAILING_LOGS_4": "Ubuntu",
+    "EMAILING_HEADER": "Ocasionalmente los desarrolladores principales de Lantern le solicitarán que les envíe por correo electrónico sus registros (logs) para diagnosticar mejor el problema.",
+    "EMAILING_HEADER2": "Para hacer esto necesita encontrar el directorio de los registros (logs) en su plataforma:",
+    "EMAILING_HEADER3": "El directorio debe tener ficheros en él como <tt class=\"docutils literal\"><span class=\"pre\">java.log</span></tt>, <tt class=\"docutils literal\"><span class=\"pre\">installer.log</span></tt> y otros. Empaquete el directorio entero en un único fichero zip. Algunas veces puede que sólo contenga java.log, que es el fichero más importante. Puede comprimirlo para sea más pequeño, o simplemente enviarlo como está.",
+    "EMAILING_HEADER4": "Adjunte el fichero zip, o el fichero log de java, en un correo electrónico enviado al contacto [en] getlantern.org . Si usted es muy observante de la seguridad y quiere una dirección de correo electrónico PGP para enviarlo, háganoslo saber y podremos proporcionarle una."
 }
