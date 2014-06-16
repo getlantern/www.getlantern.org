@@ -136,5 +136,18 @@
     "SWITCHING_GOOGLE_3": "Aussi fantastique que cela soit de regarder les connexions Lantern traversant la planète, la plupart du temps vous exécuterez Lantern sans que la carte du réseau ne soit visible.",
     "SWITCHING_GOOGLE_4": "Choisissez Montrer Lantern depuis l'icône Lantern dans la barre de notification.",
     "SWITCHING_GOOGLE_5": "Réinitialiser Lantern",
-    "SWITCHING_GOOGLE_6": "Ensuite, réinitialisez Lantern et relancer la séquence initiale de configuration. Réinitialiser Lantern efface toutes les informations enregistrées depuis votre dernière configuration."
+    "SWITCHING_GOOGLE_6": "Ensuite, réinitialisez Lantern et relancer la séquence initiale de configuration. Réinitialiser Lantern efface toutes les informations enregistrées depuis votre dernière configuration.",
+    "SETUP_1": "Lors de votre première utilisation de Lantern, une série de questions vous sera posée.",
+    "SETUP_2": "Donner ou obtenir l'accès",
+    "SETUP_3": "La première question est de savoir si vous voulez donner ou obtenir l'accès.",
+    "SETUP_4": "<strong>Donner l'accès</strong> est pour les utilisateurs dans les pays non censurés voulant partager leur connexion Internet. Leur ordinateur devient ainsi un serveur mandataire qui peut être utilisé gratuitement par leurs amis Lantern de confiance pour accéder à l'Internet ouvert. Lantern tourne en arrière-plan et nous vous encourageons à le laisser tourner autant que possible afin que vos amis puissent toujours utiliser votre connexion.",
+    "SETUP_5": "<strong>Obtenir l'accès</strong> est pour les utilisateurs dans des pays censurés qui veulent accéder à Internet. Lantern utilise une approche 'pair-à-pair' pour canaliser l'accès à Internet provenant de tous vos amis Lantern de confiance en même temps. Plus vous aurez d'amis Lantern de confiance dans d'autres pays, meilleure sera votre connexion.",
+    "SETUP_6": "Se connecter à Google",
+    "SETUP_7": "La prochaine étape est de vous connecter à votre compte Google. Lantern se base sur vos contacts Google existants pour construire son réseau social.",
+    "SETUP_8": "La prochaine étape est de vous connecter à votre compte Google. Lantern se base sur vos contacts Google existants pour construire son réseau social.",
+    "SETUP_9": "Ajouter des amis",
+    "SETUP_10": "Après vous être connecté à Google, vous pouvez ajouter des amis à votre réseau Lantern. Il est important de n'ajouter que des personnes en qui vous avez confiance à votre réseau Lantern. Pour plus de détails sur l'ajout d'amis",
+    "SETUP_11": "Configurer vos sites",
+    "SETUP_12": "Si vous choisissez Obtenir, consultez <a class=\"reference internal\" href=\"Proxied-sites-configuration.html#config-proxied-sites\"><em>configuration--sites-relayés`</em></a>. Prenez note que les receveurs peuvent accéder à la page de configuration des sites relayés en tout temps en cliquant sur l'icône de mappemonde en bas à droite.",
+    "SETUP_13": "Les utilisateurs donnant l'accès ne verront pas cette étape, bien que vous puissiez changer de mode pour tester ce qu'est Lantern pour les utilisateurs obtenant l'accès."
 }

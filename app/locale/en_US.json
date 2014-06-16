@@ -150,5 +150,18 @@
     "SWITCHING_GOOGLE_3": "As awesome as it is to watch Lantern connections crossing the globe, most of the time you will probably have Lantern running without the network map visible.",
     "SWITCHING_GOOGLE_4": "Select Show Lantern from the Lantern icon in the Status Bar.",
     "SWITCHING_GOOGLE_5": "Reset Lantern",
-    "SWITCHING_GOOGLE_6": "Next, reset Lantern and go through the setup process again. Resetting Lantern clears all saved information since your last setup"
+    "SWITCHING_GOOGLE_6": "Next, reset Lantern and go through the setup process again. Resetting Lantern clears all saved information since your last setup",
+    "SETUP_1": "When you first run Lantern you will be asked a series of questions.",
+    "SETUP_2": "Give or Get access",
+    "SETUP_3": "The first question is if you want to &#8216;give&#8217; or &#8216;get&#8217; access.",
+    "SETUP_4": "<strong>&#8216;Give Access&#8217;</strong> is for users in uncensored countries who want to share their internet connection. This turns their computer into a proxy that their trusted Lantern friends can use for free to access the open internet. Lantern runs in the background, and we encourage you to leave it on whenever you can, so your friends can always use your connection.",
+    "SETUP_5": "<strong>&#8216;Get Access&#8217;</strong> is for users in censored countries who want access to the internet. Lantern uses a &#8216;peer-to-peer&#8217; approach to stream internet access from all your trusted Lantern friends at once. So the more Lantern friends in other countries that you add the better your connection will be.",
+    "SETUP_6": "Signing in to Google",
+    "SETUP_7": "The next step is to sign in to your Google account. Lantern leverages your existing Google contacts to build up its social network.",
+    "SETUP_8": "The sign-in page is served directly from Google. Your password goes straight to Google&#8217;s servers, Lantern never stores or even sees the password.",
+    "SETUP_9": "Adding Friends",
+    "SETUP_10": "After you enter your information you will be prompted to authorize Lantern to view your email and basic information, and to view and send chat messages. Lantern asks about chat messages because it uses Google&#8217;s chat communication channels to bootstrap its network. Hit authorize, or Lantern will not work properly.",
+    "SETUP_11": "Configuring your sites",
+    "SETUP_12": "If you chose Get, see <a class=\"reference internal\" href=\"Proxied-sites-configuration.html#config-proxied-sites\"><em>Configuring Proxied Sites</em></a>. Note that the proxied sites configuration page can be reached at any time by Get users by clicking on the globe icon in the lower right.",
+    "SETUP_13": "Users Giving access will not see this step. Though you are welcome to switch modes to experience what Lantern would be like for a user Getting access."
 }
