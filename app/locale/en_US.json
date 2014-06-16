@@ -144,5 +144,11 @@
     "GET_INVOLVED_18": "Besides running Lantern on your own computer to share an uncensored internet connection, you can also pledge a one-time or monthly donation to sponsor a Lantern cloud proxy, which provides an additional high-capacity internet connection to the network 24 hours a day, even while your computer is off or disconnected. Alternatively, if there is some feature or bugfix you&#8217;d like to see in the next version of Lantern, you can sponsor its development.",
     "GET_INVOLVED_19": "Please contact the Lantern developers about either of these options if you would like to inquire further.",
     "GET_INVOLVED_20": "You can also just make a 1-click microdonation to the cause in general using Flattr or GitTip:",
-    "GET_INVOLVED_21": "Thank you for your interest in contributing to Lantern. A vibrant and active community is vital to our existence."
+    "GET_INVOLVED_21": "Thank you for your interest in contributing to Lantern. A vibrant and active community is vital to our existence.",
+    "SWITCHING_GOOGLE_1": "You can change the Google email that you use with Lantern by resetting Lantern and going through the initial setup sequence.",
+    "SWITCHING_GOOGLE_2": "Show the Lantern Network Map",
+    "SWITCHING_GOOGLE_3": "As awesome as it is to watch Lantern connections crossing the globe, most of the time you will probably have Lantern running without the network map visible.",
+    "SWITCHING_GOOGLE_4": "Select Show Lantern from the Lantern icon in the Status Bar.",
+    "SWITCHING_GOOGLE_5": "Reset Lantern",
+    "SWITCHING_GOOGLE_6": "Next, reset Lantern and go through the setup process again. Resetting Lantern clears all saved information since your last setup"
 }

@@ -130,5 +130,11 @@
     "GET_INVOLVED_18": "En plus de l'exécution de Lantern sur votre propre ordinateur pour partager des connexions Internet non censurées, vous pouvez aussi vous engager à un don unique ou mensuel pour commanditer un serveur mandataire dans le nuage, fournissant une connexion Internet à haute-capacité additionnelle au réseau, jour et nuit, même quand votre ordinateur est éteint ou déconnecté. Autrement, s'il y a une caractéristique ou un correctif de bogue que vous aimeriez voir introduit dans la prochaine version de Lantern, vous pouvez commanditer son développement.",
     "GET_INVOLVED_19": "Veuillez contacter les développeurs de Lantern à propos de l'une ou l'autre de ces options pour de plus amples informations.",
     "GET_INVOLVED_20": "Vous pouvez aussi faire un micro don en 1 clic à la cause en général en utilisant Flattr or GitTip :",
-    "GET_INVOLVED_21": "Merci de votre intérêt sur comment contribuer à Lantern. Une communauté vibrante et active est vitale à notre existence."
+    "GET_INVOLVED_21": "Merci de votre intérêt sur comment contribuer à Lantern. Une communauté vibrante et active est vitale à notre existence.",
+    "SWITCHING_GOOGLE_1": "Vous pouvez changer l'adresse courriel Google que vous utilisez avec Lantern en réinitialisant Lantern et en lançant la séquence initiale de configuration.",
+    "SWITCHING_GOOGLE_2": "Montrer la carte du réseau Lantern",
+    "SWITCHING_GOOGLE_3": "Aussi fantastique que cela soit de regarder les connexions Lantern traversant la planète, la plupart du temps vous exécuterez Lantern sans que la carte du réseau ne soit visible.",
+    "SWITCHING_GOOGLE_4": "Choisissez Montrer Lantern depuis l'icône Lantern dans la barre de notification.",
+    "SWITCHING_GOOGLE_5": "Réinitialiser Lantern",
+    "SWITCHING_GOOGLE_6": "Ensuite, réinitialisez Lantern et relancer la séquence initiale de configuration. Réinitialiser Lantern efface toutes les informations enregistrées depuis votre dernière configuration."
 }
