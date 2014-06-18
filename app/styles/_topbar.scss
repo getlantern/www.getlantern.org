@@ -260,6 +260,19 @@
         .section-list {
             @include inline-list;
             line-height: 38px;
+            a.dl {
+                font-weight: bold;
+                color: rgb(73,252,251);
+            }
+            a.dl:hover {
+                color: rgb(73,252,251);
+            }
+            span.dl {
+                vertical-align: super;
+                font-size: 17px;
+                font-style: italic;
+                color: rgb(73,252,251);
+            }
             a {
                 @include single-transition(color, .3s);
                 color: #fff;
