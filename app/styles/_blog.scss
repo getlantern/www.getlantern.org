@@ -1,0 +1,18 @@
+.post-title {
+    font-family: 'AvenirNextLTPro-DemiCn';
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 5px;
+    letter-spacing: -1px;
+}
+
+section.post-excerpt p,
+section.post-content p {
+    font-family: "Noto Serif", serif;
+    font-size: 1.9rem;
+    color: #404040;
+    width: 100%;
+    max-width: 700px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

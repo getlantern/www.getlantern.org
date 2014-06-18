@@ -77,6 +77,9 @@ def main():
                     html['ng-app'] = 'lantern_www'
                     header = soup.find('header', attrs={'class':'site-head'})
                     postHeader = soup.find('header', attrs={'class':'post-header'})
+
+                    for e in soup.findAll('br'):
+                            e.extract()
                     # remove existing ghost headers
                     if header:
                         header.extract()
