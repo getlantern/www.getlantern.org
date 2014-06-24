@@ -43,7 +43,7 @@ angular.module('lantern_www')
               playerVars: {
                 autohide: 1,
                 autoplay: +autoPlay, // + converts bool to 0 or 1 if false or true respectively
-                cc_load_policy: +('en' !== $translate.uses().substring(0, 2)),
+                cc_load_policy: +('en' !== $translate.use().substring(0, 2)),
                 controls: 2,
                 enable_js_api: 1,
                 origin: 'getlantern.org',
