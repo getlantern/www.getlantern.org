@@ -1,0 +1,45 @@
+@import "mixins";
+
+.censored {
+    height: auto;
+    background-color: rgb(24,41,58);
+    border-radius: 15px;
+    padding: 0 40px 10px 40px;
+
+    div.text-center {
+        padding-top: 5px;
+    }
+
+    div.box {
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 20px;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    h1 {
+        text-transform: uppercase;
+        font-family: 'AvenirNextLTPro-DemiCn';
+        font-size:45px;
+        color: red;
+    }
+
+    div.howtohelp {
+        color: rgb(169, 168, 168);
+        padding-top: 10px;
+        font-weight: bold;
+        font-size: 21px;
+        text-align: center;
+        a {
+            text-transform: none;
+            color: #00ffff;
+        }
+    }
+
+
+
+}
