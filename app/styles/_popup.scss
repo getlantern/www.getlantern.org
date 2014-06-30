@@ -29,15 +29,22 @@
     }
 
     div.howtohelp {
-        color: rgb(169, 168, 168);
+        color: white;
         padding-top: 10px;
         font-weight: bold;
-        font-size: 21px;
+        font-size: 24px;
+        font-family: 'AvenirNextLTPro-DemiCn';
         text-align: center;
         a {
             text-transform: none;
             color: #00ffff;
         }
+
+        p.donate a {
+            text-decoration: none;
+            font-style: italic;
+        }
+
     }
 
 
