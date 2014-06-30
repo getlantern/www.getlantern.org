@@ -50,11 +50,6 @@
         <section class="header-spacer">
 
         </section>
-        <div class="checkdomain {{domainType|lowercase}}" ng-show="domainType == 'MIRROR' || domainType == 'UNRECOGNIZED'">
-          <span ng-show="domainType == 'MIRROR'" ng-bind-template="{{'OFFICIAL_MIRROR' | translate}}">You are viewing...</span>
-          <span ng-show="domainType == 'UNRECOGNIZED'" ng-bind-template="{{'UNOFFICIAL_MIRROR' | translate}}">Caution...</span>
-          <a ng-href="{{valByLang(BEWARE_OF_PHONIES_URLS)}}" target="_blank" ng-bind-template="{{'BEWARE_OF_PHONIES' | translate}}">Beware of phonies</a>
-        </div>
         <div class="lightbox hide" lightbox>
             <a class="lightbox-close" lightbox-close>&times;</a>
             <div class="media-container" id="player"></div>
@@ -104,8 +99,7 @@
                         <ul class="section-list">
                             <li><a href="#about" ng-bind-template="{{'ABOUT' | translate}}">About</a></li>
                             <li><a href="#faq" ng-bind-template="{{'FAQ' | translate}}">FAQ</a></li>
-                            <li><a href="/blog" ng-bind-template="{{'BLOG' | translate}}">Blog</a></li>
-                             <li><a href="/docs/Using-Lantern.html" ng-bind-template="{{'DOCS' | translate}}">Blog</a></li>
+                            <li><a href="/blog/index.html" ng-bind-template="{{'BLOG' | translate}}">Blog</a></li>
                             <li><a href="https://rally.org/getlantern" target="_blank" ng-bind-template="{{'DONATE' | translate}}">Donate</a></li>
                         </ul>
                     </nav>
@@ -252,7 +246,11 @@
                 </nav>
             </div>
         </footer>
-</div><!-- site content ends here -->
+    <div ng-controller="CensoredPopupCtrl" ng-init="open('lg')">
+    <script type="text/ng-template" id="censored.html">
+    </script>
+    </div>
+    </div><!-- site content ends here -->
 
 <script>
 window.session = {options: {gapi_location: false}};
@@ -278,6 +276,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         <script src="scripts/app.js"></script>
         <script src="scripts/constants.js"></script>
         <script src="scripts/controllers/download.js"></script>
+        <script src="scripts/controllers/popup.js"></script>
         <script src="scripts/directives/lightbox.js"></script>
         <script src="scripts/directives/signup.js"></script>
         <script src="scripts/directives/windowScroll.js"></script>

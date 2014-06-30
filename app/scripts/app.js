@@ -4,6 +4,7 @@ angular.module('lantern_www', [
     'ngCookies',
     'ngSanitize',
     'pascalprecht.translate',
+    'ui.bootstrap.modal',
     'ui.bootstrap.collapse'
   ],
   ['$translateProvider', 'constants', 'translations', function ($translateProvider, constants, translations) { // XXX can't get services like $log injected here :(
