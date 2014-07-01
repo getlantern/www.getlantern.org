@@ -39,7 +39,7 @@ angular.module('lantern_www')
             $window.player = new $window.YT.Player('player', {
               height: height,
               width: width,
-              videoId: '4TY4IVnMO98',
+              videoId: '9IrfAPo4ASw',
               playerVars: {
                 autohide: 1,
                 autoplay: +autoPlay, // + converts bool to 0 or 1 if false or true respectively
