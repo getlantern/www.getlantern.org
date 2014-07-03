@@ -287,6 +287,9 @@
                 @media screen and (max-width: 1325px) {
                     font-size: 0.9em;
                 }
+                @media screen and (max-width: 600px) {
+                    font-size: 0.7em;
+                }                    
             }
             li {
                 padding: 0 20px;
@@ -324,7 +327,6 @@
                 @media screen and (max-width: 1325px) {
                     font-size: 1.2em;
                 }
-
 
             }
 
