@@ -315,6 +315,22 @@
         }
         .social-media-icons {
             display: inline-block;
+            li.bc span {
+                padding-left: 10px;
+                color: white;
+                font-family: 'AvenirNextLTPro-MediumCn';
+                font-size: 1.5em;
+            }
+
+            li.bc div.bc-link {
+                cursor: pointer;
+            }
+
+            li.bc img {
+                vertical-align: middle;
+                margin-bottom: 10px;
+                cursor: pointer;
+            }
             li {
                 display: inline-block;
                 @media screen and (max-width: $break-small) {
