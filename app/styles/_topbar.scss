@@ -284,8 +284,8 @@
                     text-decoration: none;
                     color: #bbb;
                 }
-                @media screen and (max-width: 875px) {
-                    font-size: 1em;
+                @media screen and (max-width: 1325px) {
+                    font-size: 0.9em;
                 }
             }
             li {
@@ -305,7 +305,7 @@
             margin-right: 0;
         }
         position: relative;
-        @media screen and (max-width: 875px) {
+        @media screen and (max-width: 1025px) {
             float: none;
             width: 100%;
             text-align: center;
@@ -320,10 +320,17 @@
                 color: white;
                 font-family: 'AvenirNextLTPro-MediumCn';
                 font-size: 1.5em;
+
+                @media screen and (max-width: 1325px) {
+                    font-size: 1.2em;
+                }
+
+
             }
 
             li.bc div.bc-link {
                 cursor: pointer;
+
             }
 
             li.bc img {
@@ -361,7 +368,7 @@
 .header-spacer {
     height: 207px; 
     background-color: #10283a;
-    @media screen and (max-width: 875px) {
+    @media screen and (max-width: 1025px) {
         height: 0;
     }
 }
