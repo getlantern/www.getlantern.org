@@ -77,6 +77,28 @@ angular.module('lantern_www')
       return (/UBUNTU/).test(key);
     };
 
+    $scope.order = ['Mac OS X', 'Windows', 'Linux'];
+    $scope.oss = {
+        'Mac OS X' : constants.OSX_URL,
+        'Windows' : constants.WIN_URL,
+        'Linux': constants.DEB_URL64
+    };
+
+    $scope.init = function () {
+        if ($scope.selectedOS == "OSX") {
+            $scope.order = ['Mac OS X', 'Windows', 'Linux'];
+        }
+        else if ($scope.selectedOS == "WINDOWS") {
+            $scope.order = ['Windows', 'Mac OS X', 'Linux'];
+        }
+        else if ($scope.selectedOS == "UBUNTU64" || 
+            $scope.selectedOS == "UBUNTU32") {
+            $scope.order = ['Linux', 'Mac OS X', 'Windows'];
+            if ($scope.selectedOS == "UBUNTU32") {
+                $scope.oss['Linux'] = constants.DEB_URL32;
+            }
+        }
+    };
 
     $scope.faqs = [ {
             key : "SAFE_TO_USE",

@@ -4,6 +4,7 @@ angular.module('lantern_www')
   .constant('constants', {
     DEFAULT_LANGCODE: 'en_US',
     LANGS: {
+
       // http://www.omniglot.com/language/names.htm
       en_US: {
         code: 'en_US',
@@ -144,8 +145,11 @@ angular.module('lantern_www')
     TWITTER_URL: 'https://twitter.com/getlantern',
     FACEBOOK_URL: 'https://www.facebook.com/getlantern',
     TUMBLR_URL: 'http://get-lantern.tumblr.com/',
-    GITHUB_URL: 'https://github.com/getlantern/lantern'
-
+    GITHUB_URL: 'https://github.com/getlantern/lantern',
+    OSX_URL: 'https://s3.amazonaws.com/lantern/lantern-1.4.0-fffecf0.dmg',
+    WIN_URL: 'https://s3.amazonaws.com/lantern/lantern-1.4.0-fffecf0.exe',
+    DEB_URL32: 'https://s3.amazonaws.com/lantern/lantern-1.4.0-fffecf0-32-bit.deb',
+    DEB_URL64: 'https://s3.amazonaws.com/lantern/lantern-1.4.0-fffecf0-64-bit.deb'
   // point this at the real data when it's ready, or point at a not found url
   // to test what happens if we can't reach the installer data or if we take
   // it down on purpose to temporarily disable public download:
