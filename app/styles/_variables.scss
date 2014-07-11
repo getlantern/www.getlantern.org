@@ -2,6 +2,8 @@ $lnt-teal: #0a3343;
 $lnt-light-teal: #0e475e;
 $lnt-pale-teal: lighten(#0e475e, 60%);
 $lnt-yellow: #cbd687;
+$bright-yellow: rgb(238, 227, 97);
+         
 $lnt-pale-yellow: scale-saturation($lnt-yellow, -70%);
 $footerHeight: 300px;
 

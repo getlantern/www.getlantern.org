@@ -216,7 +216,7 @@
 }
 
 div.download-section {
-    margin-left: 20%;
+    margin-left: 15%;
     @media only screen and (max-width: 1200px) {
         margin-left: 2%;
     }
@@ -230,7 +230,7 @@ div.download-section {
         -moz-border-radius: 3px;
         border-radius: 3px;
         display: inline-block;
-        font-size: 20px;
+        font-size: 23px;
         font-weight: 800;
         position:relative;
         line-height: 1.3;
@@ -246,7 +246,7 @@ div.download-section {
 
         span {
             font-weight: bold;
-            font-size: 12px;
+            font-size: 13px;
             line-height: 1.4em;
             display: block;
 
@@ -254,13 +254,19 @@ div.download-section {
     }
     small {
         margin-top: 10px;
-        font-size: 14px;
+        font-size: 15px;
         padding-bottom: 30px;
         display: block;
         
         a { 
+            font-weight: bold;
+            font-size: 16px;
             text-decoration: none;
-            color: #cbd687;  
+            color: $lnt-yellow;
+        }
+        a:hover {
+            text-shadow: 0 0 2px #999;
+            color: $bright-yellow;
         }
         
     }
