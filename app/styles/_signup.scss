@@ -35,12 +35,27 @@
             margin: 0 auto;
             padding: 15px 10px;
             position: relative;
-            
+
+            .lantern-form-section.you-are {
+                width: 18%;
+                @media screen and (max-width: 990px) {
+                    display:block;
+                    width: 100%;
+                }
+            }
+            .lantern-form-section.enter-email {
+                width: 31%;
+                @media screen and (max-width: 990px) {
+                    display:block;
+                    width: 100%;
+                }
+            }
+
             .lantern-form-section {
                 display: inline-block;
-                width: 32%;
                 text-align: left;
                 vertical-align: top;
+
                 *[dir=ltr] & {
                     padding-left: 5%;
                 }

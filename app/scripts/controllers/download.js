@@ -5,11 +5,12 @@ angular.module('lantern_www')
       '$log',
       '$rootScope',
       '$scope',
+      '$window',
       '$timeout',
       'constants',
       'installerDataFetcher',
       'osSniffer',
-      function ($log, $rootScope, $scope, $timeout, constants, installerDataFetcher, osSniffer) {
+      function ($log, $rootScope, $scope, $window, $timeout, constants, installerDataFetcher, osSniffer) {
     // have to bind to rootScope to work in IE8?
     if (/lt-ie9/.test((document.getElementById('ng-app') || {}).className)) {
       $scope = $rootScope;
@@ -58,6 +59,11 @@ angular.module('lantern_www')
         }, 500);
       }
       //Analytics.trackEvent('download', 'clicked', osSniffer.os);
+    };
+
+    $scope.trackEvent = function(type) {
+        $window.ga('send', 'event', type, 
+                   'click', type + ' ' + osSniffer.os);
     };
 
     $scope.selectOS = function (os) {
