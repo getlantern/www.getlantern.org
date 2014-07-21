@@ -100,7 +100,9 @@
                             <li><a href="#about" ng-bind-template="{{'ABOUT' | translate}}">About</a></li>
                             <li><a href="#faq" ng-bind-template="{{'FAQ' | translate}}">FAQ</a></li>
                             <li><a href="/blog/index.html" ng-bind-template="{{'BLOG' | translate}}">Blog</a></li>
-                            <li><a class="dl" href="http://igg.me/at/getlantern" target="_blank">Donate Via Indiegogo</a></li>
+                            <li><a class="dl"
+                                href="http://igg.me/at/getlantern"
+                                target="_blank" ng-click="trackEvent('donation');">Donate Via Indiegogo</a></li>
                         </ul>
                     </nav>
                     <nav class="social-media">
@@ -131,7 +133,7 @@
                         <p ng-bind-template="{{'LANTERN_DESCRIPTION_1' | translate}}">Lantern is an international network...</p>
                         <p ng-bind-template="{{'LANTERN_DESCRIPTION_2' | translate}}">Through our new peer-to peer censorship circumvention software...</p>
                         <p ng-bind-template="{{'LANTERN_DESCRIPTION_3' | translate}}">Together, ...</p>
-                        <div id="download" class="download-section">
+                        <div id="download" ng-click="trackEvent('download');" class="download-section">
                         <a class="button download-main" href="{{oss[order[0]]}}">Download Lantern<span>{{order[0]}}</span></a>
                         <small>
             Also available for <a class="download-alt" href="{{oss[order[1]]}}">{{order[1]}}</a> and <a class="download-alt" href="{{oss[order[2]]}}">{{order[2]}}</a>
@@ -142,20 +144,11 @@
             </section>
             <section class="section signup">
                 <!-- Begin MailChimp Signup Form -->
-                <div id="mc_embed_signup" controller="SignupCtrl">
+                <div  id="mc_embed_signup" controller="SignupCtrl">
                     <form action="http://getlantern.us2.list-manage1.com/subscribe/post?u=0ac18298d5d0330dcda8f48aa&amp;id=f06770f311" method="POST" id="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate name="signupForm">
-                        <h3 ng-bind-template="{{'EMAIL_SIGNUP' | translate}}">Sign up here</h3>
-                        <div class="lantern-form-section">
-                            <h5><span>1.</span><p ng-bind-template="{{'EMAIL_CHOOSE_OPTION' | translate}}">Choose one option:</p></h5>
-                            <div class="mc-field-group input-group select-options">
-                                <ul class="newsletter">
-                                    <li><input type="radio" value="4" name="group[16517]" id="mce-group[16517]-16517-0"><label for="mce-group[16517]-16517-0" ng-bind-template="{{'EMAIL_WAITLIST_NEWSLETTER' | translate}}">Invitation waitlist &amp; newsletter</label></li>
-                                    <li><input type="radio" value="8" name="group[16517]" id="mce-group[16517]-16517-1"><label for="mce-group[16517]-16517-1" ng-bind-template="{{'EMAIL_NEWSLETTER_ONLY' | translate}}">Newsletter only</label></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="lantern-form-section">
-                            <h5><span>2.</span><p ng-bind-template="{{'EMAIL_CHOOSE_OPTION' | translate}}">You are in a...</p></h5>
+                        <h3 ng-bind-template="{{'EMAIL_SIGNUP' | translate}}">Sign up for our newsletter</h3>
+                        <div class="you-are lantern-form-section">
+                            <h5><p ng-bind-template="{{'EMAIL_CHOOSE_OPTION' | translate}}">You are in a...</p></h5>
                             <div class="mc-field-group input-group select-options">
                                 <ul>
                                     <li><input type="radio" value="1" name="group[16513]" id="mce-group[16513]-16513-0"><label for="mce-group[16513]-16513-0" ng-bind-template="{{'EMAIL_CENSORED' | translate}}">Censored region</label></li>
@@ -163,8 +156,8 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="lantern-form-section">
-                            <h5><span>3.</span><p ng-bind-template="{{'EMAIL_INPUT' | translate}}">Enter your e-mail address:</p></h5>
+                        <div class="enter-email lantern-form-section">
+                            <h5><p ng-bind-template="{{'EMAIL_INPUT' | translate}}">Enter your e-mail address:</p></h5>
                             <div class="mc-field-group input-group input-append">
                                 <input type="email" value="" name="EMAIL" class="required email input-xlarge form-control" id="mce-EMAIL" ng-model="email" required spellcheck="false"
                                     ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/" placeholder="email@example.com">
@@ -301,6 +294,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         <script type="text/javascript">
             $(document).ready(function() {
             $('.bc-link').click(function(){
+            ga('send', 'event', 'donate', 'click', 'bitcoin');
             $(document).trigger('coinbase_show_modal', 'deeffa56195e84b5b9991ce7da426c9f');
             return false;
             });
