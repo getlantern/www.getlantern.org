@@ -12,10 +12,10 @@
     "es5-shim": "~2.3.0",
     "json3": "3.3.0",
     "modernizr": "~2.7.1",
-    "session.js": "0.4.1"
+    "session.js": "0.4.1",
+    "jquery": "~2.1.1"
   },
   "resolutions": {
-    "angular": "1.2.17",
-    "angular-cookies": "1.2.18"
+    "angular": "1.2.17"
   }
 }
