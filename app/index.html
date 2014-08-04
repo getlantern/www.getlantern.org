@@ -46,21 +46,99 @@
 
 
 
-<div class="top-section">
-    <div class="nav-area"><span>About</span><span>FAQ</span><span>Blog</span><span class="boxed">Donate Via Indiegogo</span></div>
-    <div class="end-censorship">An app to end censorship.</div>
-    <div class="app-desc">Censorship is wrong, but we can stop it. Lantern is the app you install<br/> on <span>your</span> computer that lets the <span>whole world</span> escape censorship.</div>
-    <div class="download-section">
-    <div class="download-button"><div class="download-txt">Download
-            Lantern<span>Mac OS X</span></div></div>
-    </div>
-    <div class="platforms">Available for <span>Mac</span>, <span>Windows</span>, and <span>Linux</span></div>
-    <div class="arrow-down"></div>
-</div>
-<div class="sign-up"></div>
-<div class="lantern-map">
-    <h1>How Does Lantern Work?</h1>
-    <div class="lantern-desc">Lantern's goal is access: creating fast, reliable connections to the open Internet. With Lantern, every computer can act as a server. By running Lantern, every user with uncensored access can become an access point for those without, providing gateways to censored sites like Twitter, Facebook, and YouTube.</div>
+<div class="ng-cloak" lang="{{activeLang.code}}" dir="{{activeLang.dir}}">
+        <div class="lightbox hide" lightbox>
+            <a class="lightbox-close" lightbox-close>&times;</a>
+            <div class="media-container" id="player"></div>
+        </div>
+      
+
+            <div class="nav-bar">
+                <nav class="social-media">
+            <!-- XXX DRY .social-media-icons in header -->
+                <ul class="social-media-icons">
+                    <li><a target="_blank" ng-href="{{TWITTER_URL}}"><span class="icon-twitter"></span></a></li>
+                    <li><a target="_blank" ng-href="{{FACEBOOK_URL}}"><span class="icon-facebook"></span></a></li>
+                    <li><a target="_blank" ng-href="{{TUMBLR_URL}}"><span class="icon-tumblr"></span></a></li>
+                    <li><a target="_blank" ng-href="{{GITHUB_URL}}"><span class="icon-github"></span></a></li>
+                </ul>
+                </nav>
+                  <nav class="nav-area">
+                        <ul class="section-list">
+                            <li><a href="#about" ng-bind-template="{{'ABOUT' | translate}}">About</a></li>
+                            <li><a href="#faq" ng-bind-template="{{'FAQ' | translate}}">FAQ</a></li>
+                            <li><a href="/blog/index.html" ng-bind-template="{{'BLOG' | translate}}">Blog</a></li>
+                            <li><a class="dl boxed" href="http://igg.me/at/getlantern" target="_blank">Donate Via Indiegogo</a></li>
+                        </ul>
+                    </nav>
+            </div>
+   <div class="top-section">
+       
+                <div class="end-censorship">An app to end censorship.</div>
+
+            <div class="app-desc">Censorship is wrong, but we can stop it. Lantern is the app you install<br/> on <span>your</span> computer that lets the <span>whole world</span> escape censorship.</div>
+            <div class="download-section" ng-controller="DownloadCtrl"
+                ng-init="init()">
+                <a target="_blank" ng-href="{{oss[order[0]]}}">
+                <div class="download-button" on->
+                    <div class="download-txt">Download
+                        Lantern<span>{{order[0]}}</span></div>
+                </div>
+                </a>
+                <div class="watch-video" video-on-click>
+                    <div id="video"></div>
+                    <span>Watch Video</span>
+                </div>
+
+            </div>
+            <div class="platforms">Available for <a target="_blank"
+                    ng-href="{{OSX_URL}}">Mac</a>, <a target="_blank"
+                    ng-href="{{WIN_URL}}">Windows</a>, and <a
+                    ng-href="{{DEB_URL64}}">Linux</a>.</div>
+            <div class="arrow-down"></div>
+        </div>
+        <section class="sign-up">
+            <h1>Sign Up For Our Newsletter</h1>
+                <!-- Begin MailChimp Signup Form -->
+                <div id="mc_embed_signup" controller="SignupCtrl">
+                    <form action="http://getlantern.us2.list-manage1.com/subscribe/post?u=0ac18298d5d0330dcda8f48aa&amp;id=f06770f311" method="POST" id="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate name="signupForm">
+                        <div class="region lantern-form-section">
+                            <h5><p ng-bind-template="{{'EMAIL_CHOOSE_OPTION' | translate}}">You are in a...</p></h5>
+                            <div class="mc-field-group input-group select-options">
+                                <ul>
+                                    <li><input type="radio" value="1" name="group[16513]" id="mce-group[16513]-16513-0"><label for="mce-group[16513]-16513-0" ng-bind-template="{{'EMAIL_CENSORED' | translate}}">Censored region</label></li>
+                                    <li><input type="radio" value="2" name="group[16513]" id="mce-group[16513]-16513-1"><label for="mce-group[16513]-16513-1" ng-bind-template="{{'EMAIL_UNCENSORED' | translate}}">Uncensored region</label></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="email-form lantern-form-section">
+                            <h5><p ng-bind-template="{{'EMAIL_INPUT' | translate}}">Enter your e-mail address:</p></h5>
+                            <div class="mc-field-group input-group input-append">
+                                <input type="email" value="" name="EMAIL" class="required email input-xlarge form-control" id="mce-EMAIL" ng-model="email" required spellcheck="false"
+                                    ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/" placeholder="email@example.com">
+                                <span class="input-group-btn">
+                                    <div id="mce-responses" class="clear">
+                                            <div class="response" id="mce-error-response" style="display:none"></div>
+                                        <div class="response" id="mce-success-response" style="display:none"></div>
+                                </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                    <div style="position: absolute; left: -5000px;"><input type="text" name="b_0ac18298d5d0330dcda8f48aa_15830df463" value="+"></div>
+                                    <input type="submit" name="subscribe"  id="mc-embedded-subscribe" class="btn btn-inverse"
+                                        ng-disabled="signupForm.$invalid"
+                                        value="+">
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+        </div>
+        <div id="about" class="lantern-map">
+            <h1>How Does Lantern Work?</h1>
+            <div class="lantern-desc">Lantern's goal is access: creating fast, reliable connections to the open Internet. With Lantern, every computer can act as a server. By running Lantern, every user with uncensored access can become an access point for those without, providing gateways to censored sites like Twitter, Facebook, and YouTube.</div>
+            <div id="faq" class="map-wrapper">
+                <iframe src="http://lantern-ui.nodejitsu.com/app/index.html"
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
 </div>
 
 <script>

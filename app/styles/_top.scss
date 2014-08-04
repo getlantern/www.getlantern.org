@@ -1,6 +1,85 @@
 @font-face { font-family: LB; src: url('/fonts/ProximaNova-Bold.otf'); } 
 @font-face { font-family: LBL; src: url('/fonts/ProximaNova-Light.otf'); }
 @font-face { font-family: LBR; src: url('/fonts/ProximaNova-Regular.otf'); }
+div.nav-bar {
+    background-image: url('/images/nav-bg.png');
+    width: 100%;
+    height: 75px;
+    nav.social-media {
+        left: 3%;
+        color: #ababab !important;
+        @media screen and (max-width: 1025px) {
+            float: none;
+            text-align: left;
+            *[dir=rtl] & {
+                float: none;
+            }
+        }
+
+        position: relative;
+        @include single-transition(color, .3s);
+        display: inline-block;
+        padding-top: 20px;
+        li {
+            @media screen and (max-width: $break-small) {
+                display: inline-block;
+            }
+            padding: 0 10px;
+            a {
+                @include single-transition(color, .3s);
+                transition: color 0.3s;
+                display: block;
+                color: #ababab !important;
+                font-size: 20px;
+                padding: 5px;
+                width: 20px;
+                height: 42px;
+                text-align: center;
+                &:hover {
+                    color: lighten(#ababab, 15%)
+                }
+                &:first-of-type {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    nav.nav-area {
+        font-size: 18px;
+        font-family: LB;
+        width: 75%;
+        @media screen and (max-width: 1025px) {
+            font-size: 15px;
+        }
+        -moz-transform: matrix( 0.88121806912158,0,0,0.89167052164685,0,0);
+        -webkit-transform: matrix( 0.88121806912158,0,0,0.89167052164685,0,0);
+        -ms-transform: matrix( 0.88121806912158,0,0,0.89167052164685,0,0);
+        position: relative;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        text-transform: uppercase;
+        z-index: 61;
+        display: inline-block;
+        ul {
+            li {
+                display: inline;
+                padding-right: 43px;
+                letter-spacing:2px;
+            }
+            li a.boxed {
+                border: 2px solid #fff;
+                padding: 10px;
+            }
+            li a {
+                text-decoration: none;
+                color: #fff;
+            }
+        }
+    }
+}
+
 div.top-section {
     background: -moz-linear-gradient( 90deg, rgb(13,23,32) 19%, rgb(18,30,40) 100%);
     background: -webkit-linear-gradient( 90deg, rgb(13,23,32) 19%, rgb(18,30,40) 100%);
@@ -8,42 +87,22 @@ div.top-section {
     background: -ms-linear-gradient( 90deg, rgb(13,23,32) 19%, rgb(18,30,40) 100%);
     background: rgb(13,23,32);
     background-image: url('/images/LanternYellow2.png');
+    background-repeat: no-repeat;
+    background-size: contain;
     position: relative;
     width: 100%;
-    height: 670px;
+    height: 640px;
     z-index: 24;
-
-
-    div.nav-area {
-        font-size: 18px;
-        font-family: LB;
-        -moz-transform: matrix( 0.88121806912158,0,0,0.89167052164685,0,0);
-        -webkit-transform: matrix( 0.88121806912158,0,0,0.89167052164685,0,0);
-        -ms-transform: matrix( 0.88121806912158,0,0,0.89167052164685,0,0);
-
-        color: rgb( 255, 255, 255 );
-        line-height: 1.615;
-        text-align: center;
-        position: relative;
-        text-transform: uppercase;
-        top: 5%;
-        z-index: 61;
-        span {
-            padding-right: 43px;
-            letter-spacing:2px;
-        }
-        span.boxed {
-            border: 2px solid #fff;
-            padding: 10px;
-        }
+    @media screen and (max-width: 1025px) {
+        height: 1020px;
     }
+
 
     div.end-censorship {
         font-size: 16px;
         font-family: LBL;
         font-weight: lighter;
         color: rgb( 255, 255, 255 );
-        line-height: 1.615;
         text-align: center;
         -moz-transform: matrix( 3.6355342662767,0,0,3.67352469523935,0,0);
         -webkit-transform: matrix( 3.6355342662767,0,0,3.67352469523935,0,0);
@@ -51,7 +110,7 @@ div.top-section {
         position: relative;
         margin-left: auto;
         margin-right: auto;
-        top: 40%;
+        top: 37%;
         z-index: 38;
     }
 
@@ -77,30 +136,32 @@ div.top-section {
         -webkit-transform: matrix( 0.7386542256302,0,0,0.73825770238054,0,0);
         -ms-transform: matrix( 0.7386542256302,0,0,0.73825770238054,0,0);
         position: relative;
-        top: 45%;
+        top: 40%;
         margin-left: auto;
         margin-right: auto;
         width: 55%;
-        height: 57.12px;
         z-index: 39;
     }
 
     div.download-section {
-        top: 50%;
+        top: 45%;
         margin-left: auto;
         margin-right: auto;
         position: relative;
         width: 516px;
+        height: 80px;
 
         div.download-button {
             border-radius: 3em;
+            float: left;
             border-style: solid;
             border-color: rgb( 197, 187, 32 );
             background-color: #e0d627;
             width: 294px;
             position: relative;
-            height: 74px;
+            height: 64px;
             color: #fff;
+            text-shadow:1px 1px 2px #aaa;
             letter-spacing: 3px;
             background-image: -moz-linear-gradient( 90deg, rgb(0,0,0) 0%,
             rgb(255,255,255) 100%);
@@ -120,42 +181,55 @@ div.top-section {
                 text-transform: uppercase;
                 span {
                     display: block;
-
+                    color: rgb(114, 105, 27);
+                    font-size: 10px;
                 }
             }
         }
         div.watch-video {
+            width: 200px; 
+            padding-top: 15px;
+            padding-left: 50px;
+            float: right;
+            height: 50px;
+            cursor: pointer;
+            background: url('/images/play-button.png') no-repeat;
+            span {
+                letter-spacing: 3px;
+                padding-left: 10px;
+                color: #fff;
+                font-size: 15px;
+                font-family: LBR;
+                line-height: 1.615;          
+                text-transform: uppercase;
+            }
         }
     }
 
     div.platforms {
+        display: block;
         font-size: 18px;
         font-family: LB;
         color: rgb( 104, 139, 166 );
         line-height: 1.615;
         text-align: center;
         position: relative;
-        top: 55%;
+        top: 53%;
         margin-left: auto;
         margin-right: auto;
         z-index: 32;
-        span {
+        a {
             color: #e0d627;
-            text-decoration: underline;
+            text-decoration: none;
+            border-bottom: 1px solid #999999;
         }
     }
 }
-div.sign-up {
-    width: 100%;
-    height: 320px;
-    position: relative;
-    background: rgb(19,36,48);
-}
-
+section.sign-up,
 div.lantern-map {
     position: relative;
     background: rgb(29,53,69);
-    height: 686px;
+    height: 1286px;
 
     h1 {
         margin-top: 0px;
@@ -184,5 +258,81 @@ div.lantern-map {
         font-size: 18px;
 
     }
-}
+    div.map-wrapper {
+        width: 85%;
+        height: 70%;
+        margin: 0 auto;
+        position: relative;
+        background: rgb(29,53,69);
 
+        iframe {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+section.sign-up {
+    width: 100%;
+    height: 320px;
+    position: relative;
+    background: rgb(18,36,48);
+
+    div#mc_embed_signup {
+        width: 674px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: LBL;         
+        h5 {
+            font-size: 24px;
+            text-align: center;
+            color: #fff;
+        }
+        div.region {
+            width: 210px;
+            float: left;
+            display: block;
+            div.mc-field-group {
+                padding-top: 30px; 
+                padding-right: 55px;
+                padding-bottom: 35px;
+                background: rgb(25,45,58);
+            }
+            ul {
+                padding-left: 20px;
+                li {
+                    text-align: left;
+                    color: #fff;
+                    width: 170px;
+                    text-transform: uppercase;
+                    label {
+                        font-size: 11px;
+                        font-family: LBL;
+                        padding-left: 5px;
+                    }
+
+                }
+            }
+        }
+        div.email-form {
+            width: 460px;
+            float: right;
+            div.mc-field-group {
+                padding: 40px;
+                background: rgb(35, 57, 72);
+                span {
+                    input {
+                        opacity: 1.0;
+                        color: #fff;
+                        font-weight: bold;
+                        background: #e0d627;
+                    }
+                }
+            }
+        }
+    }
+}
