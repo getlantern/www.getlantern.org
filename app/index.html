@@ -159,11 +159,31 @@
             <h1>How Does Lantern Work?</h1>
             <div class="lantern-desc">Lantern's goal is access: creating fast, reliable connections to the open Internet. With Lantern, every computer can act as a server. By running Lantern, every user with uncensored access can become an access point for those without, providing gateways to censored sites like Twitter, Facebook, and YouTube.</div>
             <div id="faq" class="map-wrapper">
-                <iframe src="http://lantern-nodejitsu.com/app/index.html"
-                    frameborder="0" allowfullscreen></iframe>
+                <iframe id="map" src=""
+                    frameborder="0" scrolling="auto"
+                    allowfullscreen></iframe>
             </div>
         </div>
 </div>
+
+<script>
+//doesn't block the load event
+function createIframe(){
+    var i = document.getElementById("map");
+    i.src = "http://lantern-ui.nodejitsu.com/app/index.html";
+};
+    
+// Check for browser support of event handling capability
+if (window.addEventListener) {
+    window.addEventListener("load", createIframe, false);
+} else if (window.attachEvent) {
+    window.attachEvent("onload", createIframe);
+}
+else {
+    window.onload = createIframe;
+}
+
+</script>
 
 <script>
 window.session = {options: {gapi_location: false}};
