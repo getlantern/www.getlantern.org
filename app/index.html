@@ -71,6 +71,30 @@
                             <li><a class="dl boxed" href="http://igg.me/at/getlantern" target="_blank">Donate Via Indiegogo</a></li>
                         </ul>
                     </nav>
+
+                <nav class="languages" ng-init="isCollapsed = true" ng-show="NLANGS > 1">
+                        <ul class="navlink-list lang-list" dir="ltr">
+                            <li style="padding:10px 0px 5px 10px;">
+                                <a class="active-lang">{{activeLang.name}}</a>
+                            </li>
+                            <li class="dropdown">
+                                <a ng-click="isCollapsed = !isCollapsed">
+                                    <span class="caret"></span>
+                                </a>
+                                <ul collapse="isCollapsed" class="menu" role="menu">
+                                    <li ng-repeat="lang in LANGS" role="presentation">
+                                        <a role="menuitem" ng-href="#{{lang.code}}" ng-class="{'active-lang': lang.code == activeLang.code}" ng-click="changeLang(lang.code)" class="lang">{{lang.name}}</a>
+                                    </li>
+                                    <li>
+                                        <strong><a ng-href="{{HELP_TRANSLATE_URL}}" target="_blank" ng-bind-template="{{'HELP_TRANSLATE' | translate}}">
+                                            Help Translate
+                                        </a></strong>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+      
             </div>
    <div class="top-section">
        
@@ -135,7 +159,7 @@
             <h1>How Does Lantern Work?</h1>
             <div class="lantern-desc">Lantern's goal is access: creating fast, reliable connections to the open Internet. With Lantern, every computer can act as a server. By running Lantern, every user with uncensored access can become an access point for those without, providing gateways to censored sites like Twitter, Facebook, and YouTube.</div>
             <div id="faq" class="map-wrapper">
-                <iframe src="http://lantern-ui.nodejitsu.com/app/index.html"
+                <iframe src="http://lantern-nodejitsu.com/app/index.html"
                     frameborder="0" allowfullscreen></iframe>
             </div>
         </div>

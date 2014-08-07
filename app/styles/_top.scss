@@ -45,10 +45,129 @@ div.nav-bar {
         }
     }
 
+    nav.languages {
+        position: relative;
+        height: 30px;
+
+        padding-top: 20px;
+
+        float: right;
+        *[dir=rtl] & {
+            float: left;
+        }
+        margin-right: 4.5%;
+        @media screen and (max-width: $break-small) {
+            float: none;
+            margin-top: -52px;
+            text-align: center;
+            *[dir=rtl] & {
+                float: none;
+            }
+        }
+
+        .navlink-list {
+            @include inline-list;
+            &.lang-list > li {
+                float: left;
+                *[dir=rtl] & {
+                    float: right;
+                }
+
+                text-align: right;
+                text-transform: uppercase;
+                background-color: rgb( 43, 62, 78 );
+                text-transform: uppercase;
+                cursor: pointer;
+
+                padding: 10px 5px 5px 5px;
+                display: inline-block;
+                @media screen and (max-width: $break-small) {
+                    float: none;
+                           *[dir=rtl] & {
+                               float: none;
+                           }
+                       }
+                   }
+                &.lang-list, &.lang-list a {
+                    font-size: 12px;
+                    letter-spacing: 2px;
+                    font-weight: bold;
+                    font-family: LB;
+                    color: #fff;
+                    &.active-lang {
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+                p {
+                    float: left;
+                    *[dir=rtl] & {
+                        float: right;
+                    }
+                    font-weight: bold;
+                    font-size: 1.1em;
+                    margin: 0;
+                    color: #e0d627;  
+                }
+                a {
+                    @include single-transition(color, .3s);
+                    color: #7f9e99;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                    b {
+                        font-weight: normal;
+                    }
+                    span {
+                        border-top: 5px solid #fff;
+                        margin-left: 0;
+                    }
+                }
+                .menu {
+                    position: absolute;
+                    top: 100%;
+                    right: 0;
+                    text-align: right;
+                    z-index: 1000;
+                    float: left;
+                    *[dir=rtl] & {
+                        float: right;
+                        text-align: left;
+                        left: 0;
+                    }
+                    min-width: 160px;
+                    padding: 5px 0;
+                    margin: 2px 0 0;
+                    list-style: none;
+                    font-size: 14px;
+                    background-color: #131f28;
+                    border: 1px solid #cccccc;
+                    border: 1px solid rgba(0, 0, 0, 0.15);
+                    border-radius: 4px;
+                    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+                    background-clip: padding-box;
+                    li {
+                        display: block;
+                        a {
+                            padding: 3px 20px;
+                            @include single-transition(color, .3s);
+                            &:hover {
+                                color: #e0d627;
+                                background-color: transparent;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
     nav.nav-area {
         font-size: 18px;
         font-family: LB;
-        width: 75%;
+        width: 70%;
         @media screen and (max-width: 1025px) {
             font-size: 15px;
         }
