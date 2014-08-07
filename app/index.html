@@ -73,15 +73,13 @@
                     </nav>
 
                 <nav class="languages" ng-init="isCollapsed = true" ng-show="NLANGS > 1">
-                        <ul class="navlink-list lang-list" dir="ltr">
+                        <ul ng-click="isCollapsed = !isCollapsed" class="navlink-list lang-list" dir="ltr">
                             <li style="padding:10px 0px 5px 10px;">
                                 <a class="active-lang">{{activeLang.name}}</a>
                             </li>
                             <li class="dropdown">
-                                <a ng-click="isCollapsed = !isCollapsed">
-                                    <span class="caret"></span>
-                                </a>
-                                <ul collapse="isCollapsed" class="menu" role="menu">
+                            <span class="caret"></span>
+                            <ul collapse="isCollapsed" class="menu" role="menu">
                                     <li ng-repeat="lang in LANGS" role="presentation">
                                         <a role="menuitem" ng-href="#{{lang.code}}" ng-class="{'active-lang': lang.code == activeLang.code}" ng-click="changeLang(lang.code)" class="lang">{{lang.name}}</a>
                                     </li>
@@ -165,25 +163,6 @@
             </div>
         </div>
 </div>
-
-<script>
-//doesn't block the load event
-function createIframe(){
-    var i = document.getElementById("map");
-    i.src = "http://lantern-ui.nodejitsu.com/app/index.html";
-};
-    
-// Check for browser support of event handling capability
-if (window.addEventListener) {
-    window.addEventListener("load", createIframe, false);
-} else if (window.attachEvent) {
-    window.attachEvent("onload", createIframe);
-}
-else {
-    window.onload = createIframe;
-}
-
-</script>
 
 <script>
 window.session = {options: {gapi_location: false}};

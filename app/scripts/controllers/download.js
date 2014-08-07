@@ -104,6 +104,9 @@ angular.module('lantern_www')
                 $scope.oss['Linux'] = constants.DEB_URL32;
             }
         }
+
+        var map = angular.element( document.querySelector( '#map' ) )[0];
+        map.attributes.src.value = "http://lantern-ui.nodejitsu.com/app/index.html";
     };
 
     $scope.faqs = [ {
