@@ -106,7 +106,7 @@ angular.module('lantern_www')
         }
 
         var map = angular.element( document.querySelector( '#map' ) )[0];
-        map.attributes.src.value = "http://lantern-ui.nodejitsu.com/app/index.html";
+        map.attributes.src.value = "http://0.0.0.0:8000/app/index.html";
     };
 
     $scope.faqs = [ {
