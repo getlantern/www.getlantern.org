@@ -1,459 +1,482 @@
 @font-face { font-family: LB; src: url('/fonts/ProximaNova-Bold.otf'); } 
 @font-face { font-family: LBL; src: url('/fonts/ProximaNova-Light.otf'); }
 @font-face { font-family: LBR; src: url('/fonts/ProximaNova-Regular.otf'); }
-div.nav-bar {
-    background-image: url('/images/nav-bg.png');
-    width: 100%;
-    height: 75px;
-    nav.social-media {
-        left: 3%;
-        color: #ababab !important;
-        @media screen and (max-width: 1025px) {
-            float: none;
-            text-align: left;
-            *[dir=rtl] & {
+div.outer-container {
+    margin: 0;
+    padding: 0;
+    background: rgb(13,23,32);
+
+    div.nav-bar {
+        background-image: url('/images/nav-bg.png');
+        width: 100%;
+        position: fixed;
+        padding-bottom: 10px;
+        top: 0;
+        z-index: 1005;
+        nav.social-media {
+            left: 3%;
+            color: #ababab !important;
+            margin-right: 15%;
+            @media screen and (max-width: 1025px) {
                 float: none;
-            }
-        }
-
-        position: relative;
-        @include single-transition(color, .3s);
-        display: inline-block;
-        padding-top: 20px;
-        li {
-            @media screen and (max-width: $break-small) {
-                display: inline-block;
-            }
-            padding: 0 10px;
-            a {
-                @include single-transition(color, .3s);
-                transition: color 0.3s;
-                display: block;
-                color: #ababab !important;
-                font-size: 20px;
-                padding: 5px;
-                width: 20px;
-                height: 42px;
-                text-align: center;
-                &:hover {
-                    color: lighten(#ababab, 15%)
-                }
-                &:first-of-type {
-                    margin-top: 0;
-                }
-            }
-        }
-    }
-
-    nav.languages {
-        position: relative;
-        height: 30px;
-
-        padding-top: 20px;
-
-        float: right;
-        *[dir=rtl] & {
-            float: left;
-        }
-        margin-right: 4.5%;
-        @media screen and (max-width: $break-small) {
-            float: none;
-            margin-top: -52px;
-            text-align: center;
-            *[dir=rtl] & {
-                float: none;
-            }
-        }
-
-        .navlink-list {
-            @include inline-list;
-            &.lang-list > li {
-                float: left;
+                margin-right: 0%;
+                text-align: left;
                 *[dir=rtl] & {
-                    float: right;
-                }
-
-                text-align: right;
-                text-transform: uppercase;
-                background-color: rgb( 43, 62, 78 );
-                text-transform: uppercase;
-                cursor: pointer;
-
-                padding: 10px 5px 5px 5px;
-                display: inline-block;
-                @media screen and (max-width: $break-small) {
                     float: none;
-                           *[dir=rtl] & {
-                               float: none;
-                           }
-                       }
-                   }
-                &.lang-list, &.lang-list a {
-                    font-size: 12px;
-                    letter-spacing: 2px;
-                    font-weight: bold;
-                    font-family: LB;
-                    color: #fff;
-                    &.active-lang {
-                        -webkit-font-smoothing: antialiased;
-                        -moz-osx-font-smoothing: grayscale;
-                        &:hover {
-                            cursor: pointer;
-                        }
-                    }
                 }
-                p {
-                    float: left;
-                    *[dir=rtl] & {
-                        float: right;
-                    }
-                    font-weight: bold;
-                    font-size: 1.1em;
-                    margin: 0;
-                    color: #e0d627;  
+            }
+            float: left;
+
+            position: relative;
+            @include single-transition(color, .3s);
+            display: inline-block;
+            margin-top: 10px;
+            li {
+                @media screen and (max-width: $break-small) {
+                    display: inline-block;
                 }
+                padding: 0 10px;
                 a {
                     @include single-transition(color, .3s);
-                    color: #7f9e99;
-                    &:hover {
-                        text-decoration: none;
-                    }
-                    b {
-                        font-weight: normal;
-                    }
-                    span {
-                        border-top: 5px solid #fff;
-                        margin-left: 0;
-                    }
-                }
-                .menu {
-                    position: absolute;
-                    top: 100%;
-                    right: 0;
-                    text-align: right;
-                    z-index: 1000;
-                    float: left;
-                    *[dir=rtl] & {
-                        float: right;
-                        text-align: left;
-                        left: 0;
-                    }
-                    min-width: 160px;
-                    padding: 5px 0;
-                    margin: 2px 0 0;
-                    list-style: none;
-                    font-size: 14px;
-                    background-color: #131f28;
-                    border: 1px solid #cccccc;
-                    border: 1px solid rgba(0, 0, 0, 0.15);
-                    border-radius: 4px;
-                    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-                    background-clip: padding-box;
-                    li {
-                        display: block;
-                        a {
-                            padding: 3px 20px;
-                            @include single-transition(color, .3s);
-                            &:hover {
-                                color: #e0d627;
-                                background-color: transparent;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-    nav.nav-area {
-        font-size: 18px;
-        font-family: LB;
-        width: 70%;
-        @media screen and (max-width: 1025px) {
-            font-size: 15px;
-        }
-        -moz-transform: matrix( 0.88121806912158,0,0,0.89167052164685,0,0);
-        -webkit-transform: matrix( 0.88121806912158,0,0,0.89167052164685,0,0);
-        -ms-transform: matrix( 0.88121806912158,0,0,0.89167052164685,0,0);
-        position: relative;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        text-transform: uppercase;
-        z-index: 61;
-        display: inline-block;
-        ul {
-            li {
-                display: inline;
-                padding-right: 43px;
-                letter-spacing:2px;
-            }
-            li a.boxed {
-                border: 2px solid #fff;
-                padding: 10px;
-            }
-            li a {
-                text-decoration: none;
-                color: #fff;
-            }
-        }
-    }
-}
-
-div.top-section {
-    background: -moz-linear-gradient( 90deg, rgb(13,23,32) 19%, rgb(18,30,40) 100%);
-    background: -webkit-linear-gradient( 90deg, rgb(13,23,32) 19%, rgb(18,30,40) 100%);
-    background: -o-linear-gradient( 90deg, rgb(13,23,32) 19%, rgb(18,30,40) 100%);
-    background: -ms-linear-gradient( 90deg, rgb(13,23,32) 19%, rgb(18,30,40) 100%);
-    background: rgb(13,23,32);
-    background-image: url('/images/LanternYellow2.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: relative;
-    width: 100%;
-    height: 640px;
-    z-index: 24;
-    @media screen and (max-width: 1025px) {
-        height: 1020px;
-    }
-
-
-    div.end-censorship {
-        font-size: 16px;
-        font-family: LBL;
-        font-weight: lighter;
-        color: rgb( 255, 255, 255 );
-        text-align: center;
-        -moz-transform: matrix( 3.6355342662767,0,0,3.67352469523935,0,0);
-        -webkit-transform: matrix( 3.6355342662767,0,0,3.67352469523935,0,0);
-        -ms-transform: matrix( 3.6355342662767,0,0,3.67352469523935,0,0);
-        position: relative;
-        margin-left: auto;
-        margin-right: auto;
-        width: 30%;
-        top: 37%;
-        z-index: 38;
-    }
-
-    div.arrow-down {
-        width: 0; 
-        height: 0; 
-        border-left: 30px solid transparent;
-        border-right: 30px solid transparent;
-        border-top: 30px solid rgb(13, 23, 32);
-        position: relative;
-        margin-left: auto;
-        margin-right: auto;
-        top: 58%;
-    }
-
-    div.app-desc {
-        font-size: 24px;
-        font-family: LBR;
-        color: rgb( 255, 255, 255 );
-        line-height: 1.461;
-        text-align: center;
-        -moz-transform: matrix( 0.7386542256302,0,0,0.73825770238054,0,0);
-        -webkit-transform: matrix( 0.7386542256302,0,0,0.73825770238054,0,0);
-        -ms-transform: matrix( 0.7386542256302,0,0,0.73825770238054,0,0);
-        position: relative;
-        top: 40%;
-        margin-left: auto;
-        margin-right: auto;
-        width: 55%;
-        z-index: 39;
-    }
-
-    div.download-section {
-        top: 45%;
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-        width: 516px;
-        height: 80px;
-
-        div.download-button {
-            border-radius: 3em;
-            float: left;
-            border-style: solid;
-            border-color: rgb( 197, 187, 32 );
-            background-color: #e0d627;
-            width: 294px;
-            position: relative;
-            height: 64px;
-            color: #fff;
-            text-shadow:1px 1px 2px #aaa;
-            letter-spacing: 3px;
-            background-image: -moz-linear-gradient( 90deg, rgb(0,0,0) 0%,
-            rgb(255,255,255) 100%);
-            background-image: -webkit-linear-gradient( 90deg, rgb(0,0,0) 0%,
-            rgb(255,255,255) 100%);
-            background-image: -ms-linear-gradient( 90deg, rgb(0,0,0) 0%,
-            rgb(255,255,255) 100%);
-            box-shadow: 1px 1.732px 0px 0px rgb( 21, 46, 65 );
-
-
-            div.download-txt {
-                padding-top: 10px;
-                text-align: center;
-                font-size: 16px;
-                font-family: LB;
-                line-height: 1.615;
-                text-transform: uppercase;
-                span {
+                    transition: color 0.3s;
                     display: block;
-                    color: rgb(114, 105, 27);
-                    font-size: 10px;
-                }
-            }
-        }
-        div.watch-video {
-            width: 200px; 
-            padding-top: 15px;
-            padding-left: 50px;
-            float: right;
-            height: 50px;
-            cursor: pointer;
-            background: url('/images/play-button.png') no-repeat;
-            span {
-                letter-spacing: 3px;
-                padding-left: 10px;
-                color: #fff;
-                font-size: 15px;
-                font-family: LBR;
-                line-height: 1.615;          
-                text-transform: uppercase;
-            }
-        }
-    }
-
-    div.platforms {
-        display: block;
-        font-size: 18px;
-        font-family: LB;
-        color: rgb( 104, 139, 166 );
-        line-height: 1.615;
-        text-align: center;
-        position: relative;
-        top: 53%;
-        margin-left: auto;
-        margin-right: auto;
-        z-index: 32;
-        a {
-            color: #e0d627;
-            text-decoration: none;
-            border-bottom: 1px solid #999999;
-        }
-    }
-}
-section.sign-up,
-div.lantern-map {
-    position: relative;
-    background: rgb(29,53,69);
-    height: 1286px;
-
-    h1 {
-        margin-top: 0px;
-        font-size: 30px;
-        color: #fff;
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-        text-transform: uppercase;
-        letter-spacing:5px;
-        font-family: LBL;
-        text-align: center;
-        padding-top: 70px;
-    }
-
-    div.lantern-desc {
-        padding-top: 30px;
-        font-family: LBL;
-        text-align: center;
-        width: 45%;
-        position: relative;
-        color: #fff;
-        margin-left: auto;
-        display: block;
-        margin-right: auto;
-        font-size: 18px;
-
-    }
-    div.map-wrapper {
-        width: 85%;
-        height: 70%;
-        margin: 0 auto;
-        position: relative;
-        background: rgb(29,53,69);
-
-        iframe {
-            padding-top: 50px;
-            padding-bottom: 50px;
-            position: absolute;
-            frameborder: 0;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-    }
-}
-section.sign-up {
-    width: 100%;
-    height: 320px;
-    position: relative;
-    background: rgb(18,36,48);
-
-    div#mc_embed_signup {
-        width: 674px;
-        margin-left: auto;
-        margin-right: auto;
-        font-family: LBL;         
-        h5 {
-            font-size: 24px;
-            text-align: center;
-            color: #fff;
-        }
-        div.region {
-            width: 210px;
-            float: left;
-            display: block;
-            div.mc-field-group {
-                padding-top: 30px; 
-                padding-right: 55px;
-                padding-bottom: 35px;
-                background: rgb(25,45,58);
-            }
-            ul {
-                padding-left: 20px;
-                li {
-                    text-align: left;
-                    color: #fff;
-                    width: 170px;
-                    text-transform: uppercase;
-                    label {
-                        font-size: 11px;
-                        font-family: LBL;
-                        padding-left: 5px;
+                    color: #ababab !important;
+                    font-size: 20px;
+                    padding: 5px;
+                    width: 20px;
+                    height: 42px;
+                    text-align: center;
+                    &:hover {
+                        color: lighten(#ababab, 15%)
                     }
-
-                }
-            }
-        }
-        div.email-form {
-            width: 460px;
-            float: right;
-            div.mc-field-group {
-                padding: 40px;
-                background: rgb(35, 57, 72);
-                span {
-                    input {
-                        opacity: 1.0;
-                        color: #fff;
-                        font-weight: bold;
-                        background: #e0d627;
+                    &:first-of-type {
+                        margin-top: 0;
                     }
                 }
             }
         }
-    }
-}
+
+        nav.languages {
+            position: relative;
+            height: 30px;
+
+            padding-top: 20px;
+
+            float: right;
+                   *[dir=rtl] & {
+                       float: left;
+                   }
+                   margin-right: 4.5%;
+                   @media screen and (max-width: $break-small) {
+                       float: none;
+
+                       text-align: center;
+                       *[dir=rtl] & {
+                           float: none;
+                       }
+                   }
+
+                   .navlink-list {
+                       @include inline-list;
+                       &.lang-list > li {
+                           float: left;
+                                  *[dir=rtl] & {
+                                      float: right;
+                                  }
+
+                                  text-align: right;
+                                  text-transform: uppercase;
+                                  background-color: rgb( 43, 62, 78 );
+                                  text-transform: uppercase;
+                                  cursor: pointer;
+
+                                  padding: 10px 5px 5px 5px;
+                                  display: inline-block;
+                                  @media screen and (max-width: $break-small) {
+                                      float: none;
+                                             *[dir=rtl] & {
+                                                 float: none;
+                                             }
+                                         }
+                                     }
+                                     &.lang-list, &.lang-list a {
+                                         font-size: 12px;
+                                         letter-spacing: 2px;
+                                         font-weight: bold;
+                                         font-family: LB;
+                                         color: #fff;
+                                         &.active-lang {
+                                             -webkit-font-smoothing: antialiased;
+                                             -moz-osx-font-smoothing: grayscale;
+                                             &:hover {
+                                                 cursor: pointer;
+                                             }
+                                         }
+                                     }
+                                     p {
+                                         float: left;
+                                                *[dir=rtl] & {
+                                                    float: right;
+                                                }
+                                                font-weight: bold;
+                                                font-size: 1.1em;
+                                                margin: 0;
+                                                color: #e0d627;  
+                                            }
+                                            a {
+                                                @include single-transition(color, .3s);
+                                                color: #7f9e99;
+                                                &:hover {
+                                                    text-decoration: none;
+                                                }
+                                                b {
+                                                    font-weight: normal;
+                                                }
+                                                span {
+                                                    border-top: 5px solid #fff;
+                                                    margin-left: 0;
+                                                }
+                                            }
+                                            .menu {
+                                                position: absolute;
+                                                top: 100%;
+                                                right: 0;
+                                                text-align: right;
+                                                z-index: 1000;
+                                                float: left;
+                                                       *[dir=rtl] & {
+                                                           float: right;
+                                                           text-align: left;
+                                                           left: 0;
+                                                       }
+                                                       min-width: 160px;
+                                                       padding: 5px 0;
+                                                       margin: 2px 0 0;
+                                                       list-style: none;
+                                                       font-size: 14px;
+                                                       background-color: #131f28;
+                                                       border: 1px solid #cccccc;
+                                                       border: 1px solid rgba(0, 0, 0, 0.15);
+                                                       border-radius: 4px;
+                                                       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+                                                       background-clip: padding-box;
+                                                       li {
+                                                           display: block;
+                                                           a {
+                                                               padding: 3px 20px;
+                                                               @include single-transition(color, .3s);
+                                                               &:hover {
+                                                                   color: #e0d627;
+                                                                   background-color: transparent;
+                                                               }
+                                                           }
+                                                       }
+                                                   }
+                                               }
+                                           }
+
+                                           nav.nav-area {
+
+
+                                               @media screen and (max-width: 1025px) {
+                                                   float: right;
+                                                   *[dir=rtl] & {
+                                                       float: none;
+                                                   }
+                                                   font-size: 15px;
+                                               }                    
+                                               font-size: 18px;
+                                               font-family: LB;
+
+                                               -moz-transform: matrix( 0.88121806912158,0,0,0.89167052164685,0,0);
+                                               -webkit-transform: matrix( 0.88121806912158,0,0,0.89167052164685,0,0);
+                                               -ms-transform: matrix( 0.88121806912158,0,0,0.89167052164685,0,0);
+                                               position: relative;
+                                               text-align: center;
+                                               margin-left: auto;
+                                               margin-right: auto;
+                                               text-transform: uppercase;
+
+                                               padding-top: 20px;
+                                               float: left;
+                                               display: block;
+                                               ul {
+                                                   li {
+                                                       display: inline;
+                                                       padding-right: 43px;
+                                                       letter-spacing:2px;
+                                                   }
+                                                   li a.boxed {
+                                                       border: 2px solid #fff;
+                                                       padding: 10px;
+                                                   }
+                                                   li a {
+                                                       text-decoration: none;
+                                                       color: #fff;
+                                                   }
+                                               }
+                                           }
+                                       }
+
+                                       div.top-section {
+                                           background: -moz-linear-gradient( 90deg, rgb(13,23,32) 19%, rgb(18,30,40) 100%);
+                                           background: -webkit-linear-gradient( 90deg, rgb(13,23,32) 19%, rgb(18,30,40) 100%);
+                                           background: -o-linear-gradient( 90deg, rgb(13,23,32) 19%, rgb(18,30,40) 100%);
+                                           background: -ms-linear-gradient( 90deg, rgb(13,23,32) 19%, rgb(18,30,40) 100%);
+                                           background: rgb(13,23,32);
+                                           margin-top: 60px;
+                                           background:
+                                           url('/images/LanternYellow2.png') top center no-repeat;
+                                           background-size: contain;
+                                           position: relative;
+                                           width: 100%;
+                                           height: 640px;
+                                           z-index: 24;
+
+                                           div.container {
+                                               width: 100%;
+                                               position: absolute;
+                                               div.end-censorship {
+                                                   font-size: 16px;
+                                                   font-family: LBL;
+                                                   font-weight: lighter;
+                                                   color: rgb( 255, 255, 255 );
+                                                   text-align: center;
+                                                   -moz-transform: matrix( 3.6355342662767,0,0,3.67352469523935,0,0);
+                                                   -webkit-transform: matrix( 3.6355342662767,0,0,3.67352469523935,0,0);
+                                                   -ms-transform: matrix( 3.6355342662767,0,0,3.67352469523935,0,0);
+                                                   position: relative;
+                                                   margin-left: auto;
+                                                   margin-right: auto;
+                                                   width: 250px;
+                                                   top: 275px;
+                                                   z-index: 38;
+                                               }
+
+                                               div.arrow-down {
+                                                   width: 0; 
+                                                   height: 0; 
+                                                   border-left: 30px solid transparent;
+                                                   border-right: 30px solid transparent;
+                                                   border-top: 30px solid rgb(13, 23, 32);
+                                                   position: relative;
+                                                   margin-left: auto;
+                                                   margin-right: auto;
+                                                   top: 58%;
+                                               }
+
+                                               div.app-desc {
+                                                   font-size: 24px;
+                                                   font-family: LBR;
+                                                   color: rgb( 255, 255, 255 );
+                                                   text-align: center;
+                                                   -moz-transform: matrix( 0.7386542256302,0,0,0.73825770238054,0,0);
+                                                   -webkit-transform: matrix( 0.7386542256302,0,0,0.73825770238054,0,0);
+                                                   -ms-transform: matrix( 0.7386542256302,0,0,0.73825770238054,0,0);
+                                                   position: relative;
+                                                   top: 300px;
+                                                   margin-left: auto;
+                                                   margin-right: auto;
+                                                   width: auto;
+                                                   z-index: 39;
+                                               }
+
+                                               div.download-section {
+                                                   top: 325px;
+                                                   margin-left: auto;
+                                                   margin-right: auto;
+                                                   position: relative;
+                                                   width: 516px;
+                                                   height: 80px;
+
+                                                   div.download-button {
+                                                       border-radius: 3em;
+                                                       float: left;
+                                                       border-style: solid;
+                                                       border-color: rgb( 197, 187, 32 );
+                                                       background-color: #e0d627;
+                                                       width: 294px;
+                                                       position: relative;
+                                                       height: 64px;
+                                                       color: #fff;
+                                                       text-shadow:1px 1px 2px #aaa;
+                                                       letter-spacing: 3px;
+                                                       background-image: -moz-linear-gradient( 90deg, rgb(0,0,0) 0%,
+                                                       rgb(255,255,255) 100%);
+                                                       background-image: -webkit-linear-gradient( 90deg, rgb(0,0,0) 0%,
+                                                       rgb(255,255,255) 100%);
+                                                       background-image: -ms-linear-gradient( 90deg, rgb(0,0,0) 0%,
+                                                       rgb(255,255,255) 100%);
+                                                       box-shadow: 1px 1.732px 0px 0px rgb( 21, 46, 65 );
+
+
+                                                       div.download-txt {
+                                                           padding-top: 10px;
+                                                           text-align: center;
+                                                           font-size: 16px;
+                                                           font-family: LB;
+                                                           text-transform: uppercase;
+                                                           span {
+                                                               display: block;
+                                                               color: rgb(114, 105, 27);
+                                                               font-size: 10px;
+                                                           }
+                                                       }
+                                                   }
+                                                   div.watch-video {
+                                                       width: 200px; 
+                                                       padding-top: 15px;
+                                                       padding-left: 50px;
+                                                       float: right;
+                                                       height: 50px;
+                                                       cursor: pointer;
+                                                       background: url('/images/play-button.png') no-repeat;
+                                                       span {
+                                                           letter-spacing: 3px;
+                                                           padding-left: 10px;
+                                                           color: #fff;
+                                                           font-size: 15px;
+                                                           font-family: LBR;
+                                                           text-transform: uppercase;
+                                                       }
+                                                   }
+                                               }
+
+                                               div.platforms {
+                                                   display: block;
+                                                   font-size: 18px;
+                                                   font-family: LB;
+                                                   color: rgb( 104, 139, 166 );
+                                                   text-align: center;
+                                                   position: relative;
+                                                   top: 380px;
+                                                   margin-left: auto;
+                                                   margin-right: auto;
+                                                   z-index: 32;
+                                                   a {
+                                                       color: #e0d627;
+                                                       text-decoration: none;
+                                                       border-bottom: 1px solid #999999;
+                                                   }
+                                               }
+                                           }
+                                       }
+                                       section.sign-up,
+                                       div.lantern-map {
+                                           position: relative;
+                                           background: rgb(29,53,69);
+                                           height: 1286px;
+
+                                           h1 {
+                                               margin-top: 0px;
+                                               font-size: 30px;
+                                               color: #fff;
+                                               margin-left: auto;
+                                               margin-right: auto;
+                                               position: relative;
+                                               text-transform: uppercase;
+                                               letter-spacing:5px;
+                                               font-family: LBL;
+                                               text-align: center;
+                                               padding-top: 50px;
+                                           }
+
+                                           div.lantern-desc {
+                                               padding-top: 30px;
+                                               font-family: LBL;
+                                               text-align: center;
+                                               width: 45%;
+                                               position: relative;
+                                               color: #fff;
+                                               margin-left: auto;
+                                               display: block;
+                                               margin-right: auto;
+                                               font-size: 18px;
+
+                                           }
+                                           div.map-wrapper {
+                                               width: 85%;
+                                               height: 70%;
+                                               margin: 0 auto;
+                                               position: relative;
+                                               background: rgb(29,53,69);
+
+                                               iframe {
+                                                   padding-top: 50px;
+                                                   padding-bottom: 50px;
+                                                   position: absolute;
+                                                   frameborder: 0;
+                                                   top: 0;
+                                                   left: 0;
+                                                   width: 100%;
+                                                   height: 100%;
+                                               }
+                                           }
+                                       }
+                                       section.sign-up {
+                                           width: 100%;
+                                           height: 320px;
+                                           position: relative;
+                                           background: rgb(18,36,48);
+
+                                           div#mc_embed_signup {
+                                               width: 674px;
+                                               margin-left: auto;
+                                               margin-right: auto;
+                                               font-family: LBL;         
+                                               h5 {
+                                                   font-size: 24px;
+                                                   text-align: center;
+                                                   color: #fff;
+                                               }
+                                               div.region {
+                                                   width: 210px;
+                                                   float: left;
+                                                   display: block;
+                                                   div.mc-field-group {
+                                                       padding-top: 30px; 
+                                                       padding-right: 55px;
+                                                       padding-bottom: 35px;
+                                                       background: rgb(25,45,58);
+                                                   }
+                                                   ul {
+                                                       padding-left: 20px;
+                                                       li {
+                                                           text-align: left;
+                                                           color: #fff;
+                                                           width: 170px;
+                                                           text-transform: uppercase;
+                                                           label {
+                                                               font-size: 11px;
+                                                               font-family: LBL;
+                                                               padding-left: 5px;
+                                                           }
+
+                                                       }
+                                                   }
+                                               }
+                                               div.email-form {
+                                                   width: 460px;
+                                                   float: right;
+                                                   div.mc-field-group {
+                                                       padding: 40px;
+                                                       background: rgb(35, 57, 72);
+                                                       input#mce-EMAIL {
+                                                          font-weight: bold;
+                                                          font-family: LB;
+                                                          font-size: 18px;
+                                                       }
+
+                                                       span {
+                                                           input {
+                                                               opacity: 1.0;
+                                                               color: #fff;
+                                                               font-weight: bold;
+                                                               background: #e0d627;
+                                                           }
+                                                       }
+                                                   }
+                                               }
+                                           }
+                                       }
+                                   }

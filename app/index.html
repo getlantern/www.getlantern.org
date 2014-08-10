@@ -46,6 +46,7 @@
 
 
 
+<div class="outer-container">
 <div class="ng-cloak" lang="{{activeLang.code}}" dir="{{activeLang.dir}}">
         <div class="lightbox hide" lightbox>
             <a class="lightbox-close" lightbox-close>&times;</a>
@@ -72,7 +73,7 @@
                         </ul>
                     </nav>
 
-                <nav class="languages" ng-init="isCollapsed = true" ng-show="NLANGS > 1">
+                <!--<nav class="languages" ng-init="isCollapsed = true" ng-show="NLANGS > 1">
                         <ul ng-click="isCollapsed = !isCollapsed" class="navlink-list lang-list" dir="ltr">
                             <li style="padding:10px 0px 5px 10px;">
                                 <a class="active-lang">{{activeLang.name}}</a>
@@ -91,12 +92,13 @@
                                 </ul>
                             </li>
                         </ul>
-                    </nav>
+                        </nav>-->
       
             </div>
    <div class="top-section">
        
-                <div class="end-censorship">An app to end censorship.</div>
+       <div class="container">
+            <div class="end-censorship">An app to end censorship.</div>
 
             <div class="app-desc">Censorship is wrong, but we can stop it. Lantern is the app you install<br/> on <span>your</span> computer that lets the <span>whole world</span> escape censorship.</div>
             <div class="download-section" ng-controller="DownloadCtrl"
@@ -117,8 +119,8 @@
                     ng-href="{{OSX_URL}}">Mac</a>, <a target="_blank"
                     ng-href="{{WIN_URL}}">Windows</a>, and <a
                     ng-href="{{DEB_URL64}}">Linux</a>.</div>
-            <div class="arrow-down"></div>
         </div>
+    </div>
         <section class="sign-up">
             <h1>Sign Up For Our Newsletter</h1>
                 <!-- Begin MailChimp Signup Form -->
@@ -162,6 +164,7 @@
                     allowfullscreen></iframe>
             </div>
         </div>
+</div>
 </div>
 
 <script>
