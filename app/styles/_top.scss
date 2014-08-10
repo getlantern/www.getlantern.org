@@ -6,6 +6,11 @@ div.outer-container {
     padding: 0;
     background: rgb(13,23,32);
 
+    @media screen and (max-width: 768px) {
+        min-width: 1024px;
+    }                    
+
+
     div.nav-bar {
         background-image: url('/images/nav-bg.png');
         width: 100%;
@@ -176,14 +181,12 @@ div.outer-container {
                                            }
 
                                            nav.nav-area {
-
-
-                                               @media screen and (max-width: 1025px) {
-                                                   float: right;
+                                               @media screen and (max-width: 768px) {
+                                                   float: left;
                                                    *[dir=rtl] & {
                                                        float: none;
                                                    }
-                                                   font-size: 15px;
+                                                   font-size: 12px;
                                                }                    
                                                font-size: 18px;
                                                font-family: LB;
