@@ -4,6 +4,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9" id="ng-app" ng-app="lantern_www"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" id="ng-app" ng-app="lantern_www"> <!--<![endif]-->
     <head>
+        <script src="//cdn.optimizely.com/js/1740440413.js"></script>
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
         <title ng-bind-template="{{'LANTERN' | translate}}">Lantern</title>
@@ -23,7 +24,7 @@
         <script src="bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
     </head>
-    <body style="min-width:1024px;">
+    <body>
         <!--[if lt IE 8]>
           <p class="chromeframe">You are using an outdated browser. Please <a href="https://www.google.com/chrome/">upgrade your browser</a> or <a href="https://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> and try again.</p>
         <![endif]-->
@@ -138,7 +139,7 @@
                         <div class="email-form lantern-form-section">
                             <h5><p ng-bind-template="{{'EMAIL_INPUT' | translate}}">Enter your e-mail address:</p></h5>
                             <div class="mc-field-group input-group input-append">
-                                <input type="email" value="" name="EMAIL" class="required email input-xlarge form-control" id="mce-EMAIL" ng-model="email" required spellcheck="false"
+                                <input type="email" value="" style="border-radius:0px;" name="EMAIL" class="required email input-xlarge form-control" id="mce-EMAIL" ng-model="email" required spellcheck="false"
                                     ng-pattern="/[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}/" placeholder="email@example.com">
                                 <span class="input-group-btn">
                                     <div id="mce-responses" class="clear">
@@ -146,7 +147,7 @@
                                         <div class="response" id="mce-success-response" style="display:none"></div>
                                 </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                                     <div style="position: absolute; left: -5000px;"><input type="text" name="b_0ac18298d5d0330dcda8f48aa_15830df463" value="+"></div>
-                                    <input type="submit" name="subscribe"  id="mc-embedded-subscribe" class="btn btn-inverse"
+                                    <input type="submit" style="border-radius:0px;" name="subscribe"  id="mc-embedded-subscribe" class="btn btn-inverse"
                                         ng-disabled="signupForm.$invalid"
                                         value="+">
                                 </span>
