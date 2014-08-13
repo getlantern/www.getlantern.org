@@ -1,9 +1,9 @@
 @font-face { font-family: LB; src: url('/fonts/ProximaNova-Bold.otf'); } 
 @font-face { font-family: LBL; src: url('/fonts/ProximaNova-Light.otf'); }
 @font-face { font-family: LBR; src: url('/fonts/ProximaNova-Regular.otf'); }
+iframe, img { max-width: 100%; }
 div.outer-container {
     margin: 0;
-    img { max-width: 100%; }
     padding: 0;
     background: rgb(13,23,32);
 
@@ -462,7 +462,7 @@ div.outer-container {
                                                             height: 100%;
 
                                                             @media screen and (max-width: $break-small) {
-                                                                max-width: 100%;
+                                                                width: 50%;
                                                             }
 
                                                         }
