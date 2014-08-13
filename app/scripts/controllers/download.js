@@ -112,9 +112,6 @@ angular.module('lantern_www')
         if (window.screen.width > 600) {
             map.attributes.src.value = "https://ui.getlantern.org/app/index.html";
         }
-        else {
-            map.attributes.src.value = "http://getlantern.org/images/50b24994.vis.gif";
-        }
     };
 
     $scope.faqs = [ {
