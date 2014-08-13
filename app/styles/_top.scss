@@ -27,6 +27,10 @@ div.outer-container {
                     float: none;
                 }
             }
+            @media screen and (max-width: $break-small) {
+                display: block;
+                text-align: center;
+            }
             float: left;
 
             position: relative;
@@ -182,44 +186,52 @@ div.outer-container {
                                                    float: right;
                                                    padding-top: 0px;
                                                    margin-top: 20px;
+
                                                    display: inline-block;
-                                                            *[dir=rtl] & {
-                                                                float: none;
-                                                            }
-                                                            font-size: 12px;
-                                                        }                    
-                                                        font-size: 18px;
-                                                        font-family: LB;
+                                                  *[dir=rtl] & {
+                                                      float: none;
+                                                  }
+                                                  font-size: 12px;
+                                              }                    
+                                              @media screen and (max-width: $break-small) {
+                                                  float: left;
+                                              }
 
-                                                        -moz-transform: matrix( 0.88121806912158,0,0,0.89167052164685,0,0);
-                                                        -webkit-transform: matrix( 0.88121806912158,0,0,0.89167052164685,0,0);
-                                                        -ms-transform: matrix( 0.88121806912158,0,0,0.89167052164685,0,0);
-                                                        position: relative;
-                                                        text-align: center;
-                                                        margin-left: auto;
-                                                        margin-right: auto;
-                                                        text-transform: uppercase;
 
-                                                        padding-top: 20px;
-                                                        float: left;
-                                                        display: block;
-                                                        ul {
-                                                            li {
-                                                                display: inline;
-                                                                padding-right: 43px;
-                                                                letter-spacing:2px;
-                                                            }
-                                                            li a.boxed {
-                                                                border: 2px solid #fff;
-                                                                padding: 10px;
-                                                            }
-                                                            li a {
-                                                                text-decoration: none;
-                                                                color: #fff;
-                                                            }
-                                                        }
-                                                    }
-                                                }
+                                              font-size: 18px;
+                                              font-family: LB;
+                                              position: relative;
+                                              text-align: center;
+                                              margin-left: auto;
+                                              margin-right: auto;
+                                              text-transform: uppercase;
+
+                                              padding-top: 20px;
+                                              float: left;
+                                              display: block;
+                                              ul {
+                                                  li {
+                                                      display: inline;
+                                                      padding-right: 43px;
+                                                      letter-spacing:2px;
+                                                  }
+                                                  li a.boxed {
+                                                      border: 2px solid #fff;
+                                                      padding: 10px;
+                                                      @media screen and (max-width: $break-small) {
+                                                          padding: 0px;
+                                                          display: block;
+                                                      }
+
+
+                                                  }
+                                                  li a {
+                                                      text-decoration: none;
+                                                      color: #fff;
+                                                  }
+                                              }
+                                          }
+                                      }
 
                                                 div.top-section {
                                                     background-image: -moz-linear-gradient(bottom, #0c1720 18.26%, #0c1720 18.51%, #111d27 100%); /* gradient overlay */
@@ -237,7 +249,8 @@ div.outer-container {
 
                                                     @media screen and (max-width: $break-small) {
                                                         margin-top: 0px;
-                                                        background: url('/images/LanternYellow-small.png') center center no-repeat;
+                                                        background: url('/images/LanternYellow-small.png') 100% 25% no-repeat;
+                                                        background-size: contain;
                                                     }
 
 
@@ -432,10 +445,15 @@ div.outer-container {
                                                             padding-bottom: 50px;
                                                             position: absolute;
                                                             frameborder: 0;
+                                                            max-width: 100%;
                                                             top: 0;
                                                             left: 0;
                                                             width: 100%;
                                                             height: 100%;
+
+                                                            @media screen and (max-width: $break-small) {
+                                                                width: auto;
+                                                            }
 
                                                         }
                                                     }
@@ -446,8 +464,16 @@ div.outer-container {
                                                     position: relative;
                                                     background: rgb(18,36,48);
 
+                                                    @media screen and (max-width: $break-small) {
+                                                        height: 500px;
+                                                    }             
+
                                                     div#mc_embed_signup {
                                                         width: 674px;
+                                                        @media screen and (max-width: $break-small) {
+                                                            width: 100%;
+                                                        }
+
                                                         margin-left: auto;
                                                         margin-right: auto;
                                                         font-family: LBL;         
@@ -455,16 +481,27 @@ div.outer-container {
                                                             font-size: 24px;
                                                             text-align: center;
                                                             color: #fff;
+                                                            @media screen and (max-width: $break-small) {
+                                                                font-size: 20px;
+                                                            }            
                                                         }
                                                         div.region {
                                                             width: 210px;
                                                             float: left;
                                                             display: block;
+                                                            @media screen and (max-width: $break-small) {
+                                                                width: 100%;
+                                                            }
+
                                                             div.mc-field-group {
                                                                 padding-top: 30px; 
                                                                 padding-right: 55px;
                                                                 padding-bottom: 35px;
                                                                 background: rgb(25,45,58);
+
+                                                                @media screen and (max-width: $break-small) {
+                                                                    width: 100%;
+                                                                }
                                                             }
                                                             ul {
                                                                 padding-left: 20px;
@@ -485,6 +522,10 @@ div.outer-container {
                                                         div.email-form {
                                                             width: 460px;
                                                             float: right;
+                                                            @media screen and (max-width: $break-small) {
+                                                                width: 100%;
+                                                            }
+
                                                             div.mc-field-group {
                                                                 padding: 40px;
                                                                 background: rgb(35, 57, 72);
