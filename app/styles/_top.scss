@@ -234,6 +234,10 @@ a.nav-toggle:before{color:#fff;font:400 28px/55px "responsivenav";text-transform
                                                   li a.boxed {
                                                       border: 2px solid #fff;
                                                       padding: 10px;
+                                                      @media screen and (max-width: $break-small) {
+                                                        padding: 0px;
+                                                        border: none;
+                                                      }
 
                                                   }
                                                   li a {
