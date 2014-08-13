@@ -14,6 +14,11 @@ div.outer-container {
         padding-bottom: 10px;
         top: 0;
         z-index: 1005;
+        @media screen and (max-width: $break-small) {
+            padding-bottom: 0px;
+            position: relative;
+        }
+
         nav.social-media {
             left: 3%;
             color: #ababab !important;
@@ -306,6 +311,12 @@ div.outer-container {
                                                             width: 516px;
                                                             height: 80px;
 
+                                                            @media screen and (max-width: $break-small) {
+                                                                width: auto;
+                                                                top: 270px;
+                                                            }
+
+
                                                             div.download-button {
 
                                                                 @media screen and (max-width: $break-small) {
@@ -355,7 +366,6 @@ div.outer-container {
                                                                 cursor: pointer;
                                                                 background: url('/images/play-button.png') no-repeat;
                                                                 @media screen and (max-width: $break-small) {
-                                                                    width: 70%;
                                                                     float: none;
                                                                     margin-left: auto;
                                                                     margin-right: auto;
