@@ -450,6 +450,7 @@ div.outer-container {
                                                         position: relative;
                                                         background: rgb(29,53,69);
 
+
                                                         iframe {
                                                             padding-top: 50px;
                                                             padding-bottom: 50px;
@@ -460,9 +461,13 @@ div.outer-container {
                                                             left: 0;
                                                             width: 100%;
                                                             height: 100%;
-
                                                             @media screen and (max-width: $break-small) {
-                                                                img {
+                                                                width: 50%;
+                                                                height: 50%;
+                                                            }
+
+                                                            img {
+                                                                @media screen and (max-width: $break-small) {
                                                                     width: 50%;
                                                                     max-width: 100%;
                                                                 }
