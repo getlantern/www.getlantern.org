@@ -462,7 +462,10 @@ div.outer-container {
                                                             height: 100%;
 
                                                             @media screen and (max-width: $break-small) {
-                                                                width: 50%;
+                                                                img {
+                                                                    width: 50%;
+                                                                    max-width: 100%;
+                                                                }
                                                             }
 
                                                         }
