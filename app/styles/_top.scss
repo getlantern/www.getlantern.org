@@ -3,13 +3,9 @@
 @font-face { font-family: LBR; src: url('/fonts/ProximaNova-Regular.otf'); }
 div.outer-container {
     margin: 0;
+    img { max-width: 100%; }
     padding: 0;
     background: rgb(13,23,32);
-
-    @media screen and (max-width: 768px) {
-        min-width: 1024px;
-    }                    
-
 
     div.nav-bar {
         background-image: url('/images/nav-bg.png');
@@ -24,6 +20,7 @@ div.outer-container {
             margin-right: 15%;
             @media screen and (max-width: 1025px) {
                 float: none;
+                left: 0%;
                 margin-right: 0%;
                 text-align: left;
                 *[dir=rtl] & {
@@ -182,304 +179,331 @@ div.outer-container {
 
                                            nav.nav-area {
                                                @media screen and (max-width: 768px) {
-                                                   float: left;
-                                                   *[dir=rtl] & {
-                                                       float: none;
-                                                   }
-                                                   font-size: 12px;
-                                               }                    
-                                               font-size: 18px;
-                                               font-family: LB;
-
-                                               -moz-transform: matrix( 0.88121806912158,0,0,0.89167052164685,0,0);
-                                               -webkit-transform: matrix( 0.88121806912158,0,0,0.89167052164685,0,0);
-                                               -ms-transform: matrix( 0.88121806912158,0,0,0.89167052164685,0,0);
-                                               position: relative;
-                                               text-align: center;
-                                               margin-left: auto;
-                                               margin-right: auto;
-                                               text-transform: uppercase;
-
-                                               padding-top: 20px;
-                                               float: left;
-                                               display: block;
-                                               ul {
-                                                   li {
-                                                       display: inline;
-                                                       padding-right: 43px;
-                                                       letter-spacing:2px;
-                                                   }
-                                                   li a.boxed {
-                                                       border: 2px solid #fff;
-                                                       padding: 10px;
-                                                   }
-                                                   li a {
-                                                       text-decoration: none;
-                                                       color: #fff;
-                                                   }
-                                               }
-                                           }
-                                       }
-
-                                       div.top-section {
-                                           background: -moz-linear-gradient( 90deg, rgb(13,23,32) 19%, rgb(18,30,40) 100%);
-                                           background: -webkit-linear-gradient( 90deg, rgb(13,23,32) 19%, rgb(18,30,40) 100%);
-                                           background: -o-linear-gradient( 90deg, rgb(13,23,32) 19%, rgb(18,30,40) 100%);
-                                           background: -ms-linear-gradient( 90deg, rgb(13,23,32) 19%, rgb(18,30,40) 100%);
-                                           background: rgb(13,23,32);
-                                           margin-top: 60px;
-                                           background:
-                                           url('/images/LanternYellow2.png') top center no-repeat;
-                                           background-size: contain;
-                                           position: relative;
-                                           width: 100%;
-                                           height: 640px;
-                                           z-index: 24;
-
-                                           div.container {
-                                               width: 100%;
-                                               position: absolute;
-                                               div.end-censorship {
-                                                   font-size: 16px;
-                                                   font-family: LBL;
-                                                   font-weight: lighter;
-                                                   color: rgb( 255, 255, 255 );
-                                                   text-align: center;
-                                                   -moz-transform: matrix( 3.6355342662767,0,0,3.67352469523935,0,0);
-                                                   -webkit-transform: matrix( 3.6355342662767,0,0,3.67352469523935,0,0);
-                                                   -ms-transform: matrix( 3.6355342662767,0,0,3.67352469523935,0,0);
-                                                   position: relative;
-                                                   margin-left: auto;
-                                                   margin-right: auto;
-                                                   width: 250px;
-                                                   top: 275px;
-                                                   z-index: 38;
-                                               }
-
-                                               div.arrow-down {
-                                                   width: 0; 
-                                                   height: 0; 
-                                                   border-left: 30px solid transparent;
-                                                   border-right: 30px solid transparent;
-                                                   border-top: 30px solid rgb(13, 23, 32);
-                                                   position: relative;
-                                                   margin-left: auto;
-                                                   margin-right: auto;
-                                                   top: 58%;
-                                               }
-
-                                               div.app-desc {
-                                                   font-size: 24px;
-                                                   font-family: LBR;
-                                                   color: rgb( 255, 255, 255 );
-                                                   text-align: center;
-                                                   -moz-transform: matrix( 0.7386542256302,0,0,0.73825770238054,0,0);
-                                                   -webkit-transform: matrix( 0.7386542256302,0,0,0.73825770238054,0,0);
-                                                   -ms-transform: matrix( 0.7386542256302,0,0,0.73825770238054,0,0);
-                                                   position: relative;
-                                                   top: 300px;
-                                                   margin-left: auto;
-                                                   margin-right: auto;
-                                                   width: auto;
-                                                   z-index: 39;
-                                               }
-
-                                               div.download-section {
-                                                   top: 325px;
-                                                   margin-left: auto;
-                                                   margin-right: auto;
-                                                   position: relative;
-                                                   width: 516px;
-                                                   height: 80px;
-
-                                                   div.download-button {
-                                                       border-radius: 3em;
-                                                       float: left;
-                                                       border-style: solid;
-                                                       border-color: rgb( 197, 187, 32 );
-                                                       background-color: #e0d627;
-                                                       width: 294px;
-                                                       position: relative;
-                                                       height: 64px;
-                                                       color: #fff;
-                                                       text-shadow:1px 1px 2px #aaa;
-                                                       letter-spacing: 3px;
-                                                       background-image: -moz-linear-gradient( 90deg, rgb(0,0,0) 0%,
-                                                       rgb(255,255,255) 100%);
-                                                       background-image: -webkit-linear-gradient( 90deg, rgb(0,0,0) 0%,
-                                                       rgb(255,255,255) 100%);
-                                                       background-image: -ms-linear-gradient( 90deg, rgb(0,0,0) 0%,
-                                                       rgb(255,255,255) 100%);
-                                                       box-shadow: 1px 1.732px 0px 0px rgb( 21, 46, 65 );
-
-
-                                                       div.download-txt {
-                                                           padding-top: 10px;
-                                                           text-align: center;
-                                                           font-size: 16px;
-                                                           font-family: LB;
-                                                           text-transform: uppercase;
-                                                           span {
-                                                               display: block;
-                                                               color: rgb(114, 105, 27);
-                                                               font-size: 10px;
-                                                           }
-                                                       }
-                                                   }
-                                                   div.watch-video {
-                                                       width: 200px; 
-                                                       padding-top: 15px;
-                                                       padding-left: 50px;
-                                                       float: right;
-                                                       height: 50px;
-                                                       cursor: pointer;
-                                                       background: url('/images/play-button.png') no-repeat;
-                                                       span {
-                                                           letter-spacing: 3px;
-                                                           padding-left: 10px;
-                                                           color: #fff;
-                                                           font-size: 15px;
-                                                           font-family: LBR;
-                                                           text-transform: uppercase;
-                                                       }
-                                                   }
-                                               }
-
-                                               div.platforms {
-                                                   display: block;
-                                                   font-size: 18px;
-                                                   font-family: LB;
-                                                   color: rgb( 104, 139, 166 );
-                                                   text-align: center;
-                                                   position: relative;
-                                                   top: 380px;
-                                                   margin-left: auto;
-                                                   margin-right: auto;
-                                                   z-index: 32;
-                                                   a {
-                                                       color: #e0d627;
-                                                       text-decoration: none;
-                                                       border-bottom: 1px solid #999999;
-                                                   }
-                                               }
-                                           }
-                                       }
-                                       section.sign-up,
-                                       div.lantern-map {
-                                           position: relative;
-                                           background: rgb(29,53,69);
-                                           height: 1286px;
-
-                                           h1 {
-                                               margin-top: 0px;
-                                               font-size: 30px;
-                                               color: #fff;
-                                               margin-left: auto;
-                                               margin-right: auto;
-                                               position: relative;
-                                               text-transform: uppercase;
-                                               letter-spacing:5px;
-                                               font-family: LBL;
-                                               text-align: center;
-                                               padding-top: 50px;
-                                           }
-
-                                           div.lantern-desc {
-                                               padding-top: 30px;
-                                               font-family: LBL;
-                                               text-align: center;
-                                               width: 45%;
-                                               position: relative;
-                                               color: #fff;
-                                               margin-left: auto;
-                                               display: block;
-                                               margin-right: auto;
-                                               font-size: 18px;
-
-                                           }
-                                           div.map-wrapper {
-                                               width: 85%;
-                                               height: 70%;
-                                               margin: 0 auto;
-                                               position: relative;
-                                               background: rgb(29,53,69);
-
-                                               iframe {
-                                                   padding-top: 50px;
-                                                   padding-bottom: 50px;
-                                                   position: absolute;
-                                                   frameborder: 0;
-                                                   top: 0;
-                                                   left: 0;
-                                                   width: 100%;
-                                                   height: 100%;
-                                               }
-                                           }
-                                       }
-                                       section.sign-up {
-                                           width: 100%;
-                                           height: 320px;
-                                           position: relative;
-                                           background: rgb(18,36,48);
-
-                                           div#mc_embed_signup {
-                                               width: 674px;
-                                               margin-left: auto;
-                                               margin-right: auto;
-                                               font-family: LBL;         
-                                               h5 {
-                                                   font-size: 24px;
-                                                   text-align: center;
-                                                   color: #fff;
-                                               }
-                                               div.region {
-                                                   width: 210px;
-                                                   float: left;
-                                                   display: block;
-                                                   div.mc-field-group {
-                                                       padding-top: 30px; 
-                                                       padding-right: 55px;
-                                                       padding-bottom: 35px;
-                                                       background: rgb(25,45,58);
-                                                   }
-                                                   ul {
-                                                       padding-left: 20px;
-                                                       li {
-                                                           text-align: left;
-                                                           color: #fff;
-                                                           width: 170px;
-                                                           text-transform: uppercase;
-                                                           label {
-                                                               font-size: 11px;
-                                                               font-family: LBL;
-                                                               padding-left: 5px;
-                                                           }
-
-                                                       }
-                                                   }
-                                               }
-                                               div.email-form {
-                                                   width: 460px;
                                                    float: right;
-                                                   div.mc-field-group {
-                                                       padding: 40px;
-                                                       background: rgb(35, 57, 72);
-                                                       input#mce-EMAIL {
-                                                          font-weight: bold;
-                                                          font-family: LB;
-                                                          font-size: 18px;
-                                                       }
+                                                   padding-top: 0px;
+                                                   margin-top: 20px;
+                                                   display: inline-block;
+                                                            *[dir=rtl] & {
+                                                                float: none;
+                                                            }
+                                                            font-size: 12px;
+                                                        }                    
+                                                        font-size: 18px;
+                                                        font-family: LB;
 
-                                                       span {
-                                                           input {
-                                                               opacity: 1.0;
-                                                               color: #fff;
-                                                               font-weight: bold;
-                                                               background: #e0d627;
-                                                           }
-                                                       }
-                                                   }
-                                               }
-                                           }
-                                       }
-                                   }
+                                                        -moz-transform: matrix( 0.88121806912158,0,0,0.89167052164685,0,0);
+                                                        -webkit-transform: matrix( 0.88121806912158,0,0,0.89167052164685,0,0);
+                                                        -ms-transform: matrix( 0.88121806912158,0,0,0.89167052164685,0,0);
+                                                        position: relative;
+                                                        text-align: center;
+                                                        margin-left: auto;
+                                                        margin-right: auto;
+                                                        text-transform: uppercase;
+
+                                                        padding-top: 20px;
+                                                        float: left;
+                                                        display: block;
+                                                        ul {
+                                                            li {
+                                                                display: inline;
+                                                                padding-right: 43px;
+                                                                letter-spacing:2px;
+                                                            }
+                                                            li a.boxed {
+                                                                border: 2px solid #fff;
+                                                                padding: 10px;
+                                                            }
+                                                            li a {
+                                                                text-decoration: none;
+                                                                color: #fff;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                div.top-section {
+                                                    background-image: -moz-linear-gradient(bottom, #0c1720 18.26%, #0c1720 18.51%, #111d27 100%); /* gradient overlay */
+                                                    background-image: -o-linear-gradient(bottom, #0c1720 18.26%, #0c1720 18.51%, #111d27 100%); /* gradient overlay */
+                                                    background-image: -webkit-linear-gradient(bottom, #0c1720 18.26%, #0c1720 18.51%, #111d27 100%); /* gradient overlay */
+                                                    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iaGF0MCIgZ3JhZGllbnRVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIHgxPSI1MCUiIHkxPSIxMDAlIiB4Mj0iNTAlIiB5Mj0iLTEuNDIxMDg1NDcxNTIwMmUtMTQlIj4KPHN0b3Agb2Zmc2V0PSIxOCUiIHN0b3AtY29sb3I9IiMwYzE3MjAiIHN0b3Atb3BhY2l0eT0iMSIvPgo8c3RvcCBvZmZzZXQ9IjE5JSIgc3RvcC1jb2xvcj0iIzBjMTcyMCIgc3RvcC1vcGFjaXR5PSIxIi8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzExMWQyNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgIDwvbGluZWFyR3JhZGllbnQ+Cgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0idXJsKCNoYXQwKSIgLz4KPC9zdmc+); 
+                                                    background-color: #0a161f;
+                                                    margin-top: 60px;
+                                                    background: url('/images/LanternYellow2.png') top center no-repeat;
+                                                    background-size: cover;
+                                                    position: relative;
+                                                    width: 100%;
+                                                    height: 615px;
+                                                    z-index: 24;
+
+                                                    @media screen and (max-width: $break-small) {
+                                                        margin-top: 0px;
+                                                        background: url('/images/LanternYellow-small.png') center center no-repeat;
+                                                    }
+
+
+
+                                                    div.container {
+                                                        width: 100%;
+                                                        position: absolute;
+                                                        div.end-censorship {
+
+                                                            font-size: 16px;
+                                                            font-family: LBL;
+                                                            color: rgb( 255, 255, 255 );
+                                                            text-align: center;
+                                                            -moz-transform: matrix( 3.6355342662767,0,0,3.67352469523935,0,0);
+                                                            -webkit-transform: matrix( 3.6355342662767,0,0,3.67352469523935,0,0);
+                                                            -ms-transform: matrix( 3.6355342662767,0,0,3.67352469523935,0,0);
+                                                            position: relative;
+                                                            margin-left: auto;
+                                                            margin-right: auto;
+                                                            width: 28%;
+                                                            top: 245px;
+                                                            z-index: 38;
+
+                                                            @media screen and (max-width: $break-small) {
+                                                                width: auto;
+                                                                -webkit-transform: none;
+                                                                font-size: 30px;
+                                                            }
+
+                                                        }
+
+                                                        div.app-desc {
+                                                            font-size: 24px;
+                                                            font-family: LBR;
+                                                            color: rgb( 255, 255, 255 );
+                                                            text-align: center;
+                                                            -moz-transform: matrix( 0.7386542256302,0,0,0.73825770238054,0,0);
+                                                            -webkit-transform: matrix( 0.7386542256302,0,0,0.73825770238054,0,0);
+                                                            -ms-transform: matrix( 0.7386542256302,0,0,0.73825770238054,0,0);
+                                                            position: relative;
+                                                            top: 275px;
+                                                            margin-left: auto;
+                                                            margin-right: auto;
+                                                            width: auto;
+                                                            z-index: 39;
+                                                        }
+
+                                                        div.download-section {
+                                                            top: 315px;
+                                                            margin-left: auto;
+                                                            margin-right: auto;
+                                                            position: relative;
+                                                            width: 516px;
+                                                            height: 80px;
+
+                                                            div.download-button {
+
+                                                                @media screen and (max-width: $break-small) {
+                                                                    display: none;
+                                                                }
+
+                                                                border-radius: 3em;
+                                                                float: left;
+                                                                border: 3px solid #c5bb1f; 
+                                                                border-radius: 33px; /* border radius */
+                                                                -moz-background-clip: padding;
+                                                                -webkit-background-clip: padding-box;
+                                                                background-color: #dfd323;
+                                                                width: 294px;
+                                                                position: relative;
+                                                                height: 64px;
+                                                                color: #fff;
+                                                                letter-spacing: 3px;
+                                                                background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.12) 0%, rgba(255,255,255,.12) 100%); /* gradient overlay */
+                                                                background-image: -o-linear-gradient(bottom, rgba(0,0,0,.12) 0%, rgba(255,255,255,.12) 100%); /* gradient overlay */
+                                                                background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.12) 0%, rgba(255,255,255,.12) 100%); /* gradient overlay */
+                                                                background-image: linear-gradient(bottom, rgba(0,0,0,.12) 0%, rgba(255,255,255,.12) 100%); 
+
+                                                                div.download-txt {
+                                                                    padding-top: 10px;
+                                                                    text-align: center;
+                                                                    font-size: 18px;
+                                                                    font-family: LB;
+                                                                    text-shadow: 0 2px 2px rgba(0,0,0,.16); 
+                                                                    text-transform: uppercase;
+                                                                    span {
+                                                                        display: block;
+                                                                        color: #726b12;
+                                                                        text-shadow: none;
+                                                                        font-weight: bold;
+                                                                        font-size: 10px;
+                                                                    }
+                                                                }
+                                                            }
+                                                            div.watch-video {
+
+                                                                width: 200px; 
+                                                                padding-top: 15px;
+                                                                padding-left: 50px;
+                                                                float: right;
+                                                                height: 50px;
+                                                                cursor: pointer;
+                                                                background: url('/images/play-button.png') no-repeat;
+                                                                @media screen and (max-width: $break-small) {
+                                                                    width: 70%;
+                                                                    float: none;
+                                                                    margin-left: auto;
+                                                                    margin-right: auto;
+                                                                    
+                                                                }
+
+                                                                span {
+                                                                    letter-spacing: 3px;
+                                                                    padding-left: 10px;
+                                                                    color: #fff;
+                                                                    font-size: 15px;
+                                                                    font-family: LBR;
+                                                                    text-transform: uppercase;
+                                                                }
+                                                            }
+                                                        }
+
+                                                        div.platforms {
+                                                            display: block;
+                                                            font-size: 18px;
+                                                            font-family: LB;
+                                                            color: rgb( 104, 139, 166 );
+                                                            text-align: center;
+                                                            position: relative;
+                                                            top: 340px;
+                                                            margin-left: auto;
+                                                            margin-right: auto;
+                                                            z-index: 32;
+                                                            @media screen and (max-width: $break-small) {
+                                                                display: none;
+                                                            }
+                                                  
+                                                            a {
+                                                                color: #e0d627;
+                                                                text-decoration: none;
+                                                                border-bottom: 1px solid #e0d627;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                section.sign-up,
+                                                div.lantern-map {
+                                                    position: relative;
+                                                    background: rgb(29,53,69);
+                                                    height: 1286px;
+
+                                                    h1 {
+                                                        margin-top: 0px;
+                                                        font-size: 30px;
+                                                        color: #fff;
+                                                        margin-left: auto;
+                                                        margin-right: auto;
+                                                        position: relative;
+                                                        text-transform: uppercase;
+                                                        letter-spacing:5px;
+                                                        font-family: LBL;
+                                                        text-align: center;
+                                                        padding-top: 70px;
+                                                    }
+
+                                                    div.lantern-desc {
+                                                        padding-top: 30px;
+                                                        font-family: LBL;
+                                                        text-align: center;
+                                                        width: 45%;
+                                                        position: relative;
+                                                        color: #fff;
+                                                        margin-left: auto;
+                                                        display: block;
+                                                        margin-right: auto;
+                                                        font-size: 18px;
+                                                        @media screen and (max-width: $break-small) {
+                                                            width: auto;
+                                                        }
+
+
+                                                    }
+                                                    div.map-wrapper {
+                                                        width: 85%;
+                                                        height: 70%;
+                                                        margin: 0 auto;
+                                                        position: relative;
+                                                        background: rgb(29,53,69);
+
+                                                        iframe {
+                                                            padding-top: 50px;
+                                                            padding-bottom: 50px;
+                                                            position: absolute;
+                                                            frameborder: 0;
+                                                            top: 0;
+                                                            left: 0;
+                                                            width: 100%;
+                                                            height: 100%;
+
+                                                        }
+                                                    }
+                                                }
+                                                section.sign-up {
+                                                    width: 100%;
+                                                    height: 350px;
+                                                    position: relative;
+                                                    background: rgb(18,36,48);
+
+                                                    div#mc_embed_signup {
+                                                        width: 674px;
+                                                        margin-left: auto;
+                                                        margin-right: auto;
+                                                        font-family: LBL;         
+                                                        h5 {
+                                                            font-size: 24px;
+                                                            text-align: center;
+                                                            color: #fff;
+                                                        }
+                                                        div.region {
+                                                            width: 210px;
+                                                            float: left;
+                                                            display: block;
+                                                            div.mc-field-group {
+                                                                padding-top: 30px; 
+                                                                padding-right: 55px;
+                                                                padding-bottom: 35px;
+                                                                background: rgb(25,45,58);
+                                                            }
+                                                            ul {
+                                                                padding-left: 20px;
+                                                                li {
+                                                                    text-align: left;
+                                                                    color: #fff;
+                                                                    width: 170px;
+                                                                    text-transform: uppercase;
+                                                                    label {
+                                                                        font-size: 13px;
+                                                                        font-family: LBL;
+                                                                        padding-left: 5px;
+                                                                    }
+
+                                                                }
+                                                            }
+                                                        }
+                                                        div.email-form {
+                                                            width: 460px;
+                                                            float: right;
+                                                            div.mc-field-group {
+                                                                padding: 40px;
+                                                                background: rgb(35, 57, 72);
+                                                                input#mce-EMAIL {
+                                                                    font-weight: bold;
+                                                                    font-family: LB;
+                                                                    font-size: 18px;
+                                                                }
+
+                                                                span {
+                                                                    input {
+                                                                        opacity: 1.0;
+                                                                        color: #fff;
+                                                                        font-weight: bold;
+                                                                        background: #e0d627;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }

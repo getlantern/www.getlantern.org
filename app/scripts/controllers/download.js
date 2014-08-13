@@ -90,6 +90,8 @@ angular.module('lantern_www')
         'Linux': constants.DEB_URL64
     };
 
+    $rootScope.DEB_URL = constants.DEB_URL64;
+
     $scope.init = function () {
         if ($scope.selectedOS == "OSX") {
             $scope.order = ['Mac OS X', 'Windows', 'Linux'];
@@ -102,11 +104,17 @@ angular.module('lantern_www')
             $scope.order = ['Linux', 'Mac OS X', 'Windows'];
             if ($scope.selectedOS == "UBUNTU32") {
                 $scope.oss['Linux'] = constants.DEB_URL32;
+                $rootScope.DEB_URL = constants.DEB_URL32;
             }
         }
 
         var map = angular.element( document.querySelector( '#map' ) )[0];
-        map.attributes.src.value = "https://ui.getlantern.org/app/index.html";
+        if (window.screen.width > 600) {
+            map.attributes.src.value = "https://ui.getlantern.org/app/index.html";
+        }
+        else {
+            map.attributes.src.value = "http://getlantern.org/images/50b24994.vis.gif";
+        }
     };
 
     $scope.faqs = [ {
