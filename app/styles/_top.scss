@@ -15,7 +15,7 @@ div.outer-container {
         height: 60px;
         top: 0;
         z-index: 1005;
-        @media screen and (max-width: 720px) {
+        @media screen and (max-width: 770px) {
             padding-bottom: 0px;
             position: relative;
         }
@@ -275,20 +275,16 @@ a.nav-toggle:before{color:#fff;font:400 28px/55px "responsivenav";text-transform
                                                         position: absolute;
                                                         div.end-censorship {
 
-                                                            font-size: 16px;
+                                                            font-size: 60px;
                                                             font-family: LBL;
                                                             color: rgb( 255, 255, 255 );
                                                             text-align: center;
-                                                            -moz-transform: matrix( 3.6355342662767,0,0,3.67352469523935,0,0);
-                                                            -webkit-transform: matrix( 3.6355342662767,0,0,3.67352469523935,0,0);
-                                                            -ms-transform: matrix( 3.6355342662767,0,0,3.67352469523935,0,0);
                                                             position: relative;
                                                             margin-left: auto;
                                                             margin-right: auto;
-                                                            top: 245px;
+                                                            width: 100%;
+                                                            top: 225px;
                                                             max-width: 100%;
-                                                            z-index: 38;
-
                                                             @media screen and (max-width: $break-small) {
                                                                 width: auto;
                                                                 -webkit-transform: none;
@@ -307,15 +303,19 @@ a.nav-toggle:before{color:#fff;font:400 28px/55px "responsivenav";text-transform
                                                             -webkit-transform: matrix( 0.7386542256302,0,0,0.73825770238054,0,0);
                                                             -ms-transform: matrix( 0.7386542256302,0,0,0.73825770238054,0,0);
                                                             position: relative;
-                                                            top: 275px;
+                                                            top: 235px;
                                                             margin-left: auto;
                                                             margin-right: auto;
                                                             width: auto;
                                                             z-index: 39;
+                                                            @media screen and (max-width: $break-small) {
+                                                                top: 225px;
+                                                            }
+
                                                         }
 
                                                         div.download-section {
-                                                            top: 315px;
+                                                            top: 270px;
                                                             margin-left: auto;
                                                             margin-right: auto;
                                                             position: relative;
@@ -401,7 +401,7 @@ a.nav-toggle:before{color:#fff;font:400 28px/55px "responsivenav";text-transform
                                                             color: rgb( 104, 139, 166 );
                                                             text-align: center;
                                                             position: relative;
-                                                            top: 340px;
+                                                            top: 300px;
                                                             margin-left: auto;
                                                             margin-right: auto;
                                                             z-index: 32;
