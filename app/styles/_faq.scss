@@ -1,15 +1,19 @@
 .faq {
-    background-color: #10283a;
+    background-color: #122430;
     position: relative;
     z-index: 1;
     h3 {
-        color: $lnt-yellow;
+        color: #fff;
+        font-size: 30px;
+        letter-spacing:5px;
+        font-family: LBR;
         margin: 0 6% 20px 6%;
         text-transform: uppercase;
-        font-family: 'AvenirNextLTPro-DemiCn';
+        text-align: center;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        font-size: 2em;
+        font-size: 30px;
+        font-wieght: bold;
     }
     #faq {
         padding: 50px 0 25px;
@@ -19,16 +23,15 @@
         .more_questions {
             li {
                 &:first-child {
-                    border-top: 1px solid #7f9e99;
+                    //border-top: 1px solid #7f9e99;
                 }
             }
         }
         ul {
-            background: #32424d;
+            background: #233948;
             margin: 0 6%;
             padding: 0;
             li {
-                border-bottom: 1px solid #7f9e99;
                 padding: 10px 20px;
                 position: relative;
                 color: #fff;
@@ -68,7 +71,8 @@
                 .faq-item {
                     width: 92%;
                     float: left;
-                    font-family: 'AvenirNextLTPro-MediumCn';
+                    font-family: LBL;
+                    font-size: 13px;
                     -webkit-font-smoothing: antialiased;
                     -moz-osx-font-smoothing: grayscale;
                     @media screen and (max-width: 850px) {
@@ -86,7 +90,7 @@
                             text-decoration: none;
                         }
                         h4 {
-                            font-family: 'AvenirNextLTPro-MediumCn';
+                            font-family: LB;
                             -webkit-font-smoothing: antialiased;
                             -moz-osx-font-smoothing: grayscale;
                             font-size: 1.8em;
@@ -96,6 +100,9 @@
                                 display: inline-block;
                             }
                         }
+                    }
+                    a:hover {
+                        color: #dfd323;
                     }
                     .faq-answer {
                         font-size: 1.5em;
@@ -131,7 +138,7 @@
                         }
                     }
                 }
-    
+
                 h4 {
                     display: inline-block;
                 }

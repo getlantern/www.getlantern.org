@@ -12,7 +12,7 @@ div.outer-container {
         width: 100%;
         position: fixed;
         padding-bottom: 10px;
-        height: 60px;
+        height: 63px;
         top: 0;
         z-index: 1005;
         @media screen and (max-width: 770px) {
@@ -223,7 +223,7 @@ a.nav-toggle:before{color:#fff;font:400 28px/55px "responsivenav";text-transform
                                               ul {
                                                   li {
                                                       display: inline;
-                                                      padding-left: 35px;
+                                                      padding-left: 45px;
                                                       @media screen and (max-width: $break-small) {
                             padding-left: 10px;
                             font-size: 11px;
@@ -476,11 +476,12 @@ a.nav-toggle:before{color:#fff;font:400 28px/55px "responsivenav";text-transform
                                                                 display: none;
                                                             }
                                                         }
-                                                            @media screen and (max-width: $break-small) {
-                                                                img {
-                                                                    padding-top: 20px;
-                                                                    display: block !important;
-                                                                }
+
+                                                        img {
+                                                            padding-top: 20px;
+                                                            display: block;
+                                                            margin-left: auto;
+                                                            margin-right: auto;
                                                         }
                                                     }
                                                 }
