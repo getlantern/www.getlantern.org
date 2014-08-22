@@ -18,8 +18,8 @@
 
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
-        <link rel="stylesheet" href="bower_components/responsive-nav/responsive-nav.css"/>
         <!-- endbuild -->
+        <link rel="stylesheet" href="styles/responsive-nav.css"/>
 
         <!-- build:js scripts/loadfirst.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
@@ -70,7 +70,7 @@
                   <nav class="nav-area nav-collapse">
                         <ul class="section-list">
                             <li><a href="#about" ng-bind-template="{{'ABOUT' | translate}}">About</a></li>
-                            <li><a target="_blank" href="https://github.com/getlantern/lantern/wiki/Questions-and-Answers" ng-bind-template="{{'FAQ' | translate}}">FAQ</a></li>
+                            <li><a href="#faq" ng-bind-template="{{'FAQ' | translate}}">FAQ</a></li>
                             <li><a href="/blog/index.html" ng-bind-template="{{'BLOG' | translate}}">Blog</a></li>
                             <li><a class="dl boxed" href="http://igg.me/at/getlantern" target="_blank">Donate Via Indiegogo</a></li>
                         </ul>
@@ -161,14 +161,58 @@
         <div id="about" class="lantern-map">
             <h1>How Does Lantern Work?</h1>
             <div class="lantern-desc">Lantern's goal is access: creating fast, reliable connections to the open Internet. With Lantern, every computer can act as a server. By running Lantern, every user with uncensored access can become an access point for those without, providing gateways to censored sites like Twitter, Facebook, and YouTube.</div>
-            <div id="faq" class="map-wrapper">
+            <div class="map-wrapper">
                 <iframe id="map" src=""
                     frameborder="0" scrolling="auto"
                     allowfullscreen></iframe>
                 <img src="https://getlantern.org/images/50b24994.vis.gif"
-                style="display:none; max-width:100%;">
+                style="display:none;max-width:100%;">
             </div>
         </div>
+         <section class="section faq clearfix">
+                <div id="faq" class="clearfix" ng-controller="DownloadCtrl">
+                    <a name="faq" class="section-target">
+                        <h3 ng-bind-template="{{'QUESTIONS_AND_ANSWERS' | translate}}">Questions and Answers</h3>
+                    </a>
+                    <ul>
+                        <li class="clearfix" ng-repeat="faq in faqs.slice(0,5)">
+                            <button ng-click="faq.expanded=!faq.expanded" class="expander">{{!faq.expanded && '+' || '-'}}</button>
+                            <div class="faq-item">
+                                <a name="faq_{{faq.key|lowercase}}"
+                                    ng-click="faq.expanded=!faq.expanded"><h4 ng-bind-template="{{faq.key + '_QUESTION' | translate}}"></h4></a>
+                                <a class="faq-permalink" ng-href="#faq_{{faq.key|lowercase}}"></a>
+                                <div collapse="!faq.expanded" class="faq-answer">
+                                    <p ng-repeat="i in range(1, faq.nparagraphs)">
+                                       <span ng-bind-html="faq.key + '_ANSWER_' + i | translate"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                    <div ng-init="isCollapsed = true">
+                        <ul class="more_questions" collapse="isCollapsed">
+                            <li class="clearfix" ng-repeat="faq in faqs.slice(5,15)">
+                                <button ng-click="faq.expanded=!faq.expanded" class="expander">{{!faq.expanded && '+' || '-'}}</button>
+                                <div class="faq-item">
+                                    <a name="faq_{{faq.key|lowercase}}"
+                                        ng-click="faq.expanded=!faq.expanded"><h4 ng-bind-template="{{faq.key + '_QUESTION' | translate}}"></h4></a>
+                                    <a class="faq-permalink" ng-href="#faq_{{faq.key|lowercase}}"></a>
+                                    <div collapse="!faq.expanded" class="faq-answer">
+                                        <p ng-repeat="i in range(1, faq.nparagraphs)">
+                                           <span ng-bind-html="faq.key + '_ANSWER_' + i | translate"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <a ng-bind-template="{{'MORE_QUESTIONS' | translate}}" class="faq-link" ng-click="isCollapsed = !isCollapsed" ng-show="isCollapsed">More Questions and Answers</a>
+                        <a ng-bind-template="{{'LESS_QUESTIONS' | translate}}" class="faq-link" ng-click="isCollapsed = !isCollapsed" ng-hide="isCollapsed">Fewer Questions and Answers</a>
+                    </div>
+                </div>
+            </section>
+
+     
 </div>
 </div>
 
