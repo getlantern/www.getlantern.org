@@ -39,7 +39,7 @@ a.nav-toggle:before{color:#fff;font:400 28px/55px "responsivenav";text-transform
         nav.social-media {
             left: 3%;
             color: #ababab !important;
-            margin-right: 15%;
+            margin-right: 12%;
             @media screen and (max-width: 1025px) {
                 float: none;
                 left: 0%;
@@ -77,6 +77,18 @@ a.nav-toggle:before{color:#fff;font:400 28px/55px "responsivenav";text-transform
                         margin-top: 0;
                     }
                 }
+            }
+            li.bc div.bc-link {
+                cursor: pointer;
+
+            }
+
+            li.bc img {
+                vertical-align: middle;
+                cursor: pointer;
+            }
+            li.bc {
+                padding: 0px 10px 5px 15px;
             }
         }
 
