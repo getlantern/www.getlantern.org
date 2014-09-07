@@ -16,7 +16,8 @@ angular.module('lantern_www')
       case 'Linux':
         // https://github.com/codejoust/session.js/issues/29
         // https://github.com/codejoust/session.js/issues/30
-        if (/Ubuntu/.test(navigator.userAgent)) {
+        if (/Ubuntu/.test(navigator.userAgent) ||
+            /Linux/.test(navigator.userAgent)) {
           if (/x86_64/.test(navigator.userAgent)) {
             os = 'UBUNTU64';
           } else if (/(x|i6)86/.test(navigator.userAgent)) {
