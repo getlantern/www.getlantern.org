@@ -63,7 +63,7 @@ angular.module('lantern_www')
 
     $scope.trackEvent = function(type) {
         $window.ga('send', 'event', type, 
-                   'click', type + ' ' + osSniffer.os);
+                   'click', osSniffer.os);
     };
 
     $scope.selectOS = function (os) {
