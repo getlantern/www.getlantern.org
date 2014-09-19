@@ -525,7 +525,7 @@ a.nav-toggle:before{color:#fff;font:400 28px/55px "responsivenav";text-transform
                                                             }            
                                                         }
                                                         div.region {
-                                                            width: 210px;
+                                                            width: 40%;
                                                             float: left;
                                                             display: block;
                                                             @media screen and (max-width: $break-small) {
@@ -534,8 +534,9 @@ a.nav-toggle:before{color:#fff;font:400 28px/55px "responsivenav";text-transform
 
                                                             div.mc-field-group {
                                                                 padding-top: 30px; 
+                                                                height: 114px;
+                                                                width: 100%;
                                                                 padding-right: 55px;
-                                                                padding-bottom: 35px;
                                                                 background: rgb(25,45,58);
 
                                                                 @media screen and (max-width: $break-small) {
@@ -544,10 +545,11 @@ a.nav-toggle:before{color:#fff;font:400 28px/55px "responsivenav";text-transform
                                                             }
                                                             ul {
                                                                 padding-left: 20px;
+                                                                list-style-type: none;
                                                                 li {
+                                                                    width: 110%;
                                                                     text-align: left;
                                                                     color: #fff;
-                                                                    width: 170px;
                                                                     text-transform: uppercase;
                                                                     label {
                                                                         font-size: 13px;
@@ -559,7 +561,7 @@ a.nav-toggle:before{color:#fff;font:400 28px/55px "responsivenav";text-transform
                                                             }
                                                         }
                                                         div.email-form {
-                                                            width: 460px;
+                                                            width: 60%;
                                                             float: right;
                                                             @media screen and (max-width: $break-small) {
                                                                 width: 100%;
