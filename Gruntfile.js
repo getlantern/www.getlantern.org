@@ -290,8 +290,9 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,png,txt}',
             '*.html',
+            'blog/**/*',
             'images/{,*/}*.{gif,webp}',
-            'styles/fonts/*.{ttf,svg,eot,woff}'
+            'styles/fonts/*.{ttf,svg,eot,woff,otf}'
           ]
         }, {
           expand: true,
@@ -386,7 +387,7 @@ module.exports = function (grunt) {
             cwd: '<%= yeoman.dist %>'
           }
         },
-      command: 'jitsu deploy && ../deploytos3.bash'
+      command: '../deploytos3.bash'
       }
     },
 
