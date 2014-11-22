@@ -149,7 +149,8 @@ angular.module('lantern_www')
     OSX_URL: 'https://s3.amazonaws.com/lantern/lantern-installer.dmg',
     WIN_URL: 'https://s3.amazonaws.com/lantern/lantern-installer.exe',
     DEB_URL32: 'https://s3.amazonaws.com/lantern/lantern-installer-32.deb',
-    DEB_URL64: 'https://s3.amazonaws.com/lantern/lantern-installer-64.deb'
+    DEB_URL64: 'https://s3.amazonaws.com/lantern/lantern-installer-64.deb',
+    BETA_URL: 'https://github.com/getlantern/lantern/wiki/Lantern-Beta-Versions',
   // point this at the real data when it's ready, or point at a not found url
   // to test what happens if we can't reach the installer data or if we take
   // it down on purpose to temporarily disable public download:

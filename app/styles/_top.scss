@@ -34,20 +34,22 @@ div.outer-container {
             font: 400 28px/55px "responsivenav";
             text-transform: none;
         }
-a.nav-toggle:before{color:#fff;font:400 28px/55px "responsivenav";text-transform:none;text-align:center;position:absolute;content:"\2261";text-indent:0;speak:none;width:100%;left:0;top:0}
+        a.nav-toggle:before{color:#fff;font:400 28px/55px "responsivenav";text-transform:none;text-align:center;position:absolute;content:"\2261";text-indent:0;speak:none;width:100%;left:0;top:0}
 
         nav.social-media {
             left: 3%;
             color: #ababab !important;
-            margin-right: 12%;
+            width: 30%;
             @media screen and (max-width: 1025px) {
                 float: none;
-                left: 0%;
                 margin-right: 0%;
                 text-align: left;
                 *[dir=rtl] & {
                     float: none;
                 }
+            }
+            @media screen and (max-width: 648px) {
+                width: auto;
             }
             float: left;
 
@@ -99,493 +101,538 @@ a.nav-toggle:before{color:#fff;font:400 28px/55px "responsivenav";text-transform
             padding-top: 20px;
 
             float: right;
-                   *[dir=rtl] & {
-                       float: left;
-                   }
-                   margin-right: 4.5%;
-                   @media screen and (max-width: $break-small) {
-                       float: none;
+            *[dir=rtl] & {
+                float: left;
+            }
+            margin-right: 4.5%;
+            @media screen and (max-width: 800px) {
+                display: none;
+            }
+            @media screen and (max-width: $break-small) {
+                float: none;
 
-                       text-align: center;
-                       *[dir=rtl] & {
-                           float: none;
-                       }
-                   }
+                text-align: center;
+                *[dir=rtl] & {
+                    float: none;
+                }
+            }
 
-                   .navlink-list {
-                       @include inline-list;
-                       &.lang-list > li {
-                           float: left;
+            .navlink-list {
+                @include inline-list;
+                &.lang-list > li {
+                    float: left;
+                           *[dir=rtl] & {
+                               float: right;
+                           }
+
+                           text-align: right;
+                           text-transform: uppercase;
+                           background-color: rgb( 43, 62, 78 );
+                           text-transform: uppercase;
+                           cursor: pointer;
+
+                           padding: 10px 5px 5px 5px;
+                           display: inline-block;
+                           @media screen and (max-width: $break-small) {
+                               float: none;
+                                      *[dir=rtl] & {
+                                          float: none;
+                                      }
+                                  }
+                              }
+                              &.lang-list, &.lang-list a {
+                                  font-size: 12px;
+                                  letter-spacing: 2px;
+                                  font-weight: bold;
+                                  font-family: LB;
+                                  color: #fff;
+                                  &.active-lang {
+                                      -webkit-font-smoothing: antialiased;
+                                      -moz-osx-font-smoothing: grayscale;
+                                      &:hover {
+                                          cursor: pointer;
+                                      }
+                                  }
+                              }
+                              p {
+                                  float: left;
                                   *[dir=rtl] & {
                                       float: right;
                                   }
-
+                                  font-weight: bold;
+                                  font-size: 1.1em;
+                                  margin: 0;
+                                  color: #e0d627;  
+                              }
+                              a {
+                                  @include single-transition(color, .3s);
+                                  color: #7f9e99;
+                                  &:hover {
+                                      text-decoration: none;
+                                  }
+                                  b {
+                                      font-weight: normal;
+                                  }
+                                  span {
+                                      border-top: 5px solid #fff;
+                                      margin-left: 0;
+                                  }
+                              }
+                              .menu {
+                                  position: absolute;
+                                  top: 100%;
+                                  right: 0;
                                   text-align: right;
-                                  text-transform: uppercase;
-                                  background-color: rgb( 43, 62, 78 );
-                                  text-transform: uppercase;
-                                  cursor: pointer;
-
-                                  padding: 10px 5px 5px 5px;
-                                  display: inline-block;
-                                  @media screen and (max-width: $break-small) {
-                                      float: none;
-                                             *[dir=rtl] & {
-                                                 float: none;
-                                             }
-                                         }
-                                     }
-                                     &.lang-list, &.lang-list a {
-                                         font-size: 12px;
-                                         letter-spacing: 2px;
-                                         font-weight: bold;
-                                         font-family: LB;
-                                         color: #fff;
-                                         &.active-lang {
-                                             -webkit-font-smoothing: antialiased;
-                                             -moz-osx-font-smoothing: grayscale;
-                                             &:hover {
-                                                 cursor: pointer;
-                                             }
-                                         }
-                                     }
-                                     p {
-                                         float: left;
-                                                *[dir=rtl] & {
-                                                    float: right;
-                                                }
-                                                font-weight: bold;
-                                                font-size: 1.1em;
-                                                margin: 0;
-                                                color: #e0d627;  
-                                            }
-                                            a {
-                                                @include single-transition(color, .3s);
-                                                color: #7f9e99;
-                                                &:hover {
-                                                    text-decoration: none;
-                                                }
-                                                b {
-                                                    font-weight: normal;
-                                                }
-                                                span {
-                                                    border-top: 5px solid #fff;
-                                                    margin-left: 0;
-                                                }
-                                            }
-                                            .menu {
-                                                position: absolute;
-                                                top: 100%;
-                                                right: 0;
-                                                text-align: right;
-                                                z-index: 1000;
-                                                float: left;
-                                                       *[dir=rtl] & {
-                                                           float: right;
-                                                           text-align: left;
-                                                           left: 0;
-                                                       }
-                                                       min-width: 160px;
-                                                       padding: 5px 0;
-                                                       margin: 2px 0 0;
-                                                       list-style: none;
-                                                       font-size: 14px;
-                                                       background-color: #131f28;
-                                                       border: 1px solid #cccccc;
-                                                       border: 1px solid rgba(0, 0, 0, 0.15);
-                                                       border-radius: 4px;
-                                                       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-                                                       background-clip: padding-box;
-                                                       li {
-                                                           display: block;
-                                                           a {
-                                                               padding: 3px 20px;
-                                                               @include single-transition(color, .3s);
-                                                               &:hover {
-                                                                   color: #e0d627;
-                                                                   background-color: transparent;
-                                                               }
-                                                           }
-                                                       }
-                                                   }
-                                               }
-                                           }
-
-                                           nav.nav-area {
-
-                                              font-size: 18px;
-                                              font-family: LB;
-                                              position: relative;
-                                              text-align: center;
-                                              height: 60px;
-                                              margin-left: auto;
-                                              margin-right: auto;
-                                              text-transform: uppercase;
-
-                                              padding-top: 20px;
-                                              float: left;
-                                              display: block;
-                                              @media screen and (max-width: $break-small) {
-                                                padding-bottom: 30px;
-                                                padding-top: 15px;
-                                                background-image: url("/images/nav-bg.png");
-
-                                              }
-
-                                              ul {
-                                                  li {
-                                                      display: inline;
-                                                      padding-left: 45px;
-                                                      @media screen and (max-width: $break-small) {
-                            padding-left: 10px;
-                            font-size: 11px;
-            }
-
-                                                      letter-spacing:2px;
-                                                  }
-                                                  li a.boxed {
-                                                      border: 2px solid #fff;
-                                                      padding: 10px;
-                                                      @media screen and (max-width: $break-small) {
-                                                        padding: 0px;
-                                                        border: none;
-                                                      }
-
-                                                  }
-                                                  li a {
-                                                      text-decoration: none;
-                                                      color: #fff;
-                                                  }
-                                              }
+                                  z-index: 1000;
+                                  float: left;
+                                  *[dir=rtl] & {
+                                      float: right;
+                                      text-align: left;
+                                      left: 0;
+                                  }
+                                  min-width: 160px;
+                                  padding: 5px 0;
+                                  margin: 2px 0 0;
+                                  list-style: none;
+                                  font-size: 14px;
+                                  background-color: #131f28;
+                                  border: 1px solid #cccccc;
+                                  border: 1px solid rgba(0, 0, 0, 0.15);
+                                  border-radius: 4px;
+                                  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+                                  background-clip: padding-box;
+                                  li {
+                                      display: block;
+                                      a {
+                                          padding: 3px 20px;
+                                          @include single-transition(color, .3s);
+                                          &:hover {
+                                              color: #e0d627;
+                                              background-color: transparent;
                                           }
                                       }
+                                  }
+                              }
+                          }
+                      }
 
-                                                div.top-section {
-                                                    background-image: -moz-linear-gradient(bottom, #0c1720 18.26%, #0c1720 18.51%, #111d27 100%); /* gradient overlay */
-                                                    background-image: -o-linear-gradient(bottom, #0c1720 18.26%, #0c1720 18.51%, #111d27 100%); /* gradient overlay */
-                                                    background-image: -webkit-linear-gradient(bottom, #0c1720 18.26%, #0c1720 18.51%, #111d27 100%); /* gradient overlay */
-                                                    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iaGF0MCIgZ3JhZGllbnRVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIHgxPSI1MCUiIHkxPSIxMDAlIiB4Mj0iNTAlIiB5Mj0iLTEuNDIxMDg1NDcxNTIwMmUtMTQlIj4KPHN0b3Agb2Zmc2V0PSIxOCUiIHN0b3AtY29sb3I9IiMwYzE3MjAiIHN0b3Atb3BhY2l0eT0iMSIvPgo8c3RvcCBvZmZzZXQ9IjE5JSIgc3RvcC1jb2xvcj0iIzBjMTcyMCIgc3RvcC1vcGFjaXR5PSIxIi8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzExMWQyNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgIDwvbGluZWFyR3JhZGllbnQ+Cgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0idXJsKCNoYXQwKSIgLz4KPC9zdmc+); 
-                                                    background-color: #0a161f;
-                                                    margin-top: 60px;
-                                                    background: url('/images/LanternYellow2.png') top center no-repeat;
-                                                    background-size: cover;
-                                                    position: relative;
-                                                    width: 100%;
-                                                    height: 615px;
-                                                    z-index: 24;
+                      nav.nav-area {
 
-                                                    @media screen and (max-width: $break-small) {
-                                                        background: url('/images/LanternYellow-small.png') top center no-repeat;
-                                                        background-size: 140% 60%;
-                                                        margin-top: 0px;
-                                                    }
+                          font-size: 18px;
+                          font-family: LB;
+                          position: fixed;
+                          text-align: center;
+                          text-transform: uppercase;
+                          padding-top: 20px;
+                          display: inline-block;
+                          @media screen and (max-width: $break-small) {
+                              padding-bottom: 30px;
+                              padding-top: 15px;
+                              background-image: url("/images/nav-bg.png");
+                              width: 100%;
+                          }
 
+                          ul {
+                              margin: 0;
+                              padding: 0;
+                              display: inline-block;
+                              list-style:none;
+                              li {
+                                  display: inline;
+                                  padding-left: 45px;
+                                  @media screen and (max-width: $break-small) {
+                                      padding-left: 10px;
+                                      font-size: 11px;
+                                  }
 
+                                  letter-spacing:2px;
+                              }
+                              li:first-child {
+                                  padding-left: 15px;
+                              }
+                              li a.boxed {
+                                  display: inline-block;
+                                  border: 2px solid #fff;
+                                  padding: 10px;
+                                  @media screen and (max-width: $break-small) {
+                                      padding: 0px;
+                                      border: none;
+                                  }
 
-                                                    div.container {
-                                                        width: 100%;
-                                                        position: absolute;
-                                                        div.end-censorship {
+                              }
+                              li a {
+                                  text-decoration: none;
+                                  color: #fff;
+                              }
+                          }
+                      }
+                  }
 
-                                                            font-size: 60px;
-                                                            font-family: LBL;
-                                                            color: rgb( 255, 255, 255 );
-                                                            text-align: center;
-                                                            position: relative;
-                                                            margin-left: auto;
-                                                            margin-right: auto;
-                                                            width: 100%;
-                                                            top: 225px;
-                                                            max-width: 100%;
-                                                            @media screen and (max-width: $break-small) {
-                                                                width: auto;
-                                                                -webkit-transform: none;
-                                                                font-size: 30px;
-                                                                top: 180px;
-                                                            }
+                div.top-section {
+                    background-image: -moz-linear-gradient(bottom, #0c1720 18.26%, #0c1720 18.51%, #111d27 100%); /* gradient overlay */
+                    background-image: -o-linear-gradient(bottom, #0c1720 18.26%, #0c1720 18.51%, #111d27 100%); /* gradient overlay */
+                    background-image: -webkit-linear-gradient(bottom, #0c1720 18.26%, #0c1720 18.51%, #111d27 100%); /* gradient overlay */
+                    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iaGF0MCIgZ3JhZGllbnRVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIHgxPSI1MCUiIHkxPSIxMDAlIiB4Mj0iNTAlIiB5Mj0iLTEuNDIxMDg1NDcxNTIwMmUtMTQlIj4KPHN0b3Agb2Zmc2V0PSIxOCUiIHN0b3AtY29sb3I9IiMwYzE3MjAiIHN0b3Atb3BhY2l0eT0iMSIvPgo8c3RvcCBvZmZzZXQ9IjE5JSIgc3RvcC1jb2xvcj0iIzBjMTcyMCIgc3RvcC1vcGFjaXR5PSIxIi8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzExMWQyNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgIDwvbGluZWFyR3JhZGllbnQ+Cgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0idXJsKCNoYXQwKSIgLz4KPC9zdmc+); 
+                    background-color: #0a161f;
+                    margin-top: 60px;
+                    background: url('/images/LanternYellow2.png') top center no-repeat;
+                    background-size: cover;
+                    position: relative;
+                    width: 100%;
+                    height: 615px;
+                    z-index: 24;
 
-                                                        }
-
-                                                        div.app-desc {
-                                                            font-size: 24px;
-                                                            font-family: LBR;
-                                                            color: rgb( 255, 255, 255 );
-                                                            text-align: center;
-                                                            -moz-transform: matrix( 0.7386542256302,0,0,0.73825770238054,0,0);
-                                                            -webkit-transform: matrix( 0.7386542256302,0,0,0.73825770238054,0,0);
-                                                            -ms-transform: matrix( 0.7386542256302,0,0,0.73825770238054,0,0);
-                                                            position: relative;
-                                                            top: 235px;
-                                                            margin-left: auto;
-                                                            margin-right: auto;
-                                                            width: auto;
-                                                            z-index: 39;
-                                                            @media screen and (max-width: $break-small) {
-                                                                top: 225px;
-                                                            }
-
-                                                        }
-
-                                                        div.download-section {
-                                                            top: 270px;
-                                                            margin-left: auto;
-                                                            margin-right: auto;
-                                                            position: relative;
-                                                            width: 516px;
-                                                            height: 80px;
-
-                                                            @media screen and (max-width: $break-small) {
-                                                                width: auto;
-                                                                top: 270px;
-                                                            }
+                    @media screen and (max-width: $break-small) {
+                        background: url('/images/LanternYellow-small.png') top center no-repeat;
+                        background-size: 140% 60%;
+                        margin-top: 0px;
+                        height: 500px;
+                    }
 
 
-                                                            div.download-button {
 
-                                                                @media screen and (max-width: $break-small) {
-                                                                    display: none;
-                                                                }
+                    div.container {
+                        width: 100%;
+                        position: relative;
+                        div.end-censorship {
 
-                                                                border-radius: 3em;
-                                                                float: left;
-                                                                border: 3px solid #c5bb1f; 
-                                                                border-radius: 33px; /* border radius */
-                                                                -moz-background-clip: padding;
-                                                                -webkit-background-clip: padding-box;
-                                                                background-color: #dfd323;
-                                                                width: 294px;
-                                                                position: relative;
-                                                                height: 64px;
-                                                                color: #fff;
-                                                                letter-spacing: 3px;
-                                                                background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.12) 0%, rgba(255,255,255,.12) 100%); /* gradient overlay */
-                                                                background-image: -o-linear-gradient(bottom, rgba(0,0,0,.12) 0%, rgba(255,255,255,.12) 100%); /* gradient overlay */
-                                                                background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.12) 0%, rgba(255,255,255,.12) 100%); /* gradient overlay */
-                                                                background-image: linear-gradient(bottom, rgba(0,0,0,.12) 0%, rgba(255,255,255,.12) 100%); 
+                            font-size: 60px;
+                            font-family: LBL;
+                            color: rgb( 255, 255, 255 );
+                            text-align: center;
+                            position: relative;
+                            margin-top: 255px;
+                            margin-left: auto;
+                            margin-right: auto;
+                            width: 100%;
+                            @media screen and (max-width: $break-small) {
+                                width: auto;
+                                -webkit-transform: none;
+                                font-size: 30px;
+                                top: 0px;
+                                margin-top: 325px;
+                            }
 
-                                                                div.download-txt {
-                                                                    padding-top: 10px;
-                                                                    text-align: center;
-                                                                    font-size: 18px;
-                                                                    font-family: LB;
-                                                                    text-shadow: 0 2px 2px rgba(0,0,0,.16); 
-                                                                    text-transform: uppercase;
-                                                                    span {
-                                                                        display: block;
-                                                                        color: #726b12;
-                                                                        text-shadow: none;
-                                                                        font-weight: bold;
-                                                                        font-size: 10px;
-                                                                    }
-                                                                }
-                                                            }
-                                                            div.watch-video {
+                        }
 
-                                                                width: 200px; 
-                                                                padding-top: 15px;
-                                                                padding-left: 50px;
-                                                                float: right;
-                                                                height: 50px;
-                                                                cursor: pointer;
-                                                                background: url('/images/play-button.png') no-repeat;
-                                                                @media screen and (max-width: $break-small) {
-                                                                    float: none;
-                                                                    margin-left: auto;
-                                                                    margin-right: auto;
-                                                                    
-                                                                }
+                        div.post-download {
+                            font-size: 22px;
+                            font-family: LBR;
+                            position: relative;
+                            color: #fff;
+                            color: rgb(255,255,255);
+                            text-align: center;
+                            span.fb {
+                                padding-top: 10px;
+                                color: rgb(74, 110, 169);
+                                font-weight: bold;
+                                padding-left:10px;
+                            }
+                            div.fb-share-button span {
+                                height: 30px !important; 
+                            }
+                            span.twitter {
+                                padding-top: 10px;
+                                color: rgb(66, 192, 251);
+                                font-weight: bold;
+                            }
+                        }
 
-                                                                span {
-                                                                    letter-spacing: 3px;
-                                                                    padding-left: 10px;
-                                                                    color: #fff;
-                                                                    font-size: 15px;
-                                                                    font-family: LBR;
-                                                                    text-transform: uppercase;
-                                                                }
-                                                            }
-                                                        }
+                        div.app-desc {
+                            font-size: 22px;
+                            font-family: LBR;
+                            color: rgb( 255, 255, 255 );
+                            text-align: center;
+                            -moz-transform: matrix( 0.7386542256302,0,0,0.73825770238054,0,0);
+                            -webkit-transform: matrix( 0.7386542256302,0,0,0.73825770238054,0,0);
+                            -ms-transform: matrix( 0.7386542256302,0,0,0.73825770238054,0,0);
+                            position: relative;
+                            margin-left: auto;
+                            margin-right: auto;
+                            width: 60%;
+                            z-index: 39;
+                            @media screen and (max-width: $break-small) {
+                                width: auto;
+                            }
 
-                                                        div.platforms {
-                                                            display: block;
-                                                            font-size: 18px;
-                                                            font-family: LB;
-                                                            color: rgb( 104, 139, 166 );
-                                                            text-align: center;
-                                                            position: relative;
-                                                            top: 300px;
-                                                            margin-left: auto;
-                                                            margin-right: auto;
-                                                            z-index: 32;
-                                                            @media screen and (max-width: $break-small) {
-                                                                display: none;
-                                                            }
-                                                  
-                                                            a {
-                                                                color: #e0d627;
-                                                                text-decoration: none;
-                                                                border-bottom: 1px solid #e0d627;
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                                section.sign-up,
-                                                div.lantern-map {
-                                                    position: relative;
-                                                    background: rgb(29,53,69);
-                                                    height: 1286px;
+                        }
 
-                                                    h1 {
-                                                        margin-top: 0px;
-                                                        font-size: 30px;
-                                                        color: #fff;
-                                                        margin-left: auto;
-                                                        margin-right: auto;
-                                                        position: relative;
-                                                        text-transform: uppercase;
-                                                        letter-spacing:5px;
-                                                        font-family: LBL;
-                                                        text-align: center;
-                                                        padding-top: 70px;
-                                                    }
+                        div.download-section {
+                            margin-left: auto;
+                            margin-right: auto;
+                            margin-top: 22px;
+                            position: relative;
+                            width: 516px;
+                            height: 70px;
 
-                                                    div.lantern-desc {
-                                                        padding-top: 30px;
-                                                        font-family: LBL;
-                                                        text-align: center;
-                                                        width: 45%;
-                                                        position: relative;
-                                                        color: #fff;
-                                                        margin-left: auto;
-                                                        display: block;
-                                                        margin-right: auto;
-                                                        font-size: 18px;
-                                                        @media screen and (max-width: $break-small) {
-                                                            width: auto;
-                                                        }
+                            @media screen and (max-width: 700px) {
+                                display: none !important;
+                            }
 
 
-                                                    }
-                                                    div.map-wrapper {
-                                                        width: 85%;
-                                                        height: 70%;
-                                                        margin: 0 auto;
-                                                        position: relative;
-                                                        background: rgb(29,53,69);
+
+                            div.download-button {
+
+                                border-radius: 3em;
+                                float: left;
+                                border: 3px solid #c5bb1f; 
+                                border-radius: 33px; /* border radius */
+                                -moz-background-clip: padding;
+                                -webkit-background-clip: padding-box;
+                                background-color: #dfd323;
+                                width: 294px;
+                                position: relative;
+                                height: 64px;
+                                color: #fff;
+                                letter-spacing: 3px;
+                                background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.12) 0%, rgba(255,255,255,.12) 100%); /* gradient overlay */
+                                background-image: -o-linear-gradient(bottom, rgba(0,0,0,.12) 0%, rgba(255,255,255,.12) 100%); /* gradient overlay */
+                                background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.12) 0%, rgba(255,255,255,.12) 100%); /* gradient overlay */
+                                background-image: linear-gradient(bottom, rgba(0,0,0,.12) 0%, rgba(255,255,255,.12) 100%); 
+
+                                div.download-txt {
+                                    padding-top: 10px;
+                                    text-align: center;
+                                    font-size: 15px;
+                                    font-family: LB;
+                                    text-shadow: 0 2px 2px rgba(0,0,0,.16); 
+                                    text-transform: uppercase;
+                                    span.version {
+                                        font-size: 10px;
+                                        padding: 0px 5px 0px 5px;
+                                        display: block;
+                                        weight: bold;
+                                    }
+                                    span.os {
+                                        display: inline;
+                                        color: #726b12;
+                                        text-transform: none;
+                                        letter-spacing: normal;
+                                        text-shadow: none;
+                                        font-weight: bold;
+                                        font-size: 13px;
+                                        p {
+                                            display: inline;
+                                            font-family: LBL;
+                                            padding: 0px 2px 0px 2px;
+                                            font-weight: none;
+                                            font-size: 12px;
+                                        }
+                                    }
+                                }
+                            }
+                            div.watch-video {
+
+                                width: 200px; 
+                                padding-top: 15px;
+                                padding-left: 50px;
+                                float: right;
+                                height: 50px;
+                                cursor: pointer;
+                                background: url('/images/play-button.png') no-repeat;
+                                @media screen and (max-width: $break-small) {
+                                    float: none;
+                                    margin-left: auto;
+                                    margin-right: auto;
+
+                                }
+                                span {
+                                    letter-spacing: 3px;
+                                    padding-left: 10px;
+                                    color: #fff;
+                                    font-size: 15px;
+                                    font-family: LBR;
+                                    text-transform: uppercase;
+                                }
+                            }
+                        }
+
+                        div.platforms {
+                            display: block;
+                            font-size: 18px;
+                            font-family: LB;
+                            color: rgb( 104, 139, 166 );
+                            text-align: center;
+                            position: relative;
+                            margin-top: 15px;
+                            margin-left: auto;
+                            margin-right: auto;
+                            z-index: 32;
+
+                            @media screen and (max-width: 700px) {
+                                display: none !important;
+                            }
 
 
-                                                        iframe {
-                                                            padding-top: 50px;
-                                                            padding-bottom: 50px;
-                                                            position: absolute;
-                                                            frameborder: 0;
-                                                            max-width: 100%;
-                                                            top: 0;
-                                                            left: 0;
-                                                            width: 100%;
-                                                            height: 100%;
-                                                            @media screen and (max-width: $break-small) {
-                                                                display: none;
-                                                            }
-                                                        }
+                            a {
+                                color: #e0d627;
+                                text-decoration: none;
+                                border-bottom: 1px solid #e0d627;
+                            }
+                        }
+                    }
+                }
+                section.sign-up,
+                div.lantern-map {
+                    position: relative;
+                    background: rgb(29,53,69);
+                    height: 1286px;
 
-                                                        img {
-                                                            padding-top: 20px;
-                                                            display: block;
-                                                            margin-left: auto;
-                                                            margin-right: auto;
-                                                        }
-                                                    }
-                                                }
-                                                section.sign-up {
-                                                    width: 100%;
-                                                    height: 350px;
-                                                    position: relative;
-                                                    background: rgb(18,36,48);
+                    @media screen and (max-width: $break-small) {
+                        height: 600px;
+                    }
 
-                                                    @media screen and (max-width: $break-small) {
-                                                        height: 500px;
-                                                    }             
+                    h1 {
+                        margin-top: 0px;
+                        font-size: 30px;
+                        color: #fff;
+                        margin-left: auto;
+                        margin-right: auto;
+                        position: relative;
+                        text-transform: uppercase;
+                        letter-spacing:5px;
+                        font-family: LBL;
+                        text-align: center;
+                        padding-top: 70px;
+                    }
 
-                                                    div#mc_embed_signup {
-                                                        width: 674px;
-                                                        @media screen and (max-width: $break-small) {
-                                                            width: 100%;
-                                                        }
+                    div.lantern-desc {
+                        padding-top: 30px;
+                        font-family: LBL;
+                        text-align: center;
+                        width: 45%;
+                        position: relative;
+                        color: #fff;
+                        margin-left: auto;
+                        display: block;
+                        margin-right: auto;
+                        font-size: 18px;
+                        @media screen and (max-width: $break-small) {
+                            width: auto;
+                        }
 
-                                                        margin-left: auto;
-                                                        margin-right: auto;
-                                                        font-family: LBL;         
-                                                        h5 {
-                                                            font-size: 24px;
-                                                            text-align: center;
-                                                            color: #fff;
-                                                            @media screen and (max-width: $break-small) {
-                                                                font-size: 20px;
-                                                            }            
-                                                        }
-                                                        div.region {
-                                                            width: 40%;
-                                                            float: left;
-                                                            display: block;
-                                                            @media screen and (max-width: $break-small) {
-                                                                width: 100%;
-                                                            }
 
-                                                            div.mc-field-group {
-                                                                padding-top: 30px; 
-                                                                height: 114px;
-                                                                width: 100%;
-                                                                padding-right: 55px;
-                                                                background: rgb(25,45,58);
+                    }
+                    div.map-wrapper {
+                        width: 85%;
+                        height: 70%;
+                        margin: 0 auto;
+                        position: relative;
+                        background: rgb(29,53,69);
 
-                                                                @media screen and (max-width: $break-small) {
-                                                                    width: 100%;
-                                                                }
-                                                            }
-                                                            ul {
-                                                                padding-left: 20px;
-                                                                list-style-type: none;
-                                                                li {
-                                                                    width: 110%;
-                                                                    text-align: left;
-                                                                    color: #fff;
-                                                                    text-transform: uppercase;
-                                                                    label {
-                                                                        font-size: 13px;
-                                                                        font-family: LBL;
-                                                                        padding-left: 5px;
-                                                                    }
 
-                                                                }
-                                                            }
-                                                        }
-                                                        div.email-form {
-                                                            width: 60%;
-                                                            float: right;
-                                                            @media screen and (max-width: $break-small) {
-                                                                width: 100%;
-                                                            }
+                        iframe {
+                            padding-top: 50px;
+                            padding-bottom: 50px;
+                            position: absolute;
+                            frameborder: 0;
+                            max-width: 100%;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            @media screen and (max-width: $break-small) {
+                                display: none;
+                            }
+                        }
 
-                                                            div.mc-field-group {
-                                                                padding: 40px;
-                                                                background: rgb(35, 57, 72);
-                                                                input#mce-EMAIL {
-                                                                    font-weight: bold;
-                                                                    font-family: LB;
-                                                                    font-size: 18px;
-                                                                }
+                        img {
+                            padding-top: 20px;
+                            display: block;
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+                    }
+                }
+                section.sign-up {
+                    width: 100%;
+                    height: 350px;
+                    position: relative;
+                    background: rgb(18,36,48);
 
-                                                                span {
-                                                                    input {
-                                                                        opacity: 1.0;
-                                                                        color: #fff;
-                                                                        font-weight: bold;
-                                                                        background: #e0d627;
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
+                    @media screen and (max-width: $break-small) {
+                        height: 500px;
+                    }             
+
+                    div#mc_embed_signup {
+                        width: 674px;
+                        @media screen and (max-width: $break-small) {
+                            width: 100%;
+                        }
+
+                        margin-left: auto;
+                        margin-right: auto;
+                        font-family: LBL;         
+                        h5 {
+                            font-size: 24px;
+                            text-align: center;
+                            color: #fff;
+                            @media screen and (max-width: $break-small) {
+                                font-size: 20px;
+                            }            
+                        }
+                        div.region {
+                            width: 40%;
+                            float: left;
+                            display: block;
+                            @media screen and (max-width: $break-small) {
+                                width: 100%;
+                            }
+
+                            div.mc-field-group {
+                                padding-top: 30px; 
+                                height: 114px;
+                                width: 100%;
+                                padding-right: 55px;
+                                background: rgb(25,45,58);
+
+                                @media screen and (max-width: $break-small) {
+                                    width: 100%;
+                                }
+                            }
+                            ul {
+                                padding-left: 20px;
+                                list-style-type: none;
+                                li {
+                                    width: 110%;
+                                    text-align: left;
+                                    color: #fff;
+                                    text-transform: uppercase;
+                                    label {
+                                        font-size: 13px;
+                                        font-family: LBL;
+                                        padding-left: 5px;
+                                    }
+
+                                }
+                            }
+                        }
+                        div.email-form {
+                            width: 60%;
+                            float: right;
+                            @media screen and (max-width: $break-small) {
+                                width: 100%;
+                            }
+
+                            div.mc-field-group {
+                                padding: 40px;
+                                background: rgb(35, 57, 72);
+                                input#mce-EMAIL {
+                                    font-weight: bold;
+                                    font-family: LB;
+                                    font-size: 18px;
+                                }
+
+                                span {
+                                    input {
+                                        opacity: 1.0;
+                                        color: #fff;
+                                        font-weight: bold;
+                                        background: #e0d627;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
