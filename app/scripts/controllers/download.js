@@ -48,22 +48,13 @@ angular.module('lantern_www')
 
     $scope.handleDownload = function () {
       $scope.downloadClicked = true;
-      if (/(localhost|127.0.0.1)/.test(location.hostname) ||
-          /dummy/.test(constants.INSTALLER_DATA_URL) ||
-          /nodownload/.test(location.search)) {
-        $log.log('skipping redirect to installer url');
-      } else {
-        $log.log('redirecting to installer url');
-        $timeout(function () {
-          location.href = $scope.data[$scope.selectedOS].url;
-        }, 500);
-      }
+      return false;
       //Analytics.trackEvent('download', 'clicked', osSniffer.os);
     };
 
     $scope.trackEvent = function(type) {
         $window.ga('send', 'event', type, 
-                   'click', type + ' ' + osSniffer.os);
+                   'click', osSniffer.os);
     };
 
     $scope.selectOS = function (os) {
@@ -90,6 +81,19 @@ angular.module('lantern_www')
         'Linux': constants.DEB_URL64
     };
 
+    $scope.macsteps = [
+        "Open the .dmg file and double-click the 'Lantern Installer' icon",
+    ];
+
+    $(window).resize(function(){
+
+        if (window.innerWidth < 600) {
+            var gif = angular.element(document.querySelector('#gif-map'))[0];
+            console.log(gif.style);
+            gif.style.display = "block";
+        }
+    });
+
     $rootScope.DEB_URL = constants.DEB_URL64;
 
     $scope.init = function () {
@@ -111,6 +115,9 @@ angular.module('lantern_www')
         var map = angular.element( document.querySelector( '#map' ) )[0];
         if (window.screen.width > 600) {
             map.attributes.src.value = "https://ui.getlantern.org/app/index.html";
+        } else {
+            var gif = angular.element(document.querySelector('#gif-map'))[0];
+            gif.style.display = "block";
         }
     };
 
