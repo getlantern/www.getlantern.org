@@ -146,10 +146,10 @@ angular.module('lantern_www')
     FACEBOOK_URL: 'https://www.facebook.com/getlantern',
     TUMBLR_URL: 'http://get-lantern.tumblr.com/',
     GITHUB_URL: 'https://github.com/getlantern/lantern',
-    OSX_URL: 'https://s3.amazonaws.com/lantern/lantern-installer.dmg',
-    WIN_URL: 'https://s3.amazonaws.com/lantern/lantern-installer.exe',
-    DEB_URL32: 'https://s3.amazonaws.com/lantern/lantern-installer-32.deb',
-    DEB_URL64: 'https://s3.amazonaws.com/lantern/lantern-installer-64.deb',
+    OSX_URL: 'https://raw.githubusercontent.com/getlantern/lantern-binaries/master/lantern-installer.dmg'
+    WIN_URL: 'https://raw.githubusercontent.com/getlantern/lantern-binaries/master/lantern-installer.exe',
+    DEB_URL32: 'https://raw.githubusercontent.com/getlantern/lantern-binaries/master/lantern-installer-32.deb',
+    DEB_URL64: 'https://raw.githubusercontent.com/getlantern/lantern-binaries/master/lantern-installer-64.deb',
     BETA_URL: 'https://github.com/getlantern/lantern/wiki/Lantern-Beta-Versions',
   // point this at the real data when it's ready, or point at a not found url
   // to test what happens if we can't reach the installer data or if we take
