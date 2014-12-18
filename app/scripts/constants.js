@@ -146,7 +146,7 @@ angular.module('lantern_www')
     FACEBOOK_URL: 'https://www.facebook.com/getlantern',
     TUMBLR_URL: 'http://get-lantern.tumblr.com/',
     GITHUB_URL: 'https://github.com/getlantern/lantern',
-    OSX_URL: 'https://raw.githubusercontent.com/getlantern/lantern-binaries/master/lantern-installer.dmg'
+    OSX_URL: 'https://raw.githubusercontent.com/getlantern/lantern-binaries/master/lantern-installer.dmg',
     WIN_URL: 'https://raw.githubusercontent.com/getlantern/lantern-binaries/master/lantern-installer.exe',
     DEB_URL32: 'https://raw.githubusercontent.com/getlantern/lantern-binaries/master/lantern-installer-32.deb',
     DEB_URL64: 'https://raw.githubusercontent.com/getlantern/lantern-binaries/master/lantern-installer-64.deb',
