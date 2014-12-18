@@ -121,7 +121,7 @@
 
             <div class="app-desc" ng-bind-template="{{'END_CENSORSHIP_DESCRIPTION' | translate}}"></div>
             <div class="download-section">
-                <a target="_blank" ng-show="!downloadClicked" ng-click="handleDownload()" ng-href="{{oss[order[0]]}}">
+                <a target="_blank" ng-click="handleDownload()" ng-href="{{oss[order[0]]}}">
                 <div ng-click="trackEvent('download')" class="download-button" on->
                     <div class="download-txt">Download Lantern<span class="version"></span><span class="os"><p>  for  </p>{{order[0]}}</span></div>
                 </div>
@@ -138,14 +138,14 @@
                 </div>
 
             </div>
-            <div class="platforms">Available for <a target="_blank"
-                    ng-click="trackEvent('download')" ng-href="{{OSX_URL}}">Mac</a>, <a target="_blank" ng-click="trackEvent('download')" ng-bind-template="{{'WINDOWS' | translate}}" ng-href="{{WIN_URL}}">Windows</a>, and <a
-                    ng-click="trackEvent('download')" ng-href="{{DEB_URL}}">Linux</a>.
-                <p class="beta">Preview our <a target="_blank" ng-href="{{BETA_URL}}">beta release</a>.</p></div>
+            <div class="platforms"><span ng-bind-template="{{'AVAILABLE_FOR' | translate}}">Available for </span> <a target="_blank"
+                    ng-click="trackEvent('download')" ng-href="{{OSX_URL}}" ng-bind-template="{{'MAC' | translate}}">Mac</a>, <a target="_blank" ng-click="trackEvent('download')" ng-bind-template="{{'WINDOWS' | translate}}" ng-href="{{WIN_URL}}">Windows</a>, and <a
+                    ng-click="trackEvent('download')" ng-href="{{DEB_URL}}" ng-bind-template="{{'LINUX' | translate}}">Linux</a>.
+                <p class="beta"><span ng-bind-template="{{'PREVIEW_OUR' | translate}}">Preview our </span> <a target="_blank" ng-bind-template="{{'BETA_RELEASE' | translate}}" ng-href="{{BETA_URL}}">beta release</a>.</p></div>
             </div>
     </div>
         <section class="sign-up">
-            <h1>Sign Up For Our Newsletter</h1>
+        <h1 ng-bind-template="{{'EMAIL_SIGNUP' | translate}}">Sign Up For Our Newsletter</h1>
                 <!-- Begin MailChimp Signup Form -->
                 <div id="mc_embed_signup" controller="SignupCtrl">
                     <form action="//getlantern.us2.list-manage.com/subscribe/post?u=0ac18298d5d0330dcda8f48aa&amp;id=f06770f311" method="POST" id="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate name="signupForm">
@@ -179,7 +179,7 @@
                 </div>
         </div>
         <div id="about" class="lantern-map">
-            <h1>How Does Lantern Work?</h1>
+            <h1 ng-bind-template="{{'HOW_LANTERN_WORKS' | translate}}">How Does Lantern Work?</h1>
             <div class="lantern-desc" ng-bind-template="{{'LANTERN_WORK_DESC' | translate}}">Lantern's goal is access: creating fast, reliable connections to the open Internet. With Lantern, every computer can act as a server. By running Lantern, every user with uncensored access can become an access point for those without, providing gateways to censored sites like Twitter, Facebook, and YouTube.</div>
             <div class="map-wrapper">
                 <iframe id="map" src=""
