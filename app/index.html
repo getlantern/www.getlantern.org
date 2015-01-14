@@ -72,11 +72,11 @@
                     <li><a target="_blank" ng-href="{{FACEBOOK_URL}}"><span class="icon-facebook"></span></a></li>
                     <li><a target="_blank" ng-href="{{TUMBLR_URL}}"><span class="icon-tumblr"></span></a></li>
                     <li><a target="_blank" ng-href="{{GITHUB_URL}}"><span class="icon-github"></span></a></li>
-                    <!--<li ng-click="trackEvent('donate')" class="bc"><div class="coinbase-button"
-                        data-code="deeffa56195e84b5b9991ce7da426c9f"
+                    <li ng-click="trackEvent('donate')" class="bc"><div class="coinbase-button"
+                        data-code="862ae93972431e175353e09133d9e424"
                         data-button-style="none"></div><div
                         class="bc-link"><img
-                        src="/images/bitcoin-logo-cyan.png"></div></li>-->
+                        src="/images/bitcoin-logo-cyan.png"></div></li>
                 </ul>
                 </nav>
                   <nav class="nav-area nav-collapse">
@@ -310,8 +310,9 @@ var nav = responsiveNav(".nav-collapse", { // Selector
 
 
 $(document).ready(function() {
+
   $('.bc-link').click(function(){
-    $(document).trigger('coinbase_show_modal', 'deeffa56195e84b5b9991ce7da426c9f');
+    $(document).trigger('coinbase_show_modal', '862ae93972431e175353e09133d9e424');
     return false;
   });
 
