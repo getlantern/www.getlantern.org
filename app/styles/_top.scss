@@ -1,6 +1,7 @@
 @font-face { font-family: LB; src: url('/styles/fonts/ProximaNova-Bold.otf'); } 
 @font-face { font-family: LBL; src: url('/styles/fonts/ProximaNova-Light.otf'); }
 @font-face { font-family: LBR; src: url('/styles/fonts/ProximaNova-Regular.otf'); }
+@font-face { font-family: LBRA; src: url('/styles/fonts/ProximaNova-Alt-Semibold-Italic.otf'); }
 iframe, img { max-width: 100%; }
 div.outer-container {
     margin: 0;
@@ -572,10 +573,10 @@ div.outer-container {
                     padding-top: 20px;
                     .user-praise-from-scmp {
                       font-size: 32px;
+                      font-family: LBL;
                     }
                     .user-scmp {
-                      font-style: italic;
-                      font-weight: bold;
+                      font-family: LBRA;
                       font-size: 24px;
                     }
                   }
