@@ -476,7 +476,6 @@ div.outer-container {
                         }
                     }
                 }
-                section.press,
                 section.sign-up,
                 div.lantern-map {
                     position: relative;
@@ -566,6 +565,10 @@ div.outer-container {
                     img {
                       padding: 0 20px;
                       height: 22px;
+                      @include single-transition(opacity, .3s);
+                      &:hover {
+                        @include opacity(0.7);
+                      }
                     }
                   }
                   .praise {
