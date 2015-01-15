@@ -64,8 +64,6 @@ div.outer-container {
                 }
                 padding: 0 10px;
                 a {
-                    @include single-transition(color, .3s);
-                    transition: color 0.3s;
                     display: block;
                     color: #ababab !important;
                     font-size: 20px;
@@ -73,8 +71,9 @@ div.outer-container {
                     width: 20px;
                     height: 42px;
                     text-align: center;
+                    @include single-transition(opacity, .3s);
                     &:hover {
-                        color: lighten(#ababab, 15%)
+                        @include opacity(0.7);
                     }
                     &:first-of-type {
                         margin-top: 0;
