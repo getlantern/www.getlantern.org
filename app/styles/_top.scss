@@ -580,6 +580,12 @@ div.outer-container {
                     .user-scmp {
                       font-family: LBRA;
                       font-size: 24px;
+                      a {
+                        @include single-transition(color, .3s);
+                        &:hover {
+                          text-decoration: none;
+                        }
+                      }
                     }
                   }
                 }
