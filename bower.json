@@ -13,7 +13,8 @@
     "json3": "3.3.0",
     "modernizr": "~2.7.1",
     "session.js": "0.4.1",
-    "jquery": "~2.1.1"
+    "jquery": "~2.1.1",
+    "responsive-nav": "~1.0.34"
   },
   "resolutions": {
     "angular": "1.2.17"
