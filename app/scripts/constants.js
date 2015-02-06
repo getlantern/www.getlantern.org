@@ -41,14 +41,9 @@ angular.module('lantern_www')
         name: 'Deutsch',
         dir: 'ltr'
       },
-      fr_CA: {
-        code: 'fr_CA',
-        name: 'français (Canada)', // that's a no-break space
-        dir: 'ltr'
-      },
-      fr_FR: {
-        code: 'fr_FR',
-        name: 'français (France)', // that's a no-break space
+      fr: {
+        code: 'fr',
+        name: 'Français', // that's a no-break space
         dir: 'ltr'
       },
       sk: {

@@ -16,7 +16,7 @@ Adesso, chiunque può farsi sentire in tutto il mondo, e in pochi secondi.
 
 5
 00:00:31,0 --> 00:00:34,0
-Internet è diventato la voce di chi una voce non ce l'ha. 
+Internet è diventato la voce di chi una voce non ce l'ha.
 
 6
 00:00:34,0 --> 00:00:36,0
@@ -74,7 +74,7 @@ Lantern è un software gratuito e sicuro
 
 19
 00:01:13,0 --> 00:01:18,0
-che consente l'accesso ad Internet in posti dove tale accesso è negato. 
+che consente l'accesso ad Internet in posti dove tale accesso è negato.
 
 20
 00:01:18,0 --> 00:01:21,0
@@ -94,7 +94,7 @@ per permettere uno scambio di notizie con i paesi sotto censura.
 
 24
 00:01:29,0 --> 00:01:31,0
-Indica una via d'uscita a queste persone, 
+Indica una via d'uscita a queste persone,
 
 25
 00:01:31,0 --> 00:01:33,0
@@ -130,5 +130,5 @@ Unisciti alla causa.
 
 33
 00:01:47,0 --> 00:01:49,0
-Usa Lantern. 
+Usa Lantern.
 
