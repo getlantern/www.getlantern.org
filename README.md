@@ -135,6 +135,8 @@ built site will be output to the "dist" directory. You can cd into it, run
 "python -m SimpleHTTPServer", and then point a browser at the local built
 version to make sure it looks the same as the development version.
 
+**Please note that the current deployment has to prepend "./" to image URLs to get around the getlantern.org subdirectory on our S3 mirror at https://s3.amazonaws.com/getlantern.org/index.html. The unfortunate result of this is that those images fail to load in local testing even though they'll load no problem in production.**
+
 ## Deployment
 
 Run "grunt deploy". This will create a fresh build in the "dist" directory and then deploy it to our S3 bucket that serves both our S3 mirror as well as getlantern.org.
