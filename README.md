@@ -94,6 +94,8 @@ To start up a development session using grunt's default dev server, run
 server, open a browser pointing to the dev server, and detect when any source
 files are changed and automatically compile any reload them in the browser.
 
+**Please note that the current deployment has to prepend "./" to image URLs to get around the getlantern.org subdirectory on our S3 mirror at https://s3.amazonaws.com/getlantern.org/index.html. The unfortunate result of this is that those images fail to load in local testing even though they'll load no problem in production.**
+
 ### i18n
 
 Translated strings are fetched from json files in the "app/locale" directory
@@ -135,8 +137,4 @@ version to make sure it looks the same as the development version.
 
 ## Deployment
 
-First make sure you have the Nodejitsu credentials for the lantern\_www user in
-~/.jitsuconf (if not run "jitsu login" to create it) as well as
-https://github.com/getlantern/too-many-secrets checked out alongside this repo,
-and then run "grunt deploy". This will create a fresh build in the "dist"
-directory and then deploy it to Nodejitsu as well as S3.
+Run "grunt deploy". This will create a fresh build in the "dist" directory and then deploy it to our S3 bucket that serves both our S3 mirror as well as getlantern.org.
