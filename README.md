@@ -25,6 +25,9 @@ For easy copy/paste into Terminal:
     # install required global node packages
     npm install -g grunt-cli bower
 
+    # s3_website tool for deploying to S3
+    gem install s3_website
+
     # install required local node packages
     npm install
 
