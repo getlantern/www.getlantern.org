@@ -7,7 +7,6 @@ This is the code that powers https://www.getlantern.org.
 
 ## OS X Quick Start
 
-
 For easy copy/paste into Terminal:
 
     # install homebrew if missing
