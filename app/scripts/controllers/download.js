@@ -122,14 +122,23 @@ angular.module('lantern_www')
     };
 
     $scope.faqs = [ {
+            key : "WHO_ARE_WE",
+            nparagraphs : 1
+          }, {
+            key : "IS_LANTERN_FREE",
+            nparagraphs : 2
+          }, {
             key : "SAFE_TO_USE",
-            nparagraphs : 3
+            nparagraphs : 6
+          }, {
+            key : "SAFE_TO_PROVIDE_ACCESS",
+            nparagraphs : 1
           }, {
             key : "PRIVACY_INFO",
-            nparagraphs : 2
+            nparagraphs : 1
           }, {
             key : "CANT_REACH_USERS",
-            nparagraphs : 2
+            nparagraphs : 1
           }, {
             key : "COMPARE_TO_OTHER_TOOLS",
             nparagraphs : 4
@@ -154,9 +163,6 @@ angular.module('lantern_www')
           }, {
             key : "VULNERABLE_TO_HACKERS",
             nparagraphs : 1
-          }, {
-            key : "IS_LANTERN_FREE",
-            nparagraphs : 2
           }, {
             key : "CONTRIBUTE",
             nparagraphs : 1

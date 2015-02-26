@@ -116,7 +116,7 @@
         
        
        <div class="container" ng-controller="DownloadCtrl" ng-init="init()">
-           <div ng-show="!downloadClicked" class="end-censorship" ng-bind-template="{{'AN_APP_END_CENSORSHIP' | translate}}">An app to end censorship.</div>
+           <div ng-show="!downloadClicked" class="end-censorship" ng-bind-template="{{'AN_APP_END_CENSORSHIP' | translate}}">An app to end Internet censorship.</div>
            <div ng-show="downloadClicked" class="end-censorship" ng-bind-template="{{'THANKS_FOR_DOWNLOADING' | translate}}">Thanks for Downloading!</div>
 
             <div class="app-desc" ng-bind-template="{{'END_CENSORSHIP_DESCRIPTION' | translate}}"></div>
@@ -131,17 +131,11 @@
                       data-text="I just downloaded Lantern -- an app for defeating Internet censorship @getlantern"
                 data-size="medium"
                 data-count="none">Tweet</a></span><span class="fb"><div class="fb-share-button" style="height:30px;" data-href="https://getlantern.org" data-layout="button_count"></div></span></div>
-
-                <div ng-show="!downloadClicked" ng-click="trackEvent('watch-video')" class="watch-video" video-on-click>
-                    <div id="video"></div>
-                    <span>Watch Video</span>
-                </div>
-
             </div>
             <div class="platforms"><span ng-bind-template="{{'AVAILABLE_FOR' | translate}}">Available for </span> <a target="_blank"
                     ng-click="trackEvent('download')" ng-href="{{OSX_URL}}" ng-bind-template="{{'MAC' | translate}}">Mac</a>, <a target="_blank" ng-click="trackEvent('download')" ng-bind-template="{{'WINDOWS' | translate}}" ng-href="{{WIN_URL}}">Windows</a>, and <a
                     ng-click="trackEvent('download')" ng-href="{{DEB_URL}}" ng-bind-template="{{'LINUX' | translate}}">Linux</a>.
-                <p class="beta"><span ng-bind-template="{{'PREVIEW_OUR' | translate}}">Preview our </span> <a target="_blank" ng-bind-template="{{'BETA_RELEASE' | translate}}" ng-href="{{BETA_URL}}">beta release</a>.</p></div>
+                <p class="beta"><span ng-bind-template="{{'PREVIEW_OUR' | translate}}">Preview our </span> <a target="_blank" ng-bind-template="{{'BETA_RELEASE' | translate}}" ng-href="{{BETA_URL}}">beta release</a> 0.2</p></div>
             </div>
     </div>
         <section class="sign-up">
@@ -209,7 +203,7 @@
     </section>
     <div id="about" class="lantern-map">
       <h1 ng-bind-template="{{'HOW_LANTERN_WORKS' | translate}}">How Does Lantern Work?</h1>
-      <div class="lantern-desc" ng-bind-template="{{'LANTERN_WORK_DESC' | translate}}">Lantern's goal is access: creating fast, reliable connections to the open Internet. With Lantern, every computer can act as a server. By running Lantern, every user with uncensored access can become an access point for those without, providing gateways to censored sites like Twitter, Facebook, and YouTube.</div>
+      <div class="lantern-desc" ng-bind-template="{{'LANTERN_WORK_DESC' | translate}}">Lantern is an Internet proxy tool. It’s goal is access: creating fast, reliable connections to the open Internet. Lantern uses secure servers and peer access points to provide Internet access to blocked sites. Lantern is unique because it uses peer connections as a source of Internet connectivity when servers are unavailable.</div>
       <div class="map-wrapper">
         <iframe id="map" src=""
           frameborder="0" scrolling="auto"
