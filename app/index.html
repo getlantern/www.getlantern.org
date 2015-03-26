@@ -144,8 +144,8 @@
                     ng-click="trackEvent('download')" ng-href="{{OSX_URL}}" ng-bind-template="{{'MAC' | translate}}">Mac</a>, <a target="_blank" ng-click="trackEvent('download')" ng-bind-template="{{'WINDOWS' | translate}}" ng-href="{{WIN_URL}}">Windows</a>, and <a
                     ng-click="trackEvent('download')" ng-href="{{DEB_URL}}" ng-bind-template="{{'LINUX' | translate}}">Linux</a>.
                 <p class="beta"><span ng-bind-template="{{'PREVIEW_OUR' | translate}}">Preview our </span> <a target="_blank" ng-bind-template="{{'BETA_RELEASE' | translate}}" ng-href="{{BETA_URL}}">beta release</a> 0.2</p></div>
+            <iframe width="0" height="0" name="Trade Desk Tracking - Conversion" frameborder="0" scrolling="no" ng-src="{{conversionTrackingUrl}}"></iframe>
             </div>
-            <iframe width="0" height="0" name="Trade Desk Tracking - Conversion" frameborder="0" scrolling="no" src="{{conversionTrackingUrl}}"></iframe>
           </div>
           <section class="sign-up">
         <h1 ng-bind-template="{{'EMAIL_SIGNUP' | translate}}">Sign Up For Our Newsletter</h1>
