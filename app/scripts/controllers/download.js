@@ -7,10 +7,11 @@ angular.module('lantern_www')
       '$scope',
       '$window',
       '$timeout',
+      '$sce',
       'constants',
       'installerDataFetcher',
       'osSniffer',
-      function ($log, $rootScope, $scope, $window, $timeout, constants, installerDataFetcher, osSniffer) {
+      function ($log, $rootScope, $scope, $window, $timeout, $sce, constants, installerDataFetcher, osSniffer) {
     // have to bind to rootScope to work in IE8?
     if (/lt-ie9/.test((document.getElementById('ng-app') || {}).className)) {
       $scope = $rootScope;
@@ -55,6 +56,26 @@ angular.module('lantern_www')
     $scope.trackEvent = function(type) {
         $window.ga('send', 'event', type, 
                    'click', osSniffer.os);
+                   if (type === 'download') {
+                     $scope.conversionTrackingUrl = $sce.trustAsResourceUrl('//insight.adsrvr.org/tags/l2p03i8/ddylndam/iframe');
+                     $scope.trackFBConversion();
+                   }
+    };
+
+    $scope.trackFBConversion = function() {
+      (function() {
+        var _fbq = window._fbq || (window._fbq = []);
+        if (!_fbq.loaded) {
+          var fbds = document.createElement('script');
+          fbds.async = true;
+          fbds.src = '//connect.facebook.net/en_US/fbds.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(fbds, s);
+          _fbq.loaded = true;
+        }
+      })();
+      window._fbq = window._fbq || [];
+      window._fbq.push(['track', '6022956323756', {'value':'0.00','currency':'USD'}]);
     };
 
     $scope.selectOS = function (os) {
