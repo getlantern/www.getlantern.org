@@ -7,11 +7,13 @@ angular.module('lantern_www')
       '$scope',
       '$window',
       '$timeout',
+      '$translate',
       '$sce',
       'constants',
       'installerDataFetcher',
       'osSniffer',
-      function ($log, $rootScope, $scope, $window, $timeout, $sce, constants, installerDataFetcher, osSniffer) {
+      function ($log, $rootScope, $scope, $window, $timeout, $translate, 
+                $sce, constants, installerDataFetcher, osSniffer) {
     // have to bind to rootScope to work in IE8?
     if (/lt-ie9/.test((document.getElementById('ng-app') || {}).className)) {
       $scope = $rootScope;
@@ -50,16 +52,15 @@ angular.module('lantern_www')
     $scope.handleDownload = function () {
       $scope.downloadClicked = true;
       return false;
-      //Analytics.trackEvent('download', 'clicked', osSniffer.os);
     };
 
     $scope.trackEvent = function(type) {
         $window.ga('send', 'event', type, 
                    'click', osSniffer.os);
-                   if (type === 'download') {
-                     $scope.conversionTrackingUrl = $sce.trustAsResourceUrl('//insight.adsrvr.org/tags/l2p03i8/ddylndam/iframe');
-                     $scope.trackFBConversion();
-                   }
+        if (type === 'download' && $translate.use() == constants.LANGS.fa_IR.code) {
+            $scope.conversionTrackingUrl = $sce.trustAsResourceUrl('//insight.adsrvr.org/tags/l2p03i8/ddylndam/iframe');
+            $scope.trackFBConversion();
+        }
     };
 
     $scope.trackFBConversion = function() {
