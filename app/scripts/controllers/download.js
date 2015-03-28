@@ -110,7 +110,6 @@ angular.module('lantern_www')
 
         if (window.innerWidth < 600) {
             var gif = angular.element(document.querySelector('#gif-map'))[0];
-            console.log(gif.style);
             gif.style.display = "block";
         }
     });
