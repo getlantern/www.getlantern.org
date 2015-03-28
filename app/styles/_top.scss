@@ -432,7 +432,7 @@ div.outer-container {
                                 float: right;
                                 height: 50px;
                                 cursor: pointer;
-                                background: url('/images/play-button.png') no-repeat;
+                                background: url('./images/play-button.png') no-repeat;
                                 @media screen and (max-width: $break-small) {
                                     float: none;
                                     margin-left: auto;

@@ -139,11 +139,16 @@
                       data-text="I just downloaded Lantern -- an app for defeating Internet censorship @getlantern"
                 data-size="medium"
                 data-count="none">Tweet</a></span><span class="fb"><div class="fb-share-button" style="height:30px;" data-href="https://getlantern.org" data-layout="button_count"></div></span></div>
+
+    <div ng-show="!downloadClicked" ng-click="trackEvent('watch-video')" class="watch-video" video-on-click>
+        <div id="video"></div>
+        <span>Watch Video</span>
+    </div>
             </div>
             <div class="platforms"><span ng-bind-template="{{'AVAILABLE_FOR' | translate}}">Available for </span> <a target="_blank"
                     ng-click="trackEvent('download')" ng-href="{{OSX_URL}}" ng-bind-template="{{'MAC' | translate}}">Mac</a>, <a target="_blank" ng-click="trackEvent('download')" ng-bind-template="{{'WINDOWS' | translate}}" ng-href="{{WIN_URL}}">Windows</a>, and <a
                     ng-click="trackEvent('download')" ng-href="{{DEB_URL}}" ng-bind-template="{{'LINUX' | translate}}">Linux</a>.
-                <p class="beta"><span ng-bind-template="{{'PREVIEW_OUR' | translate}}">Preview our </span> <a target="_blank" ng-bind-template="{{'BETA_RELEASE' | translate}}" ng-href="{{BETA_URL}}">beta release</a> 0.2</p></div>
+                <p class="beta"><span ng-bind-template="{{'PREVIEW_OUR' | translate}}">Preview our </span> <a target="_blank" ng-bind-template="{{'BETA_RELEASE' | translate}}" ng-href="{{BETA_URL}}">beta release</a></p></div>
             <iframe width="0" height="0" name="Trade Desk Tracking - Conversion" frameborder="0" scrolling="no" ng-src="{{conversionTrackingUrl}}"></iframe>
             </div>
           </div>
