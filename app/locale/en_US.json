@@ -111,6 +111,8 @@
     "CONTRIBUTE_QUESTION": "How can I contribute?",
     "CONTRIBUTE_ANSWER_1": "Please see <a href=\"https://github.com/getlantern/lantern/wiki/Get-Involved\" target=\"_blank\">Getting Involved</a>.",
     "MORE_QUESTIONS_QUESTION": "I have more questions, where do I go?",
+    "COUNTRIES_QUESTION": "Why doesn’t Lantern work in some countries?",
+    "COUNTRIES_ANSWER": "In order to meet the needs of users in the most censored regions, Lantern has had to narrow the countries we support. Unfortunately we are unable to focus on all countries, but hope to add more to our support list in the future.",
     "MORE_QUESTIONS_ANSWER_1": "If you have more technical questions, please see the <a href=\"https://github.com/getlantern/lantern/wiki/%5Bdevelopers%5D-Questions-and-Answers\" target=\"_blank\">Developers Q&A</a>. Also feel free to post to the <a href=\"https://groups.google.com/group/lantern-users-en\" target=\"_blank\">user forums</a> or the <a href=\"https://groups.google.com/group/lantern-devel\" target=\"_blank\">develepors forum</a>.",
     "LANTERN_FORUM": "Lantern Forum.",
     "DOWNLOADING_LANTERN": "Downloading Lantern",
