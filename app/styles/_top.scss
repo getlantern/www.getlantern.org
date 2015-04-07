@@ -1,7 +1,7 @@
-@font-face { font-family: LB; src: url('/styles/fonts/ProximaNova-Bold.otf'); } 
-@font-face { font-family: LBL; src: url('/styles/fonts/ProximaNova-Light.otf'); }
-@font-face { font-family: LBR; src: url('/styles/fonts/ProximaNova-Regular.otf'); }
-@font-face { font-family: LBRA; src: url('/styles/fonts/ProximaNova-Alt-Semibold-Italic.otf'); }
+@font-face { font-family: LB; src: url('./fonts/ProximaNova-Bold.otf'); }
+@font-face { font-family: LBL; src: url('./fonts/ProximaNova-Light.otf'); }
+@font-face { font-family: LBR; src: url('./fonts/ProximaNova-Regular.otf'); }
+@font-face { font-family: LBRA; src: url('./fonts/ProximaNova-Alt-Semibold-Italic.otf'); }
 iframe, img { max-width: 100%; }
 div.outer-container {
     margin: 0;
@@ -9,7 +9,7 @@ div.outer-container {
     background: rgb(13,23,32);
 
     nav.nav-bar {
-        background-image: url('./images/nav-bg.png');
+        background-image: url('../images/nav-bg.png');
         width: 100%;
         position: fixed;
         padding-bottom: 10px;
@@ -228,7 +228,7 @@ div.outer-container {
                           @media screen and (max-width: $break-small) {
                               padding-bottom: 30px;
                               padding-top: 15px;
-                              background-image: url("./images/nav-bg.png");
+                              background-image: url("../images/nav-bg.png");
                               width: 100%;
                           }
 
@@ -276,18 +276,16 @@ div.outer-container {
                     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iaGF0MCIgZ3JhZGllbnRVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIHgxPSI1MCUiIHkxPSIxMDAlIiB4Mj0iNTAlIiB5Mj0iLTEuNDIxMDg1NDcxNTIwMmUtMTQlIj4KPHN0b3Agb2Zmc2V0PSIxOCUiIHN0b3AtY29sb3I9IiMwYzE3MjAiIHN0b3Atb3BhY2l0eT0iMSIvPgo8c3RvcCBvZmZzZXQ9IjE5JSIgc3RvcC1jb2xvcj0iIzBjMTcyMCIgc3RvcC1vcGFjaXR5PSIxIi8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzExMWQyNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgIDwvbGluZWFyR3JhZGllbnQ+Cgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0idXJsKCNoYXQwKSIgLz4KPC9zdmc+); 
                     background-color: #0a161f;
                     margin-top: 60px;
-                    background: url('./images/LanternYellow2.png') top center no-repeat;
+                    background: url('../images/LanternYellow2.png') top center no-repeat;
                     background-size: cover;
                     position: relative;
                     width: 100%;
-                    height: 615px;
                     z-index: 24;
 
                     @media screen and (max-width: $break-small) {
-                        background: url('./images/LanternYellow-small.png') top center no-repeat;
+                        background: url('../images/LanternYellow-small.png') top center no-repeat;
                         background-size: 140% 60%;
                         margin-top: 0px;
-                        height: 500px;
                     }
 
 
@@ -366,7 +364,7 @@ div.outer-container {
                             margin-right: auto;
                             margin-top: 22px;
                             position: relative;
-                            width: 516px;
+                            width: 294px;
                             height: 70px;
 
                             @media screen and (max-width: 700px) {
@@ -433,7 +431,7 @@ div.outer-container {
                                 float: right;
                                 height: 50px;
                                 cursor: pointer;
-                                background: url('./images/play-button.png') no-repeat;
+                                background: url('../images/play-button.png') no-repeat;
                                 @media screen and (max-width: $break-small) {
                                     float: none;
                                     margin-left: auto;
