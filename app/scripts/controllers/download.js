@@ -7,11 +7,13 @@ angular.module('lantern_www')
       '$scope',
       '$window',
       '$timeout',
+      '$translate',
       '$sce',
       'constants',
       'installerDataFetcher',
       'osSniffer',
-      function ($log, $rootScope, $scope, $window, $timeout, $sce, constants, installerDataFetcher, osSniffer) {
+      function ($log, $rootScope, $scope, $window, $timeout, $translate, 
+                $sce, constants, installerDataFetcher, osSniffer) {
     // have to bind to rootScope to work in IE8?
     if (/lt-ie9/.test((document.getElementById('ng-app') || {}).className)) {
       $scope = $rootScope;
@@ -50,16 +52,21 @@ angular.module('lantern_www')
     $scope.handleDownload = function () {
       $scope.downloadClicked = true;
       return false;
-      //Analytics.trackEvent('download', 'clicked', osSniffer.os);
+    };
+
+    $scope.hideBetaLink = false; 
+
+    if ($translate.use() == constants.LANGS.fa_IR.code) {
+        $scope.hideBetaLink = true;
     };
 
     $scope.trackEvent = function(type) {
         $window.ga('send', 'event', type, 
                    'click', osSniffer.os);
-                   if (type === 'download') {
-                     $scope.conversionTrackingUrl = $sce.trustAsResourceUrl('//insight.adsrvr.org/tags/l2p03i8/ddylndam/iframe');
-                     $scope.trackFBConversion();
-                   }
+        if (type === 'download' && $translate.use() == constants.LANGS.fa_IR.code) {
+            $scope.conversionTrackingUrl = $sce.trustAsResourceUrl('//insight.adsrvr.org/tags/l2p03i8/ddylndam/iframe');
+            $scope.trackFBConversion();
+        }
     };
 
     $scope.trackFBConversion = function() {
@@ -96,11 +103,32 @@ angular.module('lantern_www')
     };
 
     $scope.order = ['Mac OS X', 'Windows', 'Linux'];
-    $scope.oss = {
-        'Mac OS X' : constants.OSX_URL,
-        'Windows' : constants.WIN_URL,
-        'Linux': constants.DEB_URL64
+    $rootScope.DEB_URL = constants.DEB_URL64;
+
+    if ($translate.use() == constants.LANGS.fa_IR.code) {
+        $scope.OSX_URL = constants.OSX_BETA_URL;
+        $scope.WIN_URL = constants.WIN_BETA_URL;
+        $rootScope.DEB_URL = $scope.DEB_URL64 = constants.DEB_BETA_URL64;
+        $scope.DEB_URL32 = constants.DEB_BETA_URL32;
+        $scope.oss = {
+            'Mac OS X' : constants.OSX_BETA_URL,
+            'Windows' : constants.WIN_BETA_URL,
+            'Linux': constants.DEB_BETA_URL64
+        };
+        $scope.version = '2.0.0 Beta 3';
+    } else {
+        $scope.oss = {
+            'Mac OS X' : constants.OSX_URL ,
+            'Windows' : constants.WIN_URL,
+            'Linux': constants.DEB_URL64
+        };
+        $scope.version = '1.5.17';
+    }
+    //$('span.os').prepend($scope.version == 'beta' ? '2.0.0 Beta 3' : '1.5.17');
+    /*function versionCallback(versions) {
+        $('span.os').prepend($scope.version == 'beta' ? '2.0.0 Beta 3' : '1.5.17');
     };
+    $.getScript("https://s3.amazonaws.com/lantern/version.js");*/
 
     $scope.macsteps = [
         "Open the .dmg file and double-click the 'Lantern Installer' icon",
@@ -113,8 +141,6 @@ angular.module('lantern_www')
             gif.style.display = "block";
         }
     });
-
-    $rootScope.DEB_URL = constants.DEB_URL64;
 
     $scope.init = function () {
         if ($scope.selectedOS == "OSX") {
