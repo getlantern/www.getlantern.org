@@ -9,7 +9,7 @@ div.outer-container {
     background: rgb(13,23,32);
 
     nav.nav-bar {
-        background-image: url('./images/nav-bg.png');
+        background-image: url('/images/nav-bg.png');
         width: 100%;
         position: fixed;
         padding-bottom: 10px;
@@ -38,10 +38,14 @@ div.outer-container {
         a.nav-toggle:before{color:#fff;font:400 28px/55px "responsivenav";text-transform:none;text-align:center;position:absolute;content:"\2261";text-indent:0;speak:none;width:100%;left:0;top:0}
 
         nav.social-media {
-            left: 3%;
+            position: absolute;
+            left: 0;
+            margin: 10px 0 0 3%;
             color: #ababab !important;
-            width: 30%;
-            @media screen and (max-width: 1025px) {
+            @include single-transition(color, .3s);
+
+            @media screen and (max-width: $break-large) {
+                position: relative;
                 float: none;
                 margin-right: 0%;
                 text-align: left;
@@ -49,15 +53,10 @@ div.outer-container {
                     float: none;
                 }
             }
-            @media screen and (max-width: 648px) {
+            @media screen and (max-width: $break-medium) {
+                position: absolute;
                 width: auto;
             }
-            float: left;
-
-            position: relative;
-            @include single-transition(color, .3s);
-            display: inline-block;
-            margin-top: 10px;
             li {
                 @media screen and (max-width: $break-small) {
                     display: inline-block;
@@ -95,22 +94,21 @@ div.outer-container {
         }
 
         nav.languages {
-            position: relative;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 3;
             height: 30px;
-
-            padding-top: 20px;
-
-            float: right;
+            margin-right: 4.5%;
+            margin-top: 20px;
             *[dir=rtl] & {
                 float: left;
             }
-            margin-right: 4.5%;
-            @media screen and (max-width: 800px) {
+            @media screen and (max-width: $break-large) {
                 display: none;
             }
             @media screen and (max-width: $break-small) {
                 float: none;
-
                 text-align: center;
                 *[dir=rtl] & {
                     float: none;
@@ -133,7 +131,7 @@ div.outer-container {
 
                            padding: 10px 5px 5px 5px;
                            display: inline-block;
-                           @media screen and (max-width: $break-small) {
+                           @media screen and (max-width: $break-medium) {
                                float: none;
                                       *[dir=rtl] & {
                                           float: none;
@@ -217,18 +215,17 @@ div.outer-container {
                       }
 
                       nav.nav-area {
-
+                          margin: 0 auto;
+                          width: 800px;
                           font-size: 18px;
                           font-family: LB;
-                          position: fixed;
                           text-align: center;
                           text-transform: uppercase;
                           padding-top: 20px;
-                          display: inline-block;
-                          @media screen and (max-width: $break-small) {
+                          @media screen and (max-width: $break-medium) {
                               padding-bottom: 30px;
                               padding-top: 15px;
-                              background-image: url("./images/nav-bg.png");
+                              background-image: url("/images/nav-bg.png");
                               width: 100%;
                           }
 
@@ -240,9 +237,12 @@ div.outer-container {
                               li {
                                   display: inline;
                                   padding-left: 45px;
-                                  @media screen and (max-width: $break-small) {
+                                  @media screen and (max-width: $break-medium) {
                                       padding-left: 10px;
                                       font-size: 11px;
+                                      .new-flag {
+                                        font-size: 7px;
+                                      }
                                   }
 
                                   letter-spacing:2px;
@@ -254,7 +254,7 @@ div.outer-container {
                                   display: inline-block;
                                   border: 2px solid #fff;
                                   padding: 10px;
-                                  @media screen and (max-width: $break-small) {
+                                  @media screen and (max-width: $break-medium) {
                                       padding: 0px;
                                       border: none;
                                   }
@@ -264,8 +264,14 @@ div.outer-container {
                                   text-decoration: none;
                                   color: #fff;
                               }
+                              .new-flag {
+                                font-family: LBS;
+                                font-size: 11px;
+                                color: #d4ca2e;
+                                vertical-align: super;
+                              }
+                            }
                           }
-                      }
                   }
 
                 div.top-section {
@@ -275,7 +281,7 @@ div.outer-container {
                     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iaGF0MCIgZ3JhZGllbnRVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIHgxPSI1MCUiIHkxPSIxMDAlIiB4Mj0iNTAlIiB5Mj0iLTEuNDIxMDg1NDcxNTIwMmUtMTQlIj4KPHN0b3Agb2Zmc2V0PSIxOCUiIHN0b3AtY29sb3I9IiMwYzE3MjAiIHN0b3Atb3BhY2l0eT0iMSIvPgo8c3RvcCBvZmZzZXQ9IjE5JSIgc3RvcC1jb2xvcj0iIzBjMTcyMCIgc3RvcC1vcGFjaXR5PSIxIi8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzExMWQyNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgIDwvbGluZWFyR3JhZGllbnQ+Cgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0idXJsKCNoYXQwKSIgLz4KPC9zdmc+); 
                     background-color: #0a161f;
                     margin-top: 60px;
-                    background: url('./images/LanternYellow2.png') top center no-repeat;
+                    background: url('/images/LanternYellow2.png') top center no-repeat;
                     background-size: cover;
                     position: relative;
                     width: 100%;
@@ -283,7 +289,7 @@ div.outer-container {
                     z-index: 24;
 
                     @media screen and (max-width: $break-small) {
-                        background: url('./images/LanternYellow-small.png') top center no-repeat;
+                        background: url('/images/LanternYellow-small.png') top center no-repeat;
                         background-size: 140% 60%;
                         margin-top: 0px;
                         height: 500px;
@@ -432,7 +438,7 @@ div.outer-container {
                                 float: right;
                                 height: 50px;
                                 cursor: pointer;
-                                background: url('./images/play-button.png') no-repeat;
+                                background: url('/images/play-button.png') no-repeat;
                                 @media screen and (max-width: $break-small) {
                                     float: none;
                                     margin-left: auto;
@@ -549,10 +555,16 @@ div.outer-container {
                 }
                 section#press {
                   text-align: center;
-                  padding: 70px 0;
+                  padding: 40px 0;
+                  h1 {
+                    font-family: LBL;
+                    font-size: 40px;
+                    letter-spacing:5px;
+                    color: white;
+                  }
                   ul.press-images {
                     margin: 0 auto;
-                    padding: 0;
+                    padding: 20px 0;
                     width: 100%;
                     li {
                       display: inline-block;
@@ -571,7 +583,7 @@ div.outer-container {
                     }
                   }
                   .praise {
-                    color: #8acbfd;
+                    color: #688ba6;
                     padding-top: 20px;
                     .user-praise-from-scmp {
                       font-size: 32px;
@@ -586,6 +598,17 @@ div.outer-container {
                           text-decoration: none;
                         }
                       }
+                    }
+                  }
+                  .press-inqueries {
+                    padding-top: 40px;
+                    span, a {
+                      font-size: 24px;
+                      font-family: LBL;
+                      color: white;
+                    }
+                    a {
+                      text-decoration: underline;
                     }
                   }
                 }
