@@ -549,10 +549,16 @@ div.outer-container {
                 }
                 section#press {
                   text-align: center;
-                  padding: 70px 0;
+                  padding: 40px 0;
+                  h1 {
+                    font-family: LBL;
+                    font-size: 40px;
+                    letter-spacing:5px;
+                    color: white;
+                  }
                   ul.press-images {
                     margin: 0 auto;
-                    padding: 0;
+                    padding: 20px 0;
                     width: 100%;
                     li {
                       display: inline-block;
@@ -586,6 +592,17 @@ div.outer-container {
                           text-decoration: none;
                         }
                       }
+                    }
+                  }
+                  .press-inqueries {
+                    padding-top: 40px;
+                    span, a {
+                      font-size: 24px;
+                      font-family: LBL;
+                      color: white;
+                    }
+                    a {
+                      text-decoration: underline;
                     }
                   }
                 }
