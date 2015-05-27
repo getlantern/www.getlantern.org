@@ -38,10 +38,14 @@ div.outer-container {
         a.nav-toggle:before{color:#fff;font:400 28px/55px "responsivenav";text-transform:none;text-align:center;position:absolute;content:"\2261";text-indent:0;speak:none;width:100%;left:0;top:0}
 
         nav.social-media {
-            left: 3%;
+            position: absolute;
+            left: 0;
+            margin: 10px 0 0 3%;
             color: #ababab !important;
-            width: 30%;
-            @media screen and (max-width: 1025px) {
+            @include single-transition(color, .3s);
+
+            @media screen and (max-width: $break-large) {
+                position: relative;
                 float: none;
                 margin-right: 0%;
                 text-align: left;
@@ -49,15 +53,10 @@ div.outer-container {
                     float: none;
                 }
             }
-            @media screen and (max-width: 648px) {
+            @media screen and (max-width: $break-medium) {
+                position: absolute;
                 width: auto;
             }
-            float: left;
-
-            position: relative;
-            @include single-transition(color, .3s);
-            display: inline-block;
-            margin-top: 10px;
             li {
                 @media screen and (max-width: $break-small) {
                     display: inline-block;
@@ -95,22 +94,21 @@ div.outer-container {
         }
 
         nav.languages {
-            position: relative;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 3;
             height: 30px;
-
-            padding-top: 20px;
-
-            float: right;
+            margin-right: 4.5%;
+            margin-top: 20px;
             *[dir=rtl] & {
                 float: left;
             }
-            margin-right: 4.5%;
-            @media screen and (max-width: 800px) {
+            @media screen and (max-width: $break-large) {
                 display: none;
             }
             @media screen and (max-width: $break-small) {
                 float: none;
-
                 text-align: center;
                 *[dir=rtl] & {
                     float: none;
@@ -133,7 +131,7 @@ div.outer-container {
 
                            padding: 10px 5px 5px 5px;
                            display: inline-block;
-                           @media screen and (max-width: $break-small) {
+                           @media screen and (max-width: $break-medium) {
                                float: none;
                                       *[dir=rtl] & {
                                           float: none;
@@ -217,15 +215,14 @@ div.outer-container {
                       }
 
                       nav.nav-area {
-
+                          margin: 0 auto;
+                          width: 800px;
                           font-size: 18px;
                           font-family: LB;
-                          position: fixed;
                           text-align: center;
                           text-transform: uppercase;
                           padding-top: 20px;
-                          display: inline-block;
-                          @media screen and (max-width: $break-small) {
+                          @media screen and (max-width: $break-medium) {
                               padding-bottom: 30px;
                               padding-top: 15px;
                               background-image: url("/images/nav-bg.png");
@@ -240,9 +237,12 @@ div.outer-container {
                               li {
                                   display: inline;
                                   padding-left: 45px;
-                                  @media screen and (max-width: $break-small) {
+                                  @media screen and (max-width: $break-medium) {
                                       padding-left: 10px;
                                       font-size: 11px;
+                                      .new-flag {
+                                        font-size: 7px;
+                                      }
                                   }
 
                                   letter-spacing:2px;
@@ -254,7 +254,7 @@ div.outer-container {
                                   display: inline-block;
                                   border: 2px solid #fff;
                                   padding: 10px;
-                                  @media screen and (max-width: $break-small) {
+                                  @media screen and (max-width: $break-medium) {
                                       padding: 0px;
                                       border: none;
                                   }
@@ -264,8 +264,14 @@ div.outer-container {
                                   text-decoration: none;
                                   color: #fff;
                               }
+                              .new-flag {
+                                font-family: LBS;
+                                font-size: 11px;
+                                color: #d4ca2e;
+                                vertical-align: super;
+                              }
+                            }
                           }
-                      }
                   }
 
                 div.top-section {

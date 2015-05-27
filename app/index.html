@@ -94,8 +94,7 @@
                             <li><a href="/blog/index.html" ng-bind-template="{{'BLOG' | translate}}">Blog</a></li>
                             <li><a target="_blank" href="https://github.com/getlantern/lantern" ng-bind-template="{{'CODE' | translate}}">CODE</a></li>
                             <li><a target="_blank" ng-href="{{valByLang(FORUMS_URLS)}}" ng-bind-template="{{'FORUMS' | translate}}">FORUMS</a></li>
-
-
+                            <li><a target="_blank" ng-href="http://firetweet.io" ng-bind-template="{{'FIRETWEET' | translate}}">FIRETWEET</a><span class="new-flag">New!</span></li>
                         </ul>
                     </nav>
 
@@ -121,8 +120,6 @@
                         </nav>
             </nav>
    <div class="top-section" ng-click="isCollapsed || (isCollapsed = !isCollapsed)" >
-        
-       
        <div class="container" ng-controller="DownloadCtrl" ng-init="init()">
            <div ng-show="!downloadClicked" class="end-censorship" ng-bind-template="{{'AN_APP_END_CENSORSHIP' | translate}}">An app to end Internet censorship.</div>
            <div ng-show="downloadClicked" class="end-censorship" ng-bind-template="{{'THANKS_FOR_DOWNLOADING' | translate}}">Thanks for Downloading!</div>
