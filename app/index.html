@@ -128,9 +128,10 @@
             <div class="download-section">
                 <a target="_blank" ng-click="handleDownload()" ng-href="{{oss[order[0]]}}">
                 <div ng-click="trackEvent('download')" class="download-button" on->
-                    <div class="download-txt">Download Lantern<span class="version"></span><span class="os"><p>  for  </p>{{order[0]}}</span></div>
+                    <div class="download-txt">Download Lantern<span class="version"></span><span class="os"><span ng-bind="version"></span><p>&nbsp;for&nbsp;</p>{{order[0]}}</span></div>
                 </div>
                 </a>
+                <div ng-if="irDownload" ng-include="'template/conversion.html'"></div>
                 <div class="post-download" ng-show="downloadClicked">Share with your friends on <span class="twitter"><br/><a class="twitter-share-button" href="https://twitter.com/share"
                       data-related="twitterdev"
                       data-text="I just downloaded Lantern -- an app for defeating Internet censorship @getlantern"
@@ -145,7 +146,8 @@
             <div class="platforms"><span ng-bind-template="{{'AVAILABLE_FOR' | translate}}">Available for </span> <a target="_blank"
                     ng-click="trackEvent('download')" ng-href="{{OSX_URL}}" ng-bind-template="{{'MAC' | translate}}">Mac</a>, <a target="_blank" ng-click="trackEvent('download')" ng-bind-template="{{'WINDOWS' | translate}}" ng-href="{{WIN_URL}}">Windows</a>, and <a
                     ng-click="trackEvent('download')" ng-href="{{DEB_URL}}" ng-bind-template="{{'LINUX' | translate}}">Linux</a>.
-                <p class="beta"><span ng-bind-template="{{'PREVIEW_OUR' | translate}}">Preview our </span> <a target="_blank" ng-bind-template="{{'BETA_RELEASE' | translate}}" ng-href="{{BETA_URL}}">beta release</a></p></div>
+                <p ng-hide="hideBetaLink" class="beta"><span ng-bind-template="{{'PREVIEW_OUR' | translate}}">Preview our </span> <a target="_blank" ng-bind-template="{{'BETA_RELEASE' | translate}}" ng-href="{{BETA_URL}}">beta release</a></p>
+            </div>
             <iframe width="0" height="0" name="Trade Desk Tracking - Conversion" frameborder="0" scrolling="no" ng-src="{{conversionTrackingUrl}}"></iframe>
             </div>
           </div>
@@ -327,10 +329,6 @@ $(document).ready(function() {
   });
 });
 
-var versionCallback = function(versions) {
-  $('span.os').prepend(versions.stable);
-};
-$.getScript("https://s3.amazonaws.com/lantern/version.js"); 
 window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
 </script>
 
