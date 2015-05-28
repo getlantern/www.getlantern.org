@@ -21,6 +21,7 @@ angular.module('lantern_www')
 
     $scope.selectedOS = osSniffer.os;
     $scope.downloadClicked = false;
+    $scope.irDownload = false;
 
     var ntries = 0, MAXTRIES = 20;
     function tryAgain() {
@@ -54,10 +55,17 @@ angular.module('lantern_www')
       return false;
     };
 
+    $scope.hideBetaLink = false; 
+
+    if ($translate.use() == constants.LANGS.fa_IR.code) {
+        $scope.hideBetaLink = true;
+    };
+
     $scope.trackEvent = function(type) {
         $window.ga('send', 'event', type, 
                    'click', osSniffer.os);
         if (type === 'download' && $translate.use() == constants.LANGS.fa_IR.code) {
+            $scope.irDownload = true;
             $scope.conversionTrackingUrl = $sce.trustAsResourceUrl('//insight.adsrvr.org/tags/l2p03i8/ddylndam/iframe');
             $scope.trackFBConversion();
         }
@@ -97,11 +105,27 @@ angular.module('lantern_www')
     };
 
     $scope.order = ['Mac OS X', 'Windows', 'Linux'];
-    $scope.oss = {
-        'Mac OS X' : constants.OSX_URL,
-        'Windows' : constants.WIN_URL,
-        'Linux': constants.DEB_URL64
-    };
+    $rootScope.DEB_URL = constants.DEB_URL64;
+
+    if ($translate.use() == constants.LANGS.fa_IR.code) {
+        $scope.OSX_URL = constants.OSX_BETA_URL;
+        $scope.WIN_URL = constants.WIN_BETA_URL;
+        $rootScope.DEB_URL = $scope.DEB_URL64 = constants.DEB_BETA_URL64;
+        $scope.DEB_URL32 = constants.DEB_BETA_URL32;
+        $scope.oss = {
+            'Mac OS X' : constants.OSX_BETA_URL,
+            'Windows' : constants.WIN_BETA_URL,
+            'Linux': constants.DEB_BETA_URL64
+        };
+        $scope.version = '2.0.0 Beta 5';
+    } else {
+        $scope.oss = {
+            'Mac OS X' : constants.OSX_URL ,
+            'Windows' : constants.WIN_URL,
+            'Linux': constants.DEB_URL64
+        };
+        $scope.version = '1.5.17';
+    }
 
     $scope.macsteps = [
         "Open the .dmg file and double-click the 'Lantern Installer' icon",
@@ -111,12 +135,9 @@ angular.module('lantern_www')
 
         if (window.innerWidth < 600) {
             var gif = angular.element(document.querySelector('#gif-map'))[0];
-            console.log(gif.style);
             gif.style.display = "block";
         }
     });
-
-    $rootScope.DEB_URL = constants.DEB_URL64;
 
     $scope.init = function () {
         if ($scope.selectedOS == "OSX") {
